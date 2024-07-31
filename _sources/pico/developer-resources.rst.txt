@@ -1,0 +1,35 @@
+:hide-toc:
+
+**********************************************************************
+Developer Resources
+**********************************************************************
+
+Tooling
+=======
+Download the relevant tooling to develop on the platform of your choice.
+
+* Use and apply real-world physics
+* Import and rig your own 3D hand assets
+* Utilise a library of optimized and rigged hand models
+
+`Unity <https://leap2.ultraleap.com/xr-developer-tools/`_
+
+`Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Documentation and Design Guidelines
+===================================
+
+Visit `Ultraleap Developer Resources <https://docs.ultraleap.com/>`_ to find out what's involved in designing for hand tracking.
+
+Keep an eye on the Ultralab Blog
+--------------------------------
+
+With experiments, tips, and tricks, the `Ultralab Blog <https://docs.ultraleap.com/ultralab/>`_ is a useful place to know about. Check out our recent post taking you inside the design of our `barista training demo <https://docs.ultraleap.com/ultralab/vr-training-design.html>`_.
+
+To get access to the latest developments, software, and tutorials for hand tracking from Ultraleap, 
+please click `here <https://www.ultraleap.com/newsletter-sign-up/>`_ to subscribe to our newsletter.
+
+
+-----------
+
+`Back to top <#top>`_

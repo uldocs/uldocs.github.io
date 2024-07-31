@@ -1,0 +1,6 @@
+Namespace System
+================
+
+.. doxygennamespace:: System
+   :project: unity
+   :no-link: 

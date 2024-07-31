@@ -1,0 +1,6 @@
+Struct Leap::MetadataUtil::Analytics
+====================================
+
+.. doxygenstruct:: Leap::MetadataUtil::Analytics
+   :project: unity
+   :members: 

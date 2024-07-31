@@ -1,0 +1,50 @@
+Ultraleap Hand Tracking Forearm
+*********
+
+This feature is enabled implicitly and functionality of the feature can be accessed via the 
+`XR_ULTRALEAP_hand_tracking_forearm <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_ULTRALEAP_hand_tracking_forearm>`_
+extension.
+
+------------
+
+What does it do?
+-----------
+
+This feature extends upon the existing ``XR_EXT_hand_tracking``'s ``XrHandJointSetEXT`` to include an additional
+joint to represent the users elbow.
+
+When using this feature, requesting hand joints via ``xrLocateHandJointsEXT`` will also include the elbow joint,
+allowing for an accurate representation of the users forearm if desired.
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      The video shows our classic capsule hands with the forearm being instantiated between the wrist
+      and this features elbow joint position.
+	    </p>
+    </div>
+    <div class="image">
+      <video width="440" height="285" controls style="padding:5%;">
+        <source src="../../../_video/openxr/oxr-forearm.mp4" type="video/mp4">
+    </div>
+  </div>
+
+`Back to top <#top>`_

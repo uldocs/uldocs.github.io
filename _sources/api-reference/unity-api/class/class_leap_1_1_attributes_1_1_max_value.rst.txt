@@ -1,0 +1,6 @@
+Class Leap::Attributes::MaxValue
+================================
+
+.. doxygenclass:: Leap::Attributes::MaxValue
+   :project: unity
+   :members: 

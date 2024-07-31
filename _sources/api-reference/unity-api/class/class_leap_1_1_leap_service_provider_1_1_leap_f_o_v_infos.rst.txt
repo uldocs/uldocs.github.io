@@ -1,0 +1,6 @@
+Class Leap::LeapServiceProvider::LeapFOVInfos
+=============================================
+
+.. doxygenclass:: Leap::LeapServiceProvider::LeapFOVInfos
+   :project: unity
+   :members: 

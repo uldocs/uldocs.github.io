@@ -1,0 +1,175 @@
+:hide-toc:
+
+********************************
+Hinting API Overview
+********************************
+
+What is it?
+############
+
+The Hinting API is an API that enables the Tracking Service to switch between available models and modes according to the application context, which is determined by the developer. This feature enables the developer to focus on the end user experience, rather than on implementing specific features in their code.
+
+The developer can set a number of hints that describe the context for how the application and the device is expected to be using hand tracking. These hints will be used by the Tracking Service to select the best hand tracking conditions for the context.
+
+What hints are available? 
+############
+
+The hints can be divided into two groups: 1) user interaction and 2) device conditions
+
+**User Interaction**
+------------
+
+    ++++++
+    **Interaction with UI**
+
+    This hint assumes fingers are fully extended when they out of line of sight of the cameras, making it easier to interact with buttons. This is expected only to be used in instances where the user is near UI.
+
+    *   Type of hint: 
+    
+        *   Performance Mode 
+
+    *   Example use cases:
+
+        *   Button pushing
+
+        *   UI panel interactions
+
+    ---
+
+    ++++++
+    **Hands moving quickly**
+
+    This hint makes sure the hand tracking runs as fast as possible to enables hands to be tracked in instances where the user is expected to be moving them quickly.
+
+    *   Type of hint: 
+    
+        *   Performance Mode 
+
+    *   Example use cases:
+
+        *   Games or fitness applications.
+
+    ---
+
+    ++++++
+    **Discreet or low effort gestures**
+
+    This hint enables tracking of acute finger movements, also known as microgestures, with high degrees of accuracy. They are useful for interacting with UI in a way that is subtle and require sminimal effort.
+
+    *   Type of hint: 
+    
+        *   Tracking Model
+
+    *   Example use cases:
+  
+        *   Scrolling through menus
+    
+        *   Swiping through images
+    
+        *   'Everyday' AR interaction
+
+    ---
+
+    ++++++
+    **Interaction with real world objects**
+
+    This hint optimises hand tracking for instances where hands are occluded by objects being held.
+
+    *   Type of hint: 
+    
+        *   Tracking Model
+    
+    *   Example use cases:
+
+        *   Training with objects
+    
+        *   Holding controllers
+
+-----------
+
+**Device Conditions**
+------------
+
+    ++++++
+    **Low resources**
+
+    This hint will minimise resource usage of hand tracking to avoid a drop in overall system performance, whilst maintaining smooth tracking. It can lead to reduced hand tracking performance so is best for use cases where high fidelity hand tracking is unnecessary, such as basic button interaction.
+
+    *   Type of hint: 
+    
+        *   Performance Mode 
+
+    *   Example use cases:
+
+        *   Media consumption
+
+    ---
+
+    ++++++
+    **Peak performance**
+
+    This hint will maximise resource usage of hand tracking to ensure peak performance. It is useful for developers who care more about performance than battery life/heat/spare CPU. It is best to be used in instances where compute will not be an issue, such as PCVR.
+
+    *   Type of hint: 
+    
+        *   Performance Mode 
+
+    *   Example use cases:
+
+        *   Flight simulation
+
+    ---
+
+    ++++++
+    **Bright conditions**
+
+    This hint will ask the system to adjust the illumination to better suit the environment
+
+    *   Type of hint: 
+    
+        *   Performance Mode 
+
+    *   Example use cases:
+        
+        *  Outside usage
+
+-----------
+
+.. raw:: html
+    
+    <div class="text-center">
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/downloads/leap-motion-controller-2/">Download Hyperion for Leap Motion Controller 2</a>
+
+    </div>
+
+
+
+Notes
+------------
+
+*   It is important to be aware that the capabilities that are enabled via the Hinting API are not dynamic - for example, the Tracking Service will not automatically detect that a user is holding an object. The application will therefore need to indicate to the Tracking Service that the user is holding an object via a hint, so that the Service can select the appropriate right model.
+
+*   If there is a conflict between hints, the order in which the hints has been provided will be treated by the Tracking Service as an indication of priority.
+
+*   The Tracking Service makes no guarantee to the application that it will follow any particular behaviour, so developers should choose hints for their intention.
+
+*   Not all hints work the same across all platforms. The service will attempt to pick the best hand tracking to meet a client application's described use-case.
+
+*   Some hints values will only be supported when the hand tracking service has a Hyperion license.
+
+*   Over time supported hints will be added and removed.
+
+Further Reading
+------------
+
+*   Click `here <https://docs.ultraleap.com/api-reference/tracking-api/group/group___hints.html>`_ for the API reference guide.
+
+*   Using the Ultraleap Unity Plugin - see the guide `here <https://docs.ultraleap.com/xr-and-tabletop/xr/unity/plugin/features/hand-tracking-hinting.html>`_.
+
+*   Using the Ultraleap Unreal Plugin - see the guide `here <https://docs.ultraleap.com/xr-and-tabletop/xr/unreal/plugin/features/hand-tracking-hinting.html>`_.
+
+
+ 
+
+    

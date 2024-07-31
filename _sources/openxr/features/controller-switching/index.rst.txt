@@ -1,0 +1,90 @@
+Controller Switching
+*********
+
+Chose the desired configuration option below to see the **key-value** pairs and their options:
+
+.. tabbed:: Configuration File
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``feature_hand_interaction_controller_switching``
+          - ``BOOL``
+          - where ``BOOL`` is a boolean describing the active state of the feature. Options are ``true`` and ``false``
+          - ``true``
+
+.. tabbed:: Environment Variables
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``ULTRALEAP_OPENXR_FEATURE_HAND_INTERACTION_CONTROLLER_SWITCHING``
+          - ``BOOL``
+          - where ``BOOL`` is a boolean describing the active state of the feature. Options are ``true`` and ``false``
+          - ``true``
+
+What does it do?
+-----------
+
+This feature augments the `hand interaction <../hand-interaction-profile/index.html>`_ feature, allowing for the 
+usage of controllers in conjunction with hands when using interaction profiles.
+
+When enabled, our layer will keep track and automatically switch to controller interaction profiles when 
+appropriate on a per hand basis. 
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      The video to the right shows the following permutations:
+	    </p>
+      <ul>
+        <li>Both hands driving actions</li>
+        <li>Both controllers driving actions</li>
+        <li>1 Hand, 1 controller driving actions</li>
+      </ul>
+    </div>
+    <div class="image">
+      <video width="403" height="237" controls style="padding:5%;">
+        <source src="../../../_video/openxr/oxr-controller-switching.mp4" type="video/mp4">
+    </div>
+  </div>
+
+The application will receive the typical notification if the input source has been changed mid session.
+More information regarding this event can be seen in the OpenXR Specification 
+`here <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XrEventDataInteractionProfileChanged>`_.
+
+.. note::
+  It is **highly** recommended to have this feature enabled if the `hand interaction <../hand-interaction-profile/index.html>`_
+  feature is also enabled. Without this **all** controller input via interaction profiles will be overridden and ignored.
+
+`Back to top <#top>`_

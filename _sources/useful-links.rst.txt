@@ -1,0 +1,53 @@
+:hide-toc:
+
+************
+Useful Links
+************
+
+Customer and Developer Support
+##############################
+
+Already using our products and experiencing technical issues? Find helpful resources on our developer documentation and
+`forums <https://forums.leapmotion.com/>`_ or `Support FAQs <https://support.leapmotion.com/hc/en-us>`_ or raise a
+support ticket and our team will get back to you.
+
+.. link-button:: https://support.leapmotion.com/hc/en-us/requests/new
+    :type: url
+    :text: Contact Support
+    :classes: btn-secondary
+
+Discord
+##############################
+
+You asked and we've delivered ... we're now on Discord.
+
+Join our NEW server.
+
+.. link-button:: https://discord.gg/3VCndThqxS
+    :type: url
+    :text: Discord
+    :classes: btn-secondary
+
+General Inquiries
+#################
+
+Whether you’re looking to bring your next great idea to life or interested in finding out more about Ultraleap, we’re here to help. For partnership, PR, or other inquiries, please contact us via our main website.
+
+.. link-button:: https://www.ultraleap.com/contact-us/
+    :type: url
+    :text: Contact Ultraleap
+    :classes: btn-secondary
+
+---------
+
+Explore More of Ultraleap
+#########################
+
+`Ultraleap Site <https://leap2.ultraleap.com/>`_ The future is a place where infinite worlds are at your fingertips.
+One where you interact naturally and in 3D. One where you don’t need controllers. Ultraleap was formed when Leap Motion
+and Ultrahaptics came together in 2019. We’ve united the world’s most advanced hand tracking with the only haptic
+technology that creates the sensation of touch in mid-air.
+
+-----------
+
+`Back to top <#top>`_

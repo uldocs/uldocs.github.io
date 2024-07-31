@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::HandFadeInAtDistanceFromRealData
+===========================================================
+
+.. doxygenclass:: Leap::PhysicalHands::HandFadeInAtDistanceFromRealData
+   :project: unity
+   :members: 

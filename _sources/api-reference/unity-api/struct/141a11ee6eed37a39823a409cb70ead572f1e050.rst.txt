@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_NEW_DEVICE_TRANSFORM
+==============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_NEW_DEVICE_TRANSFORM
+   :project: unity
+   :members: 

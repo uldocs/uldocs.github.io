@@ -1,0 +1,6 @@
+Namespace UnityObject
+=====================
+
+.. doxygennamespace:: UnityObject
+   :project: unity
+   :no-link: 

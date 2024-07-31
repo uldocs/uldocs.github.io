@@ -1,0 +1,6 @@
+Class Leap::Unity::MRTK::LeapMRTKSubsystem::LeapHandContainer
+=============================================================
+
+.. doxygenclass:: Leap::Unity::MRTK::LeapMRTKSubsystem::LeapHandContainer
+   :project: unity
+   :members: 

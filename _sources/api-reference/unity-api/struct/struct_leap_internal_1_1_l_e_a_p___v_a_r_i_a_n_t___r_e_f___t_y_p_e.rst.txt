@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_VARIANT_REF_TYPE
+==========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_VARIANT_REF_TYPE
+   :project: unity
+   :members: 

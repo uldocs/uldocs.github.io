@@ -1,0 +1,6 @@
+Struct Leap::HandPoseDetector::PoseRule
+=======================================
+
+.. doxygenstruct:: Leap::HandPoseDetector::PoseRule
+   :project: unity
+   :members: 

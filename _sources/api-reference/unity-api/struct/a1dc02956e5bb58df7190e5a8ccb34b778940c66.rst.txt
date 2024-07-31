@@ -1,0 +1,6 @@
+Struct Leap::RuntimeGizmos::RuntimeGizmoDrawer::WireSphere
+==========================================================
+
+.. doxygenstruct:: Leap::RuntimeGizmos::RuntimeGizmoDrawer::WireSphere
+   :project: unity
+   :members: 

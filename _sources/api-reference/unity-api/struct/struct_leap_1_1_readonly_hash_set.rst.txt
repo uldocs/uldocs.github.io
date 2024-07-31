@@ -1,0 +1,6 @@
+Struct Leap::ReadonlyHashSet
+============================
+
+.. doxygenstruct:: Leap::ReadonlyHashSet
+   :project: unity
+   :members: 

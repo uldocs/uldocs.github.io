@@ -1,0 +1,30 @@
+*********************
+MAC Support
+*********************
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Pre-requisites
+--------------------------
+
+* Xcode 14.1 for MAC silicon, Xcode 14.2 for MAC intel.
+* Unreal engine 5.2
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Build the plugin with C++ project
+--------------------------
+
+1. Create a new C++ project with Unreal engine
+2. Clone the plugin from our `Github Repo <https://github.com/ultraleap/UnrealPlugin>`_ to your Plugins folder in your project
+3. Build the project with the plugin in it 
+
+
+.. note::
+    Due to the Unreal engine marketplace only accepting .dylib built with MAC 10.15, our marketplace plugin does not support MAC.
+    However, our `Github Repo <https://github.com/ultraleap/UnrealPlugin>`_ provides MAC support for both Intel and Silicon devices.
+
+
+-----------
+
+`Back to top <#top>`_

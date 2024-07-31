@@ -1,0 +1,111 @@
+************
+Hover States
+************
+
+User interfaces feel so much more alive with reactive hover states. TouchFree provides the ability to add hover states to your content to make it even more engaging than it was previously. This can either be used with TouchFree or making touchscreen content reactive to the users hand before they touch. 
+
+Hover states provide benefits in terms of both usability and engagement. Users feel so much more engaged when content is visually reacting to their hand.
+
+Users expect the behaviour of UI elements to react and match the action of their movements. Buttons styled and behaving in a 3D way responds to the depth of AirPush and TouchPlane, increasing intuitiveness of those interactions. 
+
+.. image:: ../../img/touchless-interfaces/hover-states/hover-states.gif
+  :alt: Shows buttons growing and glowing green when hovered
+  :align: center
+
+Focus Feedback
+--------------
+
+Clear, visual feedback communicates to the user that they are focused on an interactable element. This aids usability and makes the interface alive, reacting to the users presence and motions.
+
+.. image:: ../../img/touchless-interfaces/hover-states/focus-feedback.gif
+  :alt: Shows play button growing when hovered
+  :align: center
+
+Small Button Convenience
+------------------------
+
+Intent can be used to make smaller interactable content larger. When the user moves their hand over smaller interactable elements, those elements can grow, making them easy to click. Utilising hover states in this way unclutterers the interface and provides appropriate prominence for individual elements at appropriate times. 
+
+.. image:: ../../img/touchless-interfaces/hover-states/small-button.gif
+  :alt: Shows a small button growing and glowing green when hovered
+  :align: center
+
+Engagement
+----------
+
+Interactable content is so much more engaging when it reacts to a users hand movements. Users feel like they have much more agency over the UI and the opportunities are endless in terms of what the hover states can be. They can be used to improve the user experience, make it more fun, memorable and for transactional use cases these can be used to highlight and promote items of interest such as new or featured items.
+
+.. figure:: ../../img/touchless-interfaces/hover-states/engage-info.gif
+  :alt: Shows button displaying information when hovered
+  :align: center
+
+  Contextual Info
+
+.. figure:: ../../img/touchless-interfaces/hover-states/engage-3d.gif
+  :alt: Shows button with a 3D model that rotates when hovered
+  :align: center
+
+  3D Spin
+
+.. figure:: ../../img/touchless-interfaces/hover-states/engage-video.gif
+  :alt: Shows button with a video that plays when hovered
+  :align: center
+
+  Video Preview
+
+.. figure:: ../../img/touchless-interfaces/hover-states/engage-background.gif
+  :alt: Shows button with a background that is revealed when hovered
+  :align: center
+
+  Reveal Background
+
+.. figure:: ../../img/touchless-interfaces/hover-states/engage-animation.gif
+  :alt: Shows button with animated characters that plays when hovered
+  :align: center
+
+  Character Animation (image by jcomp on Freepik)
+
+Contextual Information
+----------------------
+
+Hover states can be used to show extra information at appropriate times. Hiding it away when not needed and showing it when it is useful to the user in making a decision.
+
+.. image:: ../../img/touchless-interfaces/hover-states/contextual-info.gif
+  :alt: Shows buttons that reveal calorie information when hovered
+  :align: center
+
+.. figure:: ../../img/touchless-interfaces/hover-states/contextual-explode.gif
+  :alt: Shows a button with an image of food that expands to show the ingredients when hovered
+  :align: center
+
+  Explode
+
+
+Area State Change
+-----------------
+
+When the users hand moves over an intractable area of the screen, a state change can encourage users to interact. This reactive state change provides an extra layer of immersiveness while requiring no effort from the user. It can also be used to give more value on top of the idle content, by telling story, setting the scene or anything else you can think of.
+
+.. image:: ../../img/touchless-interfaces/hover-states/area-state.gif
+  :alt: Shows an animation of a watch expanding when the cursor enters the area
+  :align: center
+
+Element State Change
+--------------------
+
+A low effort interaction for users is a state change on entry to a context area. This can be used as a low effort way to aid people in understanding how to onboard people with the concept of TouchFree by moving their hand in mid air to affect content on screen.
+
+.. image:: ../../img/touchless-interfaces/hover-states/element-state.gif
+  :alt: Shows an animation where tiles are flipped as the cursor enters them
+  :align: center
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Augmented Touch
+---------------
+
+Any traditional touchscreen can be retrofitted with a 3Di camera and TouchFree to add reactive hover states while keeping the experience purely touchscreen with no touchless interaction required. This has immense benefits in terms of user engagement and usability while being totally risk free.
+
+.. image:: ../../img/touchless-interfaces/hover-states/augmented-touch.gif
+  :alt: Shows an animation of a person using a touchscreen with hover states enabled by TouchFree
+  :align: center

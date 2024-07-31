@@ -1,0 +1,6 @@
+Class ATrackingDeviceBaseActor
+==============================
+
+.. doxygenclass:: ATrackingDeviceBaseActor
+   :project: unreal
+   :members:

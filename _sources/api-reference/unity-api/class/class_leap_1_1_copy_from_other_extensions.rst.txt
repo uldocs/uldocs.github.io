@@ -1,0 +1,6 @@
+Class Leap::CopyFromOtherExtensions
+===================================
+
+.. doxygenclass:: Leap::CopyFromOtherExtensions
+   :project: unity
+   :members: 

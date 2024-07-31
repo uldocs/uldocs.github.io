@@ -1,0 +1,90 @@
+:hide-toc:
+
+***************
+Getting Started
+***************
+
+Ultraleap Hand Tracking Cameras
+######################
+
+Choose either the `Leap Motion Controller <https://www.ultraleap.com/datasheets/Leap_Motion_Controller_Datasheet.pdf>`_
+or the `Stereo IR 170 Camera Module <https://www.ultraleap.com/datasheets/Stereo_IR_170_datasheet.pdf>`_. The Leap
+Motion Controller captures the movements of your hands with unparalleled accuracy and near–zero latency. Our
+high–performance Stereo IR 170 (formerly known as Rigel) has a wider field of view, longer tracking range, and slimmer
+form factor than the Leap Motion Controller.
+
+.. image:: ../img/hand-tracking/getting-started/ultraleap-interaction-zone-top.jpeg
+    :width: 70%
+    :alt: Ultraleap hand tracking interaction zone top view
+
+.. image:: ../img/hand-tracking/getting-started/ultraleap-interaction-zone-side.jpeg
+    :width: 70%
+    :alt: Ultraleap hand tracking interaction zone side view
+
+-----------
+
+System Requirements
+###################
+
+**Minimum system requirements (desktop)**
+
+- Windows® 10, 64-bit
+- Intel® Core™ i3 processor 5th Gen (must support AVX instructions)
+- 2 GB RAM
+- USB 2.0 port
+
+VR headsets may come with their own system requirements.
+
+-----------
+
+Set Up Camera
+###################
+
+Ultraleap’s Tracking Devices use infrared LEDs and cameras to deliver precision hand tracking in a variety of environments. 
+
+Combined with our Hand Tracking Software, our camera modules can be used to integrate world-leading hand tracking into your next application.
+
+These pages will help you get started with mounting your camera module.
+
+- `XR Headset <./XR-Setup/XR-setup.html>`_
+- `PC Desktop <./desktop-setup.html>`_
+
+------------
+
+Installation Guides
+###################
+
+Standard installation guides for the Ultraleap Hand Tracking Cameras can be found on our
+`developer portal <https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html>`_.
+
+Below are some video resources for general setup and care:
+
+- `Taking care of your Leap Motion Controller <https://support.leapmotion.com/hc/en-us/articles/360004322638-Taking-care-of-your-Leap-Motion-Controller>`_
+- `Tips for using your Leap Motion Controller <https://support.leapmotion.com/hc/en-us/articles/360004332517-Tips-for-using-your-Leap-Motion-Controller>`_
+- `Improving tracking <https://support.leapmotion.com/hc/en-us/articles/360004322298-Improving-Tracking>`_
+- `Setup and comfortable use <https://support.leapmotion.com/hc/en-us/articles/360004324298-Setup-and-comfortable-use-of-your-Leap-Motion-Controller>`_
+
+------------
+
+Developer Tools
+###############
+
+Build world-leading hand tracking into your application using our developer tools. Download the plugin for your chosen platform to start integrating our tracking data into your creation. Tools are available for Unity, Unreal, OpenXR, and MRTK from the `developer portal <https://leap2.ultraleap.com/xr-developer-tools/>`_. 
+
+Our plugins for the Unity and Unreal game engines make it easy to incorporate hand tracking into your projects.
+
+We provide a full user manual and API reference for both `Unity <https://docs.ultraleap.com/unity-api/>`_ and `Unreal <https://docs.ultraleap.com/unreal-api/>`_ here on our Developer Resources site. 
+
+-----------
+
+Device Orientation
+##################
+
+Our Hand Tracking Software supports three different tracking orientation modes: desktop
+(facing up from a table), head–mounted (fastened to a VR/AR headset), and screentop (facing down towards the user).
+
+Orientation mode is set at the application level by the developer. We do not recommend other device orientations. 
+
+
+-------------
+`Back to top <#top>`_

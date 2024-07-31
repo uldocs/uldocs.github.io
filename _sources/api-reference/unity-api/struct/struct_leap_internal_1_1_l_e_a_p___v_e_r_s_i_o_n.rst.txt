@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_VERSION
+=================================
+
+.. doxygenstruct:: LeapInternal::LEAP_VERSION
+   :project: unity
+   :members: 

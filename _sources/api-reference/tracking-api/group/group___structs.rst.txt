@@ -1,0 +1,6 @@
+Group Structs
+=============
+
+.. doxygengroup:: Structs
+   :project: tracking
+   :members:

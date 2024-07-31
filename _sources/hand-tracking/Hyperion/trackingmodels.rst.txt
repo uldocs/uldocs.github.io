@@ -1,0 +1,93 @@
+:hide-toc:
+
+********************************
+Tracking Models
+********************************
+
+Ultraleap provides different tracking models that have been trained to work well for specific use cases. These models can be called by an application via the Hinting API.
+
+Microgestures
+############
+
+This is a specific tracking model that is trained to improve finger tracking accuracy making it possible to track very fine or subtle finger movements, also known as microgestures, with high degrees of accuracy. 
+
+They are useful for interacting with UI in a way that is subtle and require sminimal effort.
+
+.. raw:: html
+
+    <div class="text-center">
+
+	<video width="60%" loop muted controls>
+		<source src="../../_video/Hyperion_video/Microgestures.mp4" type="video/mp4">
+	</video>
+
+    </div>
+
+*   Called via the Hint: LEAP_HINT_MICROGESTURES
+
+*   **Example Use Case(s)**
+
+    *   Scrolling through menus
+
+    *   Swiping through images
+
+    *   'Everyday' AR interaction
+
+*   **Current Compatible Camera Positions**
+
+    *   HMD only
+
+------------
+
+Hand On Object
+############
+
+This is a specific tracking model that is trained to provide robust tracking when objects are being held in a users hand, with up to a 22% increase in robustness compared to previous releases.
+
+.. raw:: html
+    
+    <div class="text-center">
+
+	<video width="60%" loop muted controls>
+		<source src="../../_video/Hyperion_video/HOO.mp4" type="video/mp4">
+	</video>
+
+    </div>
+
+*   Called via the Hint: LEAP_HINT_HAND_ON_OBJECT
+
+*   **Example Use Case(s)**
+
+    *   Enterprise training and simulation with objects
+
+    *   Holding VR controllers
+
+*   **Current Compatible Camera Positions**
+
+    *   HMD only
+
+Marker Tracking
+------------
+
+Ultraleap also offers AR Marker tracking which complements the tracking model for handling objects. 
+
+Attaching markers to real world objects means you can track them using a Leap Motion Controller 2. Combining this with the Hand On Object tracking model allows user to seamlessly interact with these objects, whether in MR or VR.
+
+.. raw:: html
+    
+    <div class="text-center">
+
+	<video width="60%" loop muted controls>
+		<source src="../../_video/Hyperion_video/Marker_Tracking.mp4" type="video/mp4">
+	</video>
+
+    </div>
+
+
+.. raw:: html
+    
+    <div class="text-center">
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/downloads/leap-motion-controller-2/">Download Hyperion for Leap Motion Controller 2</a>
+
+    </div>

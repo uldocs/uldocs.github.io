@@ -1,0 +1,6 @@
+Class Leap::PinchDetector
+=========================
+
+.. doxygenclass:: Leap::PinchDetector
+   :project: unity
+   :members: 

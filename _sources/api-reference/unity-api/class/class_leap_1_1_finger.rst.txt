@@ -1,0 +1,6 @@
+Class Leap::Finger
+==================
+
+.. doxygenclass:: Leap::Finger
+   :project: unity
+   :members: 

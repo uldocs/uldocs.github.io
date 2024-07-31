@@ -1,0 +1,88 @@
+:hide-toc:
+
+****************************************
+Ultraleap mid-air haptics
+****************************************
+
+Ultraleap’s core mid-air, haptic technology uses ultrasound (i.e. frequencies beyond the range of human hearing) to project tactile sensation directly onto the hands. We have developed and patented algorithms that release the required ultrasonic waves and modulation techniques needed to do this, using relatively little computing power and enabling our unique haptic technology to run on readily accessible hardware.
+
+Ultraleap's haptic technology uses phased arrays of ultrasonic speakers to transmit waves timed to coincide at a point in space.
+
+Mid-air haptics for developers
+#################################
+
+Looking to develop with our haptic technology? `Get in touch <https://support.leapmotion.com/hc/en-us/requests/new>`_ for our latest software releases.
+
+
+How does the hand feel invisible, mid-air sensations?
+######################################################
+
+Ultraleap's haptics use focused ultrasound to transmit sensation to the surface of the skin. These focused points are called "control points". Since the surface of the skin is not very sensitive to a fixed control point, it needs to be modulated, either by changing its intensity – (amplitude modulation), or moving it fast enough to stimulate the surface of the skin (spatiotemporal modulation). 
+
+For example, the 40kHz ultrasound intensity can be modulated with a much lower frequency sine wave, so that the pressure at the focal point varies. This is shown in the diagram:
+
+.. image:: ../img/haptics/Modulated-Pressure.jpeg
+    :width: 400
+    :alt: modulated pressure diagram
+	
+Our array can change the position and strength of this focal point, or **control point**, at a fast-enough rate to create haptic sensation. In addition, multiple control points can be created simultaneously.
+
+The surface of the skin is covered with sensitive nerve endings called mechanoreceptors, that respond to touch, pressure and stretching. High concentrations of mechanoreceptors are on hairless skin, i.e. the palms of the hand and front and sides of the fingers.
+
+In combination with an Ultraleap Hand Tracking Camera we can track the hand and position the control points on the palm or fingers. It is these haptic control points that stimulate the mechanoreceptors and create tactile sensation. More complex shapes, like lines and circles, can be made by rapidly moving the control point or by using multiple control points.
+
+Spatiotemporal modulation
+######################################################
+
+Spatiotemporal modulation takes our haptic technology to the next level, making it possible to render increasingly complex shapes and other effects in mid-air.
+
+Instead of changing the intensity of the signal, the point moves around the hand fast enough to stimulate the sensitive mechanoreceptors in the skin.
+
+This also means that spatiotemporal modulation is not limited to discrete focal points. Instead lines and curves can be repeated almost continuously. These can then be used as a basis to render virtual objects and shapes, enabling a whole new spectrum of high-fidelity applications in augmented reality (AR) and virtual reality (VR). 
+
+You can see both techniques illustrated in the example where a circle sensation is created using amplitude modulation (a) and spatiotemporal modulation (b). With amplitude modulation we use groups of control points, pulsed around the circle; with spatiotemporal modulation, one control point moves around the circle fast enough to create sensation.
+
+.. image:: ../img/haptics/am-stm-hand-graphic.jpeg
+    :alt: diagram showing AM and STM on the hand
+	
+Projecting ultrasound onto an oil bath allows you to ‘see’ the shapes created by Ultraleap’s haptic technology and the difference between Amplitude Modulation and Spatiotemporal Modulation.
+
+.. image:: ../img/haptics/amplitude-modulation.gif
+    :width: 600
+    :alt: video showing ultrasound making points in an oil bath
+Here you can see the discrete focal points created by amplitude modulation.
+
+.. image:: ../img/haptics/spatiotemporal-modulation.gif
+    :width: 600
+    :alt: video showing ultrasound making shapes in an oil bath
+Here you can see how you can render shapes with Spatiotemporal Modulation.
+
+At the heart of our technology is an algorithm used to calculate the strength and phase of each transducer for all control points. When multiple control points are used, their fields can destructively interfere with each other and reduce their strength. Since the phase of the 40 kHz ultrasound signal is unimportant to the haptic sensation, the Ultraleap technology uses a solver algorithm to optimise the phases of each control point so that fields constructively interfere as much as possible to give the strongest sensations.
+
+-----------
+
+Interaction zones and form factors
+######################################################
+
+At the heart of our haptic technology is an array of ultrasonic transducers that are synchronised to create an acoustic field. The focused energy in this zone creates the haptic feedback that you can feel. We call this the interaction zone. Its size and shape are dependent on the number of transducers and their positions.
+
+The size of the interaction zone and complexity of haptic feedback increases with the number of transducers.
+
+When it comes to control point position, our technology is capable of steering with sub-millimetre accuracy within the interaction zone. This allows for control points to be accurately placed anywhere on the hand and for accurate tracking of sensation to the hand.
+
+This means control point positions can be changed faster than hand movement can be detected, allowing for the creation of complex shapes and sensations in mid-air! 
+
+
+-----------
+
+Feedback and support
+##################
+
+Join our community on `Discord <https://discord.gg/3VCndThqxS>`_ or get in touch via our `contact us form <https://support.leapmotion.com/hc/en-us/requests/new>`_.
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+  Sensation Designer<sensation-designer.rst>

@@ -1,0 +1,183 @@
+:hide-toc:
+
+*********
+Ultraleap in Unity
+*********
+
+.. raw:: html
+
+  <style>
+  
+  p.title { margin:0 }
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  You can use Ultraleap hand tracking in Unity either through OpenXR or through Ultraleap's plugin directly.<br><br>
+
+	  The Ultraleap plugin provides additional features to help you in creating your hand tracked applications.<br><br>
+
+    Now Introducing <a href="./plugin/features/physical-hands.html"><strong>Physical Hands</strong></a>. A whole new way to interact with the virtual world. 
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/unity-logo.png" alt="The Unity Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./getting-started/index.html">Get started!</a>
+
+-----------
+
+Using Ultraleap with...
+------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-12 p-1
+
+    .. raw:: html
+
+      <div class="container">
+        <div class="text">
+          <p.title>
+          <b>Ultraleap Unity Plugin</b>
+          </p.title><br>
+          <small><i>
+          OpenXR/LeapC
+		  </i></small>
+        </div>
+      </div>
+	
+      <div class="container">
+        <div class="text">
+          <p>
+          <br><b>Ideal for:</b>
+    	  Building hand tracking only apps
+          </p>
+          <p>
+          Our own plugin is optimized for building hand tracking experiences and provides a quick way to start building for hands.
+          </p>
+          <p>
+    	  We provide some features that can’t be found from the other frameworks, such as advanced pose detector and hand physics.
+    	  </p>
+        </div>
+        <div class="image">
+          <img src="../../../_images/pose-showcase-scene1.png" alt="the Ultraleap Pose Showcase example scene" width="200">
+        </div>
+      </div><br>
+      <a class="btn text-wrap btn-outline-primary" href="./plugin/index.html">Ultraleap plugin documentation</a>
+
+.. raw:: html
+
+  <div class="text">
+  <br>
+  </div>
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-6 p-1
+
+    .. raw:: html
+	
+      <style>
+
+      .image {
+      text-align: left;
+	  padding-right: 20px;
+      }
+      </style>
+	
+      <div class="container">
+        <div class="image">
+          <img src="../../../_images/hand-controller-interaction-demo-scene-med.png" width="100">
+        </div>
+        <div class="text">
+          <p.title><b>
+          XR Interaction Toolkit (XRI) & XR Hands
+          </b></p.title><br>
+		  <small><i>
+          OpenXR/LeapC
+          </i></small>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text">
+          <p>
+		  <b>Ideal for: </b>
+		  Using controllers and/or hands
+          </p>
+		  <p>
+          Allows you to create XR experiences supported by both controllers and hand tracking.
+		  It is not specific to hands like our own plugin, but provides a good base for common interactions.
+          </p>
+		  <p>
+          
+          </p>
+        </div>
+      </div>
+      <a class="btn text-wrap btn-outline-primary" href="./xri-integration.html">Get started with Ultraleap & XRI</a>
+
+	---
+
+    .. raw:: html
+	
+      <style>
+      .image {
+      text-align: left;
+	  padding-right: 20px;
+      }
+      </style>
+	
+      <div class="container">
+        <div class="image">
+          <img src="../../../_images/mrtk3-banner.png" width="150">
+        </div>
+        <div class="text">
+          <p.title><b>
+          Mixed Reality Toolkit (MRTK3)
+          </b></p.title><br>
+		  <small><i>
+          OpenXR/LeapC
+          </i></small>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text">
+          <p>
+		  <b>Ideal for: </b>
+		  Advanced UI interaction needs
+          </p>
+		  <p>
+          MRTK3 is a robust XR framework for advanced UI needs. It builds on top of Unity's XRI, and adds a lot of affordances for hand tracking.
+		  MRTK is an extensive system that may take a bit more time to learn.
+          </p>
+        </div>
+      </div>
+      <a class="btn text-wrap btn-outline-primary" href="./mrtk-support.html">Get started with Ultraleap & MRTK3</a>
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+  Getting Started<getting-started/index.rst>
+  Ultraleap Plugin Features <plugin/index.rst>
+  Further guidance <further-guidance/index.rst>
+  XRI Integration <xri-integration.rst>
+  MRTK3 Support <mrtk-support.rst>
+  Frequently Asked Questions <faq.rst>

@@ -1,0 +1,130 @@
+*********
+Widget Interaction
+*********
+
+Our widget interaction component are based on the Unreal Engine widget interaction components. 
+These components enable hand based interactions with any UE widgets in your scene. 
+Our components provide two modes to interact with widgets, covering FAR and NEAR interactions. 
+Far interactions are used when the hand is too far away from a widget to manipulate it, 
+hand movement along with a pinch gesture are used to control a virtual cursor. 
+Near interactions happen when fingers touch widgets, similar to how we interact with controls on a touch screen. 
+An option is available to switch between far and near mode automatically.
+
+
+------------
+
+Adding ``LeapWidgetInteraction`` components 
+------------
+Open your hand actor, for this example we will be using ``/UltraleapTracking/InteractionEngine/BluePrints/LeapHandsIE2``.
+Click on ``Add Component``. Search for ``LeapWidgetInteraction``, add one, then rename it ``LeapWidgetInteractionLeft``. 
+Add another component for the right, and name it ``LeapWidgetInteractionRight``. 
+
+Make sure to change the ``LeapWidgetInteractionRight`` component's ``Leap Hand Type`` to ``LEAP HAND RIGHT``.
+
+At this stage a cursor will be added to the widget you're interacting with. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/UE_UI_AddComponents.gif
+    :width: 85%
+    :align: center
+
+Adding Laser Pointer Components 
+------------
+Laser pointers are nice to have and can be used to show where your hands are pointing within a widget's bounds.
+In order to add them click on ``Add Component``, search for ``IEPointerComponent``. 
+Add one to the left ``LeapWidgetInteractionLeft`` and name it ``IEPointerComponentLeft``.
+Do the same thing with the right one, as shown: 
+
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/UE_UI_AddPointers.gif
+    :width: 85%
+    :align: center
+
+In the event graph of your hand actor make sure to set ``IEPointerComponentLeft`` using ``LeapWidgetInteractionLeft``.
+Do the same with the right components.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/4.png
+    :width: 70%
+    :align: center
+
+
+Setting Up The Widget Actor
+------------
+To set up your widget is straightforward, just add ``UltraleapUMG`` tag to the widget actor tags. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/5.png
+    :width: 70%
+    :align: center
+
+``LeapWidgetInteraction`` Component Options 
+------------
+If you click on ``LeapWidgetInteraction`` you'll find three categories of settings, ``UltraLeap UI``
+showing settings for both Near and Far interaction modes, ``UltraLeap UI Near`` for direct touch and 
+``UltraLeap UI Far`` category for distant interactions with your widgets.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/6.png
+    :width: 70%
+    :align: center
+
+
+.. dropdown:: 1. ``UltraLeap UI`` category
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   The settings are as follows:
+
+   1. Leap Hand Type: for left and right hand.
+
+   2. Widget Interaction: For near and far interactions.
+
+   3. Static Mesh: This can be used to change the shape of the cursor.
+
+   4. Material Base: Can be used to change the color of the cursor.
+
+   5. Cursor Size: Can be used to change the size of the cursor.
+   6. Auto Mode: If this is set to true, the Widget Interaction mode will switch automatically between Far/Near interactions
+
+.. dropdown:: 2. ``UltraLeap UI Near`` category
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   This has one setting: ``Index Distance From UI`` this control how far the index fingertip is from the widget before 
+   an interaction occurs. 
+
+.. dropdown:: 3. ``UltraLeap UI Far`` category
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   This includes the following settings: 
+
+   1. Wrist Rotation Factor: This has a range of 0-5, where 5 means that the ray's rotation 
+   is controlled by the wrist, and 0 is where shoulder position has more effect on the ray rotation.
+
+   2. Interpolation Speed: This can be used to overcome hand jitter, and smooth the motion of the widget interactions.
+   Low values will sacrifice speed for more smooth movement. High values will will make the interactions more responsive, 
+   but some jitter could be present. 
+
+   3. YAxis Calib Offset and ZAxis Calib Offset: Can be used to overcome neck rotation offsets along the Y and Z axis.
+
+
+``LeapWidgetInteraction`` Example Scene
+------------
+
+A test map can found in: ``/UltraleapTracking/InteractionEngine/ExampleScenes/UltraleapMainTestMap``.
+In the scene if you look to the left you'll find a widget, click on ``UI Level`` by pinching from distance, 
+or by directly touching that button. A widget streaming level will load. The interaction are set to switch automatically between 
+Far/Near interaction. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/UE_UI_ExampleScene.gif
+    :width: 80%
+    :align: center
+
+.. note:: 
+    Our ``LeapWidgetInteraction`` inherits the Unreal Engine ``WidgetInteraction``, therefor, it accesses its properties, 
+    for more details check the Unreal Docs `here <https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/UMG/UserGuide/WidgetInteraction/>`__ .
+
+-------
+
+`Back to top <#top>`_

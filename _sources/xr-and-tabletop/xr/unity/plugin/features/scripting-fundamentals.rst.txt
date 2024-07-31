@@ -1,0 +1,314 @@
+*****************************************
+Scripting Fundamentals
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> The Ultraleap Unity Plugin contains utility methods to get access to hand tracking data. </p>
+        <p> This page will cover common methods to get access to hand tracking data and how to make use of it.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Getting hand tracking data
+----------------------------------
+
+Hand tracking data in the plugin comes via a LeapProvider. It comes in the form of :cs:class:`Frames <Leap.Frame>`. This is a collection of data that contains the :cs:class:`Hand <Leap.Hand>` data for both hands as well as extra IDs and timestamps for you to reference the frames by.
+
+You can subscribe to a provider to get a hand tracking frame as soon as it is ready:
+::
+
+    using Leap;
+    using UnityEngine;
+
+    public class Example : MonoBehaviour
+    {
+        public LeapProvider leapProvider;
+
+        private void OnEnable()
+        {
+            leapProvider.OnUpdateFrame += OnUpdateFrame;
+        }
+        private void OnDisable()
+        {
+            leapProvider.OnUpdateFrame -= OnUpdateFrame;
+        }
+
+        void OnUpdateFrame(Frame frame)
+        {
+            Debug.Log("We got a frame");
+        }
+    }
+
+If you wish, you can also access the latest Frame directly via leapProvider.CurrentFrame.
+
+**Access specific Hands**
+
+When you have the Frame that you would like the Hand data from, you can access specific hands in various ways. Here are some common approaches that build on the above:
+
+::
+
+	void OnUpdateFrame(Frame frame)
+	{
+	    //Get a list of all the hands in the frame and loop through 
+	    //to find the first hand that matches the Chirality
+	    foreach (var hand in frame.Hands)
+	    {
+	        if (hand.IsLeft)
+	        {
+	            //We found a left hand
+	        }
+	    }
+
+	    //Use a helpful utility function to get the first hand that matches the Chirality
+	    Hand _leftHand = frame.GetHand(Chirality.Left);
+	    Hand _rightHand = frame.GetHand(Chirality.Right);
+	}
+
+When you have access to a specific hand, you can then make use of all joints and utilities from within that class. Jump to :ref:`Getting hand details <hand-details>` to discover more.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Convenience methods
+----------------------------------
+
+.. Note::
+    When using Hands.Provider, the LeapProvider used is assumed and may not be correct if you have multiple in your scene at once. Consider explicitly specifying the LeapProvider you wish to use instead.
+
+**Getting Hand Data (Statically)**
+
+This snippet shows how you can quickly access hand data through the Hands class static methods:
+
+::
+
+    using Leap;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    public class Example: MonoBehaviour
+    {
+        private void Update()
+        {
+            Hand _specificHand = Hands.Provider.GetHand(Chirality.Left);
+            List<Hand> _allHands = Hands.Provider.CurrentFrame.Hands;
+        }
+    }
+
+**Getting Hands for Physics (Statically)**
+
+::
+
+    using Leap;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    public class Example : MonoBehaviour
+    {
+        private void FixedUpdate()
+        {
+            Hand _specificPhysicsHand = Hands.Provider.GetHand(Chirality.Left);
+            List<Hand> _allPhysicsHands = Hands.Provider.CurrentFixedFrame.Hands;
+        }
+    }
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+.. _hand-details:
+
+Getting hand details
+----------------------------------
+
+**Getting a Specific Hand**
+
+Getting a specific Hand can allow you to gain access to additional data. Here we will get access to a :cs:class:`Hand <Leap.Hand>` to use in future methods:
+
+::
+
+    using Leap;
+    using UnityEngine;
+
+    public class Example : MonoBehaviour
+    {
+        public LeapProvider leapProvider;
+
+        private void OnEnable()
+        {
+            leapProvider.OnUpdateFrame += OnUpdateFrame;
+        }
+        private void OnDisable()
+        {
+            leapProvider.OnUpdateFrame -= OnUpdateFrame;
+        }
+		
+        void OnUpdateFrame(Frame frame)
+        {
+            //Use a helpful utility function to get the first hand that matches the Chirality
+            Hand _leftHand = frame.GetHand(Chirality.Left);
+			
+            //When we have a valid left hand, we can begin searching for more Hand information
+            if(_leftHand != null)
+            {
+                OnUpdateHand(_leftHand)
+            }
+        }
+		
+        void OnUpdateHand(Hand _hand)
+        {
+            // Here we can get additional information.
+        }
+    }
+
+**Getting Hand Fingers**
+
+Once you have a hand, you can access the :cs:class:`Finger <Leap.Finger>` data for the hand in several ways:
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    //Use _hand to Explicitly get the specified fingers from it
+	    Finger _thumb = _hand.GetThumb();
+	    Finger _index = _hand.GetIndex();
+	    Finger _middle = _hand.GetMiddle();
+	    Finger _ring = _hand.GetRing();
+	    Finger _pinky = _hand.GetPinky();
+	    
+	    //Explicitly get the fingers associated with the hand
+	    _thumb = Hands.GetThumb(_hand);
+	    _index = Hands.GetIndex(_hand);
+	    _middle = Hands.GetMiddle(_hand);
+	    _ring = Hands.GetRing(_hand);
+	    _pinky = Hands.GetPinky(_hand);
+	    
+	    //Use the FingerType Enum cast to an int to select a finger from the hand
+	    _thumb = _hand.Finger((int)Finger.FingerType.TYPE_THUMB);
+	    _index = _hand.Finger((int)Finger.FingerType.TYPE_INDEX);
+	    _middle = _hand.Finger((int)Finger.FingerType.TYPE_MIDDLE);
+	    _ring = _hand.Finger((int)Finger.FingerType.TYPE_RING);
+	    _pinky = _hand.Finger((int)Finger.FingerType.TYPE_PINKY);
+	    
+	    //Use an index to define what finger you want.
+	    _thumb = _hand.Fingers[0];
+	    _index = _hand.Fingers[1];
+	    _middle = _hand.Fingers[2];
+	    _ring = _hand.Fingers[3];
+	    _pinky = _hand.Fingers[4];
+	}
+
+**Getting Hand Bones**
+
+Similarly, you can access the :cs:class:`Bones <Leap.Bone>` from the hand data by doing any of the following.
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    //Use _hand to Explicitly get the specified finger and subsequent bone from it
+	    Finger _thumb = _hand.GetThumb();
+	    Finger _index = _hand.GetIndex();
+	    Finger _middle = _hand.GetMiddle();
+	    Finger _ring = _hand.GetRing();
+	    Finger _pinky = _hand.GetPinky();
+	    
+	    //Use the _finger to subsequently get the Metacarpa bone from it using the BoneType Enum
+	    Bone _thumbMetacarpal = _thumb.Bone(Bone.BoneType.TYPE_METACARPAL);
+	    Bone _indexMetacarpal = _index.Bone(Bone.BoneType.TYPE_METACARPAL);
+	    Bone _middleMetacarpal = _middle.Bone(Bone.BoneType.TYPE_METACARPAL);
+	    Bone _ringMetacarpal = _ring.Bone(Bone.BoneType.TYPE_METACARPAL);
+	    Bone _pinkyMetacarpal = _pinky.Bone(Bone.BoneType.TYPE_METACARPAL);
+	    
+	    //Use the _indexFinger to access the bone array, then get the Metacarpal bone from it using the BoneType Enum cast to an int
+	    _thumbMetacarpal = _thumb.bones[(int)Bone.BoneType.TYPE_METACARPAL];
+	    _indexMetacarpal = _index.bones[(int)Bone.BoneType.TYPE_METACARPAL];
+	    _middleMetacarpal = _middle.bones[(int)Bone.BoneType.TYPE_METACARPAL];
+	    _ringMetacarpal = _ring.bones[(int)Bone.BoneType.TYPE_METACARPAL];
+	    _pinkyMetacarpal = _pinky.bones[(int)Bone.BoneType.TYPE_METACARPAL];
+	    
+	    //Use the _indexFinger to access the bone array, then get the metacarpal by index
+	    _thumbMetacarpal = _thumb.bones[0];
+	    _indexMetacarpal = _index.bones[1];
+	    _middleMetacarpal = _middle.bones[2];
+	    _ringMetacarpal = _ring.bones[3];
+	    _pinkyMetacarpal = _pinky.bones[4];
+	}
+
+**Getting Arm Details**
+
+You can access the :cs:class:`Arm <Leap.Arm>` (connected to the hand) as follows:
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    Arm _arm = _hand.Arm;
+	    
+	    float _armLength = _arm.Length;
+	    float _armWidth = _arm.Width;
+	    Vector3 _elbowPosition = _arm.ElbowPosition;
+	}
+
+
+**Getting Pinch Details**
+
+
+Once you have a hand, the API provides details about the hands pinching states.
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    float _pinchStrength = _hand.PinchStrength;
+	    float _pinchDistance = _hand.PinchDistance;
+	    Vector3 _pinchPosition = _hand.GetPinchPosition();
+	    Vector3 _predictedPinchPosition = _hand.GetPredictedPinchPosition();
+	    bool isPinching = _hand.IsPinching();
+	}
+
+**Getting Grab Details**
+
+The API also provides details about the hands-grabbing states.
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    float _grabStrength = _hand.GrabStrength;
+	    float _grabAngle = _hand.GrabAngle;
+	}
+
+**Hand Rays**
+
+The following code snippet shows how to obtain an ‘unsmoothed’ ray representing the general reaching/interaction intent direction.  Under the hood this creates a ray whose origin is anchored at the left or right shoulder and which passes through the index proximal bone.
+
+::
+
+	void OnUpdateHand(Hand _hand)
+	{
+	    Ray _handRay = _hand.HandRay(Camera.main);
+	}
+
+
+----------------------------------------------------------------------------------------------------------------------------------

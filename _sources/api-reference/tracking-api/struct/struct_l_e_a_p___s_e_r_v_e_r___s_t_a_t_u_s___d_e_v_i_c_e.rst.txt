@@ -1,0 +1,6 @@
+Struct LEAP_SERVER_STATUS_DEVICE
+================================
+
+.. doxygenstruct:: LEAP_SERVER_STATUS_DEVICE
+   :project: tracking
+   :members:

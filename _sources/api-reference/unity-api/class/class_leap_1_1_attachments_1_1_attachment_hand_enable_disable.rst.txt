@@ -1,0 +1,6 @@
+Class Leap::Attachments::AttachmentHandEnableDisable
+====================================================
+
+.. doxygenclass:: Leap::Attachments::AttachmentHandEnableDisable
+   :project: unity
+   :members: 

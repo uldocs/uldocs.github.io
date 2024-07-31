@@ -1,0 +1,6 @@
+Class FUltraleapTrackingInputDevice
+===================================
+
+.. doxygenclass:: FUltraleapTrackingInputDevice
+   :project: unreal
+   :members:

@@ -1,0 +1,102 @@
+:hide-toc:
+
+Technical Glossary
+==================
+
+The Essentials
+--------------
+
+TouchFree Application
+~~~~~~~~~~~~~~~~~~~~~
+
+The TouchFree Application runs invisibly on top of existing user interfaces. Perfect for retrofitting systems with no need to modify your existing application’s user interface or change a single line of code. It provides a cursor that users control touchlessly and communicates with Windows’ input system to control your application.
+
+The TouchFree Application can also be used to evaluate the capabilities of TouchFree in advance of integrating TouchFree Tooling into your own Web or Unity applications.
+
+TouchFree Tooling
+~~~~~~~~~~~~~~~~~
+
+TouchFree Tooling enables Web and Unity developers to integrate TouchFree’s touchless technology into their target applications as a native feature. More detailed information, including Quick Start Guides, can be found within the TouchFree Tooling packages for Web and Unity.
+
+TouchFree Service
+~~~~~~~~~~~~~~~~~
+
+TouchFree Service is the engine of TouchFree and is required to power both TouchFree Application and developed applications integrated with TouchFree Tooling.
+
+The TouchFree Service converts hand movements, provided by Ultraleap’s hand tracking cameras, into positional data that the TouchFree Application (or your own touchless application) can use to represent a cursor on screen.
+
+Ultraleap 3Di
+~~~~~~~~~~~~~
+
+Ultraleap's recommended camera for kiosks and DOOH. With a wide field of view and long tracking range, it is robust and certified for public use. Hand Tracking Camera. Designed to be connected to interactive screens in DOOH or retail.
+
+Everything Else
+---------------
+
+
+Air Push
+~~~~~~~~
+
+An interaction type. TouchFree’s default interaction method. Users push their hand towards the screen to trigger a click event.
+
+Call to Interact (CTI)
+~~~~~~~~~~~~~~~~~~~~~~
+
+Instructional elements that attract user attention, bring users into position, and teach them how to interact.
+
+Click event
+~~~~~~~~~~~
+
+An action triggered by a touchless interaction that would be the equivalent a mouse click.
+
+CTI
+~~~
+
+Abbreviation of Call To Interact.
+
+Gesture control
+~~~~~~~~~~~~~~~
+
+The use of mid-air movements (gestures) to control a touchless cursor.
+
+Hand Tracking Camera
+~~~~~~~~~~~~~~~~~~~~
+
+An Ultraleap Hand Tracking Camera. Either an Ultraleap 3Di, Leap Motion Controller, or a Stereo IR 170.
+
+Hover & Hold
+~~~~~~~~~~~~
+
+An interaction type. Users hold the cursor still for a short period of time to trigger a click event.
+
+Interaction Type
+~~~~~~~~~~~~~~~~
+
+Different methods for touchless control as defined by specific user behaviours required to trigger a click event. TouchFree has three interaction types; Air Push, Hover & Hold and Touch Plane.
+
+Interaction Zone
+~~~~~~~~~~~~~~~~
+
+The 3D area in which the Ultraleap Hand Tracking Camera will track hands.
+
+LMC
+~~~
+
+Leap Motion Controller. An Ultraleap Hand Tracking Camera.
+
+Scroll and drag
+~~~~~~~~~~~~~~~
+
+An interaction setting offering touchscreen-like behaviour. Emulates the click and drag behaviour of a mouse.
+
+Stereo IR 170
+~~~~~~~~~~~~~
+
+Stereo IR 170. An Ultraleap Hand Tracking Camera with a wider field of view, longer tracking range, and slimmer form factor than the LMC.
+
+Touch Plane
+~~~~~~~~~~~
+
+An interaction type. Users interact by touching an invisible mid-air plane in front of the screen.
+
+

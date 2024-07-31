@@ -1,0 +1,6 @@
+Class FJointConfidenceHistory
+=============================
+
+.. doxygenclass:: FJointConfidenceHistory
+   :project: unreal
+   :members:

@@ -1,0 +1,6 @@
+Class Leap::Examples::IgnoreCollisionsInChildren
+================================================
+
+.. doxygenclass:: Leap::Examples::IgnoreCollisionsInChildren
+   :project: unity
+   :members: 

@@ -1,0 +1,40 @@
+:hide-toc:
+
+*********************
+Testing Hand Tracking
+*********************
+
+TouchFree uses Ultraleap Tracking. It is important to make sure your Ultraleap Hand Tracking Camera is set up correctly to get accurate hand tracking: 
+
+1. Make sure your TouchFree Software is `installed <https://docs.ultraleap.com/touchfree-user-manual/setup.html>`_. The TouchFree installer includes Ultraleap Tracking.
+2. Connect the Ultraleap Hand Tracking Camera via USB and ensure the Ultraleap Tracking Control Panel is running
+3. Check the Ultraleap Tracking Windows system tray icon is running and shows the device is connected. 
+
+.. image:: ../../img/touchfree-user-manual/testing-hand-tracking/device_connected_icon.png
+    :alt: Device connected icon
+
+4. Open TouchFree Settings
+
+.. image:: ../../img/touchfree-user-manual/touchfree_settings_system_tray_menu.png
+    :alt: TouchFree settings in the system tray
+
+5. Navigate to the **Camera Feeds and Masking** screen by clicking **Camera Setup**…
+
+.. image:: ../../img/touchfree-user-manual/TF_Settings_Screen_2.png
+    :alt: TouchFree settings for camera setup
+
+…followed by **Camera Feeds and Masking**
+
+.. image:: ../../img/touchfree-user-manual/TF_Camera_Setup_Screen_2.png
+    :alt: TouchFree settings for camera feeds and masking
+
+6. Raise your hands and check they are being tracked on the Tracking feed. A 3D hand should follow yours
+
+.. image:: ../../img/touchfree-user-manual/touchfree_live_camera_feed.png
+    :alt: TouchFree live camera feed
+
+7. Your hands should normally enter the view from the bottom of the image, as shown above. If they do not enter from the bottom of the view, you may need to rotate your camera or use the Reverse Camera Orientation option.
+
+-----------
+
+`Back to top <#top>`_

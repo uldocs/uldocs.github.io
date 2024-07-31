@@ -1,0 +1,267 @@
+:hide-toc:
+
+************************************
+Locomotion
+************************************
+
+.. image:: ../../img/xr-guidelines/locomotion/Locomotion-Hero-Image.png
+    :alt: Image of hands in virtual reality uses ray casting to move around
+
+Locomotion types
+################
+
+Locomotion is a critical interaction for many VR applications. If users need to move around in a virtual space - and particularly if the virtual space is larger than the area they have for walking around - they need a way to do this quickly and easily.
+
+There are two categories of locomotion: 
+
+**Teleportation** - Users point at a destination they want to travel to, and are transported there instantaneously, without crossing the environment in between.
+
+**Free locomotion** - With their hands, users can move themselves freely around the environment in any direction, moving towards their destination. This is effectively a replacement for walking.
+
+-----------
+
+Locomotion steps
+################
+
+For both teleportation and free locomotion, there are three steps for users to carry out:
+
+**Teleportation**
+
+* Enable
+* Aim
+* Activate
+
+**Free Locomotion**
+
+* Enable
+* Move
+* Disable
+
+Enable
+################
+
+For most applications, locomotion should be enabled only when needed. If it is permanently enabled, it can interfere with other interactions (eg, users may teleport or move accidentally whilst doing something else), distract and confuse users. 
+
+There are two ways of enabling - **contextual** and **stateful**.
+
+**Stateful enabling** is easiest to achieve - users choose when they are in, or out of a locomotion state. This can be done through:
+
+* A `taught pose <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_ Can be very convenient, but must be introduced to users with an appropriate `tutorial or hint <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_.
+
+* A palm button. Easy for users to learn, but can feel slow and less like one cohesive action.
+
+* Grasping an object or component. Can feel fluid and natural if objects are within easy reach or attached to the body. 
+
+Good stateful enablement:
+
+* Provides quick, easy access, whilst also being hard to accidentally activate.
+
+* Allows users to activate locomotion whilst looking at their intended destination point, which is natural behaviour.
+
+* Can either disable locomotion automatically after each movement (best for teleportation) or allow users to disable it themselves (best for free locomotion). 
+
+
+**Contextual enabling** provides a smoother experience but is harder to achieve. By taking user input (gaze direction, eye tracking, hand tracking) and the environment, you can detect when users are likely to need locomotion and enable or disable automatically. However, it requires the entire application to be brought in and built around the concept.
+
+Take for instance an application oriented around performing tasks at different tables and moving between them. If a user’s gaze is on other tables, and their hands are not interacting with the table in front of them, we can assume intent to move and enable locomotion. However, it’s not always easy to determine user intent with confidence - if users are `pinching to draw <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_ at the table for example, how can we know for sure when they’re ready to travel? 
+
+----------
+
+Aim
+###
+
+For teleporting, next users need to take aim at their intended destination.
+
+Depending on the application, users can have the freedom to aim anywhere in the environment, or instead take aim at several predetermined destination points. 
+
+Using predetermined destination points restricts movement, but can be helpful to indicate where users can go to perform their next task and can speed up travel. This can be appropriate for say, training applications as opposed to games, where the focus may be more on environmental exploration.
+
+Additionally, the ray cast from the hand can be a parabola, or a straight line. The former is useful for more cluttered environments for aiming over obstacles. Casting out just along a line gives high precision, whereas casting out in an area (for example using `Spherecast <https://docs.unity3d.com/ScriptReference/Physics.SphereCast.html>`_) will return many objects, leaving the onus on you dictate how you decide which teleportation anchor to jump to.
+
+-----
+
+Activate
+########
+
+The final step for teleporting is for users to activate teleportation, and instantly be transported to their destination. This needs to be robust and considered carefully, primarily so that it is comfortable to use but difficult to activate accidentally. See below for some Ultraleap recommended examples.
+
+Move
+####
+
+A continuous movement through the environment, or manipulation of the environment like zooming, that users control smoothy with their hands.
+
+Disable
+#######
+
+Releasing control from the component or hand pose, to stop and disable free locomotion mode.
+
+-----
+
+Teleportation examples
+######################
+
+**Jump Gems**
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/locomotion/Locomotion-Jump-Gems.gif
+    :alt: Clip of using micro handle components to move around
+
+**With this robust form of teleportation, users can perform any other interactions - such as object manipulation - without any chance of accidental activation. It can be slightly slower than other methods, but it recommended for applications with a lot of other interactions present.**
+
+Small `micro-handle <https://docs.ultraleap.com/xr-guidelines/Components/components-overview.html>`_ components (or ‘gems’) are fixed to users' wrists. As with all wearable components, these provide quick access to a feature which will be used frequently whilst moving around.
+
+**How it’s used**
+
+1. **Enable**. Users pinch to grab either micro-handle pulling it off the wrist.
+
+2. **Aim**. This enables locomotion mode, displaying an arched ray from the gem which users can use to point at their intended destination. For additional feedback, the ray can change colour or play an audio cue to indicate when a jump can be made or not.
+
+3. **Activate**. Users then simply release the pinch pose to teleport, and the ‘gem’ snaps back to the wrist.
+
+Jump gems allow users to freely interact with any elements or use any other interaction without concern about accidental activation. 
+
+**User discovery**
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+
+   * - .. image:: ../../img/xr-guidelines/locomotion/Locomotion-Jump-Gem-Hint-1.png
+     - .. image:: ../../img/xr-guidelines/locomotion/Locomotion-Jump-Gem-Hint-2.png
+
+
+Jump gems require user prompts to be discovered and understood quickly. Ultraleap recommend two simple hints for this: 
+
+* A hint that draws attention to users' wrists, but also indicates what to expect. For example: **“Pinch me and aim!”** located near a micro-handle. Once the micro-handles are noticed, most users will pick them up instinctively.
+
+A hint saying: **"Unpinch to travel!"** or similar, located near the active hand.
+
+More on `tutorials, hints, and help <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_
+
+----------------
+
+**Pinch Teleport**
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/locomotion/Locomotion-Pinch-To-Teleport.gif
+    :alt: Clip of using a pinch gesture to perform locomotion
+
+**With this interaction, locomotion is enabled whenever either hand is pointing into the environment with an open palm. It allows for fast locomotion and multiple jumps in a short time, and is recommended for applications with fewer interactions, such as narrative experiences.** 
+
+It is not recommended for use in conjunction with other, open hand interactions such as object manipulation or distance selection, because of the possibility of accidental activation.
+
+**How it’s used**
+
+1. **Enable**. Users raise either hand and open their palm
+
+2. **Aim**: This enables locomotion mode, displaying an arched ray from the gem which users can use to point at their intended destination. For additional feedback, the arc can change colour to indicate when a jump can be made or not.
+
+3. **Activate**. Users form a pinch pose - closing some or all of their fingers - with their extended hand to activate locomotion.
+
+**User discovery**
+
+Pinch locomotion requires a prompt to teach the pinch gesture. 
+
+Ultraleap recommend a simple hint appears close to the active hand, saying **"Pinch fingers together to teleport"** or similar.
+
+----
+
+**Ray Latch Teleport**
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/locomotion/Locomotion-Ray-Latch.gif
+    :alt: Clip of using the ray latch method to teleport
+
+**This interaction begins like Pinch Teleport but uses a grab pose instead, which requires users to close all their fingers. Rather than teleporting straight away when the pose is formed, it also adds a small extra step to aid control, with a ‘latch’ component. This means slightly more effort for users, but improves control and allows use alongside most other interactions.**
+
+**How it’s used**
+
+1. **Enable:** Users raise either hand and open their palm. This enables locomotion mode, displaying a ray from the user’s palm towards the destination point. If there are several set destination points, it targets the closest to the ray.
+
+2. **Aim.** Users move their palm, aiming around the scene - snapping to destination points if they’re present. For additional feedback, the ray can change colour or tone to indicate when a jump can be made or not.
+
+3. **Activate.** Users then form a grab pose - closing their palm - with their extended hand, which makes a ‘latch’ component appear above the active hand. Holding the grab pose, users lower their active hand slightly with a small motion. The latch component fills in response to hand movement, and teleportation happens when users reach the top of the latch.
+
+**User discovery**
+
+Latch locomotion also requires prompts to be understood quickly. Ultraleap recommend two simple hints for this: 
+
+* A hint appearing close to the active hand, saying **"Point to where you want to go and close your fingers together”**.
+
+* A hint appearing in a similar position, saying **“Raise hand to teleport”** or similar.
+
+-------
+
+Free locomotion examples
+########################
+
+**Move/Rotate/Scale Pinch Locomotion** 
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/locomotion/Locomotion-Free-Locomotion.gif
+    :alt: Clip of using the ray latch method to teleport
+
+**In this interaction, users 'pinch' the world around them, before moving their hands apart to enlarge the world, or together to shrink it, smoothly, with an interaction similar to zooming in and out on a touchscreen. This may be particularly appropriate for applications where there is a 3D model to explore, for example in art or 3D modelling scenarios.**
+
+This interaction is similar to `Pinch to create objects <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_
+
+**How it’s used**
+
+1. **Enable:** Users form a pinch pose - closing the index finger and thumb - with one, or both hands simultaneously.
+
+2. **Move:** Maintaining the pinch pose with just one hand, users move their hands in any direction, as if pulling themself forwards.
+
+3. **Rotate:** Maintaining the pinch pose with both hands, users move their hands in a circular motion, as if rotating the entire world.
+
+4. **Scale:** Maintaining the pinch poses, users move their hands either further apart to enlarge (or zoom into) the world, or closer together to shrink (or zoom out of) the world.
+
+5. **Disable:** Users release the pinch poses (opening their hands again) to disable locomotion.
+
+
+**User discovery**
+
+Move/Rotate/Scale Pinch locomotion require prompts to be discovered and understood quickly. Ultraleap recommend two simple hints for this: 
+
+**Move**
+
+* A hint on both hands, that reads **"Pinch fingers together on one hand to move"** or similar.
+
+* A hint on both hands, that reads: **"Pull yourself in a direction to move"** or similar.
+
+**Rotate/Scale**
+
+* A hint on both hands, that reads **"Pinch fingers together on both hands to scale and rotate"** or similar.
+
+* Once pinch poses are held, a hint between both hands, saying **"Move hands closer or apart to zoom"** or similar.
+
+`More on tutorials, prompts and help <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_
+
+--------
+
+Getting Started
+###############
+
+Move about your scenes using your hands with the `Ultraleap Unity Plugin <https://leap2.ultraleap.com/xr-developer-tools/>`_ - currently available in our Preview Package. Support is coming soon to the `Ultraleap Unreal Plugin <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources
+##################
+
+* Blog `Hand-Powered Far Field Interaction - How We Did It <https://docs.ultraleap.com/ultralab/far-field-ray-blog.html>`_ (used extensively for teleportation)
+* Unity: Preview Example Scenes: Teleportation, and Free locomotion found at ``Examples/Locomotion``
+
+
+`Back to top <#top>`_

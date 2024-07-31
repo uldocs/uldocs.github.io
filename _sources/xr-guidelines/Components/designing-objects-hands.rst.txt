@@ -1,0 +1,128 @@
+:hide-toc:
+
+***************************
+Designing objects for hands
+***************************
+
+What are virtual objects?
+#########################
+
+In VR, virtual objects are fully three-dimensional elements with depth and physicality, reacting to your hands in much the same way as objects in the real world, would. 
+
+They can be picked up, moved, knocked over, thrown, stacked, spun and react in almost all the ways you would expect a real world object to. 
+
+`More on virtual objects <https://docs.ultraleap.com/xr-guidelines/Components/virtual-objects.html>`_
+	
+----------------------------
+
+Designing for intuitive interactions
+####################################
+
+Interacting with objects can be particularly intuitive and natural with VR and hand tracking, even for first time users, because users lean on a lifetime of learned behaviour interacting with objects in the real world.
+
+Achieving this requires that objects are designed to communicate their function to users through their appearance, and the way they react to the hands. Ultraleap recommend the following considerations for best results.
+
+**Design objects with affordances**
+
+How do users figure out what to do when faced with unfamiliar objects and environments? Affordances are the characteristics of an object’s form and surface that signal what actions are possible and how they should be done.
+
+Physical objects convey information about their use through form and appearance, and this applies to virtual objects, too. For example putting groves in the surface of a virtual ball guides users where to place their fingers to pick it up. Buttons that protrude from the surface of a UI panel look like they can be pushed, and grooves on the edge of a turntable indicate that it can be swiped with the fingertips.
+
+When designing your own objects, consider how you can make them easy to ‘read’ for users seeing them for the first time. Additional labels and hints may help things be understood, but often, the best way is to lean on familiar affordances from our real lives.
+
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Affordances-1.gif
+    :alt: Image of hands in virtual reality handling a ball with holes for holding
+
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Affordances-2.gif
+    :alt: Image of a turntable with groves to indicate how to move it
+
+------------------------
+
+Signal interactivity at every step
+##################################
+
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-objects-for-hands-Interactivity.gif
+    :alt: Clip showing the use of visual feedback in a scene
+
+With lots of objects in a typical VR scene, it can sometimes be difficult for users to understand which they can and can’t interact with. 
+
+Ultraleap recommend providing clear visual and audio feedback to signal that something is interactive, and to give users further confirmation of how an object is used as they begin to interact with it.
+
+Make interactive objects visually distinct from non-interactive ones with styling cues or lighting. It should be obvious just from appearance which can be picked up or pushed.
+
+As the hand reaches close proximity to the object, use a visual state change (such as subtle highlighting or a colour change) to indicate it will respond to hands. 
+
+If using `distance interaction <https://docs.ultraleap.com/xr-guidelines/Interactions/direct_and_distant_interaction_mode.html>`_, clearly indicate when an object has been selected, and new interactions (such as summon) are possible.
+
+If using `direct interaction <https://docs.ultraleap.com/xr-guidelines/Interactions/direct_and_distant_interaction_mode.html>`_, clearly indicate with a visual change when the fingers and hand have made contact or passed through the surface of the object.
+
+-------------------------------------
+
+Signal when hand and object meshes meet
+########################################
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+Unlike the real world, when virtual hands and objects meet, their meshes can intersect. It’s possible for fingertips to pass inside an object when its picked up for example, or when a button component is pushed. it’s important to consider what users should experience when hand and object meshes intersect, in order to help objects interactions stay coherent and compelling.
+
+The following examples are currently in development at Ultraleap:
+
+**Intersection glow**
+
+This effect visually acknowledges when the hand and object meshes intersect, and gives users a clear idea where the two elements are in relation to one another.
+
+A shader on the hand mesh creates a subtle, low-level glowing effect whenever it meets the object mesh.
+
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Intersection-Glow-1.png
+    :alt: Image of a hand with a glow to show where the hand intersects with the object mesh
+ 
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Intersection-Glow-2.gif
+    :alt: Clip of a hand with a glow to show where the hand intersects with the object mesh
+ 
+**Fingertip gradient**
+
+This effect indicates proximity of hand to object by applying a colour gradient to the fingertips when they get close enough to the object mesh. In Ultraleap’s example, the colour can be made to match that of the object where appropriate. It can help users judge distance and discern which object they’re picking up when several are close together.
+
+.. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Fingertip-Gradient-2.gif
+    :alt: Clip of a hand with a colour gradient to show where the hand intersects with the object mesh
+ 
+**Dimple mesh**
+
+This effect highlights the points where each finger approaches and intersects the object with small deformation in the shape surface. 
+
+In Ultraleap’s examples below, a dimple mesh is spawned in two different ways:
+
+* At the point of intersection, which expands (driving a blendshape) as the finger moves further inside the object. This makes it very clear where the fingers have contacted the object.
+
+* As the finger approaches the object surface it dimples, implying the object can be grabbed and ‘inviting’ users to do so (This uses two-part prefab composed of a round hole mesh and a cylinder mesh with a depth mask).
+
+ .. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Dimple-Mesh-1.gif
+    :alt: Clip of a hand causing an object to dimple as it gets close
+
+ .. image:: ../../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Dimple-Mesh-2.gif
+    :alt: Clip of a hand causing an object to dimple as it gets close
+
+
+
+------------------------------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/direct-3D-object-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link

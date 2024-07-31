@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_TELEMETRY_DATA
+========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_TELEMETRY_DATA
+   :project: unity
+   :members: 

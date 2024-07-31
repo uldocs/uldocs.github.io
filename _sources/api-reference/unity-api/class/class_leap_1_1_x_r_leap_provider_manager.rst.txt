@@ -1,0 +1,6 @@
+Class Leap::XRLeapProviderManager
+=================================
+
+.. doxygenclass:: Leap::XRLeapProviderManager
+   :project: unity
+   :members: 

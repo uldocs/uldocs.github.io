@@ -1,0 +1,6 @@
+Class Leap::HandEnableDisable::FadeRendererMaterialColorReferences
+==================================================================
+
+.. doxygenclass:: Leap::HandEnableDisable::FadeRendererMaterialColorReferences
+   :project: unity
+   :members: 

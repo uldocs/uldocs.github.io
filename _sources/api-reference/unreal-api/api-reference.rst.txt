@@ -1,0 +1,26 @@
+:hide-toc:
+
+*************
+API Reference
+*************
+
+Looking for Unreal Getting Started or Plugin Features?
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="../../xr-and-tabletop/xr/unreal/index.html">XR - Unreal Getting Started</a>
+  <a class="btn text-wrap btn-outline-primary" href="../../xr-and-tabletop/tabletop/unreal/index.html">Tabletop - Unreal Getting Started</a>
+
+
+--------
+
+.. toctree::
+    :caption: Table of Contents
+    :maxdepth: 1
+
+    Classes <classlist.rst>
+    Data Structures <structlist.rst>
+
+-----------
+
+`Back to top <#top>`_

@@ -1,0 +1,40 @@
+.. |PaintCursor| replace:: :cs:class:`PaintCursor <Leap.Examples.PaintCursor>`
+.. |PinchStrokeProcessor| replace:: :cs:class:`PinchStrokeProcessor <Leap.Examples.PinchStrokeProcessor>`
+.. |StrokeProcessor| replace:: :cs:class:`StrokeProcessor <Leap.Examples.StrokeProcessor>`
+.. |RectToroid| replace:: :cs:class:`RectToroid <Leap.Examples.RectToroid>`
+.. |ThickRibbonRenderer| replace:: :cs:class:`ThickRibbonRenderer <Leap.Examples.ThickRibbonRenderer>`
+
+*****************************************
+Pinch to Paint
+*****************************************
+
+.. image:: ../../../../../img/unity-api/pinch-to-paint.png
+    :alt: A right hand leaving a paint path where it pinched. 
+
+This example shows how you can use pinch detection to paint mid-air.
+
+
+What Code was used to build the example?
+----------------------------------------
+This example comes with a series of scripts and assets. The code included is:
+
+|PaintCursor| - The paint cursor deals with the visuals of the paint cursor, and keeps track of the current pinch status and painting status
+
+|PinchStrokeProcessor| - This manages Pinch Painting for one given hand. 
+It needs a PaintCursor to get info such as the pinch status and positions.
+It manages adding new stroke points in the correct positions, and playing painting audio with correct volume and pitch.
+It creates a StrokeProcessor which deals with the actual stroke creation logic.
+
+|StrokeProcessor| - Deals with the actual stroke logic, smoothing or averaging out the stroke and updating the stroke renderer.
+
+|RectToroid| - Generates a toroid mesh with a low-resolution (square) minor cross-section. This is used for the paint cursor.
+
+|ThickRibbonRenderer| - Renderer for a PinchStrokeProcessor that renders thick ribbons. It neeeds a mesh filter and a mesh renderer
+
+Video Walkthrough
+=======
+.. youtube:: K2xX_BzLT_0
+    :width: 560
+    :height: 315
+
+

@@ -1,0 +1,6 @@
+Class Leap::TestHandFactory
+===========================
+
+.. doxygenclass:: Leap::TestHandFactory
+   :project: unity
+   :members: 

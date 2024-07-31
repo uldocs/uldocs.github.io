@@ -1,0 +1,90 @@
+*****************************************
+Hand Pose Recording
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> The pose recorder enables a developer to record their own poses, all from within a Unity scene. </p>
+        <p> Whilst you can use this scene to record your own poses for use in your packaged build, we do not recommend packaging this scene or the pose recorder in a build because it saves assets to the asset package and this might cause issues on different platforms.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scene can be found in:
+
+  * Assets/Samples/Ultraleap Tracking/x.x.x/XR Examples/3. Pose Detection/1. Pose Recorder.unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Quick Start with Pose Recording
+---------------------
+
+For this example, we assume that you have just finished the :doc:`Getting Started Guide<../../getting-started/your-first-project>`.
+
+.. note:: This scene does not allow you to record gestures; it only allows you to record stationary static poses such as a thumbs up.
+
+From the samples folder, open the pose recorder scene: :code:`Assets > Samples > Ultraleap Tracking > x.x.x > XR Examples > 3. Pose Detection > 1. Pose Recorder.unity`
+
+1. Click the :cs:class:`PoseRecorder <Leap.HandPoseRecorder>` object from the hierarchy.
+
+2. In the inspector, name your pose. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-recorder-inspector.png
+    :width: 60%
+    :align: center
+
+3. Select which hand you want to record and where the pose should be saved.
+
+    The hand to record drop down chooses which hand you should make the pose with in this recorder. You will be able to detect this pose with either hand.
+
+4. Press play to run the scene and put your XR headset on.
+
+5. Press the "Record Pose" button in front of you with your virtual hand.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/record-pose-button.png
+    :width: 40%
+    :align: center
+
+6. You will have 3 seconds to make a pose with the hand that you specified in the pose recorder before the pose will be saved under the name that you entered.
+
+7. You will see a pair of hands appear in front of you which will show the pose that you just made on both hands. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-editor-hands.png
+    :width: 60%
+    :align: center
+
+8. Make the pose again with either hand to see if your pose has been detected. There will be a panel which drops down from the scene explanation panel which tells you the name of the pose that is detected in the scene.
+
+9. Your pose will be saved in the Pose recorders save path.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Tips
+-----
+
+We recommend that you use the pose recorder scene that we have set up in order to create new poses for use in your applications.
+
+This scene and the :cs:class:`PoseRecorder <Leap.HandPoseRecorder>` script will not work as expected if packaged into a build.
+
+
+----------------------------------------------------------------------------------------------------------------------------------

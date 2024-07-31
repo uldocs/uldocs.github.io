@@ -1,0 +1,6 @@
+Class FromMatrixExtension
+=========================
+
+.. doxygenclass:: FromMatrixExtension
+   :project: unreal
+   :members:

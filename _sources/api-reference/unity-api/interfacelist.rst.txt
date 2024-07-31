@@ -1,0 +1,7 @@
+Interface list
+==============
+
+.. toctree::
+   :glob:
+
+   interface/*

@@ -1,0 +1,16 @@
+*********
+OpenXR Support 
+*********
+
+Ultraleap support for OpenXR means you can switch between LeapC and OpenXR data in real time. 
+This can be achieved using the blueprint shown in the image below, ``Set Leap Options`` node, 
+and by ticking the Boolean ``Options Use OpenXR As Source`` to true, UE will be using OpenXR as a source 
+for data. Leaving the Boolean to be false will default to use the LeapC data.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/openxr/1.png
+    :width: 70%
+    :align: center
+
+-----------
+
+`Back to top <#top>`_

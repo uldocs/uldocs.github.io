@@ -1,0 +1,171 @@
+:hide-toc:
+
+**********************
+3Di Mounting Solutions
+**********************
+
+There are a series of different mounting solutions for the Ultraleap 3Di. To explore further options, obtain a CAD file of any of the mounts or for support please contact us via support@ultraleap.com.
+
+Multi Mount
+--------------------------------
+
+The Multi Mount holds the Ultraleap 3Di securely to kiosk or screen, and can be used in desktop mode. It provides optimum camera placement for evaluation and deployment. Designed by Ultraleap’s team of engineers, it can be attached to a wide range of displays with straight forward installation, minimal retrofitting and easy cleaning. The Multi Mount can also sit on any horizontal surface to support desktop evaluation or deployments.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/multi-mount-and-ultraleap-3Di.jpg
+    :alt: Multi Mount and Ultraleap 3Di.
+Multi Mount and Ultraleap 3Di.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-fitted-to-screen-with-the-Multi-Mount.jpg
+    :alt: Ultraleap 3Di fitted to screen with the Multi Mount.
+Ultraleap 3Di fitted to screen with the Multi Mount.
+
+Attaching Ultraleap 3Di to Multi Mount
+----------------------------------------
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di_whats_in_the_box.jpg
+    :alt: Ultraleap 3Di fitted to screen with the Multi Mount.
+What's in the box
+
+• Ultraleap 3Di Stereo Hand Tracking Camera
+• USB 2.0 cable*
+• Multi Mount for 3Di*
+• 4x Adhesive strips for attaching Multi Mount to surfaces*
+• 2x M4x8 cap head screws for securely attaching 3Di to Multi Mount*
+• Hex key*
+
+\ * Not included in volume orders.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-multi-mount-step1.jpg
+    :alt: Step 1
+Step 1
+
+Feed USB cable through access hole at rear of the Multi Mount.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-multi-mount-step2.jpg
+    :alt: Step 2
+Step 2
+
+Plug USB cable into the Ultraleap 3Di camera module.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-multi-mount-step3.jpg
+    :alt: Step 3
+Step 3
+
+Taking care not to catch the USB cable, place the Ultraleap 3Di in the Multi Mount ensuring the **matte notch on the screen is placed on the opposite side** from the cable exit.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-multi-mount-step4.jpg
+    :alt: Step 4
+Step 4
+
+Using the hex key and bolts provided, secure the Ultraleap 3Di to the Multi Mount. Take care not to over tighten the bolts.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-multi-mount-step5.jpg
+    :alt: Step 5
+Step 5
+
+The Ultraleap 3Di is now securely attached to the Multi Mount and ready for positioning in desktop mode or fixing to kiosk or screen.
+
+Option 1: Evaluate in desktop mode
+-----------------------------------
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-evaluate-in-desktop-mode.jpg
+    :alt: Step 1
+Step 1
+
+Place the Ultraleap 3Di and the Multi Mount on a horizontal surface, in front of a raised display. Position so that the cable exit is pointing towards display.
+
+Option 2: Evaluate on kiosk or screen edge
+------------------------------------
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-option2-step1.jpg
+    :alt: Step 1
+Step 1
+
+Position the adhesive strips on the Multi Mount as shown in image.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-option2-step2.jpg
+    :alt: Step 2
+Step 2
+
+Peel off red backing paper on both strips being careful not to touch the sticky underside.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3DI-option2-step3.jpg
+    :alt: Step 3
+Step 3
+
+Position on chosen kiosk or screen edge so the camera screen is pointing either down if placed at top, or pointing up if placed at bottom.
+
+Option 3: Evaluate directly on kiosk or screen
+-----------------------------------------------
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3DI-option3-step1.jpg
+    :alt: Step 1
+Step 1
+
+Position the adhesive strips on the Multi Mount either side of the cable exit as shown in image.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-option3-step2.jpg
+    :alt: Step 2
+Step 2: Option A
+
+Peel off the red backing paper on both strips being careful not to touch the sticky underside and place directly at the top of the kiosk or screen pointing down.
+
+.. image:: ../../img/touchfree-user-manual/3Di-to-multi-mount/3Di-option3-step3.jpg
+    :alt: Step 2
+Step 2: Option B
+
+Peel off the red backing paper on both strips being careful not to touch the sticky underside and place directly at the bottom of the kiosk/screen pointing up.
+
+Panel Mount Kit
+------------------------------------
+
+The Panel Mount Kit is a permanent mounting solution, protecting the camera, cable, and connection from users and the elements. Use the Panel Mount Kit for flush mounting of the 3Di within display panels (supports panel thicknesses from 2- 8 mm).
+
+.. image:: ../../img/touchfree-user-manual/panel-mount-kit-inside.png
+    :alt: Panel Mount kit as viewed from inside the kiosk
+Panel Mount Kit and 3Di viewed from inside kiosk
+
+.. image:: ../../img/touchfree-user-manual/panel-mount-kit-outside.png
+    :alt: Panel Mount kit as viewed from outside the kiosk
+Panel Mount Kit and 3Di viewed from outside kiosk, mounted above screen
+
+To integrate:
+
+1. Determine shim configuration based on panel thickness from the table below.
+2. Provision for the cutout in the panel.
+3. Configure shims as per the table below. The shims and bracket load from rear of panel, 3Di loads from the front
+
+.. image:: ../../img/touchfree-user-manual/panel-cutout-dimensions.png
+    :alt: Diagram showing the panel cutout dimensions
+Panel cutout dimensions
+
+.. image:: ../../img/touchfree-user-manual/exploded-panel-cutout.png
+    :alt: Diagram showing an exploded view of the panel mount kit
+Exploded view of 3Di, panel cutout, and Panel Mount Kit
+
+.. list-table::
+    :widths: 20 40 40
+    :header-rows: 1
+
+    * - Panel Thickness
+      - Shims Above Bracket
+      - Shims Below Bracket
+    * - **2 mm**
+      - GR + WH + BK
+      - –
+    * - **3 mm**
+      - WH + BK
+      - GR
+    * - **4 mm**
+      - GR + BK
+      - WH
+    * - **5 mm**
+      - GR + WH
+      - BK
+    * - **6 mm**
+      - WH
+      - GR + BK
+    * - **7 mm**
+      - GR
+      - WH + BK
+    * - **8 mm**
+      - –
+      - GR + WH + BK

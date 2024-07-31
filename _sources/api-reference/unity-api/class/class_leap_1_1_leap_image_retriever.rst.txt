@@ -1,0 +1,6 @@
+Class Leap::LeapImageRetriever
+==============================
+
+.. doxygenclass:: Leap::LeapImageRetriever
+   :project: unity
+   :members: 

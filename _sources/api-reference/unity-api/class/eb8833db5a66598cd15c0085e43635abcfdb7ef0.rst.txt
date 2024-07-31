@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::ContactBone::ClosestColliderDirection
+================================================================
+
+.. doxygenclass:: Leap::PhysicalHands::ContactBone::ClosestColliderDirection
+   :project: unity
+   :members: 

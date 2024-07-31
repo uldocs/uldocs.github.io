@@ -1,0 +1,175 @@
+:hide-toc:
+
+
+Ultraleap for XR developers
+*********
+
+Getting started
+------------
+
+Get started with Ultraleap hand tracking for game engines and development environments. Build your first project.
+
+.. panels::
+    :container: container-md
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ./unity/getting-started/index.html
+        :text: Get started with Unity
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    Learn how to:
+	
+    - Set up your project
+    - Create your first scene
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+	
+    .. link-button:: ./unreal/getting-started/index.html
+        :text: Get started with Unreal
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    Learn how to:
+	
+    - Set up your project
+    - Create your first level
+    ---
+
+    **Other:**
+
+    - `Native LeapC <../../api-reference/tracking-api/index.html>`_
+    - `OpenXR Integrations <../../openxr/index.html>`_
+*Don't see your integration here?* `Let us know <https://support.leapmotion.com/hc/en-us/requests/new>`_
+
+-----------
+
+Guides - building with hand tracking
+------------
+
+Hand tracking as an input method can bring new challenges when designing for applications. We have composed `XR Design Guidelines <../../xr-guidelines/index.html>`_ to break down some of the best ways to make use of hand tracking in XR.
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="../../xr-guidelines/index.html">XR Design Guidelines</a>
+
+-----------
+
+Plugin feature highlights
+------------
+
+The latest features from Ultraleap Plugins
+
+.. raw:: html
+
+   <div align="right">
+       <a class="btn text-wrap btn-outline-primary" style="width:30%; margin:5px" href="./unity/plugin/index.html">Browse all features for Unity</a>
+   </div>
+   <div align="right">
+       <a class="btn text-wrap btn-outline-primary" style="width:30%; margin:5px" href="./unreal/plugin/index.html">Browse all features for Unreal</a>
+   </div>
+   
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+    :header: text-center font-weight-bold
+
+    Pinch And Grab
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/virtual-hands-track-arms.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/pinch-and-grab-detection.html">Unity</a>
+           <button disabled class="btn text-wrap btn-outline-disabled" style="margin:5px">Unreal</button>
+       </div>
+
+    ---
+
+    Unity XRI
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene-med.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/xri-integration.html">Unity</a>
+           <button disabled class="btn text-wrap btn-outline-disabled" style="margin:5px">Unreal</button>
+       </div>
+
+    ---
+
+    Pose Detection
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-showcase-scene.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/hand-pose-detection.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/features/pose-detection.html">Unreal</a>
+       </div>
+
+    ---
+
+    Pose Recording
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-editor-hands.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/pose-recording.html">Unity</a>
+           <button disabled class="btn text-wrap btn-outline-disabled" style="margin:5px">Unreal</button>
+        </div>
+
+    ---
+
+    3D Object Interactions
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/virtual-objects-blocks-station.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/physical-hands.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/features/interaction-engine.html">Unreal</a>
+       </div>
+
+    ---
+
+    3D UI Interactions
+    ^^^^^^^^^^^^^^
+
+    .. figure:: ../../img/xr-and-tabletop/XR/Unity/Plugin/Features/3d-ui-panel.png
+        :height: 150px
+        :align: center
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/features/3D-ui-interactions.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/features/interaction-engine.html">Unreal</a>
+       </div>
+
+-----------
+
+`Back to top <#top>`_

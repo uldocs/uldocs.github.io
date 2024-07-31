@@ -1,0 +1,152 @@
+********
+Guidance
+********
+
+Ultraleap have carried out real-world research to find the best way to introduce first-time users to touchless interfaces. The instructional elements we recommend attract user attention, bring users into position, and teach them how to interact simply and quickly so a first-time user can get started in a matter of seconds..
+
+Your guidance should contain the following:
+
+* The interactive screen is touchless.
+* How to use hands to interact (for example, pushing buttons).
+
+Elements of fast onboarding
+---------------------------
+
+Instructional guidance could be live-action footage, an animation or still images of a model performing the interaction that you want users to mimic. We have provided assets below. You can adapt the visual style to fit your brand.
+
+Ultraleap recommends the following key elements of guidance for any experience:
+
+* Include the word “Touchless.” This could be as a large title or as a short phrase such as “This is a Touchless Kiosk.”
+* Make the hand pose and motion for the required interaction type clear.
+* Show the on-screen cursor synced with the hand motion.
+* Use the correct cursor for the interaction type.
+* Include a short text instruction for the interaction type in a smaller font, such as “push in mid-air to start.”
+* Play the video on a loop when the kiosk is not in use.
+
+There's a number of different components that can be used to communicate this guidance as follows:
+
+Digital Components
+------------------
+
+Attract loop
+############
+
+New users learn quickly by watching and mimicking what they see. An attention grabbing attract loop is a great way of onboarding users quickly to the concept of TouchFree. Our researchers have found that a short, instructional animation (5-8 seconds long) that users can copy can be highly effective. When played on-screen in a loop while the kiosk is not in use, it is also good a way of catching customer attention.
+
+In some use cases there will already be adverts playing in an attract loop. In these cases we recommend a short video or image communicating TouchFree interactivity in addition to the adverts in the loop.
+
+The exact format required will differ between touchless kiosks and digital signage. For example, an interactive movie poster will have different requirements to a self-serve kiosk.
+
+.. image:: ../../img/touchless-interfaces/guidance/attract-loop.gif
+  :alt: An animation showing an example of an attract loop
+  :align: center
+
+Home screen guidance
+####################
+
+The start screen is an opportunity to increase awareness of TouchFree interactivity. An area of the start screen can be used for TouchFree guidance and TouchFree interactivity awareness. A bold, high contrast background means focus can be drawn to the guidance.
+
+We recommend communicating how to interact using TouchFree in a couple of parts. The first communicating to interact away from the screen. The second showing how to perform the chosen interaction.
+
+.. image:: ../../img/touchless-interfaces/guidance/home-screen.gif
+  :alt: An animation showing guidance that could be used on the home screne of an application
+  :align: center
+
+Contextual Guidance
+###################
+
+Users are typically focused on the interactable area that they want to interact with. Providing contextual guidance attached to this is a quick way of onboarding users to how to interact with that element while being non-intrusive. This guidance also only appears when the user requires it, being helpful when needed and invisible when not required.
+
+.. image:: ../../img/touchless-interfaces/guidance/contextual.gif
+  :alt: An animation showing an informational tooltip appearing above a hovered UI element
+  :align: center
+
+Cursor-based guidance
+#####################
+
+The most eye catching, effective way of raising awareness of TouchFree and onboarding is through guidance attached to the cursor.
+
+Often users want to begin interacting as quickly as possible so won't want to watch anything that isn't short and snappy. We recommend communicating the concept of touchless and the interaction in a couple of seconds either through animation or images.
+
+Text is a key tool in onboarding users. We recommend concise, easy to understand language when describing the interaction.
+
+Users will not require the guidance to be visible the whole time as they will have learnt the required action after a few confirmed interactions.
+
+We recommend the following behaviour:
+
+#. Appear on hand initialisation
+#. Hide after 2 confirmed interactions
+#. Reappear after 10 seconds of inactivity
+#. Hide after confirmed interaction
+
+.. image:: ../../img/touchless-interfaces/guidance/cursor.gif
+  :alt: An animation showing guidance attached to the cursor
+  :align: center
+
+Printed Components
+------------------
+
+The first step in onboarding new users into a TouchFree experience is creating awareness of TouchFree interactivity. The second is to quickly onboard users by providing simple, easy to understand guidance. Here are some different examples of printed signage that can aid awareness and provide guidance to new users.
+
+Top panels, posters and banners are great ways to raise awareness and lead users to look at other guidance around the kiosk.
+
+Top panel
+#########
+
+Large "TouchFree" text can be eye catching, especially on approach to kiosks. We recommend using a thin panel, mounted above the screen communicating this message. If the kiosk is also able to be used as a touchscreen, this can be communicated here also.
+
+.. image:: ../../img/touchless-interfaces/guidance/printed-top.jpg
+  :alt: Physical guidance attached to the top of a kiosk
+  :align: center
+
+Posters and Roll Up Banners
+###########################
+
+A large image of a user interacting with a TouchFree screen communicates the concept of TouchFree quickly while grabbing the attention of potential users. This kind of signage is generally placed on approach to the kiosks, drawing people in. Typically either mounted to nearby walls or placed in A-Frames.
+
+.. image:: ../../img/touchless-interfaces/guidance/posters.jpg
+  :alt: Physical guidance on an A frame stand next to a kiosk
+  :align: center
+
+Side panels
+###########
+
+Ultraleap user `studies <https://dl.acm.org/doi/abs/10.1145/3393712.3395338>`__ show that some users start using touchless interaction very quickly, while some prefer to take their time and are happy to read instructions before beginning.
+
+A printed instructional panel can complement the on-screen animation by providing similar information in a different format. If customers get stuck mid-way through the experience, a printed panel near the screen can be very helpful.
+
+The information on the instructional panel should clearly and concisely show:
+
+* Where users should stand in relation to the kiosk.
+* How far away from the kiosk user's hands should be.
+* The hand pose and hand motion required to interact with the kiosk.
+
+Ultraleap has the following recommendations for the printed panel:
+
+* The panel should be at eye height. Typically, 1.35m-1.8m (4.5ft-6ft) and 1.15m (3.8ft) for adult wheelchair users.
+* Include short text instructions and diagrams of users interacting with the touchless screen.
+* Text should be large enough to read from around 1 metre away. We recommend at least 14-point size font for the detailed text instructions and 36-point font for titles.
+* If you are using a footprint graphic on the floor these should be shown in any images.
+* The panel should show the interaction that users need to perform to make a selection.
+* Information presented should be consistent with the instructional video or animation. This includes cursor, hand pose, and motion.
+
+.. image:: ../../img/touchless-interfaces/guidance/printed-side.jpg
+  :alt: Physical guidance attached to the side of a kiosk
+  :align: center
+
+Floor stickers
+##############
+
+Especially useful for hybrid touchscreen experiences, floor stickers can be helpful in communicating that users should be further back from the screen to interact TouchFree. These floor stickers should be eye catching, so not to be ignored.
+
+The sticker shouldn't prescribe where the user should stand as people have different heights and reaches. Instead they should encourage users use use TouchFree away from the screen. Wording such as "Stand Back, to use TouchFree" can be effective in communicating this.
+
+Our user testing indicates that simple footprints - either on a mat or vinyl sticker - are effective for the following reasons:
+
+*  They draw users to the kiosk because they can be seen from a distance.
+* They guide the user into a comfortable position within the `interaction zone <https://docs.ultraleap.com/TouchFree/touchfree-user-manual/technical-glossary.html#interaction-zone>`__.
+* They suggests that interaction happens at a distance from the screen.
+
+.. image:: ../../img/touchless-interfaces/guidance/printed-floor.jpg
+  :alt: Physical guidance attached to the floor showing where to stand
+  :align: center

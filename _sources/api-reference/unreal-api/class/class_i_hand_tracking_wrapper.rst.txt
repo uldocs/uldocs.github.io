@@ -1,0 +1,6 @@
+Class IHandTrackingWrapper
+==========================
+
+.. doxygenclass:: IHandTrackingWrapper
+   :project: unreal
+   :members:

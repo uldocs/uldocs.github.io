@@ -1,0 +1,141 @@
+*********
+Your First Project: Hello Hands
+*********
+
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> In this example project, you'll learn how to set up Ultraleap Hand Tracking in a fresh Unity project. </p>
+                <p> This example assumes that you already understand the <a HREF=index.html>Getting Started with Unity</a> steps. </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+------------
+
+Prerequisites
+------------
+
+* Ensure you have read and understand the :doc:`Getting Started with Unity <index>` prerequisites
+
+------------
+
+Make an XR scene with Hand Tracking
+------------
+
+The following steps are sufficient to see your first set of tracked hands in Unity.
+
+1. Create a new 3D project in unity.
+   
+.. figure:: ../../../../img/unity-api/unity-hub-new-project.png
+    :width: 70%
+    :align: center
+
+2. Create a new scene and name it appropriately.
+   
+.. figure:: ../../../../img/unity-api/new-scene-unity.png
+    :width: 60%
+    :align: center
+    
+3. Import the Ultraleap tracking package as described in :doc:`Getting Started with Unity <index>`
+   
+.. figure:: ../../../../img/unity-api/packagelist.png
+    :width: 50%
+    :align: center
+
+4. Add an :doc:`XR Leap Provider Manager <../further-guidance/xr-leap-provider-manager>`  prefab to the scene. This provides hand tracking data to the application. Provider prefabs can be found via the toolbar under :code:`Ultraleap > Tracking > XR Leap Provider Manager`. The Leap Provider Manager will automatically choose between using the LeapC and OpenXR service providers. 
+
+.. note:: If you wish to use OpenXR, be sure to import the `OpenXR Unity Package <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.7/manual/index.html>`_
+
+.. figure:: ../../../../img/unity-api/add-xr-leap-provider-manager.png
+    :width: 60%
+    :align: center
+
+5. From the same toolbar menu as before, add a set of hands to the scene as a child of the :doc:`XR Leap Provider Manager <../further-guidance/xr-leap-provider-manager>`. The Hand Prefabs can be found under :code:`Ultraleap > Hands`. The plugin provides a few different hand visuals, add which ever hands you would like to use.
+
+There is a selection of rigged (mesh) hands, including low polygon hands, outline hands and the iconic capsule hands. 
+
+.. note:: You can check out the other hands we include in the plugin here: :doc:`Hand Prefabs <../further-guidance/hand-prefab>` and if you want to rig your own hands (advanced), check out the rigging guide here: :doc:`Rigging your own hands <../plugin/features/rigged-hand-support>`
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/5-hand-models.png
+    :width: 60%
+    :align: center
+    
+
+6. Add `Unity's XR Origin <https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.2/manual/xr-origin-setup.html>`_ to the scene to position the scene camera relative to the XR device.
+
+.. note:: This makes use of Unity's XR Core Utilities Package features
+
+7. Press Play, or follow the build instructions on your chosen platforms own docs (e.g. if targeting an Android headset).
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Getting-Started/Low-Poly-Hands-wArms.png
+    :width: 80%
+    :align: center
+
+
+If you want to do more with your virtual hands, i.e. interact with objects or access hand data in a script, it's worth reading the relevant documentation in :doc:`Features <../plugin/index>`.
+
+-----------
+
+Building
+###########
+
+Ultraleap does not have any specific build requirements so you can build this project for any platform. Just be sure to follow your chosen platforms steps for building the project. 
+
+-----------
+
+Troubleshooting
+###############
+
+If you do not see your hands in Unity, check the following:
+
+- Make sure you have the correct "Provider" in your scene. Provider prefabs are suffixed Desktop, Screentop, or XR. If you are using the XR Provider, make sure you have the camera referenced.
+- If you are using a custom camera or controller rig, check your application's scene hierarchy while your hand is in front of the sensor. Make sure the hand isn't simply being rendered in the wrong place relative to your camera.
+- Check the Ultraleap Tracking Icon in your task bar. If it has a red circle overlay this means the Ultraleap Tracking Service isn't sending any data. Double-check that your Ultraleap Hand Tracking Camera is plugged in, and check that the Ultraleap Tracking Service is running.
+- Open the Ultraleap Visualizer from the right-click menu of the Ultraleap Tracking Icon in your task bar. If you see hands in the Visualizer, the problem is likely somewhere in Unity.
+
+Need additional support? `Get in touch <https://support.leapmotion.com/hc/en-us>`_ we'd be happy to help.
+
+-----------
+
+What's next?
+------------
+
+Now that you have had your first taste of hand tracking in Unity, why not try out our features.
+
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-6 p-1
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Getting-Started/Components-Overview-palm-button.png
+
+    .. link-button:: ../plugin/index.html
+        :text: Plugin Features
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Some of the exciting features that the plugin has to offer!
+
+-----------
+
+`Back to top <#top>`_

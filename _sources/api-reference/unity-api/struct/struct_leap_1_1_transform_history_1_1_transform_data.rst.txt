@@ -1,0 +1,6 @@
+Struct Leap::TransformHistory::TransformData
+============================================
+
+.. doxygenstruct:: Leap::TransformHistory::TransformData
+   :project: unity
+   :members: 

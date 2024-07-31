@@ -1,0 +1,6 @@
+Namespace Leap::Examples
+========================
+
+.. doxygennamespace:: Leap::Examples
+   :project: unity
+   :no-link: 

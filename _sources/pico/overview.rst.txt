@@ -1,0 +1,49 @@
+:hide-toc:
+
+Overview
+========
+
+The Ultraleap Hand Tracking Accessory for Pico Neo 3 Pro and Pro Eye. 
+
+Option 1: Pico Neo 3 Headset with Ultraleap Hand Tracking Accessory
+----------------------------------------------------------------
+
+A bundle containing the Pico Neo 3 or Pro Eye with an Ultraleap Stereo IR 170 Hand Tracking Camera attached and software pre-installed.
+
+.. image:: ../img/pico/ultraleap-pico-1.JPG
+    :alt: Pico and Ultraleap
+
+**Get Started**
+
+Your new Pico Neo 3 or Pro Eye has the Ultraleap Stereo IR 170 Hand Tracking Camera already mounted and ready to use. Your software comes preinstalled so you can skip these steps and go straight to `Demo Tips <https://docs.ultraleap.com/pico/tips-for-demos.html>`_
+
+----------------------------------------------------------------------------------------------
+
+
+Option 2: Ultraleap Hand Tracking Accessory only
+-----------------------------------------------
+
+For customers who are upgrading an existing Pico Neo 3 headset.
+
+.. image:: ../img/pico/ultraleap-pico-2.jpg
+    :alt: Pico and Ultraleap accessory only
+
+**What's included?**
+
+* Stereo IR 170 Evaluation Kit
+    An Ultraleap hand tracking camera, a mount to fit your headset, and adhesive 
+* A cable and cable tie 
+    To connect the Stereo IR 170 Evaluation Kit to the Pico Neo 3
+* Ultraleap Android Hand Tracking Software 
+    Provided by your distributor (Windows PC required)
+* The Commercial License 
+    Provided by your distributor
+
+**Get Started**
+
+1. Follow our guidance on `how to prepare the headset <https://docs.ultraleap.com/pico/setup-your-headset.html>`_
+2. Follow our guidance on how to `install and run the Ultraleap Hand Tracking Software for Android <https://docs.ultraleap.com/pico/setup-your-software.html>`_
+
+-----------
+
+`Back to top <#top>`_

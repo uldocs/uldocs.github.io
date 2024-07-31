@@ -1,0 +1,6 @@
+Struct Leap::EndProfilingBlockArgs
+==================================
+
+.. doxygenstruct:: Leap::EndProfilingBlockArgs
+   :project: unity
+   :members: 

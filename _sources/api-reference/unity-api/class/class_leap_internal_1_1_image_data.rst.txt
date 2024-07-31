@@ -1,0 +1,6 @@
+Class LeapInternal::ImageData
+=============================
+
+.. doxygenclass:: LeapInternal::ImageData
+   :project: unity
+   :members: 

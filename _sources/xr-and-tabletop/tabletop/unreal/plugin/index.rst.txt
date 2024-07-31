@@ -1,0 +1,97 @@
+:hide-toc:
+
+*********
+Ultraleap Plugin Features
+*********
+
+The Ultraleap Unreal Plugin comes with a collection of features to help you to get started with hand tracking in your application.
+
+The majority of our examples are tailored towards XR, but most of the features translate to Tabletop with some small modifications.
+
+.. warning:: This page will link you to the XR section of our documentation and may discuss unnecessary steps for use with Tabletop configurations
+
+-----------
+
+.. _unreal-plugin-features:
+
+Features
+------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/hands-module/16.png
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/hands-module.html
+        :text: Hands Module
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/7.jpg
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/interaction-engine.html
+        :text: Interaction Engine
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/6.png
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/metahuman-support.html
+        :text: Metahuman Support
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+    .. figure:: ../../../../img/unity-api/capsule-hands.png
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/OpenXR.html
+        :text: OpenXR
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/pose-detection/1.jpg
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/pose-detection.html
+        :text: Pose Detection
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/ui-input-modules/1.gif
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/UI-input-modules.html
+        :text: UI Input Modules
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/mac-support/img1.png
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/mac-support.html
+        :text: MAC Support 
+        :classes: btn-outline-primary btn-block stretched-link
+    
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unreal/plugin/hand-tracking-hinting/img5.png
+        :height: 100
+
+    .. link-button:: ../../../xr/unreal/plugin/features/hand-tracking-hinting.html
+        :text: Hinting API 
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+-----------
+
+`Back to top <#top>`_

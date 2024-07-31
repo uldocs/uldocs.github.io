@@ -1,0 +1,6 @@
+Namespace Leap::Unity
+=====================
+
+.. doxygennamespace:: Leap::Unity
+   :project: unity
+   :no-link: 

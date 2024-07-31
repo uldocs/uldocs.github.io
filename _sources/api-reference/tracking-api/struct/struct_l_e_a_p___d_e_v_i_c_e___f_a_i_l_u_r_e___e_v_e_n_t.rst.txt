@@ -1,0 +1,6 @@
+Struct LEAP_DEVICE_FAILURE_EVENT
+================================
+
+.. doxygenstruct:: LEAP_DEVICE_FAILURE_EVENT
+   :project: tracking
+   :members:

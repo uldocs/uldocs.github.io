@@ -1,0 +1,6 @@
+Class LeapWrapperCallbackInterface
+==================================
+
+.. doxygenclass:: LeapWrapperCallbackInterface
+   :project: unreal
+   :members:

@@ -1,0 +1,6 @@
+Class Leap::LeapServiceProvider
+===============================
+
+.. doxygenclass:: Leap::LeapServiceProvider
+   :project: unity
+   :members: 

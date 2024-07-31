@@ -1,0 +1,97 @@
+*********************
+Hand Tracking Hinting
+*********************
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What is Hand Tracking Hinting?
+--------------------------
+
+Hand Tracking Hinting is the ability to change features of the hand tracking system based on specific needs of your application.
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Available Hints are listed in the <a HREF="../../../../../api-reference/tracking-api/group/group___hints.html">LeapC API documentation</a> defined by "Request Using...".</p>
+		<p> e.g. “ultra_performance_mode”. </p>
+    </div>
+  </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+How do I apply Hand Tracking Hints on startup?
+--------------------------
+
+To apply Hand Tracking Hints on startup, you can populate a collection of text strings in the Ultraleap Settings panel.
+
+1. Open the Ultraleap Settings panel
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/open-ultraleap-settings.png
+  :width: 60%
+  :align: center
+
+2. Populate the Startup Hints section with all hints you wish to enable on startup of your application
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-tracking-hints-settings.png
+  :width: 60%
+  :align: center
+
+3. Run your application
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+How do I change Hand Tracking Hints at runtime?
+--------------------------
+
+You can request new collections of Hand Tracking Hints at runtime. We provide a HandTrackingHintManager class to do this.
+
+Here is some sample code to explore what options you have at runtime:
+
+::
+
+    using Leap;
+    using UnityEngine;
+    
+    public class HintTest : MonoBehaviour
+    {
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.S)) // set the index finger pointing hint
+            {
+                HandTrackingHintManager.RequestHandTrackingHints(
+                    new string[]
+                    {
+                        "straight_index_fingers",
+                        "high_hand_fidelity"
+                    }
+                    );
+            }
+    
+            if (Input.GetKeyDown(KeyCode.A)) // add to the existing hints
+            {
+                HandTrackingHintManager.AddHint("straight_index_fingers");
+            }
+    
+            if (Input.GetKeyDown(KeyCode.R)) // remove from the existing hints
+            {
+                HandTrackingHintManager.RemoveHint("straight_index_fingers");
+            }
+    
+            if (Input.GetKeyDown(KeyCode.C)) // clear the existing hints
+            {
+                HandTrackingHintManager.RequestHandTrackingHints(new string[] { });
+            }
+        }
+    }

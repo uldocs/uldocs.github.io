@@ -1,0 +1,6 @@
+Struct Leap::PhysicalHands::GrabBall::GrabBallRestrictionStatus
+===============================================================
+
+.. doxygenstruct:: Leap::PhysicalHands::GrabBall::GrabBallRestrictionStatus
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_POLICY_EVENT
+======================================
+
+.. doxygenstruct:: LeapInternal::LEAP_POLICY_EVENT
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_TIP
+=============================
+
+.. doxygenstruct:: LeapInternal::LEAP_TIP
+   :project: unity
+   :members: 

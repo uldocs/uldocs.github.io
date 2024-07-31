@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_POINT_MAPPING
+=======================================
+
+.. doxygenstruct:: LeapInternal::LEAP_POINT_MAPPING
+   :project: unity
+   :members: 

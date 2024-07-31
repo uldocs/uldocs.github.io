@@ -1,0 +1,56 @@
+:hide-toc:
+
+*******************
+Ultraleap XR design guidelines: February update
+*******************
+
+**By Matt Corrall, Design Director**
+
+.. image:: ../img/xr-guidelines/UIPanel.jpg
+    :alt: Image of hands in virtual reality interacting with a UI panel
+
+At Ultraleap, we believe strongly in the benefits of natural, intuitive user interfaces controlled using your hands. We want to see hand tracking technology used in everyday interfaces all around us, enabling them to recognise and respond to the kind of easy, effortless gestures we make all the time. As a design professional, that idea has always resonated with me - that devices around me can respond to my body’s natural motion in a way that immediately makes sense to me. That’s what we spend our days doing - imagining that future and helping our customers to build it.
+
+A spokeperson from Qualcomm recently described hand tracking as “table stakes” for VR in 2023. It’s a must, and every month we see more and more applications built for hands. The ease and convenience of using hands, and the difference that realistic interaction can make to the experience - means that we’re seeing adoption across a whole range of industries, from specialist training to gaming.
+
+.. image:: ../img/xr-guidelines/Handpanel.jpg
+    :alt: Image of hands in virtual reality using a hand menu
+	
+Building the ultimate hand tracking SDK
+#######################################
+
+Our goal is to help designers and developers build the best possible XR experiences, and get the very best out of our technology, by offering the ultimate hand tracking SDK and design guidelines. We want to take away the guesswork and experimentation you would have to do to master the technology, and make designing and building for hands, easy for everyone. We want to provide a toolkit of the best hand interactions and UI components and clear guidance on when and how to use them in your own applications, so you can build better experiences, faster.
+
+There is work to do to get there, however. Unlike much more established touchscreens or controllers, the the user experience rulebook for hands is still being written. At Ultraleap, we’ve made it our mission to accelerate the writing of this rulebook. Our dedicated teams conduct research into the best interactions and components, following a user-centric process which sees us building a lot of prototypes, testing with our users regularly, and iterating and refining everything we do, as often as we can. When we have something we know is effective, it gets added to our SDK and design guidelines.
+
+Design guidelines get a major update
+#######################################
+
+This month, I’m proud to announce a major update and expansion of our XR design guidelines, incorporating all the latest discoveries and insights our team has uncovered over the last year. This one feels an important milestone as it includes some key interactions that have been missing until now, and sets out more clearly the complete range of interactions and components Ultraleap recommend. Each interaction and component now also features developer commentary on how to build it, and links to prefabs and scenes.
+
+In this update
+#######################################
+
+**New developer guidance**
+
+* Updated detail and examples in every section
+* Overview lists of all `interactions <https://docs.ultraleap.com/xr-guidelines/Interactions/interactions_overview.html>`_ and `components <https://docs.ultraleap.com/xr-guidelines/Components/components-overview.html>`_
+* Developer commentary, links to prefabs and scenes
+
+**New interactions**
+
+* `Locomotion: <https://docs.ultraleap.com/xr-guidelines/Interactions/locomotion.html>`_ A much-requested interaction
+* `Keyboards and text entry <https://docs.ultraleap.com/xr-guidelines/Components/keyboards-text.html>`_
+* `Tutorials, hints and help <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_
+
+**New components**
+
+* `Virtual hands <https://docs.ultraleap.com/xr-guidelines/Getting%20started/virtual-hands.html>`_
+* Expanded `UI panels <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_ section
+* Breakdown of `UI components <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_ for panels
+
+**Next**
+
+We'll be updating our design guidelines again later this year as our interaction research continues. 
+
+In the meantime, we’d love to hear your feedback on the guidelines and suggestions how to make them even more useful. Join the discussion on `Discord <https://discord.com/invite/3VCndThqxS>`_.

@@ -1,0 +1,6 @@
+Class Leap::FiducialPoseEventArgs
+=================================
+
+.. doxygenclass:: Leap::FiducialPoseEventArgs
+   :project: unity
+   :members: 

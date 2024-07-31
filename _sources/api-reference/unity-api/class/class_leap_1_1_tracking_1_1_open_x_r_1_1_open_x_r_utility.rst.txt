@@ -1,0 +1,6 @@
+Class Leap::Tracking::OpenXR::OpenXRUtility
+===========================================
+
+.. doxygenclass:: Leap::Tracking::OpenXR::OpenXRUtility
+   :project: unity
+   :members: 

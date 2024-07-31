@@ -1,0 +1,52 @@
+:hide-toc:
+
+***************************
+TouchFree Design Guidelines
+***************************
+
+With `TouchFree <https://leap2.ultraleap.com/touchfree/>`__ and
+`TouchFree Tooling <https://leap2.ultraleap.com/touchfree/>`__ you can
+customize many aspects of the touchless user experience.
+
+This guide helps you make design decisions for the best user experience.
+
+What Topics Are Covered?
+------------------------
+
+`Interactions <https://docs.ultraleap.com/TouchFree/touchless-interfaces/interactions.html>`__
+############
+
+Find out about the different interactions we offer and which might be best for your application.
+
+`UI Components <https://docs.ultraleap.com/TouchFree/touchless-interfaces/ui-components.html>`__
+#############
+
+The tips in this section will help make sure users' first touchless experience is quick, engaging, and intuitive.
+
+`Guidance <https://docs.ultraleap.com/TouchFree/touchless-interfaces/guidance.html>`__
+########
+
+Follow the design recommendations in this section for a smooth and efficient user onboarding process. We recommend instructional elements that:
+
+* Attract user attention
+* Bring users into position
+* Teach them how to interact simply and concisely
+
+`Hover States <https://docs.ultraleap.com/TouchFree/touchless-interfaces/hover-states.html>`__
+############
+
+We show you the benefits of hover states in making your experience more engaging, memorable and usable.
+
+`Scrolling, Panning and Rotating <https://docs.ultraleap.com/TouchFree/touchless-interfaces/scrolling-panning-rotating.html>`__
+###############################
+
+Interfaces often require one or a few of these abilities. We'll show you examples and provide recommendations for how these should be implemented along with recommendations for which interactions should be used.
+
+.. toctree::
+    :maxdepth: 1
+
+    Interactions <interactions.rst>
+    UI Components <ui-components.rst>
+    Guidance <guidance.rst>
+    Hover States <hover-states.rst>
+    Scrolling, Panning and Rotating <scrolling-panning-rotating.rst>

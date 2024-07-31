@@ -1,0 +1,246 @@
+
+This is a Title
+*********
+
+This is a Subtitle
+---------
+
+
+this is a Chapter (section Heading)
+##########
+
+
+Bold Capitals (for Subsections)
+=============
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Separate sections with the line break which appears above this regular body text
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+This section shows how to create 3 panels next to each other 
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ./img/unity-api/capsule-hands.png
+	
+    .. link-button:: ./unity/getting-started/index.html
+        :text: This is how
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ./img/unity-api/capsule-hands.png
+
+    .. link-button:: ./unreal/getting-started/index.html
+        :text: you make a 3 part
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ./img/unity-api/capsule-hands.png
+
+    .. link-button:: ./unity/getting-started/index.html
+        :text: horizontal panel
+        :classes: btn-outline-primary btn-block stretched-link
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+You can use raw html to create more complex features on a page. This section how to place 2 buttons on top of each other, right aligned. 
+
+.. raw:: html
+
+   <div align="right">
+       <a class="btn text-wrap btn-outline-primary" style="width:30%; margin:5px" href="./unity/plugin/index.html">Browse all features for Unity</a>
+   </div>
+   <div align="right">
+       <a class="btn text-wrap btn-outline-primary" style="width:30%; margin:5px" href="./unreal/plugin/index.html">Browse all features for Unreal</a>
+   </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+This is how you write a reference to another page in raw HTML
+
+.. raw:: html
+    <a HREF=index.html>Getting Started with Unity</a>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+You can use raw html to create more complex features on a page. This section is a 6 panel  unity/Unreal feature section. 
+
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/index.html">Unreal</a>
+       </div>
+
+    ---
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/index.html">Unreal</a>
+       </div>
+
+    ---
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/index.html">Unreal</a>
+       </div>
+
+    ---
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <button disabled class="btn text-wrap btn-outline-disabled" style="margin:5px">Unreal</button>
+           </div>
+
+    ---
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/index.html">Unreal</a>
+       </div>
+
+    ---
+
+    .. figure:: img/unity-api/capsule-hands.png
+
+    .. raw:: html
+
+       <div align="center">
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unity/plugin/index.html">Unity</a>
+           <a class="btn text-wrap btn-outline-primary" style="margin:5px" href="./unreal/plugin/index.html">Unreal</a>
+       </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+This is how you should create a left aligned text with a right aligned video. This should be used for guide pages at the top. The video can be replaced with an image if no video is available.
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie urna sit amet augue posuere, sed accumsan augue viverra. Duis dignissim nunc eu purus sagittis interdum. </p>
+        <p> In metus est, fermentum quis pharetra eget, porta vel metus. Phasellus vitae lectus ex. Donec blandit volutpat cursus. Phasellus nec ligula et arcu suscipit blandit id porttitor lorem. </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../_video/unity-user-manual/rigging-guide/clip1.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+This is how to make a numbered list of items with images in between some:
+
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+.. figure:: ./img/unity-api/capsule-hands.png
+    :width: 20%
+    :align: center
+
+2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+.. figure:: ./img/unity-api/capsule-hands.png
+    :width: 30%
+    :align: center
+
+4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+this is how you make a bullet point list
+
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+.. figure:: ./img/unity-api/capsule-hands.png
+    :width: 10%
+    :align: center
+
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   
+.. figure:: ./img/unity-api/capsule-hands.png
+    :width: 18%
+    :align: center
+
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+This is how to reference another page in your docs.
+
+:doc:`Plugin Features <../plugin/index>`.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+how to create a dropdown with text in it
+
+
+.. dropdown:: Lorem ipsum
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    .. figure:: ./img/unity-api/capsule-hands.png
+        :width: 60%
+        :align: center

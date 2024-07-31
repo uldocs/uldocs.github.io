@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DISCONNECTION_EVENT
+=============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_DISCONNECTION_EVENT
+   :project: unity
+   :members: 

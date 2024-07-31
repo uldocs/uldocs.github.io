@@ -1,0 +1,6 @@
+Class Leap::ConnectionEventArgs
+===============================
+
+.. doxygenclass:: Leap::ConnectionEventArgs
+   :project: unity
+   :members: 

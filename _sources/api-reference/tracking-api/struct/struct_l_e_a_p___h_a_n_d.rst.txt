@@ -1,0 +1,6 @@
+Struct LEAP_HAND
+================
+
+.. doxygenstruct:: LEAP_HAND
+   :project: tracking
+   :members:

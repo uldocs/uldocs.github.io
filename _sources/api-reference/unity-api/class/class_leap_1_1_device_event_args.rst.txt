@@ -1,0 +1,6 @@
+Class Leap::DeviceEventArgs
+===========================
+
+.. doxygenclass:: Leap::DeviceEventArgs
+   :project: unity
+   :members: 

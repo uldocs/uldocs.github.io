@@ -1,0 +1,118 @@
+*********
+Getting started with Unity
+*********
+
+Ultraleap Unity Plugin contains everything you need to get started with Ultraleap hand tracking in Unity.
+
+.. note:: If you are looking to make use of an additional interaction system such as `XR Interaction Toolkit (XRI) <../xri-integration.html>`_ or `Mixed Reality Toolkit (MRTK) <../mrtk-support.html>`_ follow this page first, to get set up. Then follow the relevant documentation to integrate with the interaction system of choice.
+
+-----------
+
+Prerequisites
+------------
+
+**Ultraleap**
+
+* An `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_
+* A computer that meets the `Tracking Requirements <https://leap2.ultraleap.com/gemini-downloads/>`_
+* `Ultraleap Hand Tracking Software (V5.2+) <https://leap2.ultraleap.com/gemini-downloads/>`_ installed on the development computer. Also install the Hand Tracking Software for your specific XR device if building for an XR headset.
+
+**Unity**
+
+* `Unity 2021 LTS or newer <https://unity.com/releases/release-overview>`_
+* Familiarity with `Unity's XR project setup <https://docs.unity3d.com/2021.3/Documentation/Manual/configuring-project-for-xr.html>`_
+* `Unity XR Plugin Management Package <https://docs.unity3d.com/Manual/com.unity.xr.management.html>`_ which can be installed from the `Package manager window <https://docs.unity3d.com/Manual/upm-ui.html>`_
+* An XR runtime plugin Package. We recommend `OpenXR <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.7/manual/index.html>`_ where possible.
+
+.. note:: We recommend that you use `OpenXR <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.7/manual/index.html>`_ where possible. However, depending on the headset you may require a specific plugin if OpenXR is not supported. For example `Pico <https://developer-global.pico-interactive.com/document/unity/>`_, `HTC Vive <https://developer.vive.com/resources/vive-wave/tutorials/installing-wave-xr-plugin-unity/>`_ or `Meta Quest <https://developer.oculus.com/documentation/unity/unity-gs-overview/>`_
+
+.. warning:: The Ultraleap plugin does not use Unity URP by default. If you are using URP, follow the steps to `update the materials <https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@17.0/manual/upgrading-your-shaders.html>`_.
+
+    We do offer URP hand models which can be found in :code:`Assets/Samples/Ultraleap Tracking/x.x.x/URP Examples/Example Assets/Hands (URP)` without needing to upgrade the materials. (Other assets will still need updating)
+
+-----------
+
+Set up hand tracking in Unity
+------------
+
+**How to install**
+
+1. Remove any existing Ultraleap Unity modules from your project
+
+.. Note:: We use OpenUPM to handle installing packages in this tutorial. This is our recommended method as it makes installing and upgrading packages easy.
+
+    You can also get the plugin as a .unitypackage or install using the git url. These can both be found on our `open source github repository <https://github.com/ultraleap/UnityPlugin>`_
+
+2. In Unity, select :code:`Edit -> Project Settings -> Package Manager`, add a new scoped registry with the following details:
+    * Name: Ultraleap
+    * URL: :code:`https://package.openupm.com` 
+    * Scope(s): com.ultraleap
+
+.. figure:: ../../../../img/unity-api/scopedregistry.png
+    :width: 80%
+    :align: center
+
+3. Open the Package Manager (:code:`Window -> Package Manager`) and navigate to "My Registries" in the dropdown at the top left of the window.
+
+.. figure:: ../../../../img/unity-api/myregistries.png
+    :width: 50%
+    :align: center
+
+4. Ultraleap UPM packages should be available in the list. Add the "Ultraleap Tracking" package by selecting it in the list on the left then clicking install in the bottom right.
+
+.. figure:: ../../../../img/unity-api/packagelist.png
+    :width: 50%
+    :align: center
+	
+5. Include our example content, which demonstrates a lot of the features of the plugin and can be copied and expanded for your project, select the Samples for the package and import them via the Package Manager as shown below.
+
+.. figure:: ../../../../img/unity-api/sampleimport.png
+    :width: 60%
+    :align: center
+
+6. To Ensure that everything is set up and working, open the "Capsule Hands" scene in the package samples (:code:`Assets > Samples> Ultraleap Tracking > x.x.x > Examples > 1. XR Examples > 2. Building Blocks > 1. Basics > 1. Capsule Hands.unity`). With these steps completed, when pressing play, you should be able to see your hands tracking in the scene.
+
+.. figure:: ../../../../img/unity-api/capsule-hands-xr.png
+    :width: 80%
+    :align: center
+
+.. note:: This scene uses TextMesh Pro to display text. Import TMP Essentials if you are prompted to.
+
+
+-----------
+
+What's next?
+------------
+
+Now that you have had your first taste of hand tracking in Unity, why not try out setting up your own project or taking a look at our features.
+
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-6 p-1
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Getting-Started/Virtual-Objects-Blocks-Station.png
+	
+    .. link-button:: ./your-first-project.html
+        :text: Your First Project
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Your first project teaches you how to set up your own scenes to use Ultraleap hand tracking.
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Getting-Started/Components-Overview-palm-button.png
+
+    .. link-button:: ../plugin/index.html
+        :text: Plugin Features
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Some of the exciting features that the plugin has to offer!
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+    Your First Project <your-first-project.rst>

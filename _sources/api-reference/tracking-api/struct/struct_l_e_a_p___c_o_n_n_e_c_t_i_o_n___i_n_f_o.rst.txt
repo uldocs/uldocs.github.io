@@ -1,0 +1,6 @@
+Struct LEAP_CONNECTION_INFO
+===========================
+
+.. doxygenstruct:: LEAP_CONNECTION_INFO
+   :project: tracking
+   :members:

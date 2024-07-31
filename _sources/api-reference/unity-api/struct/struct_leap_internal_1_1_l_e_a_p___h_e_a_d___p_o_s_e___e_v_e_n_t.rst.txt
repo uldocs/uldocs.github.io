@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_HEAD_POSE_EVENT
+=========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_HEAD_POSE_EVENT
+   :project: unity
+   :members: 

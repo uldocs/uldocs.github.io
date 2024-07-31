@@ -1,0 +1,6 @@
+Interface Leap::PhysicalHands::IPhysicalHandContact
+===================================================
+
+.. doxygeninterface:: Leap::PhysicalHands::IPhysicalHandContact
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Namespace Leap::PhysicalHands::ContactBone
+==========================================
+
+.. doxygennamespace:: Leap::PhysicalHands::ContactBone
+   :project: unity
+   :no-link: 

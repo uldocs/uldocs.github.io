@@ -1,0 +1,6 @@
+Struct FLeapDigitData
+=====================
+
+.. doxygenstruct:: FLeapDigitData
+   :project: unreal
+   :members:

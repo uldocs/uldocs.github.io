@@ -1,0 +1,6 @@
+Struct LEAP_VECTOR
+==================
+
+.. doxygenstruct:: LEAP_VECTOR
+   :project: tracking
+   :members:

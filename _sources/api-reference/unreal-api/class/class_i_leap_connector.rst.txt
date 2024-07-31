@@ -1,0 +1,6 @@
+Class ILeapConnector
+====================
+
+.. doxygenclass:: ILeapConnector
+   :project: unreal
+   :members:

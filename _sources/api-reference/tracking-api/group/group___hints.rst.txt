@@ -1,0 +1,6 @@
+Group Hints
+===========
+
+.. doxygengroup:: Hints
+   :project: tracking
+   :members:

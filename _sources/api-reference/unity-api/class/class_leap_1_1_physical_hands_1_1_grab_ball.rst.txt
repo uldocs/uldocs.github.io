@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::GrabBall
+===================================
+
+.. doxygenclass:: Leap::PhysicalHands::GrabBall
+   :project: unity
+   :members: 

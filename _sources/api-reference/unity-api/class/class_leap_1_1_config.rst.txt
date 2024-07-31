@@ -1,0 +1,6 @@
+Class Leap::Config
+==================
+
+.. doxygenclass:: Leap::Config
+   :project: unity
+   :members: 

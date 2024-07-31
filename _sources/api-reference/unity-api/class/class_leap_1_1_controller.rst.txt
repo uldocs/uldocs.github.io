@@ -1,0 +1,6 @@
+Class Leap::Controller
+======================
+
+.. doxygenclass:: Leap::Controller
+   :project: unity
+   :members: 

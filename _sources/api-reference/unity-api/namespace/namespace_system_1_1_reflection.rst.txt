@@ -1,0 +1,6 @@
+Namespace System::Reflection
+============================
+
+.. doxygennamespace:: System::Reflection
+   :project: unity
+   :no-link: 

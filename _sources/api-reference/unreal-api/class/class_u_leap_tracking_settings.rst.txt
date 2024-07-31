@@ -1,0 +1,6 @@
+Class ULeapTrackingSettings
+===========================
+
+.. doxygenclass:: ULeapTrackingSettings
+   :project: unreal
+   :members:

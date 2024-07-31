@@ -1,0 +1,46 @@
+:hide-toc:
+
+
+
+************************************************
+Attach the Mount and Prepare the headset
+************************************************
+
+.. note:: Your Ultraleap Stereo IR 170 Hand Tracking Camera comes in a mount, ready to attach to your Pico Neo 3. If you bought your headset and accessory as a bundle from a distributor your camera is already mounted and ready to use.
+
+**CAUTION! The adhesive is semi-permanent. Make sure you are completely happy with the position before sticking the mount into place.**
+
+1. Clean and dry the surface of the headset.
+    Make sure the surface is clean and clear of debris before mounting the camera.
+    
+2. Mark the intended position before you attach the mount to the headset. 
+    Position the mount so it is aligned with the black line across the middle of the headset. 
+    Match the curvature of the headset to the curvature of the mount. Mark the position.
+
+3. Attach the mount to the front of the headset. 
+    Remove the paper backing from the adhesive on the mount and press the mount firmly to the front of the headset in the marked position. 
+
+4. Connect the Micro USB to the Stereo IR 170 Evaluation Kit.
+    Do not use the USB-C end - this could damage the connector.
+
+5. Use the cable tie to secure the USB cable at the strain point.
+    Cut the cable tie to size.
+    
+.. image:: ../img/pico/ultraleap-pico-cabletie.jpg
+    :alt: Pico cable tie
+
+6. Connect the USB-C end of USB cable to your Pico Neo 3 headset.
+
+.. image:: ../img/pico/ultraleap-pico-usb.jpg
+    :alt: Pico usb cable
+
+7. Remove the lens caps. 
+
+.. image:: ../img/pico/ultraleap-pico-lenscap.png
+    :alt: Pico Ultraleap lens caps
+
+You are now ready to install and run the Ultraleap Hand Tracking Software on the Pico Neo 3.
+
+-----------
+
+`Back to top <#top>`_

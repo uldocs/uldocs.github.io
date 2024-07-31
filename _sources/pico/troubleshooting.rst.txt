@@ -1,0 +1,29 @@
+:hide-toc:
+
+**********************************************************************
+Troubleshooting
+**********************************************************************
+
+**Hands aren't being tracked while running Ultraleap applications**
+
+* Make sure you have removed the lens caps.
+* Check the cable.
+Make sure the Ultraleap Stereo IR 170 Evaluation Kit is properly connected to the headset. Make sure the Micro USB is seated into the Stereo IR 170 Evaluation Kit completely, and that the USB-C connector is seated properly into the top port of the headset. 
+
+**Hand tracking is lost during an Ultraleap experience**
+
+Try unplugging the USB-C cable from the headset, and then plugging it in again. This will result in a black screen while the hand tracking resets. Hand tracking should resume within your application as normal.
+
+**If you still do not have hand tracking you may need to re-boot the headset**
+
+Do this by holding the power button for 7 seconds, and it should show a black screen. Wait 1 second, and then press and hold the power button for 3 seconds to boot it up again. Hand tracking should function normally.
+
+
+If you need further assistance, or have a question not covered here, contact `Ultraleap support <https://support.leapmotion.com/hc/en-us>`_
+
+You can also find us on `Discord <https://discord.gg/3VCndThqxS>`_
+
+
+-----------
+
+`Back to top <#top>`_

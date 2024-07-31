@@ -1,0 +1,100 @@
+:hide-toc:
+
+*********************
+Interactions overview
+*********************
+
+Hand interactions for XR can be divided into two main categories: **Physical** and **Learned** interactions.
+
+**Physical interactions** tend to be intuitive and require little or no user instruction, as they are so close to how things work in the real world. They use direct interaction and examples include involve handling objects, opening drawers, or waving to other players. Objects should be designed well so their function is obvious to users.
+
+
+**Learned interactions** are different. They don’t relate to real world experiences and tend to be interactions that only happen in VR or AR. Examples include locomotion / teleportation, distance selection and opening UI panels. These can be easy to use once learned, but must be introduced to users via help or onboarding content.
+
+
+-----------------------------------------------------
+
+Physical interactions
+#####################
+
+.. list-table::
+
+   * - Direct interaction
+        .. image:: ../../img/xr-guidelines/recommended.png
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-direct-interaction.png
+            :width: 200
+     - This interaction method happens up close - just like real life. Requires good hand representation to make sense.
+        
+   * - Objects
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-objects.png
+     - Objects are affected by physics - much like the real world - and can be picked up, handled, dropped, and thrown.
+
+   * - Components
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-components.png
+     - 3D UI components behave in a similar way to objects, and can be pushed, pulled and rotated.
+
+
+Learned interactions
+#####################
+
+.. list-table::
+
+   * - Distance interaction
+        .. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-distance-interaction.png
+            :width: 200
+     - This interaction method - which must be learned - allows users to interact with everything from a distance. Requires good pointer design to provide requires user feedback. Users point at an object or component and use a pinch or grab gesture to select. This is more binary than direct interaction, and works on pose detection.
+        
+   * - Teleportation
+        .. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-teleportation.png
+     - A key interaction for navigating VR environments. Teleportation allows users to point where they want to go and be instantly transported there. Users pinch to grab a small micro-handle at their wrist. They then point this at their intended destination and let go to teleport.
+
+   * - Free locomotion
+        .. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-free-locomotion.png
+     - The alternative to teleportation, free locomotion allows users to move themselves around the environment in real time.
+
+   * - Using wearable components
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-using-wearable-components.png
+     - In VR, UI elements that augment the body can work well for quick access to features. For example, twisting the palm upwards to spawn a small menu. Each must be taught, however. Gestures used are twist gesture, hand menu, palm button.
+
+   * - Hand poses
+        .. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+     - .. image:: ../../img/xr-guidelines/interactions-overview/Interactions-Overview-hand-poses.png
+     - With poses, users form a distinct shape with their hand - such as forming a pinch pose - which is detected and triggers an action. It can be performed anywhere in the interaction zone at any time. However, poses must be taught and are difficult for users to remember. Gestures - Pinch, finger pose, triangle.
+
+
+-------------------------------------------------------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/direct-3D-object-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+
+`Back to top <#top>`_
+

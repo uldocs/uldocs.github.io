@@ -1,0 +1,6 @@
+Class Leap::RuntimeGizmos::RuntimeGizmoManager
+==============================================
+
+.. doxygenclass:: Leap::RuntimeGizmos::RuntimeGizmoManager
+   :project: unity
+   :members: 

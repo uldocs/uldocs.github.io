@@ -1,0 +1,6 @@
+Namespace UnityEngine::InputSystem::Layouts
+===========================================
+
+.. doxygennamespace:: UnityEngine::InputSystem::Layouts
+   :project: unity
+   :no-link: 

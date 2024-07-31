@@ -1,0 +1,6 @@
+Namespace UnityEngine::SpatialTracking
+======================================
+
+.. doxygennamespace:: UnityEngine::SpatialTracking
+   :project: unity
+   :no-link: 

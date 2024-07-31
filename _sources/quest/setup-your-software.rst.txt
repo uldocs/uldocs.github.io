@@ -1,0 +1,17 @@
+:hide-toc:
+
+*********************************************************************
+Install and run the Ultraleap Hand Tracking Software on the Quest 2/3 
+*********************************************************************
+
+1. Make sure your headset is turned on.
+2. Connect your headset to the PC onto which you have downloaded the APKs.
+3. Put on your headset, and allow USB access.
+4. Install the apk files from the ./apks folder using your preferred method, options include:
+  a. Using Android Debugger Bridge to install the apks. https://developer.android.com/tools/adb#move
+  b. Using the SideQuest advanced installer to install the apks. https://sidequestvr.com/setup-howto
+5. The applications can be found in the "Unknown sources" section of the Application menu.
+
+-----------
+
+`Back to top <#top>`_

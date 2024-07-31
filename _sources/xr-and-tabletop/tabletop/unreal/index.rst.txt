@@ -1,0 +1,63 @@
+:hide-toc:
+
+*********
+Ultraleap in Unreal
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  The Ultraleap plugin provides additional features to help you in creating your hand tracked applications.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/unreal-logo.png" alt="The Unreal Engine logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./getting-started/index.html">Get started!</a>
+
+-----------
+
+.. Ultraleap Unreal Plugin
+.. ------------
+
+.. .. raw:: html
+
+..   <div class="container">
+..     <div class="text">
+..       <p>
+..       Ultraleap provides the Unreal plugin. This enables developers to work with Ultraleap hand tracking directly, providing additional features such as prefabs and examples to help you get started.
+..       </p>
+..     </div>
+..     <div class="image">
+..       <img src="../../../_images/ul-logo.png" alt="The Unreal Engine logo" width="200">
+..     </div>
+..   </div>
+..   <a class="btn text-wrap btn-outline-primary" href="./plugin/index.html">Ultraleap Unreal plugin overview</a>
+
+.. -----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+    Getting Started with Unreal <getting-started/index.rst>
+    Ultraleap Plugin Features <plugin/index.rst>

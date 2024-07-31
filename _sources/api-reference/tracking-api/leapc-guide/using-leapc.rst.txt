@@ -1,0 +1,195 @@
+:hide-toc:
+
+***********
+Using LeapC
+***********
+
+To get tracking and status information, the typical tasks a client application performs include:
+
+- Setting up a message pump to handle tracking and status events.
+- Requesting images.
+- Getting and setting policy settings.
+- Getting and setting configuration settings.
+- Synchronizing app and Ultraleap Hand Tracking System clocks and getting interpolated frames.
+
+Getting Tracking Frames and Other Event Messages
+################################################
+
+You can use a message pump to efficiently monitor the LeapC message queue. The message queue provides tracking data and
+status information from the Ultraleap Tracking Service.
+
+A typical message pump is a function that runs in its own thread and calls
+:cpp:func:`LeapPollConnection()<LeapPollConnection>` in a tight loop:
+
+.. code-block:: c
+
+    void serviceMessageLoop(){
+        eLeapRS result;
+        LEAP_CONNECTION_MESSAGE msg;
+        while(_isRunning){
+            unsigned int timeout = 1000;
+            result = LeapPollConnection(connectionHandle, timeout, &msg);
+            //Handle message
+        }
+    }
+
+The types of messages that can be returned by :cpp:func:`LeapPollConnection()<LeapPollConnection>` are defined in the
+:cpp:enum:`eLeapEventType<eLeapEventType>` enumeration. Your application should handle each event type appropriately and
+synchronize any data that needs to be used by other threads. :cpp:func:`LeapPollConnection()<LeapPollConnection>` blocks
+until a message is available or until the specified timeout period has elapsed.
+
+To start the message pump, you must first open a connection and start the message pump thread:
+
+.. code-block:: c
+
+    LEAP_CONNECTION* OpenConnection(){
+        eLeapRS result = LeapCreateConnection(NULL, &connectionHandle);
+        if(result == eLeapRS_Success){
+            result = LeapOpenConnection(connectionHandle);
+            if(result == eLeapRS_Success){
+                _isRunning = true;
+                pthread_create(&pollingThread, NULL, serviceMessageLoop, NULL);
+            }
+        }
+        return &connectionHandle;
+    }
+
+The :cpp:struct:`LEAP_CONNECTION<LEAP_CONNECTION>` struct returned by
+:cpp:func:`LeapCreateConnection()<LeapCreateConnection>` becomes your handle for referencing this connection in
+future LeapC API calls. (You can maintain more than one connection, but typically there is no reason to do so.) Pass a
+NULL value for the :cpp:struct:`LEAP_CONNECTION_CONFIG<LEAP_CONNECTION_CONFIG>` struct. There aren't currently any
+config options to set.
+
+:cpp:func:`LeapOpenConnection()<LeapOpenConnection>` performs client-side verification and starts any operations needed
+to connect to the service. However, any operations that may block are deferred until the first call to
+:cpp:func:`LeapOpenConnection()<LeapOpenConnection>`.
+
+.. note:: You do not need to open a device to get tracking data. The device-related functions are only needed to get device properties or to change device state. See :ref:`Reading Device Properties <reading-device-properties>`.
+
+See the :doc:`Callback Example <../examples/callback-example>`.
+
+Interpolating Frames
+####################
+
+Instead of taking frames at whatever rate the Ultraleap camera device happens to be producing them, you can request each
+frame at a particular time. LeapC will then interpolate the nearest measured frames to synthesize a frame at the desired
+time. In general, requesting frames further in the past will provide improve the perception of smoothness in the
+tracking data, but at a cost of increased latency. Conversely, requesting frames with a shorter delay will improve
+perceived responsiveness, but at a cost of increased jitteryness. You should tune the value as best suits your
+application; if you use the same code on desktop and mobile platforms (when mobile is supported), you will probably need
+different delay values for each.
+
+A timestamp that is more recent than the timestamp most recently returned by
+:cpp:func:`LeapPollConnection()<LeapPollConnection>` (e.g. for a tracking or image complete event) is considered to be
+in the future. If an interpolated frame is requested for a timestamp in the future, LeapC will use extrapolation instead
+of interpolation. If the same call was delayed so that the same timestamp value is no longer in the future, LeapC will
+choose to interpolate instead of extrapolate.
+
+The :cpp:func:`LeapGetNow()<LeapGetNow>` function returns the current value of the clock used to generate frame
+timestamps. On Windows, this value is equal to QueryPerformanceCounter divided by QueryPerformanceFrequency, represented
+in microseconds. On all other platforms, it is the time since epoch of `std::chrono::high_resolution_clock::now()`, in
+microseconds. If your application time is derived from the same source as :cpp:func:`LeapGetNow()<LeapGetNow>`, you can
+calculate the desired frame timestamps directly and do not need to use the
+:cpp:struct:`LEAP_CLOCK_REBASER<LEAP_CLOCK_REBASER>` object.
+
+To get interpolated frames:
+
+1. Open the connection.
+2. Call :cpp:func:`LeapPollConnection()<LeapPollConnection>` at least once to complete opening the connection.
+3. Create a :cpp:struct:`LEAP_CLOCK_REBASER<LEAP_CLOCK_REBASER>` struct.
+4. Pass this struct to :cpp:func:`LeapCreateClockRebaser()<LeapCreateClockRebaser>`, which initializes the struct.
+5. Every time you render a frame of graphics, call :cpp:func:`LeapUpdateRebase()<LeapUpdateRebase>` to synchronize the application and Ultraleap hand tracking system clocks. The clocks will drift apart rapidly, otherwise.
+6. Translate the target timestamp of the interpolated frame by passing the application time to :cpp:func:`LeapRebaseClock()<LeapRebaseClock>`. LeapC writes the corresponding Leap clock time to the pLeapClock parameter.
+7. Call :cpp:func:`LeapGetFrameSize()<LeapGetFrameSize>` to calculate the size of the buffer needed to require the tracking data at the desired point in time. (Frame size varies with the number of hands in view.)
+8. Allocate a buffer of the required size.
+9. Call :cpp:func:`LeapInterpolateFrame()<LeapInterpolateFrame>`, passing in the frame time and your buffer. LeapC writes the frame data to your buffer. This buffer can be treated as a :cpp:struct:`LEAP_TRACKING_EVENT<LEAP_TRACKING_EVENT>` object to access the tracking data.
+10. Continue calling :cpp:func:`LeapUpdateRebase()<LeapUpdateRebase>` and :cpp:func:`LeapInterpolateFrame()<LeapInterpolateFrame>` at your application frame rate.
+
+Note that if you have an alternative means of converting your local timestamp units into the same clock domain as that
+used by :cpp:func:`LeapGetNow()<LeapGetNow>`, you do not need to use the clock rebasing functions and can call
+:cpp:func:`LeapInterpolateFrame()<LeapInterpolateFrame>` using the converted timestamp directly.
+
+When getting interpolated frames, you can safely ignore tracking messages from
+:cpp:func:`LeapPollConnection()<LeapPollConnection>` – but you should still service the message loop to get status and
+image completion messages.
+
+See the :doc:`Interpolated Frames Example <../examples/interpolated-frames-example>`.
+
+.. _reading-device-properties:
+
+Reading Device Properties
+#########################
+
+To read the properties of a device, you must get the list of known devices from LeapC using
+:cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>`. You can then get the specific properties of the devices in the
+returned list using :cpp:func:`LeapOpenDevice()<LeapOpenDevice>` and :cpp:func:`LeapGetDeviceInfo()<LeapGetDeviceInfo>`.
+
+You must first open it with :cpp:func:`LeapOpenDevice()<LeapOpenDevice>`. For that you need a
+:cpp:struct:`LEAP_DEVICE_REF<LEAP_DEVICE_REF>` struct, which you can get from
+:cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>`. However, you must pass an array to
+:cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>` to receive the device reference structs. So first, you must get the
+number of attached devices. You get the device count by calling :cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>`
+passing in a NULL pointer in place of the device array.
+
+To get device information:
+
+1. Open the connection.
+2. Call :cpp:func:`LeapPollConnection()<LeapPollConnection>` at least once to complete opening the connection.
+3. Get the device count by calling :cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>`, passing a NULL pointer instead of an array of device reference structs. LeapC writes the device count to the pnArray parameter.
+4. Create an array of :cpp:struct:`LEAP_DEVICE_REF<LEAP_DEVICE_REF>` structs large enough to hold the number of attached devices.
+5. Call :cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>` again, passing in the correct size array and setting pnArray to the number of elements in your array. LeapC fills in the device reference struct for each attached device and updates pnArray to the number of records it actually wrote.
+
+   Because :cpp:func:`LeapGetDeviceList()<LeapGetDeviceList>` does not block, the returned list contains references for any
+   devices known to LeapC at the time of the call. This local list can be different than the list of devices know to the
+   Leap Motion service.
+
+Once you have a :cpp:struct:`LEAP_DEVICE_REF<LEAP_DEVICE_REF>` struct for a device, you can read its properties:
+
+1. Create a :cpp:struct:`LEAP_DEVICE<LEAP_DEVICE>` struct, which will become your device handle.
+2. Call :cpp:func:`LeapOpenDevice()<LeapOpenDevice>`, passing in the :cpp:struct:`LEAP_DEVICE_REF<LEAP_DEVICE_REF>` and :cpp:struct:`LEAP_DEVICE<LEAP_DEVICE>` structs.
+3. Create a :cpp:struct:`LEAP_DEVICE_INFO<LEAP_DEVICE_INFO>` struct.
+4. Allocate a buffer large enough to hold the serial number string.
+5. Call :cpp:func:`LeapGetDeviceInfo()<LeapGetDeviceInfo>` to fill in the device info struct.
+6. If the serial number buffer is too small, then :cpp:func:`LeapGetDeviceInfo()<LeapGetDeviceInfo>` returns a value of :cpp:enum:`eLeapRS_InsufficientBuffer<eLeapRS_InsufficientBuffer>`. It also sets the :cpp:struct:`LEAP_DEVICE_INFO::serial_length<LEAP_DEVICE_INFO::serial_length>` field to the required buffer length. You can use this value to allocate a properly sized buffer and call the function again.
+7. Call :cpp:func:`LeapCloseDevice()<LeapCloseDevice>` when done.
+
+.. code-block:: c
+
+    LEAP_DEVICE_INFO deviceProperties;
+    deviceProperties.serial_length = 1;
+    deviceProperties.serial = malloc(deviceProperties.serial_length);
+    result = LeapGetDeviceInfo(deviceHandle, &deviceProperties);
+    if(result == eLeapRS_InsufficientBuffer){
+      free(deviceProperties.serial);
+      deviceProperties.serial = malloc(deviceProperties.serial_length);
+      result = LeapGetDeviceInfo(deviceHandle, &deviceProperties);
+    }
+
+
+Controlling Policies
+####################
+
+Policies control whether certain features should be used by an application. Generally, these features affect general
+usability or change service behavior that will affect all applications on a system.
+
+See :ref:`Policy<leap-concepts-policy>` for a description of the current policies.
+
+Reading and writing policies
+****************************
+
+To get and set policies:
+
+1. Open the connection.
+2. Call :cpp:func:`LeapPollConnection()<LeapPollConnection>` at least once.
+3. Combine the flags that you want to set by bitwise ANDing elements of the :cpp:enum:`eLeapPolicyFlag<eLeapPolicyFlag>` enumeration.
+4. Likewise, combine the flags that you want to clear by bitwise ANDing elements of the :cpp:enum:`eLeapPolicyFlag<eLeapPolicyFlag>` enumeration.
+5. Call :cpp:func:`LeapSetPolicyFlags()<LeapSetPolicyFlags>`, passing in your set and clear policy combinations.
+6. When the policy change is processed by the service, LeapC adds a :cpp:struct:`LEAP_POLICY_EVENT<LEAP_POLICY_EVENT>` message to the queue. You can compare :cpp:struct:`LEAP_POLICY_EVENT::current_policy<LEAP_POLICY_EVENT::current_policy>` with the desired policy to verify that the policy change was "approved."
+
+To read the current policies without making changes, set both the set and the clear parameters to 0 when calling
+:cpp:func:`LeapSetPolicyFlags()<LeapSetPolicyFlags>`. This will generate a
+:cpp:struct:`LEAP_POLICY_EVENT<LEAP_POLICY_EVENT>` message containing the current policies.
+
+-----------
+
+`Back to top <#top>`_

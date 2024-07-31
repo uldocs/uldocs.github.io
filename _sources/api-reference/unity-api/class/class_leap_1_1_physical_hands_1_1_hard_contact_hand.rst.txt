@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::HardContactHand
+==========================================
+
+.. doxygenclass:: Leap::PhysicalHands::HardContactHand
+   :project: unity
+   :members: 

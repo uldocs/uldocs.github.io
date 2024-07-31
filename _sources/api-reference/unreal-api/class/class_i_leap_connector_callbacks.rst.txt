@@ -1,0 +1,6 @@
+Class ILeapConnectorCallbacks
+=============================
+
+.. doxygenclass:: ILeapConnectorCallbacks
+   :project: unreal
+   :members:

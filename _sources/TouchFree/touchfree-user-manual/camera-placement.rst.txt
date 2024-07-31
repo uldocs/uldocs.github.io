@@ -1,0 +1,129 @@
+:hide-toc:
+
+****************
+Camera Placement
+****************
+
+Confirm hand tracking is optimal for your chosen camera placement with the `Testing Hand Tracking <https://docs.ultraleap.com/touchfree-user-manual/testing-hand-tracking.html/>`_ section.
+
+.. _camera-placement-above-facing-user:
+
+Above Facing User
+#################
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/ultraleap-touchfree-camera-placement-screentop.jpg
+    :alt: TouchFree Screentop camera placement
+
+- The Ultraleap Hand Tracking Camera should be positioned so that it is at least 15 cm from the highest point on the screen that users will be interacting with.
+- The camera tilt should be no more than 30° from the horizontal – recommended angles are between 15° to 30°.
+- For best results, make sure that the camera is positioned at a minimum depth of 1 cm away from the screen.
+
+--------
+
+.. _camera-placement-above-facing-screen:
+
+Above Facing Screen
+###################
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/ultraleap-touchfree-camera-placement-hmd.jpg
+    :alt: TouchFree HMD camera placement
+
+- The Ultraleap camera module should be at least 10 cm away from the highest point where the hand enters.
+- The camera tilt should be between 15° to 85° from the horizontal.
+
+--------
+
+.. _camera-placement-below:
+
+Below
+#####
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/ultraleap-touchfree-camera-placement-desktop.jpg
+    :alt: TouchFree Desktop camera placement
+
+- The Ultraleap camera module should be at least 10 cm below the lowest point on the screen that users will interact with.
+- The camera tilt should be no more than 20° from the horizontal.
+- Make sure that the camera is a minimum of 1 cm away from the screen.
+
+-------
+
+
+Ultraleap Camera Position Visualizer (CPV) Tool
+###############################################
+
+.. image:: ../../img/focus/focus-overview.png
+    :alt: Example image from the CPV
+
+Our CPV tool helps kiosk manufacturers and integrators determine the ideal positioning of the Ultraleap Hand Tracking Camera.
+You can visualize and customize different screen sizes and orientations. You can try different camera positions to find the best placement and angle for your needs, and model the tracking zones and field of view.
+
+`Launch Camera Position Visualizer <https://docs.ultraleap.com/CameraPositionVisualizer/index.html>`__
+
+Camera Position Visualizer (CPV) User Manual
+############################################
+
+Check out the `CPV User Manual <https://docs.ultraleap.com/camera-position-visualizer/>`_ for full documentation around usage and controls,
+as well as customization of the CPV Tool.
+
+-----------
+
+Guidelines
+##########
+
+When choosing and positioning your Ultraleap Hand Tracking Camera, make sure that UI elements are within the field of view.
+
+.. list-table::
+    :widths: 20 40 40 40
+
+    * -
+      - **Ultraleap 3Di**
+      - **Leap Motion Controller**
+      - **Stereo IR 170**
+    * - **Interaction zone depth**
+      - Between 10 cm to 75 cm preferred, up to 1 m maximum
+      - Between 10 cm to 60 cm preferred, up to 80 cm maximum
+      - Between 10 cm to 75 cm preferred, up to 1 m maximum
+    * - **Field of view**
+      - 170×170° typical field of view
+      - 140×120° typical field of view
+      - 170×170° typical field of view
+
+-------
+
+Make sure there are minimal infrared (IR) sources and reflections in the camera's field-of-view. These can reduce the quality of hand tracking.
+
+Digital screens can act as mirrors, creating IR glare from the camera module’s own LEDs. To avoid this, place the camera outside the screen’s projection plane.
+
+Operating your Ultraleap camera in bright sunlight may also impact performance. To improve performance, consider changing your camera placement.
+
+We recommend opening the Ultraleap Tracking Control Panel and using the **Visualizer** to check that hand tracking is operating as expected.
+
+For more details see :doc:`Testing Hand Tracking <testing-hand-tracking>`.
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/ir-reflection.jpg
+    :alt: TouchFree IR sources
+    :width: 425
+
+*IR sources and reflections can be seen in the Visualizer.*
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/camera-projection-plane.jpg
+    :alt: TouchFree Camera Projection Plane
+    :width: 425
+
+*Camera should be placed outside of the screen’s projection plane. Try to maintain this even when screen is tilted.*
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/object-camera-fov.jpg
+    :alt: TouchFree Object in Camera FoV
+    :width: 425
+
+*Make sure there are no obstructions within the field of view of the camera. The background should be as simple as possible.*
+
+.. image:: ../../img/touchfree-user-manual/camera-placement/hands-not-tracked.jpg
+    :alt: TouchFree Hands not Tracked
+    :width: 425
+
+*Use the Visualizer to check for obstructions. In this example, hands are not tracked even though they are in the centre of the camera module’s field of view.*
+
+-----------
+
+`Back to top <#top>`_

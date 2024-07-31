@@ -1,0 +1,22 @@
+{
+  "SupportedPositions": [
+    {
+      "Name": "Above Facing User",
+      "Screentop": true,
+      "Position": [0,0,-1],
+      "Rotation": [-165,0,0]
+    },
+    {
+      "Name": "Below",
+      "Screentop": false,
+      "Position": [0,0,-1],
+      "Rotation": [0,0,0]
+    },
+    {
+      "Name": "Above Facing Screen",
+      "Screentop": true,
+      "Position": [0,0,-10],
+      "Rotation": [165,0,0]
+    }
+  ]
+}

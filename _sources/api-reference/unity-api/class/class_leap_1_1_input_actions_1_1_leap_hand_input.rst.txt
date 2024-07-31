@@ -1,0 +1,6 @@
+Class Leap::InputActions::LeapHandInput
+=======================================
+
+.. doxygenclass:: Leap::InputActions::LeapHandInput
+   :project: unity
+   :members: 

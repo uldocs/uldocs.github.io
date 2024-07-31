@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONNECTION_EVENT
+==========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONNECTION_EVENT
+   :project: unity
+   :members: 

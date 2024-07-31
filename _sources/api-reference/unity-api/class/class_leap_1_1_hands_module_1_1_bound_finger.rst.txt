@@ -1,0 +1,6 @@
+Class Leap::HandsModule::BoundFinger
+====================================
+
+.. doxygenclass:: Leap::HandsModule::BoundFinger
+   :project: unity
+   :members: 

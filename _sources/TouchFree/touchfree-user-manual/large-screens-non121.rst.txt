@@ -1,0 +1,51 @@
+:hide-toc:
+
+Camera Setup for Large Screens
+==============================
+
+
+Beyond 1:1 Touchless Interaction
+--------------------------------
+
+For touchscreen-like interaction on screens up to 42” the interaction area will usually be set to be the same size. 
+
+However, for larger displays it is possible to set the interaction area so that it is smaller than the display. 
+
+The interaction area does not need to be near the display. This means you can comfortably control a large digital display using a small interaction area, from wherever is convenient.
+
+
+Camera Setup
+---------------
+
+From the **TouchFree Settings** screen, you can configure options such as camera position and orientation, interaction settings, cursor appearance, and more.
+
+To configure your camera for a non 1:1 setup select **Camera Setup**, then **Quick Setup**.
+
+The first step asks you to select the mounting position for your Ultraleap camera.
+
+.. image:: ../../img/touchfree-user-manual/camera-mounting-position.png
+    :alt: TouchFree Camera Mounting Position
+
+In the majority of non 1:1 scenarios, the camera module is likely to be positioned on a flat surface, such as a table or podium, and will be pointing upwards as seen in the picture below. In this case, the Below setting should be used.
+
+The setup process uses two mid-air reference points to tell TouchFree where the limits of your interaction area. This “virtual” interaction area can be as far away from the display as you need it to be.
+
+Imagine that this “virtual” interaction area is a scaled down version of the physical display, as illustrated in the image below.
+
+.. image:: ../../img/touchfree-user-manual/large-screen-setup1.png
+    :alt: Positioning your the hand to mark the bottom of the virtual screen
+
+Step 1 asks you to use your hand to mark the centre point of the bottom of the virtual interaction area. When your hand is where you want the bottom of the virtual interaction area to be, press the Space Bar.
+
+The target on the physical display is there to give an indication of roughly where in the mid-air interaction area to place your hand. In this case at the bottom centre. You do not need to touch the display.
+
+Step 2 asks you to use your hand to mark the centre point of the top of the mid-air interaction area. Whilst your hand is still in place, press the Space Bar.
+
+.. image:: ../../img/touchfree-user-manual/large-screen-setup2.png
+    :alt: Positioning your the hand to mark the top of the virtual screen
+
+Again, the target on the physical display is there to give you an indication of roughly where in the mid-air interaction area to place your hand. In this case at the top centre. You do not need to touch the display.
+
+A touchless cursor will appear on screen. If the cursor is not moving comfortably with your hand movement, retry the **Quick Setup**. Make sure your hand placement is correct for the upper and lower target positions.
+
+Open an Ultraleap demo to test how your setup works within an application.

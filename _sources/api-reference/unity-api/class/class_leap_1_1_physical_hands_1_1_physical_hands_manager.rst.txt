@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::PhysicalHandsManager
+===============================================
+
+.. doxygenclass:: Leap::PhysicalHands::PhysicalHandsManager
+   :project: unity
+   :members: 

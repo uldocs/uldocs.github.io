@@ -1,0 +1,6 @@
+Class Leap::SmoothedFloat
+=========================
+
+.. doxygenclass:: Leap::SmoothedFloat
+   :project: unity
+   :members: 

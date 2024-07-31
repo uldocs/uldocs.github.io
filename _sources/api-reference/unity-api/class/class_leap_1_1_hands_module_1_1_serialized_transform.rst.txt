@@ -1,0 +1,6 @@
+Class Leap::HandsModule::SerializedTransform
+============================================
+
+.. doxygenclass:: Leap::HandsModule::SerializedTransform
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class FLeapWrapperBase
+======================
+
+.. doxygenclass:: FLeapWrapperBase
+   :project: unreal
+   :members:

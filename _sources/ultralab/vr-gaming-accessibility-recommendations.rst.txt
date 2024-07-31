@@ -1,0 +1,674 @@
+************************************
+VR Accessibility Recommendations
+************************************
+
+*By Joseph Wilk, Artist*
+
+
+Joe Wilk, a manual wheelchair user with limited high and low grasp, has been at Ultraleap for 10 months play testing virtual reality (VR) games from an accessibility perspective. This work was done through Joe’s role as a `Watershed <https://www.watershed.co.uk/>`_ Fellow in Residence as part of the `MyWorld <https://www.myworld-creates.com/>`_ funded Ideas programme. 
+
+Here are his recommendations based on the accessibility problems he experienced.
+
+VR Is For Everyone?
+******************
+
+
+In VR, we need to help all users to find comfortable ways of interacting for their bodies. That requires expanding our notions of what a body is and designing experiences to be as inclusive as possible. 
+
+The recommendations fall into 4 categories:
+ 
+* :ref:`Height Adjustments <height-adjustments>`
+* :ref:`Movement and Locomotion <movement-and-locomotion>`
+* :ref:`Menus <menus>`
+* :ref:`Physical Interaction & Ergonomics <physical-interactions>`
+
+*Please note while these recommendations are a good start, they do not negate the need to play test with a diverse set of bodies.*
+
+.. _height-adjustments:
+
+Height adjustments
+****************
+
+Your height position in VR sets the context for almost all interactions. Being able to adjust your height allows users to find a comfortable way to interact. 
+
+---------------------------
+
+Provide an in-game height adjustment solution
+########################################################################################################
+
+If a game requires a high reach and it's not possible to adjust your height, its not possible to progress. Current OS height adjustment settings do not seem to provide a sufficient solution.
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `The Curious Tale of the Stolen Pets <https://www.meta.com/en-gb/experiences/2439217169469931/>`_ has some game mechanics positioned at a high reach and the game does not provide any height adjustment. 
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/curious_tale_of_the_stolen_pets.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">The Curious Tale of the Stolen Pets: Interactions rooted high up.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    Provide a height adjustment option in the settings menu.
+
+---------------------------
+
+Avoid binary height adjustments
+########################################################################################################
+
+These do not provide enough precision to find a comfortable position in the world. Different interactions might require different heights, reaching for the floor, reaching for a desk or reaching for a shelf.
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    Meta Quests’ OS provides an accessibility height adjustment option which can only be set on/off.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/meta_height_adjustment.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Meta Quest 2: Binary height adjustment</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    Replace the binary option with an offset height adjustment. 
+
+---------------------------
+
+Height adjustments require interactive feedback
+########################################################################################################
+
+Many games provide in world sliders that allow the user height to be specified and only updated once it is confirmed. This leads to a lot of trial and error to find the right setting. It is encountered frequently as height adjustment is not a one off setting but based on what you are having trouble reaching in game. The height measurement in metres is often provided but this might not be helpful in guessing a virtual world height offset. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Startenders <https://joinstartenders.com/>`_ provides a non interactive height adjuster in the settings menu.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/startenders_height_adjustment.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Startenders: Non interactive height adjust.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    Control height offset with an up and down adjustment button that immediately updates on click. This allows previewing height adjustment without causing too much motion sickness.  
+
+---------------------------
+
+Avoid assuming standing by default
+########################################################################################################
+
+Based on an offset from the ground, menus and interactions are rooted at a predicted standing position. If you are unable to stand then these interfaces can be out of reach.  
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    Meta's "`First Hand <https://www.meta.com/en-gb/experiences/5030224183773255/>`_" assumes the user is standing by default. This roots all the interfaces high and for someone seated it is difficult to reach the “seated mode” without standing up.
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/first_hand_high_menus.jpg
+        :alt: .
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">First Hand: Standing height menus.</p>
+
+    ---
+
+    **Improvement:**
+
+    A number of options are possible:
+
+    * Assume seated mode as the default.
+    * Provide a ray based targeting solution to interact with menus. (For example `Rogue Ascent <https://cliquegames.itch.io/rogue-ascent>`_)
+    * Support moving menus.
+
+.. _movement-and-locomotion:
+
+Movement & Locomotion
+****************
+
+How you move around worlds in VR is a core part to how you orientate yourself for comfortable interactions. It's well understood that solutions are required for actions like turning or moving without causing motion sickness or requiring too much repeated physical movement. This means that locomotion can impact the accessibility of VR experiences.
+
+*See our XR Guidelines page on* `Locomotion <https://docs.ultraleap.com/xr-guidelines/Interactions/locomotion.html>`_ *for a more detailed understanding of locomotion & hand tracking.*
+
+---------------------------
+
+Avoid rooting users to a spot without far/near field interaction support
+########################################################################################################
+
+Fixing the users position prevents them from finding a comfortable way to interact.
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Vader Immortal: Episode III <https://www.starwars.com/interactive/virtual-reality/vader-immortal-episode-iii>`_ has many scenes where the user is attached to a point and is unable to move. The in-game computer consoles rely on direct interaction and if you cannot reach them it is not possible to progress. 
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/vader_far_away_button.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Vader Immortal III: Unable reach buttons.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    `I Expect You To Die <https://iexpectyoutodie.schellgames.com/>`_ roots you to the spot but provides a ray based solution that means you can bring and float objects to your character.  
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/i_expect_you_to_die_floating.png
+        :alt: A hand has a glowing beam of blue light leading to a tape which is held my the light in mid-air. 
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">I Expect You to Die: Ray based grabber to move objects closer.</p>
+---------------------------
+
+Support hand tracking for room scale movement
+########################################################################################################
+
+Room-scale experiences often support greater movement in a physical space. Pushing a self propelled wheelchair is difficult if your hands are also holding controllers. Hand tracking means your hands are free to move as your would normally.
+
+
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/metaquest_controller.jpg
+        :alt: 
+        
+    Meta Quest 3 Controller
+
+    ---
+
+    .. raw:: html
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/valve_controller.jpg
+        :alt: 
+
+    Valve Index Controller
+
+    ---
+
+    .. raw:: html
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/ps5_controller.jpg
+        :alt:  
+    
+    PS5 VR Controller
+
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+    
+    The PS5, Valve Index and Meta Quest 3 VR controllers when held make it very difficult to use your hands. The PS5 VR controller is particularly bad with its cage around your wrist.
+
+
+    ---
+
+    **Improvement:**
+
+    `Waltz of the Wizard <https://www.meta.com/en-gb/experiences/2280285932034855/>`_ and `Paper Birds <https://www.meta.com/en-gb/experiences/3723136981093558/>`_ support hand tracking which allows naturally moving a manual wheelchair without breaking immersion. 
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/paper_birds_hands.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Paper Birds: Using your hands and easily orientating in the world.</p>
+        </div>
+
+
+---------------------------
+
+Support snap turns with hand tracking
+########################################################################################################
+
+Many VR games support snap-turns (the ability to instantly turn yourself left or right) when using controllers, but not when using hand tracking. Physically turning may not always be convenient or comfortable. Snap-turns provide more choice for a user. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Waltz of the Wizard <https://www.meta.com/en-gb/experiences/2280285932034855/>`_ uses hand-tracking and assumes the user will always turn by rotating their body. There is no alternative way to turn, so the solution when stuck is picking up the controllers to turn and then go back to using hand-tracking.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/waltz_of_the_wizard_no_snapturn.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Waltz of the Wizard: No snap-turn with hand tracking.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    Meta demonstrated a snap turn at Meta Connect 2023, triggered by the swipe of a thumb.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/meta_swipe_teleport.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Meta: a snap turn performed by swiping the thumb with the index finger.</p>
+        </div>
+
+.. _menus:
+
+Menus
+****************
+
+Menus and settings are what users reach for when they need help. They play a key part in providing options for play.  
+
+---------------------------
+
+Avoid ambiguous accessibility options
+########################################################################################################
+
+Accessibility options facilitate trust in an experience. Ambiguous options can leave a user unsure how to customise the experience for their comfort. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:** 
+
+    `Startenders <https://joinstartenders.com/>`_ has an option called “Easy Reach“, though it’s unclear how this affects the game experience and no explanation is provided in game. Outside of the game the option is not documented on the Startenders website and the only reference found is a mention in their Discord channel.  
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/startender_accessibility_option.jpg
+        :alt: A blue menu with 2 green buttons. One is highlighted and is labelled "easy reach". No other description is given.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Startenders: Easy Reach accessibility option.</p>
+
+    ---
+
+    **Improvement:**
+
+    * User testing accessibility options would help understand expectations from users on options and how that might be conveyed through the interface.
+    * Provide further tooltips that give expanded details about how an option is supposed to help.
+    * Provide external (outside of the game) explanation of what an accessibility option might do and who it might help.
+
+    `Cosmonious High <https://cosmonioushigh.com/>`_ shows an example of adding expanding tooltips into menu options to provide more details:
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/cosmonious_high_expanding_tooltip.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Cosmonious High: Tooltips.</p>
+        </div>
+
+
+Cosmonious high published a video and blog post explaining their accessibility options with examples:
+
+.. youtube:: gL8gvagsqvo
+  :width: 800
+
+---------------------------
+
+Avoid unmovable menus
+########################################################################################################
+
+If the menu is not at a comfortable distance to reach, being able to move the menu means the user can orientate it to a more comfortable position. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:** 
+
+    `Surgineer <https://www.holonautic.com/surgineer>`_ fixes the game menu to a table top, and despite presenting it with handles, it cannot be moved or repositioned.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/surgineer_menu_fixed_to_table.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Surgineer: Menu fixed to a table.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    `Hand Physics Lab <https://www.holonautic.com/hand-physics-lab>`_ provides a menu which you can grab and move to a more comfortable point. Even better would be to support a ray based grab and a physical grab, so that it is always possible to get the menu to a comfortable position.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/hand_physics_lab_movable_menu.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Hand Physic Lab: Moving menus closer</p>
+        </div>
+ 
+---------------------------
+
+Avoid unstable long distance rays for interaction
+########################################################################################################
+
+If there is any jitter or noise in the rays projected from hands then it becomes very difficult to target small menu options.
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Islanders VR <https://www.meta.com/en-gb/experiences/5247901798645488/>`_ uses a far away menu and very small checkboxes which makes them very hard to target using Meta Quest 2's hand tracking in fairly good lighting.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/islanders_vr_ray_casting.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Islanders VR: Long distance ray interaction with flat, small menus.</p>
+        </div>
+
+    ---
+
+    **Improvement:**
+
+    `Rogue Ascent <https://www.meta.com/en-gb/experiences/5395586720470296/>`_ uses ray targeting with a very stable implementation which removes a lot of the jitter. It also has large menu options which helps make selecting easier. 
+
+    *See our research recommendations on how to create stable & expressive far field rays* `here <https://docs.ultraleap.com/ultralab/far-field-ray-blog.html>`_.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/rogue_ascent_stable_rays.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Rogue Ascent: Stable rays and large menus.</p>
+        </div> 
+
+.. _physical-interactions:
+
+Physical Interaction & Ergonomics
+****************
+
+The way we interact with virtual objects relies on a lot of assumptions about what bodies are capable of. By thinking more widely about what a body is, we can start to understand how we might build more flexibility into our virtual interactions.
+
+---------------------------
+
+Ensure access adjustments are reachable
+########################################################################################################
+
+Often games provide handles so you can adjust the height of in-world objects, to be more comfortable. If you position the height adjuster at the same height as the buttons then a user who cannot reach the buttons also cannot reach the height adjuster.  
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Cosmonious High <https://cosmonioushigh.com/>`_ has table height adjusters that are at a low reach and at the same level as the accessibility options.  
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/cosmonious_high_height_adjustment.png
+        :alt: In VR a purple table is visible with 2 green buttons and a blue handle. The handle is hightlighted. 
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Cosmonious High: Height adjustment handles.</p>
+
+
+    ---
+
+    **Improvement:**
+
+    Ultraleap's XR App launcher has a grab ball which moves the menu window. The grab ball is offset closer to the user than the menu which makes it easier to reach.
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/ultraleap_app_launcher.png
+        :alt: A window previews apps to launch. A grab ball is located at the bottom and offset from the window.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Ultraleap application launcher with a grab ball for adjusting the position of the menu.</p>
+
+---------------------------
+
+Avoid blocking progress with physical interactions
+########################################################################################################
+
+Placing game mechanics behind virtual barriers, like crates, drawers or cupboards means if you cannot reach them, it's impossible to progress in the game.   
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    In `Eolia <https://www.rotu.com/eolia>`_ a key is required to finish the tutorial and start the story. If you cannot open the lid of the chest (loaded onto a wagon) then it is not possible to progress.    
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/eolia_key_hidden_in_box.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Eolia: Unable to reach the key in a crate.</p>
+        </div> 
+
+
+    ---
+
+    **Improvement:**
+
+    * User test widely with a diverse set of bodies to check if your game has any barriers you are not aware of. 
+    * Provide multiple options for how to progress.
+    * Tutorials should be skippable where possible. If a user is stuck in the tutorial being able to skip it means they at least get to play the main game.
+
+---------------------------
+
+Support easily picking up objects from the floor
+########################################################################################################
+
+Repeatedly having to pickup items from the floor can be a difficult physical stretch and there may be limited range in reaching the full way. It's also not a lot of fun. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    In `The Line <https://www.meta.com/en-gb/experiences/2685959161497510/>`_, a book is on the floor that needs to be opened to continue. There is no way to pickup the book from the floor without physically reaching for it.  
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/the_line_book_on_floor.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">The Line: A book located on the floor and unable to reach to pickup.</p>
+        </div> 
+
+    ---
+
+    **Improvement:**
+
+    `Waltz of the Wizard <https://www.meta.com/en-gb/experiences/2280285932034855/>`_ has a summon solution which brings items on the floor back into your hands. 
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/waltz_of_wizard_floor_summon.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Waltz of the Wizards: Picking up from the floor.</p>
+        </div> 
+        
+
+    `Surgineer <https://www.holonautic.com/surgineer>`_ respawns objects back to their original position when dropped.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/surgineer_drop_and_respawn.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Surgineer: Respawning objects.</p>
+        </div> 
+
+---------------------------
+
+
+Consider carefully requiring carrying objects while moving
+########################################################################################################
+
+If you need both your hands to physically move (for example using a manual wheelchair) but a game requires you to hold and carry an object it becomes frustrating quickly. This is especially the case if you need to move a lot to make sure your reaches are comfortable for in world interactions. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Startenders <https://joinstartenders.com/>`_ requires a lot of holding objects and interacting with various stations. Moving between stations while holding drinking glasses which smash when dropped is frustrating.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/startenders_smashing_glasses.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Startenders: Dropping objects while trying to move</p>
+        </div> 
+
+    ---
+
+    **Improvement:**
+
+    * Anchor points where objects can be placed securely allowing movement without risk of dropping them.
+    * Being able to store objects and recover them later. 
+    * A tolerance to glitches in tracking that might occur in hand-tracking data.
+
+--------------------------- 
+
+Avoid heavy use of straining poses
+########################################################################################################
+
+Having to repeat straining poses frequently leaves wrist strain after playing. A straining pose is anything that requires you to maintain a position with your hand and fingers (like thumbs up) that requires an uncomfortable level of strain. This can vary widely between different people's hands.
+
+*See our XR Guidelines page on* `Hand Poses <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_ *for a more detailed understanding of how to design for Hand Poses.*
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Ghost Signal: A Stellaris Game <https://www.meta.com/en-gb/experiences/4302631119827554/>`_ uses a lot of straining poses when playing the game with hand tracking. 
+
+    .. image:: ../img/ultralab/vr_gaming_accessibility/ghost_signal_straining_pose.jpg
+        :alt: Instructions in a space VR game where a ghost hand shows a hand pose with thumb and ring finger pinching.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Ghost Signal: Straining hand poses with thumb and ring finger pinching.</p>
+
+    ---
+
+    **Improvement:**
+
+    Poses should be used sparingly if possible and should not be straining. `Cosmonious High <https://cosmonioushigh.com/>`_ is a good example, using waving at characters to request help and infrequent thumbs up to indicate you are ready to progress.
+
+---------------------------
+ 
+
+Support turning off body movement based non-core game mechanics
+########################################################################################################
+
+Not all physical movements such as doging, ducking & jumps are comfortable for all users. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    **Example:**
+
+    `Beat Saber <https://www.beatsaber.com/>`_ is largely playable seated, but there are sections with oncoming walls that have to be dodged. These walls are not a core part of the game experience and could be turned off as an accessibility option.
+
+    .. raw:: html
+
+        <div style="text-align: center">
+        <video width="100%" loop muted controls>
+            <source src="../_video/vr_gaming_accessibility/beatsaber_hitting_walls.mp4" type="video/mp4">
+        </video>
+        <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Beat Saber: Walls</p>
+        </div> 
+
+    ---
+
+    **Improvement:**
+
+    An accessibility menu setting with options to turn off parts of the gameplay.
+
+    User testing with a diverse set of bodies to learn what options allow more people to play your game.
+
+
+What Next?
+****************
+
+Looking to learn more? Check out our `XR Design Guidelines <https://docs.ultraleap.com/xr-guidelines/>`_ for more recommendations on how to design for Hand Tracking & XR.

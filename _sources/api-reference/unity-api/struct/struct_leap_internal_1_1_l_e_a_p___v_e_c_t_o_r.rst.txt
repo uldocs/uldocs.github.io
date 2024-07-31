@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_VECTOR
+================================
+
+.. doxygenstruct:: LeapInternal::LEAP_VECTOR
+   :project: unity
+   :members: 

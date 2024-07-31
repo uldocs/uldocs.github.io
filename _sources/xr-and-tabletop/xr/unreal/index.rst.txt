@@ -1,0 +1,90 @@
+:hide-toc:
+
+*********
+Ultraleap in Unreal
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  You can use Ultraleap hand tracking in Unreal either through OpenXR or through Ultraleap's plugin directly.
+      <br>
+      <br>
+	  The Ultraleap plugin provides additional features to help you in creating your hand tracked applications.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/unreal-logo.png" alt="The Unreal Engine logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./getting-started/index.html">Get started!</a>
+
+-----------
+
+Ultraleap Unreal Plugin
+------------
+
+.. raw:: html
+
+  <div class="container">
+    <div class="text">
+      <p>
+      Ultraleap provides the Unreal plugin. 
+      This enables developers to work with Ultraleap hand tracking directly, 
+      providing additional features such as pose detection and examples to help you get started.
+      </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/ul-logo.png" alt="the Ultraleap Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./plugin/index.html">Plugin Overview</a>
+
+-----------
+
+OpenXR
+------------
+
+.. raw:: html
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  If you are making an application that works for many inputs including controllers and hand tracking, or have a device that supports OpenXR. Ultraleap supports this through the use of OpenXR in Unreal.<br><br>
+	  Follow our further guidance on working with OpenXR to unlock the power of these standards.
+      </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/openxr.png" alt="The OpenXR Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./plugin/features/OpenXR.html">Further Guidance</a>
+
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+  :hidden:
+	
+	Getting Started <getting-started/index.rst>
+  Ultraleap Plugin Features <plugin/index.rst>
+  Frequently Asked Questions <faq/index.rst>

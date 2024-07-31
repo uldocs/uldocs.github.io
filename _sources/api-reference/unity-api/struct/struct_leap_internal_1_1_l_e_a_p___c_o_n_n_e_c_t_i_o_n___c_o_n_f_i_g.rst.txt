@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONNECTION_CONFIG
+===========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONNECTION_CONFIG
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::HandsModule::BoundBone
+==================================
+
+.. doxygenclass:: Leap::HandsModule::BoundBone
+   :project: unity
+   :members: 

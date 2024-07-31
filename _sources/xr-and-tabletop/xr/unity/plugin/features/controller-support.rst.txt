@@ -1,0 +1,78 @@
+***********************************
+Controller Support
+***********************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> While the Ultraleap plugin primarily focuses on hand interactions, it does integrate with <a HREF=https://www.khronos.org/openxr/>OpenXR</a> and <a HREF=https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>Unity XR Interaction Toolkit (XRI)</a> which both allow for switching between controllers and hands. </p>
+        <p> When developing a new application for hands and controllers, we recommend that you make use of Unity's XRI features. You can find more information about XRI in our <a HREF=xri-integration.html>XRI Integration Page</a>.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Unity XR Interaction Toolkit (XRI) & XR Hands
+-----------------------------------------------
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene-wide.png
+    :width: 100%
+    :align: center
+
+
+The Ultraleap plugin implements several methods for getting set up with XRI. More information on how to set this up can found on our :doc:`XRI Integration Page<../../xri-integration>`.
+
+Using `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ in combination with `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_ allows you to map the same inputs from the `Unity Input Manager <https://docs.unity3d.com/Manual/class-InputManager.html>`_ that you would usually use with a controller, to hand actions. For instance, you could map pinch with your Ultraleap hands to the same input as the trigger on a controller. 
+
+As Unity is officially supporting these methods, we strongly suggest that you utilise them within your new projects as they are likely to become the default for XR applications created in Unity. As such, the Ultraleap plugin will continue to actively support `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ and `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_. 
+
+The Ultraleap Plugin provides tools which focus on enhanced hand interactions. As such, many of them cannot be achieved with `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ alone. If you would like to optimise your application for hands, we recommend using a combination of Ultraleap specific features for interactions designed purely for hands and `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ with `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_ for any interactions you wish to share between controller and hands.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+For more information, check out the pages below
+---------------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-6 p-1
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene.png
+	
+    .. link-button:: ./xri-integration.html
+        :text: Our XRI Integration
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Check out our guidance of working with our hand tracking devices and XRI.
+    ---
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/unity-logo.png
+
+    .. link-button:: https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html
+        :text: Unity XRI 
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Further reading on Unity XRI and how you can use it to build your product.

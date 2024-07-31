@@ -1,0 +1,6 @@
+Class Leap::HandPoseDetector
+============================
+
+.. doxygenclass:: Leap::HandPoseDetector
+   :project: unity
+   :members: 

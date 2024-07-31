@@ -1,0 +1,6 @@
+Class Leap::Encoding::VectorHand
+================================
+
+.. doxygenclass:: Leap::Encoding::VectorHand
+   :project: unity
+   :members: 

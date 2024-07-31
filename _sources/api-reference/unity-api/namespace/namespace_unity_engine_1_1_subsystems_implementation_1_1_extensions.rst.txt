@@ -1,0 +1,6 @@
+Namespace UnityEngine::SubsystemsImplementation::Extensions
+===========================================================
+
+.. doxygennamespace:: UnityEngine::SubsystemsImplementation::Extensions
+   :project: unity
+   :no-link: 

@@ -1,0 +1,6 @@
+Class Leap::Attributes::DisableAttribute
+========================================
+
+.. doxygenclass:: Leap::Attributes::DisableAttribute
+   :project: unity
+   :members: 

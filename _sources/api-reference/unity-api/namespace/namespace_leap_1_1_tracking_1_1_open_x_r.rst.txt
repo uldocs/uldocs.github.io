@@ -1,0 +1,6 @@
+Namespace Leap::Tracking::OpenXR
+================================
+
+.. doxygennamespace:: Leap::Tracking::OpenXR
+   :project: unity
+   :no-link: 

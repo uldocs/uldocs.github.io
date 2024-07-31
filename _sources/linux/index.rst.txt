@@ -1,0 +1,106 @@
+:hide-toc:
+
+****************************************
+Ultraleap on Linux
+****************************************
+
+Ultraleap hand tracking is available for Ubuntu 22.04 LTS (Jammy Jellyfish) on x86_64 / amd64 processors.
+
+Before you install Ultraleap's software for the first time, you need to set up the Ultraleap APT repository.
+Afterwards, you can install Ultraleap software as you would a normal Ubuntu package.
+
+Installation Instructions
+===================================
+
+To add the APT repository, you will need to enter some terminal commands:
+
+1. Add the Ultraleap GPG Key::
+   
+        wget -qO - https://repo.ultraleap.com/keys/apt/gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ultraleap.gpg
+
+2. Add the Ultraleap repository to APT::
+
+        echo 'deb [arch=amd64] https://repo.ultraleap.com/apt stable main' | sudo tee /etc/apt/sources.list.d/ultraleap.list
+
+3. Update APT::
+
+        sudo apt update
+
+4. Install Ultraleap packages::
+
+        sudo apt install ultraleap-hand-tracking
+		
+.. note:: If you are prompted to accept the EULA, you may need to press Tab then Enter to accept.
+
+5. EULA - If you weren't prompted to accept the EULA, or declined the EULA then to accept it run::
+
+        leapctl eula
+
+
+Ultraleap packages
+=============================
+
+The following packages are available for installation:
+
+- :code:`ultraleap-hand-tracking-service`: The core service required to run hand-tracking.
+- :code:`ultraleap-hand-tracking-control-panel`: The control panel application for setting and diagnostics.
+- :code:`openxr-layer-ultraleap`: The Ultraleap OpenXR API Layer for hand-tracking in OpenXR applications.
+
+There is also the meta package, which installs all of the above for convenience :code:`ultraleap-hand-tracking`.
+
+All these packages can be installed with: :code:`sudo apt install ultraleap-hand-tracking`.
+
+Uninstalling packages
+=====================
+
+Packages can be uninstalled with :code:`sudo apt remove ultraleap-hand-tracking && sudo apt autoremove`.
+
+Install locations
+=================
+
+The hand tracking client library, ``libLeapC.so``, is installed to ``/usr/share/doc/ultraleap-hand-tracking-service`` with a symlink in ``/usr/lib/x86_64-linux-gnu/``.
+
+The corresponding header, ``LeapC.h``, is installed to ``/usr/share/doc/ultraleap-hand-tracking-service/include``, with a symlink in ``/usr/include``.
+
+Samples and example code, with instructions on how to build, are installed to ``/usr/share/doc/ultraleap-hand-tracking-service/samples``
+
+Controlling the Ultraleap hand tracking service
+===============================================
+
+Command line
+------------
+
+The Ultraleap hand tracking software includes a tool for configuring the service called ``leapctl``. This is a command-line utility that performs all the functions of the control panel GUI.
+
+Running ::
+
+        leapctl --help
+
+will print instructions for use.
+
+GUI
+---
+
+The Ultraleap hand tracking control panel will have been installed with the rest of the package.
+
+This displays:
+
+* A camera feed with skeletal tracked hands overlayed
+* Information about the attached device or devices
+* Options to configure the service and devices
+
+If you can't find it in your installed applications, you can run it from the command line with the following command: ::
+
+        ultraleap-hand-tracking-control-panel
+
+Supported Versions
+==================
+
+For Linux we support Ubuntu 22.04. While some of our software may work on older versions, we make no guarantee.
+
+Feedback and Support
+====================
+
+We appreciate your feedback to make this software better. Join our community on `Discord <https://discord.gg/3VCndThqxS>`_ or get in touch via our `contact us form <https://support.leapmotion.com/hc/en-us/requests/new>`_.
+
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Struct FGrabClassifierParams
+============================
+
+.. doxygenstruct:: FGrabClassifierParams
+   :project: unreal
+   :members:

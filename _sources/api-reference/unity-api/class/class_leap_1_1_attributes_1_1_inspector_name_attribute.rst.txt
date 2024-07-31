@@ -1,0 +1,6 @@
+Class Leap::Attributes::InspectorNameAttribute
+==============================================
+
+.. doxygenclass:: Leap::Attributes::InspectorNameAttribute
+   :project: unity
+   :members: 

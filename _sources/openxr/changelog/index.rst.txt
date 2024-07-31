@@ -1,0 +1,509 @@
+:hide-toc:
+
+*********
+Changelog
+*********
+
+All notable changes to this project will be documented here.
+
+The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_, and this project adheres
+to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
+
+------------
+
+.. dropdown:: 1.7.0
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+  :open:
+
+  **Added** 
+  
+  - Support for `XR_ULTRALEAP_hand_tracking_hints` which exposes the LeapC hinting API via OpenXR.
+  - Support for detecting Ultraleap hand-tracking on Varjo platforms.
+
+  **Changed**
+
+  - Reworked the filtering during extrapolation to provide a better experience at a wider range of tracking framerates.
+  - The Layer will now disable if it is unable to access it's JVM classes, rather than failing initialisation.
+  - Changed to delay load LeapC.dll, so it doesn't conflict with a version of LeapC.dll already in the address space.
+  - Changed how Frames are constructed internally to avoid unintentional copying issues.
+  - Removed usage of `xr_generated_dispatch_table` and replaced with selective table generation using OpenXR reflection.
+
+  **Fixed**
+
+  - An issue where embedded layers weren't being discovered correctly.
+  - Error handling when requested hand joints at an invalid timestamp.
+  - Default device transformed were potentially uninitialised for unknown platforms.
+  - An issue where initial newly tracked hands was using invalid data due to filtering.
+
+  **Known Issues**
+
+  - First frame of data might have erroneous joint positions when the hand is initialised at a high velocity.
+
+.. dropdown:: 1.6.7
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Changed**
+
+  - Updated to newer codes signing certificates.
+
+  **Fixed**
+
+  - An issue where multiple OpenXR applications would cause the apps hint state to desync from LeapC's.
+
+.. dropdown:: 1.6.6
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Fixed**
+
+  - An issue where hints were sent incorrectly on first app launch causing incorrect device transforms on apps that open in passthrough mode.
+
+.. dropdown:: 1.6.5
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Fixed**
+
+  - Added service version check to prevent crash on Linux when calling for hinting functionality on an older client.
+  - An issue where tracking mode wasn't getting set to HMD automatically.
+
+.. dropdown:: 1.6.4
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Added**
+
+  - Hinting for `IMMERSIVE` and `PASSTHROUGH` modes depending on the current `XrEnvironmentBlendMode`.
+
+.. dropdown:: 1.6.3
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Changed**
+
+  - Updated LeapSDK to v5.17.
+
+.. dropdown:: 1.6.2
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Added**
+
+  - Added the ability to throw exceptions via the `DEBUG` flag.
+
+  **Changed**
+
+  - Updated Android build-chain to NDK 26 and compile SDK 34.
+  - No longer explicitly wait for binding on Android to avoid multithreaded callback complexity.
+  - Fixed leaking of C++ exceptions in some scenarios, if they occur XR_ERROR_RUNTIME_ERROR will be returned instead.
+
+  **Fixed**
+
+  - Fixed an issue where resuming after sleep on android would crash applications.
+  - Fixed an issue where connecting controllers / having controllers connected during runtime causes crashes on SteamVR.
+
+  **Known Issues**
+
+  - Some headsets hand tracking will emulate controller interaction profiles in the absence and therefore needs to be disabled for the controller switching feature to work.
+  - `xrGetInstanceProcAddr` has issues when being called for certain functions by another API Layer.
+
+
+
+.. dropdown:: 1.6.1
+  :title: bg-dropdown-header text-center font-weight-bold
+  :body: bg-dropdown-primary text-left
+  :container: bg-dropdown-header m-1
+
+  **Added**
+
+  - Support for initialising the layer through ``XR_KHR_loader_init_android`` on Android platforms.
+  - Support for Android platforms of API version greater than ``29`` on OpenXR loaders newer than ``1.0.28``.
+
+  **Fixed**
+
+  - Fixed inclusion of OpenXR manifest asset in embedded layer AAR.
+  - Fixed an issue where controller switching would fail due to stale cached state.
+  - Fixed a bug where controller switching wasn't working correctly with MRTK3.
+  - Fixed an issue where session based state wasn't correctly clearing on ``xrDestroySession``.
+  - Fixed an issue where hands wouldn't reappear on subsequent play sessions after the first in Unreal.
+  - Fixed configuration variables state going stale by reloading config variables on creation of an ``XrInstance``.
+
+  **Known Issues**
+
+  - Aim ray visuals don't work correctly when using controller with ``Hand Tracking`` enabled in MRTK3.
+  - xrLocateSpace sometimes returns ``XR_ERROR_RUNTIME_FAILURE`` with Pico Streaming Assistant and SteamVR.
+  - Applications on Android API versions ``>29`` crash on resume from sleep.
+
+.. dropdown:: 1.6.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Support for the ``XR_EXT_hand_tracking_data_source`` extension. Currently only ``UNOBSTRUCTED`` is supported.
+    - Support for the ``XR_FB_hand_tracking_aim`` extension. The Dominant hand has to be set in the layer configuration file.
+    - The ability to query the blend mode for the latest frame to know whether an app is currently running in AR/MR or VR.
+    - The ability to switch between hands and controllers on a per hands basis for ``XR_EXT_hand_interaction``. Enabled via the flag ``feature_hand_interaction_controller_switching``.
+
+    **Changed**
+
+    - Reintroduced alpha limiting by default for more stable extrapolation at the cost of latency.
+    - Removed the alpha limit when in MR/AR applications as perceived latency is significantly higher when the user can see their hands.
+    - Decoupled HMD tracked state from hand tracked state.
+    - Adjusted feature flags to enable ``XR_EXT_hand_interaction``.
+
+    **Fixed**
+
+    - Incorrect pinch pose orientation for the right hand.
+    - Added missing validity check on velocities for ``XR_EXT_hand_tracking``.
+    - Fixed logging out subaction paths when they were (validly) set to ``XR_NULL_PATH``.
+
+.. dropdown:: 1.5.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Beta support for the extension ``XR_EXT_hand_interaction``, ``XR_MSFT_hand_interaction`` and ``XR_EXT_palm_pose`` behind the flag ``ULTRALEAP_OPENXR_force_enable_hand_interaction``.
+    - Missing stream output operator for ease of logging ``XrHandEXT``.
+
+    **Changed**
+
+    - Updated Android Dependencies.
+
+    **Fixed**
+
+    - Resolved an issue where the joints tracked bit was getting unset incorrectly.
+    - Removed workaround for runtimes incorrectly raising an error on unrecognised extension structures.
+    - Fixed palm wobble introduced by palm filter.
+    - A regression in palm joint radius and correction for metacarpal joint radii.
+
+    **Known Issues**
+
+    - Tracked bits being unset in tracked scenario on SteamVR via Pico Link.
+    - Over-extrapolation leading to rubber banding effect when hand speed is greatly reduced in a small time period.
+
+.. dropdown:: 1.4.4
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Changed**
+
+    - Added logging support for additional hardware.
+
+.. dropdown:: 1.4.3
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - Invalid data could be returned of only a single tracking frame was available.
+    - The layer could fail to load if the configuration JSON was invalid.
+
+    **Changed**
+
+    - Limited device transform usage to only Android as this is the only platform where it is currently enabled.
+    - Lowered synthetic frame threshold to reduce hand run-off.
+
+.. dropdown:: 1.4.2
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - Palm width was too large, it now correctly matches the OpenXR specification.
+    - Logging levels below INFO were being compiled out on release builds, debug should have been included for optional 
+      enablement from the configuration file/environment variables.
+    - Issue with consistent hand dropouts on some platforms.
+
+.. dropdown:: 1.4.1
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Support for querying the name and version of the underlying runtime.
+
+    **Changed**
+
+    - Alpha limiter to use easing instead of hard cut-off (Enabled by default).
+
+    **Fixed**
+
+    - Quest 2 hand swim by reintroducing fixed alpha limit.
+
+    **Known Issues**
+
+    - Palm orientation is incorrect whilst examining joint gizmos via Stereo Kit.
+
+.. dropdown:: 1.4.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Add support for linear and angular velocity for each joint.
+    - Add filtering to improve latency and jitter.
+    - Add support for setting tracker offset and logging level with a configuration file.
+    - Add support for capturing analytics about the OpenXR and Engine version in use. These are only reported if analytics
+      has been enabled in the Ultraleap Tracking Control Panel.
+    - Added mechanism to reduce hand swim under quick head movement.
+    - Added some internal caching to improve performance when hand-tracking is requested every frame.
+
+    **Changed**
+
+    - Updated joint radii to sensible defaults rather than direct values through from LeapC. This should result in more
+      natural looking hands if, the joint radii were used for synthetic hands.
+    - Changed frame selection to result in more stable extrapolations.
+    - Adjusted ``LocateHandJoints`` to use the first hand-frame as soon as it's available, instead of waiting for two to
+      extrapolate
+    - Adjusted Finger extrapolation to avoid stretching.
+    - Reduced default logging level on Android.
+
+    **Fixed**
+
+    - Update the palm and wrist poses to match the OpenXR specification rather than the original LeapC poses.
+    - Fixed an issue with ``xrGetInstanceProcAddr`` incorrectly returning ``XR_ERROR_HANDLE_INVALID`` when called with a ``NULL``
+      ``XrInstance`` for ``xrInitializeLoaderKHR``.
+
+    **Known Issues**
+
+    - Quest 2 on PC has increased hand-swim due to lower temporal accuracy in the head-position.
+
+.. dropdown:: 1.3.2
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - Use the correct method to access calibration information for hand-tracking alignment.
+
+.. dropdown:: 1.3.1
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - Fixed an issue where tracking would not resume when a device was disconnected and reconnected.
+
+.. dropdown:: 1.3.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Add support for XR_ULTRALEAP_hand_tracking_forearm with support for tracking and reporting the elbow joint.
+    - Add support for Linux (x64).
+
+    **Changed**
+
+    - Updated to OpenXR 1.0.23.
+
+    **Known Issues**
+
+    - Hands may experience jitter when the head position is rapidly changed on SteamVR & Monado on Linux.
+
+.. dropdown:: 1.2.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Changed**
+
+    - Moved the logging location from ``%PROGRAMFILES%\Ultraleap\OpenXR\Logs`` to ``%PROGRAMDATA%\Ultraleap\OpenXR``.
+    - Removed option to override logging location (``ULTRALEAP_OPENXR_LOG_PATH``).
+
+    **Fixed**
+
+    - Fixed reporting of palm velocity information.
+    - Fixed an issues with extension negotiation with the runtime when more than one extension was requested that depended
+      on another API layer implemented extension.
+    - Fixed an issue where there would be incorrect error messages in the log indicating incorrect device calibration or a 
+      faulty USB connection, when used with some versions of the Ultraleap Tracking Service.
+    - Fixed an issue where empty hand would be returned when the requesting joints for a timestamp before the most recent 
+      frame.
+
+.. dropdown:: 1.1.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Support for Qualcomm XR2 based Android systems.
+
+    **Changed**
+
+    - ``isTrackingSupported`` is now reported based on if the Ultraleap Tracking Service is installed and running on the
+      system, as opposed to attempting a connection to the service to avoid startup delay and possible timeouts.
+
+    **Fixed**
+
+    - Fixed an issue which could cause a hang when hand-trackers were created and destroyed very rapidly, such as
+      during the ``XR_EXT_hand_tracking`` conformance test.
+    - Fixed an issue where permissions were not always correctly set on the logs directory during installation.
+
+    **Known Issues**
+
+    - This API layer does not currently report the linear or angular velocity of the hand joints other than the palm. If
+      requested, the XrHandJointVelocitiesEXT structure will be returned with the validity bits unset.
+      `Issue #1 <https://github.com/ultraleap/OpenXRHandTracking/issues/1>`_
+
+    - The underlying Ultraleap service currently return the same joint radius for all joints.
+      `Issue #2 <https://github.com/ultraleap/OpenXRHandTracking/issues/2>`_
+
+
+.. dropdown:: 1.0.1
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Changed**
+
+    - Updated Ultraleap tracking client to v5.3.0.
+    - Increase timeout on initial tracking service connection, to increase tolerance to slower tracking server response.
+
+    **Fixed**
+
+    - Fixed an issue which could cause a hang when all created hand-trackers were destroyed.
+    - Fixed an issue with error handling that could cause tracking to stop working if the first tracking event was an error.
+
+    **Known Issues**
+
+    - This API layer does not currently report the linear or angular velocity of the hand joints other than the palm. If
+      requested, the XrHandJointVelocitiesEXT structure will be returned with the validity bits unset.
+      `Issue #1 <https://github.com/ultraleap/OpenXRHandTracking/issues/1>`_
+
+    - The underlying Ultraleap service currently return the same joint radius for all joints.
+      `Issue #2 <https://github.com/ultraleap/OpenXRHandTracking/issues/2>`_
+
+    - ``XrSystemHandTrackingPropertiesEXT.supportsHandTracking`` will always return ``XR_TRUE`` when this API layer is enabled,
+      regardless of if a device is connected. ``XrHandJointLocationsEXT.isActive`` indicates if hand-tracking information is
+      currently available for the requested hand-tracker.
+      `Issue #3 <https://github.com/ultraleap/OpenXRHandTracking/issues/3>`_
+
+
+.. dropdown:: 1.0.0
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - The API layer will now disable its function intercepts if the ``XR_EXT_hand_tracking`` extension is not requested by the
+      application `Issue #14 <https://github.com/ultraleap/OpenXRHandTracking/issues/14>`_.
+    - Fixed issue causing non-conformance when running
+      `OpenXR Conformance Test Suite <https://github.com/KhronosGroup/OpenXR-CTS>`_.
+
+    **Known Issues**
+
+    - This API layer does not currently report the linear or angular velocity of the hand joints other than the palm. If
+      requested, the XrHandJointVelocitiesEXT structure will be returned with the validity bits unset.
+      `Issue #1 <https://github.com/ultraleap/OpenXRHandTracking/issues/1>`_
+
+    - The underlying Ultraleap service currently return the same joint radius for all joints.
+      `Issue #2 <https://github.com/ultraleap/OpenXRHandTracking/issues/2>`_
+
+    - ``XrSystemHandTrackingPropertiesEXT.supportsHandTracking`` will always return ``XR_TRUE`` when this API layer is enabled,
+      regardless of if a device is connected. ``XrHandJointLocationsEXT.isActive`` indicates if hand-tracking information is
+      currently available for the requested hand-tracker.
+      `Issue #3 <https://github.com/ultraleap/OpenXRHandTracking/issues/3>`_
+
+
+.. dropdown:: 1.0.0-beta.4
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Fixed**
+
+    - Fixed issue with API layer initialisation when more than one API layer is enabled. This would result in a crash if
+      this API layer was enabled first.
+    - Fixed issue with reporting the layer's API layer version information.
+
+
+.. dropdown:: 1.0.0-beta.3
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Signed Windows installer to replace the previous PowerShell based installer. Installation will remove previous 
+      versions of the API Layer.
+    - Added support for the ``XR_EXT_hand_joints_motion_range`` extension. Since Ultraleap hand-trackers are optical-based
+      systems, the returned hand pose is always based on the unobstructed joint locations.
+    - Added support for the linear velocity reporting of the palm joint (``XR_HAND_JOINT_PALM_EXT``).
+
+    **Changed**
+
+    - Updated Ultraleap tracking client to v5.2.0.
+    - Updated OpenXR SDK to v1.0.20.
+    - OpenXR API layer DLL is now signed.
+    - Use ``XR_KHR_win32_convert_performance_counter_time`` or ``XR_KHR_convert_timespec_time`` extensions for accurate internal
+      timestamp conversions.
+    - Removed configurations variables ``ULTRALEAP_OPENXR_TIME_WARP_HEAD`` and ``ULTRALEAP_OPENXR_TIME_WARP_VIEW`` as they are
+      no longer required now that `Issue #6 <https://github.com/ultraleap/OpenXRHandTracking/issues/6>`_ is resolved.
+    - Removed 32-bit support as the Ultraleap tracking client v5 doesn't currently have support for Windows 32-bit.
+
+    **Fixed**
+
+    - Correct wrist position (was incorrectly reporting the elbow position as the wrist position).
+      `Issue #10 <https://github.com/ultraleap/OpenXRHandTracking/issues/10>`_
+    - Fixed temporal warping so that the user's hands no longer move when held static and the user's head is rapidly
+      moved. `Issue #6 <https://github.com/ultraleap/OpenXRHandTracking/issues/6>`_
+
+
+.. dropdown:: 1.0.0-beta.2
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - The uninstaller is included with the install as ``UninstallOpenXR.cmd`` to allow easy uninstallation. An entry is also
+      added to Windows add/remove programs list.
+    - The License, Readme, Changelog and version information are all now included in an installation for easy reference.
+    - Added log file output (to complement existing ``XR_EXT_debug_utils`` support) only warnings and errors are logged by
+      default, but this can be controlled with the ``ULTRALEAP_OPENXR_DEBUG`` environment variable.
+    - Clarified in the Readme that this is an implicit OpenXR api layer, and does not need explicitly enabling.
+
+    **Changed**
+
+    - Removed SteamVR <1.14 specific workaround for ``xrGetSystemProperties`` extension support.
+      `Issue #5 <https://github.com/ultraleap/OpenXRHandTracking/issues/5>`_
+
+    **Fixed**
+
+    - Fixed support for UWP/AppContainer applications, including WebXR, when used in conjunction with the
+      `Ultraleap 4.1 Tracking SDK <https://developer-archive.leapmotion.com/downloads/external/v4-1-hand-tracking/windows?version=4.1.0>`_.
+      `Issue #8 <https://github.com/ultraleap/OpenXRHandTracking/issues/8>`_
+
+
+.. dropdown:: 1.0.0-beta.1
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    **Added**
+
+    - Initial support for the ``XR_EXT_hand_tracking`` extension

@@ -1,0 +1,6 @@
+Class Leap::UltraleapSettings
+=============================
+
+.. doxygenclass:: Leap::UltraleapSettings
+   :project: unity
+   :members: 

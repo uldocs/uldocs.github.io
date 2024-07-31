@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::ContactHand::IgnoreData
+==================================================
+
+.. doxygenclass:: Leap::PhysicalHands::ContactHand::IgnoreData
+   :project: unity
+   :members: 

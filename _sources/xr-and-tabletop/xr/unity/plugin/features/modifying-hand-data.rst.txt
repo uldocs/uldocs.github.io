@@ -1,0 +1,289 @@
+***********************************
+Modifying Hand Data
+***********************************
+
+.. |PostProcessProvider| re.. |PostProcessProvider| replace:: :cs:class:`PostProcessProvider <Leap.PostProcessProvider>`
+.. |ProjectionPostProcessProvider| replace:: :cs:class:`ProjectionPostProcessProvider <Leap.Examples.ProjectionPostProcessProvider>`
+.. |InertiaPostProcessProvider| replace:: :cs:class:`InertiaPostProcessProvider <Leap.Examples.InertiaPostProcessProvider>`
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> 
+        When building an application, there may be times when you want your virtual hand to do something that your real hands cannot. 
+        For instance:
+
+        <ul>
+            <li>Reach into the virtual environment to pick up an object that would be out of reach normally.</li>
+            <li>To have your real hand movements connect to robotic hand visuals that linearly interpolate.</li>
+            <li>Pose the virtual hand around virtual objects.</li>
+        </ul>
+        </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scene can be found in:
+
+* Assets/Samples/Ultraleap Tracking/x.x.x/XR Examples/1. Basics/3. Manipulating Hand Data.unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Getting started with Modifying Hand Data
+-----------------------------------------------
+
+This page will show you how incoming tracking data can be manipulated before hand visuals are displayed. This is a powerful benefit when wanting to customize how hand tracking works in your project. 
+
+.. note:: For this example, we assume that you have just finished the :doc:`Your First Project Guide<../../getting-started/your-first-project>`.
+    
+    It also assumes that you have an understanding of c# code.
+
+
+1. This tutorial is going to teach you how to create your own :cs:class:`PostProcessProvider <Leap.PostProcessProvider>` to project your hands from your body. 
+
+So the first step is to create a new script. 
+
+.. note:: If you plan on doing more with your hands than is described in this demo, its worth familiarising yourself with functions in :cs:class:`PostProcessProvider <Leap.PostProcessProvider>`
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/create-new-script.png
+    :width: 60%
+    :align: center
+
+2. You can delete the base Start and Update functions and inherit from the :cs:class:`PostProcessProvider <Leap.PostProcessProvider>` class. Your script should now look like the image below (with your chosen name instead of "TutorialPostProcessProvider").
+    
+.. note:: If you are getting errors which say ":cs:class:`PostProcessProvider <Leap.PostProcessProvider>` cannot be found", make sure to include "using Leap;" at the top of the script.
+
+::
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using Leap;
+
+    public class TutorialPostProcessProvider : PostProcessProvider
+    {
+
+    }
+
+3. Next we need to add "using Leap;" to the top of the script then override the ProcessFrame function from :cs:class:`PostProcessProvider <Leap.PostProcessProvider>`. You do this as shown below.
+
+::
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using Leap;
+
+    public class TutorialPostProcessProvider : PostProcessProvider
+    {
+        public override void ProcessFrame(ref Frame inputFrame)
+        {
+        }
+    }
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+**At this point, your actual use case will greatly dictate how you manipulate the data given to you via the "inputFrame" reference. This holds all data about the hands in the latest frame. For more information on how to use this data, see** :doc:`Scripting Fundamentals <./scripting-fundamentals>`
+
+.. note:: If you are comfortable manipulating your own data, skip to :ref:`step 8 <step_8>`.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+4. Add some private variables to the script and serialize them so they are visible in the inspector.
+
+::
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using Leap;
+
+    public class TutorialPostProcessProvider : PostProcessProvider
+    {
+        [SerializeField]
+        private Transform headTransform;
+
+        [SerializeField]
+        private float projectionScale = 10f;
+
+        [SerializeField]
+        private float handMergeDistance = 0.35f;
+
+        public override void ProcessFrame(ref Frame inputFrame)
+        {
+        }
+    }
+
+5. Next, get the position of the head and calculate the basis of the shoulders inside the ProcessFrame function. This will allow us to project our hand based on the shoulder position.
+
+::
+
+    public override void ProcessFrame(ref Frame inputFrame)
+    {
+        // Calculate the position of the head and the basis to calculate shoulder position.
+        if (headTransform == null) 
+        { 
+            headTransform = Camera.main.transform; 
+        }
+
+        Vector3 headPos = headTransform.position;
+
+        var shoulderBasis = Quaternion.LookRotation(
+          Vector3.ProjectOnPlane(headTransform.forward, Vector3.up),
+          Vector3.up);
+    }
+
+6. Underneath this, within ProcessFrame, loop through all hands in the inputFrame and calculate where that hands shoulder is.
+
+.. note:: We are using some magic numbers here but these are the numbers we have found best represent where the shoulder is. 
+    
+    You can change these numbers but you might get weird and unexpected results.
+
+::
+
+    foreach (var hand in inputFrame.Hands)
+    {
+        // Approximate shoulder position with magic values.
+        Vector3 shoulderPos = headPos
+                                + (shoulderBasis * (new Vector3(0f, -0.13f, -0.1f)
+                                + Vector3.left * 0.15f * (hand.IsLeft ? 1f : -1f)));
+    }
+
+7. We then process the hand data, calculating how far from the shoulder the hand is and thus, how far our projected hands should travel from their actual location.
+
+::
+
+    foreach (var hand in inputFrame.Hands)
+    {
+        // Approximate shoulder position with magic values.
+        Vector3 shoulderPos = headPos
+                                + (shoulderBasis * (new Vector3(0f, -0.13f, -0.1f)
+                                + Vector3.left * 0.15f * (hand.IsLeft ? 1f : -1f)));
+
+        // Calculate the projection of the hand if it extends beyond the
+        // handMergeDistance.
+        Vector3 shoulderToHand = hand.PalmPosition - shoulderPos;
+        float handShoulderDist = shoulderToHand.magnitude;
+        float projectionDistance = Mathf.Max(0f, handShoulderDist - handMergeDistance);
+        float projectionAmount = 1f + (projectionDistance * projectionScale);
+    }
+
+.. _step_8:
+
+8. The final step in code is to set the position of the hand in the frame. We do this by calling "hand.SetTransform()" (which takes in a vector3 for hand position and a Quaternion for hand rotation) at the bottom of our ProcessFrame function. 
+
+::
+
+    hand.SetTransform(shoulderPos + shoulderToHand * projectionAmount,
+        hand.Rotation);
+
+
+If you have been following all steps up until this point, your script should look similar to the one in the dropdown below.
+
+.. dropdown:: The Full Script
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+
+    ::
+
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using Leap;
+
+        public class TutorialPostProcessProvider : PostProcessProvider
+        {
+            [SerializeField]
+            private Transform headTransform;
+
+            [SerializeField]
+            private float projectionScale = 10f;
+
+            [SerializeField]
+            private float handMergeDistance = 0.35f;
+
+            public override void ProcessFrame(ref Frame inputFrame)
+            {
+                // Calculate the position of the head and the basis to calculate shoulder position.
+                if (headTransform == null) 
+                { 
+                    headTransform = Camera.main.transform; 
+                }
+
+                Vector3 headPos = headTransform.position;
+
+                var shoulderBasis = Quaternion.LookRotation(
+                Vector3.ProjectOnPlane(headTransform.forward, Vector3.up),
+                Vector3.up);
+
+                foreach (var hand in inputFrame.Hands)
+                {
+                    // Approximate shoulder position with magic values.
+                    Vector3 shoulderPos = headPos
+                                        + (shoulderBasis * (new Vector3(0f, -0.13f, -0.1f)
+                                        + Vector3.left * 0.15f * (hand.IsLeft ? 1f : -1f)));
+
+                    // Calculate the projection of the hand if it extends beyond the
+                    // handMergeDistance.
+                    Vector3 shoulderToHand = hand.PalmPosition - shoulderPos;
+                    float handShoulderDist = shoulderToHand.magnitude;
+                    float projectionDistance = Mathf.Max(0f, handShoulderDist - handMergeDistance);
+                    float projectionAmount = 1f + (projectionDistance * projectionScale);
+
+                    hand.SetTransform(shoulderPos + shoulderToHand * projectionAmount,
+                                    hand.Rotation);
+                }
+            }
+        }
+
+
+
+9. Add your new script to a new object inside your scene and add capsule hands as children of your new :cs:class:`PostProcessProvider <Leap.PostProcessProvider>` 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/add-hands-to-post-process-provider.png
+    :width: 60%
+    :align: center
+
+Both capsule hands should have assigned your new :cs:class:`PostProcessProvider <Leap.PostProcessProvider>` to their :cs:class:`LeapProvider <Leap.LeapProvider>` field. If they have not, assign it now.
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/verify-post-process-provider-on-hands.png
+        :width: 60%
+        :align: center
+
+
+10. Finally, assign the values in your leap provider objects hierarchy. 
+
+    * Assign your :cs:class:`LeapProviderManager <Leap.XRLeapProviderManager>` to "Input Leap Provider"
+    * Assign the Main Camera (Inside XRRig > Camera Offset) to "Head Transform"
+
+With that taken care of, you should see two sets of hands in the scene, offset from one another and you are done.
+Press Play and try out your new projected hands!
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/post-process-provider-success.png
+    :width: 100%
+    :align: center
+
+    
+----------------------------------------------------------------------------------------------------------------------------------

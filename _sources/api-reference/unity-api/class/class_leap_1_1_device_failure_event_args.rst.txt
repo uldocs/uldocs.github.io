@@ -1,0 +1,6 @@
+Class Leap::DeviceFailureEventArgs
+==================================
+
+.. doxygenclass:: Leap::DeviceFailureEventArgs
+   :project: unity
+   :members: 

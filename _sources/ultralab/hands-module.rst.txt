@@ -1,0 +1,74 @@
+:hide-toc:
+
+****************************************
+How To Get Started With The Hands Module
+****************************************
+
+.. youtube:: JTnSuwcfcWc
+    :width: 750
+
+We recently released our new Hands Module, a Unity module that helps you bind our tracking data to your own hand assets. 
+
+You can now import customized hand models and have them work with our world-leading hand tracking. 
+
+You can also iterate between whatever modelling package you're using (for example Autodesk Maya or Blender) and the live hand models in Unity. 
+
+.. list-table:: 
+        
+        * - .. image:: ../img/ultralab/skeleton-hands.gif
+              :alt: Skeleton hands
+          - .. image:: ../img/ultralab/outline-hands.gif
+              :alt: Outline hands
+          - .. image:: ../img/ultralab/ghost-hands.gif
+              :alt: Ghost hands
+
+Don’t have your own hand models? We have optimized and rigged hand models you can choose from. Very handy.
+
+Follow the tutorial video or check out our step-by-step guide below to get started.
+
+10 Steps To Getting Started With The Hands Module
+#################################################
+
+1. Import the Unity Module Package into your Unity project. 
+
+Download `Unity Modules Package 4.8.0 <https://leap2.ultraleap.com/xr-developer-tools/>`_ to get the latest releases of:
+
+* Our Core Unity Module
+* Hands Module
+* Interaction Engine
+
+2. Add the LeapHandController prefab to the scene.
+
+3. Add a hand model manager component and create a new field in the model pool of the hand model manager.
+
+4. Add a left and right hand 3D Model under the hand model manager GameObject. You can invert the scale of a left hand model on the x-axis to make it look like a right hand, and vice versa.
+
+5. Add a hand binder component to each of the hand models.
+
+6. Drag and drop the left and right hand binder components to their respective fields in the hand model manager. Be sure to tick the **Is Enabled** box.
+
+7. Press **Bind Hand** on both the left and right hands.
+
+8. You can also drag and drop a GameObject from the scene into the slots on the hand binder. The dots on the hand turn green once they are bound.
+
+9. Press the button to **Calculate Rotation Offsets**.
+
+10. That’s it! Your hands are now bound with Leap data.
+
+Setting Up Your Camera Module
+#############################
+
+The tutorial assumes you’ve got your Ultraleap camera module (either a `Leap Motion Controller <https://www.ultraleap.com/product/leap-motion-controller/>`_ or `Stereo IR 170 <https://www.ultraleap.com/product/stereo-ir-170/>`_) up and running. 
+
+If not, check out our set up guide below:
+
+.. youtube:: B4ldraNelkk
+    :width: 750
+
+----
+
+Want to stay in the loop on the latest Ultraleap updates? Sign up to our newsletter `here <https://www.ultraleap.com/newsletter-sign-up/>`_.
+
+----
+
+We welcome feedback on our products and services. `Contact us <https://www.ultraleap.com/contact-us/>`_.

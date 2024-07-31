@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONNECTION_MESSAGE
+============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONNECTION_MESSAGE
+   :project: unity
+   :members: 

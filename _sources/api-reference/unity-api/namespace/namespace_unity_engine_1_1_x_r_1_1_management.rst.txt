@@ -1,0 +1,6 @@
+Namespace UnityEngine::XR::Management
+=====================================
+
+.. doxygennamespace:: UnityEngine::XR::Management
+   :project: unity
+   :no-link: 

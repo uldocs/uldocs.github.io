@@ -1,0 +1,6 @@
+Class Leap::Attributes::EnumFlags
+=================================
+
+.. doxygenclass:: Leap::Attributes::EnumFlags
+   :project: unity
+   :members: 

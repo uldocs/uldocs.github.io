@@ -1,0 +1,6 @@
+Struct LeapInternal::MemoryManager::ActiveMemoryInfo
+====================================================
+
+.. doxygenstruct:: LeapInternal::MemoryManager::ActiveMemoryInfo
+   :project: unity
+   :members: 

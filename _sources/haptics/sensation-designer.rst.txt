@@ -1,0 +1,147 @@
+:hide-toc:
+
+****************************************
+Create Haptics with Sensation Designer
+****************************************
+
+Sensation Designer is a powerful tool that empowers you to craft immersive and engaging mid-air haptic feedback sensations that defy conventional touch boundaries. Whether you are a seasoned designer or an aspiring enthusiast, this step-by-step guide will walk you through the process of bringing your haptic sensations to life. 
+
+.. figure:: ../img/haptics/sensation-designer.gif
+    :width: 80%
+    :align: center
+
+Hapticons are a way to convey meaning via a haptic metaphor. Here a haptic line projected on the hand is used to represent the temperature rising and falling in a thermometer. The ”thermometer” haptic metaphor can then be used as a hapticon in an automotive setting for a feature like cabin temperature control. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Overview of the user interface
+#################################
+
+'Interact' View
+------
+
+The Interact View provides a collection of interaction UI component examples combined with gesture control & mid-air haptics. These serve as a valuable reference and source of inspiration for prototyping effective haptic interactions.
+
+.. figure:: ../img/haptics/Interact-View.jpg
+    :width: 70%
+    :align: center
+
+1.  Interaction Library
+
+    The Interaction Library offers interaction design examples for reference. These examples serve as a starting point and can help you    understand the different possibilities. By exploring these examples you can gain insights into designing effective mid-air haptic interactions.
+
+2.  Interact Properties
+
+    This panel gives you control over various design parameters for creating custom haptic interactions. This panel allows you to augment each steps of the interaction with haptic sensations and audio feedback. You can create and tweak haptic sensations in the design view of the Sensation Designer.
+
+3.  Saving Interactions
+
+    Interact view supports saving your interaction designs, storing parameter values in a JSON file format. This allows you to preserve your designs and easily share them with others.
+
+--
+
+'Design' View
+------
+
+The Design View provides more granular control over haptic sensations and includes 3 key elements
+
+**Canvas**: 
+
+The canvas provides a visual workspace where you can design custom haptic sensations.
+
+.. figure:: ../img/haptics/Sensation_Designer_Canvas.png
+    :width: 70%
+    :align: center
+
+**Timeline**: 
+
+The timeline allows you to define the duration of the pattern, as well as its intensity and motion over time. These can further be tweaked by overlaying with the audio waveform.
+
+.. figure:: ../img/haptics/Sensation_Designer_Timeline.png
+    :width: 70%
+    :align: center
+
+**Design Tools**: 
+
+The Design Tools allow you to adjust the shape, size, position, and intensity of the haptic brush.
+
+1.   **Brush panel**: The brush is the core element of a haptic sensation. In this panel you can chose between static brushes (circle, line) or dynamic brushes (dial, rotor) and adjust their parameters (size, speed).
+
+.. figure:: ../img/haptics/Brush-panel.png
+    :width: 30%
+    :align: center
+
+2.   **Node panel**: A haptic sensation is characterised by the haptic brush motion over time. In this panel, you can precisely control the position and size of the brush at each key instant. The values set in this panel are reflected on the canvas and timeline
+
+.. figure:: ../img/haptics/Node-panel.png
+    :width: 30%
+    :align: center
+
+3.  **Intensity panel**: The brush intensity (how strong it is perceived) can add an additional expressivity element to your haptic sensation. In this panel you can accurately set what the brush intensity will be at each key instant. The values set in this panel are reflected on the timeline.
+
+.. figure:: ../img/haptics/Intensity-panel.png
+    :width: 30%
+    :align: center
+
+4.  **Sequence panel**: The sequence panel enables users to seamlessly connect and chain together two or more haptic sensations. This feature empowers users to generate more complex and captivating sensations.
+
+.. figure:: ../img/haptics/Sequence-panel.png
+    :width: 30%
+    :align: center
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+How to create your own sensation
+#################################
+
+Step 1
+------
+
+Let’s create a new sensation and call it thermometer. It will use a line brush, which represents the temperature level.
+
+.. figure:: ../img/haptics/designer-step1.png
+    :width: 100%
+    :align: center
+
+1. Click the bin to remove existing content and start a new design
+2. Rename your sensation “Thermometer”
+3. Place a node by left-clicking the middle of the canvas
+4. Go into the brush panel
+5. Select a ‘line’ brush preset and set the length to 4cm
+
+Step 2
+------
+
+Let’s create a path which moves our brush up, then down past the starting point before heading back up again to that same point.
+
+.. figure:: ../img/haptics/designer-step2.png
+    :width: 100%
+    :align: center
+
+1. Using left click, place node (a), (b) and (c) on the canvas. These describe the brush motion
+2. Select the spatial node panel
+3. Refine the position of the nodes using the table
+
+Step 3
+------
+
+Let’s anchor the sensation to the index finger, so we ensure the haptics sensation is always targeting the appropriate part of the hand. 
+
+.. figure:: ../img/haptics/designer-step3.png
+    :width: 100%
+    :align: center
+
+1. Click on the target icon to open the haptic fixation pop-up window
+2. Select index finger so the haptics move along the index finger
+3. Close the haptic fixation pop-up window
+4. Save your design. It will automatically be added the haptic library on the left
+5. Press play to experience your newly designed thermometer hapticon
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Feedback and support
+##################
+
+Join our community on `Discord <https://discord.gg/3VCndThqxS>`_ or get in touch via our `contact us form <https://support.leapmotion.com/hc/en-us/requests/new>`_.
+
+`Back to top <#top>`_

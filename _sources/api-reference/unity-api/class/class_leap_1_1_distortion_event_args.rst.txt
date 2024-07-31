@@ -1,0 +1,6 @@
+Class Leap::DistortionEventArgs
+===============================
+
+.. doxygenclass:: Leap::DistortionEventArgs
+   :project: unity
+   :members: 

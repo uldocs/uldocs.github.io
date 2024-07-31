@@ -1,0 +1,35 @@
+:hide-toc:
+
+**************************************************
+Ultraleap Gesture Technology Powered by BrightSign
+**************************************************
+
+Deploy Ultraleap’s gesture technology on BrightSign’s XC5 series and XT1144 media players.
+
+Ultraleap’s solution can enable gesture interactivity – such as select, scroll and swipe – on a digital surface of any size.
+
+Use these pages to learn how to install and configure TouchFree and create a BrightAuthor presentation.
+
+The technology
+==============
+
+* `Ultraleap 3Di hand tracking camera <https://www.ultraleap.com/product/ultraleap-3di/>`_
+* `Ultraleap TouchFree extensions <https://leap2.ultraleap.com/touchfree/>`_ for the XC5 series and XT1144 including Ultraleap’s 5th generation, best-in-class hand tracking software
+
+Features
+========
+
+• Easy installation, setup, and configuration
+• Multiple camera positions supported
+• Interactive distance of 1m / ~40” between user and camera module
+• A large range of screen sizes accommodated
+• For 1:1 interactivity: up to a 42” screen in portrait
+• For non 1:1 interactivity: any size screen can be supported
+• Comprehensive documentation and design guidelines
+• Software integration packages with examples for quick adoption
+
+.. toctree::
+    :caption: Table of Contents
+
+    Install and Configure TouchFree <setup.rst>
+    Create a BrightAuthor:connected Presentation <create.rst>

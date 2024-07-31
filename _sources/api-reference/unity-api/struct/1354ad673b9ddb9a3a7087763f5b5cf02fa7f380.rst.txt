@@ -1,0 +1,6 @@
+Struct LeapInternal::LeapC::LEAP_SERVER_STATUS_DEVICE
+=====================================================
+
+.. doxygenstruct:: LeapInternal::LeapC::LEAP_SERVER_STATUS_DEVICE
+   :project: unity
+   :members: 

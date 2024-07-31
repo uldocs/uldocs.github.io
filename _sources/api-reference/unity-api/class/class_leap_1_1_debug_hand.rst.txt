@@ -1,0 +1,6 @@
+Class Leap::DebugHand
+=====================
+
+.. doxygenclass:: Leap::DebugHand
+   :project: unity
+   :members: 

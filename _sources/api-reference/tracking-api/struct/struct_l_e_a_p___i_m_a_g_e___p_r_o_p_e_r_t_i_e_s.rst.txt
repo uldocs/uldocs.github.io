@@ -1,0 +1,6 @@
+Struct LEAP_IMAGE_PROPERTIES
+============================
+
+.. doxygenstruct:: LEAP_IMAGE_PROPERTIES
+   :project: tracking
+   :members:

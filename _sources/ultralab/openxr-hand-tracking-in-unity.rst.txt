@@ -1,0 +1,124 @@
+:hide-toc:
+
+*****************************
+OpenXR hand tracking in Unity
+*****************************
+
+*Robert Blenkinsopp, Director, Product Engineering*
+
+.. note:: We now have full documentation for both our `OpenXR API Layer <https://docs.ultraleap.com/openxr/>`_ and using `OpenXR with hand tracking in Unity <https://docs.ultraleap.com/unity-api/OpenXR%20with%20Unity/index.html>`_. These supersede this blog post. Please visit those pages for more up-to-date information. 
+
+`Unity's OpenXR plugin <https://docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html>`_ really opens up the space for developers and consumers as hand tracked applications can be made without being tied to one platform.
+
+This blog shows you how to set it up and try for yourself using Ultraleap Tracking for OpenXR in Unity.
+
+.. image:: ../img/ultralab/open_xr/simple_openxr_gif.gif
+    :alt: Block hands moving in VR
+
+Getting started
+###############
+
+Setting up an OpenXR Scene that works with Ultraleap's hand tracking requires following a few steps. The first sections detail how to set up a general OpenXR scene.
+
+First of all there are some basic requirements to get started:
+
+
+- `Unity 2020.3 LTS or later <https://unity3d.com/unity/qa/lts-releases?version=2020.3/>`_
+  
+- `Ultraleap OpenXR API Layer <https://github.com/ultraleap/OpenXRHandTracking>`_ installed for your target device
+  
+- `Ultraleap Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_ installed for your platform
+
+- An OpenXR runtime. Depending on your platform and XR hardware this could include:
+
+	- `Valve SteamVR <https://store.steampowered.com/news/app/250820/view/2396425843528787269/>`_
+
+	- `Oculus OpenXR <https://developer.oculus.com/documentation/native/pc/dg-openxr/>`_
+
+	- `Windows Mixed Reality <https://docs.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started/>`_
+
+If you don't have your `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_ setup already, visit our `setup guide <https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html>`_
+to get started.
+
+Setting up your scene in Unity
+##############################
+
+Initial setup and OpenXR Support
+==============================
+
+First we need to install the OpenXR Support in Unity. To do this:
+
+1. Open Unity.
+2. Set up a new 3D scene (the default 3D template is ideal for this).
+3. Select `Window -> Package Manager` from the menu. From the **Packages: In Project** drop down, select **Unity Registry**.
+4. Select **OpenXR Plugin** and click install. This will install the Unity OpenXR Support.
+5. If the input system warning dialog appears, select **No** for now. We will change this setting later to avoid multiple restarts.
+
+Platform-specific OpenXR Loader
+===============================
+
+Some platforms require a specific OpenXR Loader to be used.
+
+This has to also be enabled in Unity and is normally available as part of another package. Unity bundles the Oculus Loader as the
+`Oculus Quest Support <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.3/manual/features/oculusquest.html>`_ feature.
+
+Installing Ultraleap Packages from OpenUPM
+==========================================
+
+Ultraleap uses OpenUPM for easy installation of Unity packages. If this workflow doesn't work for you, other options are detailed in the Ultraleap Unity Plugin `readme <https://github.com/ultraleap/UnityPlugin>`_.
+
+1. Select `Edit -> Project Settings -> Package Manager` from the menu, and add a new scoped registry with the following details:
+   
+   * Name: :code:`Ultraleap`
+   * URL: :code:`https://package.openupm.com`
+   * Scope(s): :code:`com.ultraleap`
+
+2. Select `Window -> Package Manager` form the menu, and from the **Packages: In Project** drop-down, select **My Registries**.
+   
+3. Select and install the **Ultraleap Tracking OpenXR** package. This will also select and install the required **Ultraleap Tracking** package.
+
+Camera setup
+============
+
+The camera needs to be set up correctly to work in an XR context:
+
+1. Select the **Main Camera** object.
+2. Add a **Tracked Pose Driver** component. This will link the camera transform to the movement of your HMD.
+
+Enable OpenXR Hand Tracking Support
+===================================
+
+1. Select `Edit -> Project Settings -> XR Plug-in Management` from the menu, and select the **OpenXR** from the list of Plug-in Providers.
+2. Select `XR Plug-in Management -> OpenXR` from the side menu, and enable **Ultraleap Hand Tracking** from the list of OpenXR Feature Groups.
+3. Click the warning icon that appears next to the **Ultraleap Hand Tracking**, this will bring up the **OpenXR Project Validation** dialog.
+4. Resolve any of these issues, most can be automatically resolved using the **Fix** button, but some might require manual resolution depending on your setting/platform.
+5. When fixing a message about the "Active Input Handling not set to Both", the Edit button does not take you to the Exact place the edit is required, the important setting is `Edit -> Project Settings" then in the `Other Settings ->Configuration -> Active Input Handling` setting. This should be set to **Both**.
+
+Simple visualizing of the hand
+===========================
+
+The hand can be visualized simply using the **Hand Joint Visualizer** script. This draws spheres at all the joints of the hand:
+
+1. Create a new Empty **Game Object**.
+2. Add a **Hand Joint Visualizer** object to it.
+
+Using Ultraleap Hand Rendering
+==============================
+
+For more than visualizing, you can use the normal tools available in the **Ultraleap Tracking** package. To use these you can follow the instructions within those tools, but use a **Service Provider (OpenXR)** prefab instead of a **Service Provider (XR)**.
+
+An example showing this (Capsule Hands (OpenXR)) is available in the **Examples** package under **Samples** for the*Ultraleap Tracking OpenXR* package. This can be installed from the Package Manager as normal.
+
+
+---
+
+Want to stay in the loop on the latest Ultraleap updates? Sign up to our newsletter `here <https://www.ultraleap.com/newsletter-sign-up/>`_.
+
+--------
+
+We welcome feedback on our products and services. Check out our `support centre <https://support.leapmotion.com/hc/en-us>`_
+or `contact us <https://www.ultraleap.com/contact-us/>`_.
+
+-----------
+
+`Back to top <#top>`_

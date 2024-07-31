@@ -1,0 +1,6 @@
+Struct Leap::MetadataUtil::Telemetry
+====================================
+
+.. doxygenstruct:: Leap::MetadataUtil::Telemetry
+   :project: unity
+   :members: 

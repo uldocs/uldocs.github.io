@@ -1,0 +1,92 @@
+:hide-toc:
+
+***********
+LeapC Guide
+***********
+
+LeapC is a C API for accessing Ultraleap tracking data. You can use LeapC directly in a C program, but the library is
+primarily intended for creating bindings to higher-level languages. LeapC provides tracking data as simple structs
+without any convenience functions.
+
+System Requirements
+###################
+
+Please refer to the system requirements as indicated on the `download page <https://leap2.ultraleap.com/gemini-downloads/>`_.
+
+Overview
+########
+
+The LeapC library acts as the intermediary between your application and the Hand Tracking Service. LeapC implements a
+message queue to which it posts tracking, image, and status messages from the service. 
+
+Once a connection to the service is open, your application uses the :cpp:func:`LeapPollConnection()<LeapPollConnection>` function to drive an application-defined message pump. Each call to :cpp:func:`LeapPollConnection()<LeapPollConnection>` returns the next message, or blocks for the specified timeout period. 
+
+Your pump must service the message queue and handle the returned messages efficiently; messages are dropped if the queue becomes full.
+
+SDK folder contents
+*******************
+
+- `include` — LeapC API header files
+- `lib` — Built LeapC library files and CMake configurations
+- `samples` — A CMake project containing sample applications written in C
+
+The location of these depends on which OS you are using:
+
+Shared libraries
+================
+
++-----------------+----------------------------------------------------------------------------+
+| OS              | Path                                                                       |
++=================+============================================================================+
+| Windows         | ``C:\Program Files\Ultraleap\LeapSDK\lib\x64``                             |
++-----------------+----------------------------------------------------------------------------+
+| Ubuntu          | ``/usr/lib/ultraleap-hand-tracking-service``                               |
++-----------------+----------------------------------------------------------------------------+
+| Raspberry Pi OS | ``/opt/ultraleap/LeapSDK/lib``                                             |
++-----------------+----------------------------------------------------------------------------+
+| MacOS           | ``/Applications/Ultraleap Hand Tracking Service.app/Contents/LeapSDK/lib`` |
++-----------------+----------------------------------------------------------------------------+
+
+Header files
+============
+
++-----------------+--------------------------------------------------------------------------------+
+| OS              | Path                                                                           |
++=================+================================================================================+
+| Windows         | ``C:\Program Files\Ultraleap\LeapSDK\include``                                 |
++-----------------+--------------------------------------------------------------------------------+
+| Ubuntu          | ``/usr/include``                                                               |
++-----------------+--------------------------------------------------------------------------------+
+| Raspberry Pi OS | ``/opt/ultraleap/LeapSDK/include``                                             |
++-----------------+--------------------------------------------------------------------------------+
+| MacOS           | ``/Applications/Ultraleap Hand Tracking Service.app/Contents/LeapSDK/include`` |
++-----------------+--------------------------------------------------------------------------------+
+
+Samples
+=======
+
++-----------------+--------------------------------------------------------------------------------+
+| OS              | Path                                                                           |
++=================+================================================================================+
+| Windows         | ``C:\Program Files\Ultraleap\LeapSDK\samples``                                 |
++-----------------+--------------------------------------------------------------------------------+
+| Ubuntu          | ``/usr/share/doc/ultraleap-hand-tracking-service/samples``                     |
++-----------------+--------------------------------------------------------------------------------+
+| Raspberry Pi OS | ``/opt/ultraleap/LeapSDK/samples``                                             |
++-----------------+--------------------------------------------------------------------------------+
+| MacOS           | ``/Applications/Ultraleap Hand Tracking Service.app/Contents/LeapSDK/samples`` |
++-----------------+--------------------------------------------------------------------------------+
+
+--------
+
+.. toctree::
+    :caption: Table of Contents
+    :maxdepth: 1
+
+    Using LeapC <leapc-guide/using-leapc.rst>
+    Images <leapc-guide/images.rst>
+    Leap Concepts <leapc-guide/leap-concepts.rst>
+
+-----------
+
+`Back to top <#top>`_

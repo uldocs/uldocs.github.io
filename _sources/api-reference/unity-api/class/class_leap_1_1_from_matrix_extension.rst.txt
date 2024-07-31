@@ -1,0 +1,6 @@
+Class Leap::FromMatrixExtension
+===============================
+
+.. doxygenclass:: Leap::FromMatrixExtension
+   :project: unity
+   :members: 

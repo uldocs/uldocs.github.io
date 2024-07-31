@@ -1,0 +1,6 @@
+Class LeapInternal::ServerStatus
+================================
+
+.. doxygenclass:: LeapInternal::ServerStatus
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::PolicyEventArgs
+===========================
+
+.. doxygenclass:: Leap::PolicyEventArgs
+   :project: unity
+   :members: 

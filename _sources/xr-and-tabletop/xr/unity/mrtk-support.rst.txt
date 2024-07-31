@@ -1,0 +1,96 @@
+*****************************************
+MRTK Support
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> MRTK is a great collection of cross-input interactions that serve a broad range of use cases. </p>
+		<p> There are a few ways to use Ultraleap tracking with MRTK, this page will discuss how to implement each. </p>
+    </div>
+    <div class="image">
+	    <img src="../../../_images/mrtk3-banner.png" alt="an MRTK3 banner" width="320" height="240">
+    </div>
+  </div>
+  
+.. figure:: ../../../img/unity-api/mrtk3-banner.png
+    :width: 0
+    :height: 0
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Introduction
+---------------------------------
+
+MRTK is an interaction system build on top of Unity's XR Interaction Toolkit. `Read more about MRTK <https://github.com/MixedRealityToolkit/MixedRealityToolkit-Unity#mixed-reality-toolkit-for-unity>`_
+
+There are two approaches when using Ultraleap tracking with MRTK. This page will discuss how to use MRTK's Hand Interaction Example scene with Ultraleap hand tracking.
+
+	Please Select your chosen route from the tabs below:
+
+Setting up your project
+---------------------
+
+Prerequisites
+=============
+
+- A Unity Project that meets the `requirements <https://github.com/MixedRealityToolkit/MixedRealityToolkit-Unity#requirements>`_ for MRTK3
+- A project that uses MRTK3 (In this example we will use the `sample project <https://github.com/MixedRealityToolkit/MixedRealityToolkit-Unity>`_)
+- The Ultraleap Tracking Service installed
+
+.. tabbed:: Direct
+
+  .. Note:: Ensure the Ultraleap Tracking Plugin for Unity is imported (available `here <https://github.com/ultraleap/UnityPlugin#ultraleap-unity-plugin>`_)
+
+  1. Ensure the Ultraleap (Non-OpenXR) Subsystem is enabled for MRTK
+
+  .. figure:: ../../../img/unity-api/mrtk-settings-ul.png
+      :width: 80%
+      :align: center
+
+  2. Run the HandInteractionExamples scene to see hands tracking and interactions occurring
+
+.. tabbed:: OpenXR
+
+  .. Note:: Ensure you have an active OpenXR Runtime
+
+  1. Ensure the OpenXR Subsystem is enabled for MRTK
+
+  .. figure:: ../../../img/unity-api/mrtk-settings-openxr.png
+      :width: 80%
+      :align: center
+
+  2. Enable the Mixed Reality feature in the OpenXR Plug-in Management window
+
+  .. figure:: ../../../img/unity-api/mrtk-openxr-plugin-enabled.png
+      :width: 80%
+      :align: center
+
+  3. Run the HandInteractionExamples scene to see hands tracking and interactions occurring
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Things to Look Out For
+---------------------------------
+
+- Controllers may interfere with the Input Actions for interactions in MRTK. Make sure you are only using the Interaction Profiles that you require
+- Gaze-based interactions may interfere with nput Actions for interactions in MRTK. Make sure these are only enabled if they are required
+- If your headset supports passthrough, hand visuals will not render. If this is required, you may need to change the settings on the openxr_left_hand and openxr_right_hand prefab to enable it
+
+----------------------------------------------------------------------------------------------------------------------------------

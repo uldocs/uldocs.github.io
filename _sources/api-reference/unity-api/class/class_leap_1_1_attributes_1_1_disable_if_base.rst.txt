@@ -1,0 +1,6 @@
+Class Leap::Attributes::DisableIfBase
+=====================================
+
+.. doxygenclass:: Leap::Attributes::DisableIfBase
+   :project: unity
+   :members: 

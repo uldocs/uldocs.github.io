@@ -1,0 +1,6 @@
+Class UGrabClassifierProbe
+==========================
+
+.. doxygenclass:: UGrabClassifierProbe
+   :project: unreal
+   :members:

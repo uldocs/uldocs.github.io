@@ -1,0 +1,6 @@
+Struct LEAP_CLOCK_REBASER
+=========================
+
+.. doxygenstruct:: LEAP_CLOCK_REBASER
+   :project: tracking
+   :members:

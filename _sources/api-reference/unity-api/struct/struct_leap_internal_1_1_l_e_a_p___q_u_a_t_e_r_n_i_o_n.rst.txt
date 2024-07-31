@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_QUATERNION
+====================================
+
+.. doxygenstruct:: LeapInternal::LEAP_QUATERNION
+   :project: unity
+   :members: 

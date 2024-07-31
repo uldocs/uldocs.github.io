@@ -1,0 +1,6 @@
+Class Leap::Attributes::CombinablePropertyAttribute
+===================================================
+
+.. doxygenclass:: Leap::Attributes::CombinablePropertyAttribute
+   :project: unity
+   :members: 

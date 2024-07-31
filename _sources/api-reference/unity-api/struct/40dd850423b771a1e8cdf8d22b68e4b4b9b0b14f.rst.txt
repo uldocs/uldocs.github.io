@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DEVICE_STATUS_CHANGE_EVENT
+====================================================
+
+.. doxygenstruct:: LeapInternal::LEAP_DEVICE_STATUS_CHANGE_EVENT
+   :project: unity
+   :members: 

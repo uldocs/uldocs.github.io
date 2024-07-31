@@ -1,0 +1,6 @@
+Namespace UnityEngine::Rendering
+================================
+
+.. doxygennamespace:: UnityEngine::Rendering
+   :project: unity
+   :no-link: 

@@ -1,0 +1,147 @@
+:hide-toc:
+
+*******************
+Components overview
+*******************
+
+User interface components in VR are often similar to the 2D equivalents we are all familiar with, but with a few notable differences. They are often more three dimensional and buttons and controls are often raised off the panel surface like mechanical buttons in real life. Components also respond noticeably to proximity and touch from hands with motion, audio and visual state changes.
+
+Ultraleap recommends the following, general-purpose components as suitable for most applications.
+
+
+Panels
+######
+
+.. list-table::
+
+   * - `UI panel <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-UI-Panel.png
+            :width: 200
+     - A re-positionable panel that sits in 3D space in the environment, and can be used with either direct or distance selection. Can be activated through a variety of means.
+        
+   * - System / shortcut panel
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-System-shortcut-panel.png
+     - A smaller version of the above, tailored for regularly-accessed shortcut actions. Also suitable for use as a system menu.
+
+   * - Hand panel
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-hand-panel.png
+     - A small panel that appears anchored next to the users' hand. Triggered by turning the palm towards the face from rest position
+
+   * - `Keyboard <https://docs.ultraleap.com/xr-guidelines/Components/keyboards-text.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-keyboard.png
+     - A re-positionable keyboard, suitable for short text entry such as passwords.
+
+
+Help and tutorials
+##################
+
+.. list-table::
+
+   * - Simple hint
+        .. image:: ../../img/xr-guidelines/recommended.png
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-simple-hint.png
+            :width: 200
+     - A small text prompt that can be used to draw attention and introduce learned interactions
+        
+   * - Help panel
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-help-panel.png
+     - A small UI panel that can be brought up at any time to present context-sensitive tutorial content
+
+Components
+##########
+
+.. list-table::
+
+   * - `Button <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-button.png
+            :width: 200
+     - A general purpose button for use on UI panels on in environment
+
+   * - `Palm button <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-palm-button.png
+     - A button positioned on the palm, typically used for quick access to features through a hand panel
+
+   * - `Toggle switch <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-toggle-switch.png
+     - A re-positionable keyboard, suitable for short text entry such as passwords
+    
+   * - Slider
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-slider.png
+     - Similar to the toggle switch, but allows users to move between a smooth range of values or multiple, distinct states
+    
+   * - `Carousel <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html#carousels>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-carousel.png
+     - For presenting horizontally scrolling content on UI panels. Used with a swipe gesture
+    
+   * - `Micro handle <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-micro-handle.png
+     - Small, grabbable components, serving as pull-cords or handles for use with other 3D components
+    
+   * - Turntable
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-turntable.png
+     - A 3D component which can be rotated and spun
+
+Objects
+#######
+
+.. list-table::
+
+   * - Free object
+        .. image:: ../../img/xr-guidelines/recommended.png
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-free-object.png
+            :width: 200
+     - Free objects in the environment which can be picked up in the hand, moved, dropped and thrown
+
+   * - Handle object
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-handle-object.png
+     - Free objects which feature handles which hands may snap to when grabbed
+
+   * - Mounted object
+        .. image:: ../../img/xr-guidelines/recommended.png
+     - .. image:: ../../img/xr-guidelines/components-overview/Components-Overview-mounted-object.png
+     - A 3D component which can be pushed and pulled, but is mounted in the environment with some axes of motion locked
+
+------------
+
+Want to learn more about features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/index.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/index.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+
+
+
+`Back to top <#top>`_
+

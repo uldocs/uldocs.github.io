@@ -1,0 +1,6 @@
+Struct LEAP_ALLOCATOR
+=====================
+
+.. doxygenstruct:: LEAP_ALLOCATOR
+   :project: tracking
+   :members:

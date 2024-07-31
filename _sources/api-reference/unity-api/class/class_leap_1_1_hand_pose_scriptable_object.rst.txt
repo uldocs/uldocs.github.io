@@ -1,0 +1,6 @@
+Class Leap::HandPoseScriptableObject
+====================================
+
+.. doxygenclass:: Leap::HandPoseScriptableObject
+   :project: unity
+   :members: 

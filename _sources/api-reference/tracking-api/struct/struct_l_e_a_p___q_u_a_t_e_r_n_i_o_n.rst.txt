@@ -1,0 +1,6 @@
+Struct LEAP_QUATERNION
+======================
+
+.. doxygenstruct:: LEAP_QUATERNION
+   :project: tracking
+   :members:

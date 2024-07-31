@@ -1,0 +1,6 @@
+Struct LEAP_RECORDING_PARAMETERS
+================================
+
+.. doxygenstruct:: LEAP_RECORDING_PARAMETERS
+   :project: tracking
+   :members:

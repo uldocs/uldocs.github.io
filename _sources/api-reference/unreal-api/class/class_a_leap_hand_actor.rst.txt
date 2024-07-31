@@ -1,0 +1,6 @@
+Class ALeapHandActor
+====================
+
+.. doxygenclass:: ALeapHandActor
+   :project: unreal
+   :members:

@@ -1,0 +1,6 @@
+Namespace System::Collections::Generic
+======================================
+
+.. doxygennamespace:: System::Collections::Generic
+   :project: unity
+   :no-link: 

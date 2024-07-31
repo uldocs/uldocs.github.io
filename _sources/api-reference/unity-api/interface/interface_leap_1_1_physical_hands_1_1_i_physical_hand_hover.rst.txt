@@ -1,0 +1,6 @@
+Interface Leap::PhysicalHands::IPhysicalHandHover
+=================================================
+
+.. doxygeninterface:: Leap::PhysicalHands::IPhysicalHandHover
+   :project: unity
+   :members: 

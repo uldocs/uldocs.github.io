@@ -1,0 +1,6 @@
+Class Leap::Attributes::OnEditorChangeAttribute
+===============================================
+
+.. doxygenclass:: Leap::Attributes::OnEditorChangeAttribute
+   :project: unity
+   :members: 

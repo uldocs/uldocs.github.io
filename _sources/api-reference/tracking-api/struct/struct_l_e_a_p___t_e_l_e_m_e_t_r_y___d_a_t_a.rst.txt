@@ -1,0 +1,6 @@
+Struct LEAP_TELEMETRY_DATA
+==========================
+
+.. doxygenstruct:: LEAP_TELEMETRY_DATA
+   :project: tracking
+   :members:

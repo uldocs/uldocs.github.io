@@ -1,0 +1,80 @@
+:hide-toc:
+
+********************************
+Performance Modes
+********************************
+
+Ultraleap offers various modes that enable customers to get the best hand tracking performance, based on device parameters or application context.
+
+Low Power Mode
+############
+
+This hint will minimise resource usage of hand tracking to avoid a drop in overall system performance, whilst maintaining smooth tracking. 
+
+It can lead to reduced hand tracking performance so is best for use cases where high fidelity hand tracking is unnecessary, such as basic button interaction.
+
+*   Called via the Hint: LEAP_HINT_LOW_RESOURCE_USAGE
+
+*   Example Use Case(s)
+
+    *   Media consumption
+
+High Performance Mode
+############
+
+This hint will maximise resource usage of hand tracking to ensure peak performance.
+
+It is useful for developers who care more about performance than battery life/heat/spare CPU. 
+
+It is best to be used in instances where compute will not be an issue, such as PCVR.
+
+*   Called via the Hint: LEAP_HINT_HIGH_HAND_FIDELITY
+
+*   Example Use Case(s)
+
+    *   Flight simulation
+
+UI Input Mode
+############
+
+This hint assumes fingers are fully extended when they out of line of sight of the cameras, making it easier to interact with buttons. 
+
+This is expected only to be used in instances where the user is near UI.
+
+*   Called via the Hint: LEAP_HINT_USER_INPUT
+
+*   Example Use Case(s)
+
+    *   Button pushing
+
+    *   UI panel interactions
+
+Light Robustness Mode
+############
+
+This hint will ask the system to adjust the illumination to better suit the environment.
+
+*   Called via the Hint: LEAP_HINT_HIGH_BACKGROUND_ILLUMINATION
+
+*   Example Use Case(s)
+
+    *   Outside usage
+
+Fast Hands Mode
+############
+
+This hint makes sure the hand tracking runs as fast as possible to enables hands to be tracked in instances where the user is expected to be moving them quickly.
+
+*   Called via the Hint: LEAP_HINT_FAST_HAND_MOTION
+
+*   Example Use Case(s)
+
+    *   Games or fitness applications
+
+.. raw:: html
+
+    <div class="text-center">
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/downloads/leap-motion-controller-2/">Download Hyperion for Leap Motion Controller 2</a>
+
+    </div>

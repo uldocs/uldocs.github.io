@@ -1,0 +1,6 @@
+Struct LEAP_POINT_MAPPING
+=========================
+
+.. doxygenstruct:: LEAP_POINT_MAPPING
+   :project: tracking
+   :members:

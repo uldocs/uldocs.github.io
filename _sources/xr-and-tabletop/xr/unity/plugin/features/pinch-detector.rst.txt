@@ -1,0 +1,153 @@
+********************
+Pinch Detector
+********************
+
+.. |ActionDetector| replace:: :cs:class:`ActionDetector <Ultraleap.ActionDetector>`
+.. |Hand| replace:: :cs:class:`Hand <Leap.Hand>`
+.. |Finger| replace:: :cs:class:`Finger <Leap.Finger>`
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p>This guide explains how to use the Pinch Detector class to detect pinch gestures in your Unity project. The Pinch Detector is the best way to determine whether the user is pinching or not. Just add one to the scene and use the events as triggers in your own code. </p>
+        
+        <p>Pinch Detector calculates a pinch value based on the distance between a specified finger tip and the thumb tip, using hysteresis for different pinch and unpinch thresholds.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Using the Pinch Detector
+---------------------
+
+The Ultraleap Plugin provides the `PinchDetector` class, which can be used to detect pinch gestures based on the distance between the thumb and a specified finger.
+
+This tutorial assumes you have a basic understanding of C# and Unity. If not, please refer to the :doc:`Scripting Fundamentals<./scripting-fundamentals>` before proceeding.
+
+**PinchDetector Class Overview**
+
+The `PinchDetector` class is derived from the |ActionDetector| class and includes the following key features:
+
+.. dropdown:: Public Properties:
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    - **IsDoingAction (bool)**: Indicates if the detector is currently detecting an action.
+    - **ActionStartedThisFrame (bool)**: Indicates if the action started this frame.
+    - **leapProvider (LeapProvider)**: Reference to the Leap provider.
+    - **chirality (Chirality)**: Specifies which hand (left or right) to track.
+
+    - **fingerType (PinchableFingerType)**: The finger to check for pinches against the thumb. Default is INDEX.
+    - **activateDistance (float)**: The distance between fingertip and thumb at which to enter the pinching state. Default is 0.025f.
+    - **deactivateDistance (float)**: The distance between fingertip and thumb at which to leave the pinching state. Default is 0.03f.
+    - **SquishPercent (float)**: The percent value (0-1) between the activate distance and absolute pinch.
+    - **PinchStartedThisFrame (bool)**: Indicates if the pinch started this frame.
+    - **IsPinching (bool)**: Indicates if the PinchDetector is currently detecting a pinch.
+    - **OnPinchStart (Action<Hand>)**: Event triggered when a pinch starts.
+    - **OnPinchEnd (Action<Hand>)**: Event triggered when a pinch ends.
+    - **OnPinching (Action<Hand>)**: Event triggered while pinching.
+
+
+.. dropdown:: Public Methods:
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    - **TryGetHand(out Hand _hand)**: Tries to get the hand based on the provided chirality.
+    - **IsTracked()**: Checks if the Leap Provider is tracking hands.
+
+
+**Setting Up the Pinch Detector**
+=============
+
+To use the `PinchDetector` in your Unity project, follow these steps:
+
+1. **Add the PinchDetector script to a GameObject in your scene.**
+
+2. **Configure the PinchDetector properties in the Inspector:**
+    - Set the `fingerType` to the desired finger (INDEX, MIDDLE, RING, PINKY).
+    - Set the `activateDistance` and `deactivateDistance` values to appropriate thresholds for your application.
+    - Assign a `Leap Provider` and `chirality`
+
+3. **Implement the pinch detection logic in your script:**
+
+::
+
+    using UnityEngine;
+    using Ultraleap;
+
+    public class PinchExample : MonoBehaviour
+    {
+        public PinchDetector pinchDetector;
+
+        private void Update()
+        {
+            if (pinchDetector.IsPinching)
+            {
+                // Handle pinch logic here
+                Debug.Log("Pinching with squish percent: " + pinchDetector.SquishPercent);
+            }
+
+            if (pinchDetector.PinchStartedThisFrame)
+            {
+                // Handle pinch start logic here
+                Debug.Log("Pinch started this frame.");
+            }
+        }
+    }
+
+4. **Subscribe to Pinch Events:**
+   You can subscribe to the pinch events (`OnPinchStart`, `OnPinchEnd`, and `OnPinching`) to execute custom logic.
+
+::
+
+    private void OnEnable()
+    {
+        pinchDetector.OnPinchStart += HandlePinchStart;
+        pinchDetector.OnPinchEnd += HandlePinchEnd;
+        pinchDetector.OnPinching += HandlePinching;
+    }
+
+    private void OnDisable()
+    {
+        pinchDetector.OnPinchStart -= HandlePinchStart;
+        pinchDetector.OnPinchEnd -= HandlePinchEnd;
+        pinchDetector.OnPinching -= HandlePinching;
+    }
+
+    private void HandlePinchStart(Hand hand)
+    {
+        Debug.Log("Pinch started.");
+    }
+
+    private void HandlePinchEnd(Hand hand)
+    {
+        Debug.Log("Pinch ended.");
+    }
+
+    private void HandlePinching(Hand hand)
+    {
+        Debug.Log("Pinching...");
+    }

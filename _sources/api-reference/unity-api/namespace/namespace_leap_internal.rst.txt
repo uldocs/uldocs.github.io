@@ -1,0 +1,6 @@
+Namespace LeapInternal
+======================
+
+.. doxygennamespace:: LeapInternal
+   :project: unity
+   :no-link: 

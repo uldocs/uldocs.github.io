@@ -1,0 +1,6 @@
+Interface Leap::Attributes::IPropertyDisabler
+=============================================
+
+.. doxygeninterface:: Leap::Attributes::IPropertyDisabler
+   :project: unity
+   :members: 

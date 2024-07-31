@@ -1,0 +1,6 @@
+Struct Leap::InputActions::XRHandsInputActionUpdater::LeapHandStateDelegates
+============================================================================
+
+.. doxygenstruct:: Leap::InputActions::XRHandsInputActionUpdater::LeapHandStateDelegates
+   :project: unity
+   :members: 

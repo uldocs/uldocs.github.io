@@ -1,0 +1,6 @@
+Class FUltraleapAnimCustomDetailsPanel
+======================================
+
+.. doxygenclass:: FUltraleapAnimCustomDetailsPanel
+   :project: unreal
+   :members:

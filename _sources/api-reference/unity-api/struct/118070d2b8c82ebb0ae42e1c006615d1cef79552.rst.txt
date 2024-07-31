@@ -1,0 +1,6 @@
+Struct Leap::HandPoseScriptableObject::FingerJointThresholds
+============================================================
+
+.. doxygenstruct:: Leap::HandPoseScriptableObject::FingerJointThresholds
+   :project: unity
+   :members: 

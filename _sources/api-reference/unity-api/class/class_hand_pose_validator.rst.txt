@@ -1,0 +1,6 @@
+Class HandPoseValidator
+=======================
+
+.. doxygenclass:: HandPoseValidator
+   :project: unity
+   :members: 

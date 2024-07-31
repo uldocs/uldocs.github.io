@@ -1,0 +1,6 @@
+Struct LEAP_FIDUCIAL_POSE_EVENT
+===============================
+
+.. doxygenstruct:: LEAP_FIDUCIAL_POSE_EVENT
+   :project: tracking
+   :members:

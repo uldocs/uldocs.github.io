@@ -1,0 +1,6 @@
+Class Leap::KabschSolver
+========================
+
+.. doxygenclass:: Leap::KabschSolver
+   :project: unity
+   :members: 

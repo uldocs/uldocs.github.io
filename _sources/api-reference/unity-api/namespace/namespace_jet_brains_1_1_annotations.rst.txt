@@ -1,0 +1,6 @@
+Namespace JetBrains::Annotations
+================================
+
+.. doxygennamespace:: JetBrains::Annotations
+   :project: unity
+   :no-link: 

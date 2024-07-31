@@ -1,0 +1,18 @@
+:hide-toc:
+
+
+
+****************************************
+Ultraleap for Varjo
+****************************************
+
+Ultraleap hand tracking is built in to the Varjo XR-3, VR-3, and VR-2 Pro headsets.
+It is also available on Varjo XR-4 as an optional `hand tracking module <https://b2b-store.varjo.com/accessories?show=ultraleap-hand-tracking-bundle>`_.
+
+Check out Varjo's documentation `here <https://developer.varjo.com/docs/get-started/hand-tracking>`_
+
+To stay in the loop on the latest Ultraleap updates sign up to our newsletter `here <https://www.ultraleap.com/newsletter-sign-up/>`_.
+
+-----------
+
+`Back to top <#top>`_

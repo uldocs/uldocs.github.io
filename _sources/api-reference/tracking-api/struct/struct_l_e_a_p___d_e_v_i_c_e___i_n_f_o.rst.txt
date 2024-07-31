@@ -1,0 +1,6 @@
+Struct LEAP_DEVICE_INFO
+=======================
+
+.. doxygenstruct:: LEAP_DEVICE_INFO
+   :project: tracking
+   :members:

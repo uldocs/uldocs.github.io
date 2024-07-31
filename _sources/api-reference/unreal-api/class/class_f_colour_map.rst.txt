@@ -1,0 +1,6 @@
+Class FColourMap
+================
+
+.. doxygenclass:: FColourMap
+   :project: unreal
+   :members:

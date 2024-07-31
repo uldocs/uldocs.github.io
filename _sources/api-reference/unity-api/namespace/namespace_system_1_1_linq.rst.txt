@@ -1,0 +1,6 @@
+Namespace System::Linq
+======================
+
+.. doxygennamespace:: System::Linq
+   :project: unity
+   :no-link: 

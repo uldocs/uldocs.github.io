@@ -1,0 +1,150 @@
+********************
+Grab Detector
+********************
+
+.. |ActionDetector| replace:: :cs:class:`ActionDetector <Ultraleap.ActionDetector>`
+.. |Hand| replace:: :cs:class:`Hand <Leap.Hand>`
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p>This guide explains how to use the Grab Detector class to detect grab gestures in your Unity project. Just add one to the scene and use the events as triggers in your own code. </p>
+        
+        <p>The Grab Detector calculates a grab value based on the grab strength of the hand, using hysteresis for different grab and ungrab thresholds.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Using the Grab Detector
+---------------------
+
+The Ultraleap Plugin provides the `GrabDetector` class, which can be used to detect grab gestures based on the grab strength of the hand.
+
+This tutorial assumes you have a basic understanding of C# and Unity. If not, please refer to the :doc:`Scripting Fundamentals<./scripting-fundamentals>` before proceeding.
+
+**GrabDetector Class Overview**
+##########
+
+The `GrabDetector` class is derived from the |ActionDetector| class and includes the following key features:
+
+.. dropdown:: Public Properties:
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    - **IsDoingAction (bool)**: Indicates if the detector is currently detecting an action.
+    - **ActionStartedThisFrame (bool)**: Indicates if the action started this frame.
+    - **leapProvider (LeapProvider)**: Reference to the Leap provider.
+    - **chirality (Chirality)**: Specifies which hand (left or right) to track.
+
+    - **activateStrength (float)**: The grab strength needed to initiate a grab. Default is 0.8f.
+    - **deactivateStrength (float)**: The grab strength needed to release a grab. Default is 0.6f.
+    - **GrabStartedThisFrame (bool)**: Indicates if the grab started this frame.
+    - **IsGrabbing (bool)**: Indicates if the GrabDetector is currently detecting a grab.
+    - **OnGrabStart (Action<Hand>)**: Event triggered when a grab starts.
+    - **OnGrabEnd (Action<Hand>)**: Event triggered when a grab ends.
+    - **OnGrabbing (Action<Hand>)**: Event triggered while grabbing.
+
+
+.. dropdown:: Public Methods:
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    - **TryGetHand(out Hand _hand)**: Tries to get the hand based on the provided chirality.
+    - **IsTracked()**: Checks if the Leap Provider is tracking hands.
+
+
+**Setting Up the Grab Detector**
+=============
+
+To use the `GrabDetector` in your Unity project, follow these steps:
+
+1. **Add the GrabDetector script to a GameObject in your scene.**
+
+2. **Configure the GrabDetector properties in the Inspector:**
+    - Set the `activateStrength` and `deactivateStrength` values to appropriate thresholds for your application.
+    - Assign a `Leap Provider` and `chirality`
+
+3. **Implement the grab detection logic in your script:**
+
+::
+
+    using UnityEngine;
+    using Ultraleap;
+
+    public class GrabExample : MonoBehaviour
+    {
+        public GrabDetector grabDetector;
+
+        private void Update()
+        {
+            if (grabDetector.IsGrabbing)
+            {
+                // Handle grab logic here
+                Debug.Log("Grabbing.");
+            }
+
+            if (grabDetector.GrabStartedThisFrame)
+            {
+                // Handle grab start logic here
+                Debug.Log("Grab started this frame.");
+            }
+        }
+    }
+
+4. **Subscribe to Grab Events:**
+   You can subscribe to the grab events (`OnGrabStart`, `OnGrabEnd`, and `OnGrabbing`) to execute custom logic.
+
+::
+
+    private void OnEnable()
+    {
+        grabDetector.OnGrabStart += HandleGrabStart;
+        grabDetector.OnGrabEnd += HandleGrabEnd;
+        grabDetector.OnGrabbing += HandleGrabbing;
+    }
+
+    private void OnDisable()
+    {
+        grabDetector.OnGrabStart -= HandleGrabStart;
+        grabDetector.OnGrabEnd -= HandleGrabEnd;
+        grabDetector.OnGrabbing -= HandleGrabbing;
+    }
+
+    private void HandleGrabStart(Hand hand)
+    {
+        Debug.Log("Grab started.");
+    }
+
+    private void HandleGrabEnd(Hand hand)
+    {
+        Debug.Log("Grab ended.");
+    }
+
+    private void HandleGrabbing(Hand hand)
+    {
+        Debug.Log("Grabbing...");
+    }

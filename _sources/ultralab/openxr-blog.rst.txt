@@ -1,0 +1,103 @@
+****************************************************************************
+Focus on OpenXR - What You Need to Know
+****************************************************************************
+
+by **Adam Harwood** XR Engineering Lead
+
+In the days before `OpenXR <https://www.khronos.org/openxr/>`_, if you wanted to develop a VR application then you had to pick which headset you wanted to develop for, and stick to it. 
+
+OpenXR solved that problem by managing communication between your application and the various platforms. For example, you can now build applications with hand tracking that work across headsets like Lynx, Varjo, Quest and Pico. 
+
+In this blog we give you all you need to know about OpenXR. What it is, how it works, why we’re excited about it, and why you should be using it.
+
+What does OpenXR do?
+====================
+
+Hand tracking is fast becoming a basic requirement of VR and looks to become the primary interface for XR (AR, VR, MR, etc.). 
+
+As is the case with touchscreens and smartphones, it’s important that developers are able to easily access the capabilities of the system to create high quality content. 
+
+With Apple `reportedly <https://uploadvr.com/apple-headset-iris-scanning-leg-tracking/>`_ on the verge of releasing its long-awaited VR headset, and Google `testing new AR glasses prototypes <https://uploadvr.com/google-testing-ar-prototype/>`_, it seems like every major tech company is getting ready to launch XR hardware of some description. 
+
+Thanks to OpenXR, picking which platform to develop for is no longer a problem. Previously, any XR application needed to use the proprietary API (Application Programming Interface) of your platform of choice, and new input devices needed customised driver integration. So to develop an application you needed to programme proprietary software for each platform, so not only increased developer time, but also increased validation time, finding bugs in one code path but not in another, and so on. Khronos, the consortium behind OpenXR, call this XR fragmentation. 
+
+So, pre-OpenXR, the situation was something like this:
+
+.. image:: ../img/ultralab/OpenXR-Before_3.png
+    :alt: Flow diagram showing app workflow before openxr
+*From Khronos Group*
+
+This is the problem that OpenXR solves. OpenXR is an API that provides access to XR platforms and devices. OpenXR means that applications can run on any system that exposes the OpenXR APIs. You can simply develop your application just once, and it will work across any platform that supports OpenXR.
+
+.. image:: ../img/ultralab/OpenXR-After_6.png
+    :alt: Flow diagram showing app workflow after openxr
+*From Khronos Group*
+
+Ultraleap have been members of the working group since 2019 and we’re committed supporters of OpenXR. We've long provided experimental support for OpenXR and we recently released `production-ready support <https://docs.ultraleap.com/openxr/>`_ across our product range, including support for tracked elbows. 
+
+And we're in good company. Featuring all the usual suspects, the list of companies that publicly support OpenXR, the OpenXR Ecosystem, is ever-growing. 
+
+.. image:: ../img/ultralab/knronos-companies.png
+    :alt: Company logos of the khronos group
+*From Khronos Group*
+
+
+How Open XR works
+====================
+
+Support across the industry is broad. Microsoft’s Mixed Reality headsets, HoloLens 2, Rift, SteamVR, and Quest, as well as Qualcomm, Epic Games, Pico, Tobii, and Varjo. So using OpenXR for hand tracking means you can build once, then deploy across Quest, Pico, Vive and Ultraleap tracking. 
+
+Unlike Meta, Microsoft, HTC, and Pico, Ultraleap don’t make XR headsets. This means we don’t build our OpenXR support directly into the software that controls the headset (the runtime), but instead provide an `API layer <https://docs.ultraleap.com/openxr/>`_.
+
+API layers can be used to add functionality on top of a runtime transparently. The application makes a call via the OpenXR API and gets a response, without needing to worry if the response came from the runtime or an API layer.
+
+Our API layer adds support for our hand tracking, and works with any Ultraleap hand tracking camera. You need no modification to your application to use it. Ultraleap hand tracking is ready to go and suitable for production. 
+
+Currently, hand tracking isn’t part of the core OpenXR spec, it’s provided via extensions. These are a way to define extra functionality and there are 3 types:
+
+* Vendor extensions (e.g. ULTRALEAP) - these enable vendor-specific features, allowing companies to innovate. For example we provide an extension that supplies the position of the elbow (`XR_ULTRALEAP_hand_tracking_forearm <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_ULTRALEAP_hand_tracking_forearm>`_)
+
+* Cross-vendor extensions (EXT) - multiple companies have agreed on these. The main hand tracking extension is cross-vendor (`XR_EXT_hand_tracking <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_tracking>`_)
+
+* Official Khronos extensions (KHR) - these have been ratified by the Khronos group and have the same license as the core spec
+
+The primary hand tracking extension defines an API that enables applications to get data about hands. Most importantly, it supplies the position and orientation of 26 joints per hand:
+
+.. image:: ../img/ultralab/ultraleap-hand-joints.png
+    :alt: Company logos of the khronos group
+*From Khronos Group*
+
+
+The Ultraleap hand tracking forearm extension increases this to 27 joints per hand, adding the elbow of each arm.
+
+Build once, run anywhere
+====================
+
+In the future, we’ll be providing all Ultraleap-specific hand tracking functionality via OpenXR, such as the `multi-device support <https://docs.ultraleap.com/ultralab/multi-device-blog.html>`_ recently released in preview. We’ll also continue working with the other companies in the Khronos group to standardise any hand tracking features supported by multiple vendors.
+
+If you’re using a game engine such as Unity or Unreal, you can use our `Plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_ to work with hand tracking data coming from OpenXR. Since the hand data is coming via OpenXR, this means your applications will work across Quest, Pico, Vive, Ultraleap tracking, and any others who support OpenXR hand tracking.
+
+I think this is really neat so it’s worth repeating; build your application using Ultraleap Plugins with OpenXR, and it’ll work on any supported headset! With all major headset providers moving to OpenXR, this means your app will run anywhere.
+
+For more information on building for OpenXR, check out our docs for `Unity <https://docs.ultraleap.com/unity-api/OpenXR%20with%20Unity/Setting-Up-OpenXR.html>`_ and `Unreal <https://docs.ultraleap.com/unreal-api/unreal-guide/getting-started.html#oculus-quest-cross-platform>`_.
+
+---
+
+You can find us on `Discord <https://discord.gg/3VCndThqxS>`_ or if you need additional support you can email support@ultraleap.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

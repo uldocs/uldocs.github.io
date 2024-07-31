@@ -1,0 +1,78 @@
+:hide-toc:
+
+******************************
+Integration Tips and Resources
+******************************
+
+Testing for Optimal Tracking
+############################
+
+The Visualizer is a powerful diagnostic tool (available from the taskbar menu) that will familiarize you with how our
+hand tracking technology sees the world. You can flip between Desktop, Head–Mounted, and Screentop Modes. 
+If the device frame rate is significantly below the values indicated in System Requirements,
+the hand tracking will appear degraded. This happens occasionally due to USB bandwidth limitations and can usually be
+remedied by switching to a different USB host controller.
+
+-------------
+
+Mounting and Embedding For VR/AR
+################################
+
+.. image:: ../img/hand-tracking/integration-tips-resources/ultraleap-headset-mount.png
+    :alt: Headset mount for Leap Motion Controller or Ultraleap Stereo IR 170
+
+Depending on your headset and application, you may wish to adjust the virtual offset between the device and the user’s
+eyes within the game engine. An example of this might be a custom experience/headset integration in which hand alignment
+needs to be as closely matched as possible. You can adjust these values within the game engine. See our
+`Unity <../unity-api/index.html>`_ or
+`Unreal <../unreal-api/index.html>`_ documentation for more details.
+
+------------
+
+Other Embedded Solutions
+########################
+
+Embedding an Ultraleap Hand Tracking Camera into a larger hardware installation can create a
+sense of mystery and magic by hiding the underlying technology. It also shields the device from dust, moisture, and
+accidental damage.
+
+.. image:: ../img/hand-tracking/integration-tips-resources/calderan-dev.jpeg
+    :alt: Virtual objects
+
+If the user’s hands need to be in an enclosed area, we recommend lining the inside surface of the space with a
+dark material that absorbs infrared light. Duvetyne is used in the film industry to make dark black backdrops, and could be used for this purpose.
+
+If you need to cover the device with glass or clear plastic, it should be placed directly on the top window’s surface.
+Ensure the glass or plastic panel stays very clean (smudges will degrade tracking quality) and use the Visualizer to make sure the panel is not blurring or refracting the light.
+
+-------------
+
+Image API
+#########
+
+You can access stereo infrared images using the Image API. This can be used for augmented reality video passthrough
+applications. Combined with retroreflective markers and computer vision techniques, the Image API also makes it possible to track the position of physical objects as well as hands. An experimental software build,
+`LeapUVC <https://blog.leapmotion.com/leapuvc/>`_, is available to provide access to even more camera controls.
+
+---------------
+
+Multiple Devices
+################
+
+Ultraleap Hand Tracking works with multiple devices at the same time. Visit the `documentation <https://docs.ultraleap.com/unity-api/The-Examples/Non-XR/multiple-devices-desktop.html>`_ for more details. 
+
+An end-user of your application will be able to see their hands in several different places which increases the tracked area for desktop or screentop applications. They can also swap between different devices at runtime, and specify the one they want to use by its serial number.
+
+Currently this is only available for users on Windows with Ultraleap Hand Tracking Software version 5.3.6 or higher.
+
+-----------
+
+Licensing
+#########
+
+Commercial and enterprise customers who are developing with our tracking technology require a license.
+Learn more at `Ultraleap Licensing <https://www.ultraleap.com/licensing/>`_
+
+-----------
+
+`Back to top <#top>`_

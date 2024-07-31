@@ -1,0 +1,6 @@
+Class Leap::FailedDeviceList
+============================
+
+.. doxygenclass:: Leap::FailedDeviceList
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_LOG_EVENT
+===================================
+
+.. doxygenstruct:: LeapInternal::LEAP_LOG_EVENT
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class LeapInternal::MemoryManager
+=================================
+
+.. doxygenclass:: LeapInternal::MemoryManager
+   :project: unity
+   :members: 

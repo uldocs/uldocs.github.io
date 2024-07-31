@@ -1,0 +1,60 @@
+*********
+Metahuman Support (Third Person Character)
+*********
+
+Ultraleap support for Metahumans means you can get hand tracking data into the third person character 
+in Unreal Engine (UE). You can find the pawn in ``UltraleapTracking Content/Metahumans/IEPawnHands_Metahuman``. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/1.png
+    :width: 70%
+    :align: center
+
+Make sure that the ``Leap Hands`` in ``IEPawnHands_Metahuman`` have ``IEUICollisionWithElbows`` 
+as a child actor class.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/2.png
+    :width: 70%
+    :align: center
+
+
+Make sure that the ``IEUICollisionWithElbows`` right hand is using ``BSAutoScaledRight`` animation 
+blueprint, and the left hand is using ``BSAutoScaledLeft`` animation blueprint.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/3.png
+    :width: 70%
+    :align: center
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/4.png
+    :width: 70%
+    :align: center
+
+
+You can also scale the character and its hands. The character's head will move according the HMD. 
+In order to scale the character's hands when running the VR mode in UE, use the left hand button menu. 
+If you're in a sitting position, use the ``Calibrate Height (sitting)`` button. 
+If you are standing then use ``Calibrate Height`` button. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/5.png
+    :width: 70%
+    :align: center
+
+Once you have calibrated your character, you will notice that the hand size has changed to match your hands.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/metahuman-support/6.png
+    :width: 70%
+    :align: center
+
+The white ``Poly Hands`` are auto-claibrated. The character's arms can also move with the hands by using 
+``inverse kinematics`` in UE. To test this, you can use the ``MannequinExample`` level, 
+which is set up with the character and hand tracking enabled.
+
+
+.. Lip sync
+.. --------
+
+.. See the **FaceLipSync_AnimBP** blueprint in the example project on the
+.. marketplace for a setup where the mouth moves with the mic input.
+
+-----------
+
+`Back to top <#top>`_

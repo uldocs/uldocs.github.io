@@ -1,0 +1,6 @@
+Struct Leap::Utils::ChildrenEnumerator
+======================================
+
+.. doxygenstruct:: Leap::Utils::ChildrenEnumerator
+   :project: unity
+   :members: 

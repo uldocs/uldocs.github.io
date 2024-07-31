@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_ALLOCATOR
+===================================
+
+.. doxygenstruct:: LeapInternal::LEAP_ALLOCATOR
+   :project: unity
+   :members: 

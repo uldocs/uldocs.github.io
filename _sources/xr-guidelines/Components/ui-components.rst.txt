@@ -1,0 +1,159 @@
+:hide-toc:
+
+*********************
+UI Components
+*********************
+
+
+Following Ultraleap's hand tracking design principles, UI components often work best with hand tracking when they are three-dimensional, and respond clearly to hand proximity and contact. We recommend the following components: 
+
+
+---------------
+
+Buttons
+#######
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Button.gif/
+    :alt: Image of hand in virtual reality pressing a button
+
+Buttons - which are usually placed on UI panels or objects in the environment - work best with direct interaction when they are raised slightly off the mounting surface. **They should also be no smaller than 2cm across**.
+
+As the hand approaches, buttons should indicate their interactivity clearly - typically this is by changing colour or "lighting up".
+
+As the finger or hand makes contact, buttons should depress in response to the forward motion of the hand, much like a mechanical button would in the real world.
+
+When fully depressed, buttons should clearly indicate an action has been triggered with another colour change and audio. A "click" noise or similar works well. 
+
+Make sure there is enough space around each component to perform the expected interaction, and not accidentally trigger other targets.
+
+-------------------------
+
+Sliders
+#######
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Sliders.gif/
+    :alt: Image of hand in virtual reality using a slider
+
+Much like buttons, sliders work best when the interactive element is raised about the panel’s surface, slightly. As in the example above, sliders can be simply dragged using a finger.
+
+If the interactive element is made larger and raised further off the surface, it can resemble a small object or micro handle, and is more likely to illicit a pinch gesture from users to take hold, followed by the drag.
+
+Ultraleap recommend including a visual indicator that the content is horizontally scrollable. This can either be small arrow icons, or instead content can be arranged so that it disappears to the left and right sides of the panel, clearly showing there is more available. 
+
+----------------------
+
+Carousels
+##########
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+-----------
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Carousels.gif/
+    :alt: Image of hand in virtual reality pressing a button
+
+Carousels work on the same principles as scrollable pages, but with content scrolling horizontally, instead. The same gestures work here - touching the panel surface with a hand or finger, and dragging left or right. 
+
+Ultraleap recommend including a visual indicator that the content shown is horizontally scrollable. This can be either small arrow icons on the left and right sides of the carousel, or content can be arranged so that it disappears off the left and right edges, clearly showing there is more available.
+
+-----------------------
+
+Toggle switches
+###############
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+--------
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Toggle-Switches.gif/
+    :alt: Image of hand in virtual reality pressing a button
+
+Much like buttons, toggle switches work best when they have some depth and three-dimensionality. Ultraleap recommends a recessed groove in the UI panel surface, with the ‘toggle’ element raised. 
+
+As with any toggle switch form web or mobile interfaces, a clear visual change should make it obvious which of the two states the switch is in. 
+
+Ultraleap recommend making toggle switches respond to both presses from fingers and small horizontal swipes, which are more likely to be used if the switch is larger.
+
+-------------------------------
+
+Micro handles
+#############
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Micro-handles-1.gif/
+    :alt: Image of hand in virtual reality using a micro handle
+
+.. image:: ../../img/xr-guidelines/ui-components/UI-Components-Micro-Handles-2.gif/
+    :alt: Image of hand in virtual reality using a micro handle
+
+Micro handles are small, versatile components which work particularly well for interacting with 3D models, offering a range of interactions including pull-cord switches or ‘handles’ for controlling the position of a cross-sectional view.
+
+In much the same way users will pickup small objects by grasping them between thumb and forefinger, micro handles feel natural to grip and pull with a pinch gesture.
+
+As the hand approaches, micro handles should clearly indicate their interactivity- typically by ‘lighting up’ visually or snapping slightly towards the hand with a small motion.
+
+When users let go by releasing a pinch gesture, the micro handle should snap back or return to its default visual state.
+
+
+---------------------------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/3D-ui-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/UI-input-modules.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+
+----------------------------
+
+Getting Started
+###############
+
+Get started with UI components and hands using our XR plugins for Unity and Unreal. We provide two ways to design your UI - 3D components which work directly with the Interaction Engine, or by retrofitting 2D UI Panels with the UI Input Module. 
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources
+#################
+
+**Unity**
+
+* Example Scene: Basic UI - ``/Examples/1. XR Examples/2. Building Blocks/3. Menus & UI/1. Basic UI``
+* Preview Example Scene: [Deprecated] ExampleUIScene - ``/Examples/UI Input Examples``
+
+**Unreal**
+
+* Documentation: `Interaction Engine <https://docs.ultraleap.com/unreal-api/unreal-guide/interaction-engine.html>`_
+* Example Scene: Basic UI - ``/UltraleapTracking Content/InteractionEngine/ExampleScenes/BasicUI``
+* Documentation: UI Input Module
+* Example Scene: UI Input VR - ``/UltraleapTracking Content/UIInputModules/ExampleScenes/VR``
+* Example Scene: Distant UI Input VR - ``/UltraleapTracking Content/UIInputModules/ExampleScenes/VRDistant``
+

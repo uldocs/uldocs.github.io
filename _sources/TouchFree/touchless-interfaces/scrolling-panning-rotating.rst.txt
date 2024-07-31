@@ -1,0 +1,165 @@
+*******************************
+Scrolling, Panning and Rotating
+*******************************
+
+Scroll Buttons
+--------------
+
+Where possible, we recommend UI buttons enabling the user to scroll. This speeds up the user experience because of the requirement to only learn how to select. Our users have seen lots of success in using these buttons as the method for scrolling content. 
+
+We recommend these buttons following our `button size <https://docs.ultraleap.com/TouchFree/touchless-interfaces/ui-components.html#button-sizing>`__ and button behaviour recommendations.
+
+.. image:: ../../img/touchless-interfaces/scrolling/scroll-buttons.jpg
+  :alt: Shows buttons used for page scrolling
+  :align: center
+
+------------------------------------------------------------------------------------------------------------------------
+
+Scroll & Drag
+-------------
+
+Scroll & Drag is an option enabled in the interaction section of TouchFree Settings. This option enables users to perform the four interactions below, scrolling, swiping carousels, panning and spinning 3D objects. It can take time for users to get used to the interaction so clear guidance is critical. We'd also recommend using scrollbars as the method for moving content with interactable elements inside to avoid any accidental clicks.
+
+.. image:: ../../img/touchless-interfaces/scrolling/scroll-drag.gif
+  :alt: Shows a hand rotating a 3D object using a scroll and drag motion
+  :align: center
+
+With Scroll & Drag activated, users perform a then a swiping action while moving towards the screen, which can manipulate the content on screen in a number of ways. The initial forward movement of the swiping action activates an interaction point, enabling the user to drag the content by moving their hand away from this point. Bringing their hand backwards deactivates the scroll & drag. The user is able to select while Scroll & Drag is enabled by targeting a button, pushing forward and then slightly pulling back while keeping the cursor still. 
+
+Interaction Modes for Scroll & Drag
+-----------------------------------
+
+* Recommended in AirPush mode.
+* Also available in TouchPlane mode.
+* Not available in Hover & Hold mode.
+
+Enjoyability
+------------
+
+Through testing we've found that swiping can be an enjoyable interaction with TouchFree. the swiping action drives engagement and satisfaction during and after an experience because like magic, they've moved content across the screen without touching it. 
+
+To maximise enjoyment of this powerful interaction, we recommend considering screen size and orientation. Scrolling is most enjoyable on a portrait or large landscape screen and carousels are best on a landscape or large portrait screen. The amount of interactable space that is available to a given interaction is proportionate to the ultimate enjoyability of that interaction. Large interactable areas lead people to make confident, fluid movements as they're swiping around the air, the content moves further which also adds to the sense that their actions are having a big impact on what they're seeing on screen.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Visual Affordances for Scroll & Drag Interactions
+-------------------------------------------------
+
+As with visual affordances in XR, the user experience is aided by visual suggestions of what the user is able to do. The aim is to always make the content the focus, to do this, remove visual clutter and focus on communicating the expected interaction with visual affordances rather than on screen instructions. 
+
+The following are suggestions about how to make frictionless and enjoyable scroll & drag interactions.
+
+Carousels
+#########
+
+.. panels::
+
+  Much like scrolling, we've found that people instinctively perform swiping motions with TouchFree carousels, however we also recommend the use of traditional desktop style left and right buttons either side of the carousel for more tentative users. 
+
+  The content should communicate that it is a carousel without the need for additional UI components by clearly showing that there is more content off screen.
+
+  A small bit of reactiveness when the carousel moves is a useful tool in driving engagement. We achieve this by scaling up the content which has become the focus. Be careful though, too much animation can lead to a distracting and cluttered interface. Always aim to use animation sparingly and appropriately so your users aren't overwhelmed. 
+
+  Dots under the carousel indicating the users position is useful in communicating that it is a carousel. These small visual affordances all add up to communicating the use of the UI element and reduce friction for users of your TouchFree kiosk.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/carousel-one.gif
+    :alt: Shows a hand moving a carousel back and forth
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/carousel-two.jpg
+    :alt: Diagram of the motions required to move a carousel with TouchFree
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/carousel-three.gif
+    :alt: Shows an animation of a row of chairs being moved in a carousel motion
+    :align: center
+
+Scroll
+######
+
+.. panels::
+
+  Our testing has found that people naturally scroll with a vertical swiping action. To encourage this action we recommend making it obvious that there's content off screen, communicating that a page can be scrolled. We don't recommend additional indicators to show that an area is scrollable, such as arrows. Testing has shown that people recognise these as buttons, therefore assuming that the only way they can interact is by selecting these arrows rather than performing swipes which lead to a better, more enjoyable experience.
+
+  We recommend that hover and any progress to click states are not be overwhelming to users. Lots of animation can lead to a busy interface when users are trying to scroll content.
+
+  An optional visual affordance to communicate a screen can be scrolled is narrow scrollbars, which indicate where the user is on a screen. If enabling users to use the scrollbar, consider how easy it will be for users to select it. The area around the scrollbar can be utilised to pick up a selection for ease of use. You can even consider increasing the width of the scrollbar once the cursor enters its interactable area to communicate that it can be interacted with and make it easier to select.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/scroll-one.gif
+    :alt: Shows a hand scrolling a row of boxes up and down
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/scroll-two.jpg
+    :alt: Diagram of the motions required to scroll a menu with TouchFree
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/scroll-three.jpg
+    :alt: Shows a cafe style interface as an example of where scrolling can be used
+    :align: center
+
+Pan
+###
+
+.. panels::
+
+  Consider removing visual clutter to minimise busyness and put the focus on the cursor and the content. Removing clutter means that people can focus more on the interaction and less on the other elements on screen
+
+  Often pannable content requires zooming, if zooming is required, we recommend implementing buttons that users can select on screen. To ensure the best hand tracking results, buttons should be in a centralised position.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/pan-one.gif
+    :alt: Shows a hand panning a grid of boxes
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/pan-two.jpg
+    :alt: Diagram of the motions required to pan with TouchFree
+    :align: center
+
+  .. image:: ../../img/touchless-interfaces/scrolling/pan-three.gif
+    :alt: Animation of panning a map using TouchFree
+    :align: center
+
+Spin
+####
+
+.. panels::
+
+  When designing experiences that allow users to rotate 3D objects, consider what axis' the object can be rotated in. Can it be rotated in any direction or just around one axis? The way you visually communicate the desired interaction is different for both.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/spin.gif
+    :alt: Shows a hand spinning a 3D object
+    :align: center
+
+2D Rotation
+###########
+
+.. panels::
+
+  To communicate that an object can only be rotated around one axis we recommend visually grounding the object in some way. Be that the object is standing on a short plinth or sitting on the ground, the fact that it is standing on something communicates that it cannot be rotated into that surface.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/2d-rotation.jpg
+    :alt: Diagram of the motions required to do rotation with TouchFree
+    :align: center
+
+3D Rotation
+###########
+
+.. panels::
+
+  To communicate that an object can be rotated in any direction we recommend displaying the object floating in the air. A good way to communicate this is to place a shadow underneath it but separated vertically from the 3D object. Giving the background the illusion of a room with floor and wall also add to the sense that the 3D object is floating. Floating objects give the sense of being weightless and that it can be rotated in any direction as they won't collide with anything.
+
+  ---
+
+  .. image:: ../../img/touchless-interfaces/scrolling/3d-rotation.gif
+    :alt: Shows a 3D model of a chair being rotated using TouchFree
+    :align: center
+

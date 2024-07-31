@@ -1,0 +1,6 @@
+Class LeapUtilityTimer
+======================
+
+.. doxygenclass:: LeapUtilityTimer
+   :project: unreal
+   :members:

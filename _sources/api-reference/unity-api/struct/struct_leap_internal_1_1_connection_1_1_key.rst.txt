@@ -1,0 +1,6 @@
+Struct LeapInternal::Connection::Key
+====================================
+
+.. doxygenstruct:: LeapInternal::Connection::Key
+   :project: unity
+   :members: 

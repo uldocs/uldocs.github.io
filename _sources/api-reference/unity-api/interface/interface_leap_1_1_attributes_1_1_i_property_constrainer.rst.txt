@@ -1,0 +1,6 @@
+Interface Leap::Attributes::IPropertyConstrainer
+================================================
+
+.. doxygeninterface:: Leap::Attributes::IPropertyConstrainer
+   :project: unity
+   :members: 

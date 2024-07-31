@@ -1,0 +1,6 @@
+Struct LEAP_CONNECTION_MESSAGE
+==============================
+
+.. doxygenstruct:: LEAP_CONNECTION_MESSAGE
+   :project: tracking
+   :members:

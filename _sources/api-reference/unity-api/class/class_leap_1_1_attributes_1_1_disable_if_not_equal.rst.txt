@@ -1,0 +1,6 @@
+Class Leap::Attributes::DisableIfNotEqual
+=========================================
+
+.. doxygenclass:: Leap::Attributes::DisableIfNotEqual
+   :project: unity
+   :members: 

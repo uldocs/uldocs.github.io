@@ -1,0 +1,128 @@
+*****************************************
+Hand Pose Detection
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Pose detection is a great way to introduce more hand interactions into your scene. You can use it for any static poses that you wish to make, for instance, thumbs up to progress to the next section. </p>
+        <p> There are several powerful tools to help you get your project going with hand poses. These are not gestures so no movement is accounted for in the pose detectors.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scenes can be found in:
+
+* Assets/Samples/Ultraleap Tracking/x.x.x/XR Examples/3. Pose Detection/2. Pose Detector.unity
+* Assets/Samples/Ultraleap Tracking/x.x.x/XR Examples/3. Pose Detection/3. Pose Showcase.unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Quick Start with Pose Detection
+---------------------
+.. note:: For this example, we assume that you have just finished the :doc:`Your First Project Guide<../../getting-started/your-first-project>`.
+
+We offer a library of poses for you to use in your scene. These can be found here: :code:`Packages > Ultraleap Tracking > Core > Runtime > Prefabs > Pose Detection > HandPoses`. However, the easiest way to get these is through the :cs:class:`PoseDetector <Leap.HandPoseDetector>` pose selection.
+
+
+1. Import the :cs:class:`PoseDetector <Leap.HandPoseDetector>` into your scene using either the prefab from the package or adding the ":cs:class:`HandPoseDetector <Leap.HandPoseDetector>`.cs" script to an object in your scene.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/import-pose-detector.png
+    :width: 60%
+    :align: center
+
+2. Add a "Pose to Detect" in the :cs:class:`PoseDetector <Leap.HandPoseDetector>`'s inspector (shown below). If you have any variations to the pose, add variations via the pose variations.
+
+.. note:: If you do not see any poses, try clicking the eye icon in the top right corner of the pop-out. This will show you plugin content.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/select-hand-pose-scriptable.png
+    :width: 60%
+    :align: center
+
+3. You can add rules relating to directions that joints point in to be more specific about your poses. This means that you can use the same hand shape for different poses. 
+    
+.. note:: 
+  In the example below, we use the "Thumbs up" hand shape with a rule that dictates if your thumb is facing down (in relation to the camera) then the pose will be detected. This creates a "thumbs down" pose.
+  
+  This example disables the directional light when the pose is detected then re-enables it when the pose is lost.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/thumbs-down-pose-detector.png
+    :width: 60%
+    :align: center
+
+4. Unity events are invoked on the :cs:class:`PoseDetector <Leap.HandPoseDetector>` when the pose is found, lost and while the pose is detected. They can be subscribed to via code or using the inspector in the "Pose Events" section.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-detector-events.png
+    :width: 60%
+    :align: center
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Check out the pose detector page for how to use these recorded poses1
+---------------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-lg-12 p-2
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/pose-recorder-scene.png
+	
+    .. link-button:: ./pose-recording.html
+        :text: Pose Recorder
+        :classes: btn-outline-primary btn-block stretched-link
+
+    The Pose Recorder allows you to create your own hand shapes to use in your projects.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Detailed Look at the Pose Detector
+---------------------
+
+These options can be found in the inspector of the pose detector script when place in your scene.
+
+  * **Pose To Detect:** This is the primary pose which should be detected and can be set to any :cs:class:`HandPoseScriptableObject <Leap.HandPoseScriptableObject>`. This should be set by default to one of the poses provided in the examples.
+  * **Pose Variations:** These should be variations of the pose to detect. such as different versions of thumb extended. The detector will send a pose detected event if any of these poses are detected. This should not be used to detect different poses, but instead, variations of the same pose.
+  * **Detect Both Hands:** This check box is ticked by default. However, if you wish to only detect on one hand, untick this box and select the hand you wish to use.
+  * **Add a new rule for finger/palm:** This button will add a new direction to the pose detector. These directions are tied to part of the hand.
+
+      - **Rule:** This rule acts as an 'AND' function. As in, all rules must be matched in order for the pose to be detected. Targets inside the rule act as 'OR' functions.
+      - **Observed part of the hand:** This is the part of the hand which will need to point towards the target.
+      - **Targets:** This is a list of 'OR' targets. If any of the targets inside the rule are matched, it will become true.
+      
+          + **Check Box:** This enables or disables the specific target. Disable all targets or remove the rule to stop rules from being checked.
+          + **Direction Relative To:** Select what this target should be pointing towards.
+          + **Axis To Face:** Available if the 'direction relative to' is set to 'world direction' or 'camera local' and is the direction the 'observed part of the hand' needs to face in order for the condition to be met.
+          + **Object To Face:** Available if 'direction relative to' is set to 'towards object' and represents the object the 'observed part of the hand' needs to face in order for the condition to be met.
+          + **Rotation Threshold:** How close to the selected rotation, does the 'observed part of the hand' need to be in order to be classed as facing towards it.
+          + **Remove Target:** This removes the target.
+      - **Add Target:** This adds a new 'OR' target.
+      - **Remove Rule:** This removes the whole rule for finger/palm.
+  * **Pose Events:** These events are fired on their respective events, On Pose Detected, While Pose Detected and On Pose Lost.
+  * **Show Fine Tuning Options:** this exposes the leap provider field if you need to use a specific leap provider.
+
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-detector-inspector.png
+    :width: 70%
+    :align: center

@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_IMAGE_PROPERTIES
+==========================================
+
+.. doxygenstruct:: LeapInternal::LEAP_IMAGE_PROPERTIES
+   :project: unity
+   :members: 

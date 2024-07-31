@@ -1,0 +1,6 @@
+Class Leap::HandTrackingHintManager
+===================================
+
+.. doxygenclass:: Leap::HandTrackingHintManager
+   :project: unity
+   :members: 

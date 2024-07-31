@@ -1,0 +1,115 @@
+*********
+Your first project: Hello Hands
+*********
+
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> In this example project, you'll learn how to set up Ultraleap Hand Tracking in a fresh Unity project. </p>
+        <p> This example assumes that you already understand the <a HREF=index.html>Getting Started with Unity</a> steps. </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../_video/unity-user-manual/rigging-guide/clip1.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+
+
+-----------
+
+How to set up unity for Tabletop development
+------------
+
+The following steps are sufficient to see your first set of tracked hands in Unity. Note, for some platforms, you may need to set up a system specific SDK or scene components (see :doc:`Getting Started with Unity <index>` for more info).
+
+1. Create a new 3D project in unity.
+   
+.. figure:: ../../../../img/unity-api/unity-hub-new-project.png
+    :width: 70%
+    :align: center
+
+2. Create a new scene and name it appropriately.
+   
+.. figure:: ../../../../img/unity-api/new-scene-unity.png
+    :width: 80%
+    :align: center
+    
+3. Import the Ultraleap tracking package as described in :doc:`Getting Started with Unity <index>`
+   
+.. figure:: ../../../../img/unity-api/packagelist.png
+    :width: 50%
+    :align: center
+
+
+4. Add a Service Provider (desktop) prefab to the scene. This provides hand tracking data to the application. Provider prefabs can be found via the toolbar under `Ultraleap > Tracking > Service Provider (Desktop)`. 
+
+.. figure:: ../../../../img/unity-api/add-desktop-service-provider.png
+    :width: 60%
+    :align: center
+
+5. From the same toolbar menu as before, add a set of hands to the scene as a child of the Service Provider (desktop). The Hand Prefabs can be found under 'Ultraleap > Hands`. The plugin provides a few different hand visuals. The iconic `Capsule Hands` are procedurally generated to match the tracking data. There are also rigged (mesh) hands, including low polygon hands, outline hands and others.
+
+.. figure:: ../../../../img/unity-api/add-capsule-hand-tabletop.png
+    :width: 60%
+    :align: center
+    
+
+6. Press Play, or follow unity's build instructions for your desired platform.
+
+.. figure:: ../../../../img/unity-api/tabletop-capsule-hands.png
+    :width: 80%
+    :align: center
+
+
+If you want to do more with your virtual hands, i.e. interact with objects or access hand data in a script, it's worth reading the relevant documentation in :doc:`Features <../plugin/index>`.
+
+-----------
+
+Building
+###########
+
+Ultraleap does not have any specific build requirements so you can build this project for any platform. Just be sure to follow your chosen platforms steps for building the project. 
+
+-----------
+
+Troubleshooting
+###############
+
+If you do not see your hands in Unity, check the following:
+
+- Make sure you have the correct "Provider" in your scene. Provider prefabs are suffixed Desktop, Screentop, or XR. For this demo, you need the "Desktop" provider.
+- If you are using a custom camera or controller rig, check your application's scene hierarchy while your hand is in front of the sensor. Make sure the hand isn't simply being rendered in the wrong place relative to your camera.
+- Check the Ultraleap Tracking Icon in your task bar. If it has a red circle overlay this means the Ultraleap Tracking Service isn't sending any data. Double-check that your Ultraleap Hand Tracking Camera is plugged in, and check that the Ultraleap Tracking Service is running.
+- Open the Ultraleap Visualizer from the right-click menu of the Ultraleap Tracking Icon in your task bar. If you see hands in the Visualizer, the problem is likely somewhere in Unity.
+
+Need additional support? `Get in touch <https://support.leapmotion.com/hc/en-us>`_ we'd be happy to help.
+
+-----------
+
+What's next?
+------------
+
+Why not take a look at all the cool features that the plugin has to offer your project? You can find them here: :doc:`Plugin Features <../plugin/index>`.
+
+-----------
+
+`Back to top <#top>`_

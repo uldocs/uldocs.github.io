@@ -1,0 +1,6 @@
+Struct LEAP_CONFIG_RESPONSE_EVENT
+=================================
+
+.. doxygenstruct:: LEAP_CONFIG_RESPONSE_EVENT
+   :project: tracking
+   :members:

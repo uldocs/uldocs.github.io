@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::ContactUtils
+=======================================
+
+.. doxygenclass:: Leap::PhysicalHands::ContactUtils
+   :project: unity
+   :members: 

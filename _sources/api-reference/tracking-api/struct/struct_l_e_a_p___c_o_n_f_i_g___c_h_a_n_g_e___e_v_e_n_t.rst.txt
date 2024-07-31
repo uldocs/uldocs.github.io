@@ -1,0 +1,6 @@
+Struct LEAP_CONFIG_CHANGE_EVENT
+===============================
+
+.. doxygenstruct:: LEAP_CONFIG_CHANGE_EVENT
+   :project: tracking
+   :members:

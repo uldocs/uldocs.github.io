@@ -1,0 +1,6 @@
+Class Leap::XRSupportUtil
+=========================
+
+.. doxygenclass:: Leap::XRSupportUtil
+   :project: unity
+   :members: 

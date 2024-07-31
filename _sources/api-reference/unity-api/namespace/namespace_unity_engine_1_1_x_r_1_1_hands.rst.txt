@@ -1,0 +1,6 @@
+Namespace UnityEngine::XR::Hands
+================================
+
+.. doxygennamespace:: UnityEngine::XR::Hands
+   :project: unity
+   :no-link: 

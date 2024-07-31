@@ -1,0 +1,6 @@
+Class Leap::SetConfigResponseEventArgs
+======================================
+
+.. doxygenclass:: Leap::SetConfigResponseEventArgs
+   :project: unity
+   :members: 

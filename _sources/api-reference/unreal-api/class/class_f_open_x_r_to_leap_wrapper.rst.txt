@@ -1,0 +1,6 @@
+Class FOpenXRToLeapWrapper
+==========================
+
+.. doxygenclass:: FOpenXRToLeapWrapper
+   :project: unreal
+   :members:

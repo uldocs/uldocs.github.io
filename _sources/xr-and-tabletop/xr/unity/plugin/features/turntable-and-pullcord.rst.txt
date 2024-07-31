@@ -1,0 +1,50 @@
+.. |Turntable| replace:: :cs:class:`Turntable <Leap.Examples.Turntable>`
+.. |TurntableVisuals| replace:: :cs:class:`TurntableVisuals <Leap.Examples.TurntableVisuals>`
+.. |PullCord| replace:: :cs:class:`PullCord <Leap.Examples.PullCord>`
+.. |PullCordHandle| replace:: :cs:class:`PullCordHandle <Leap.Examples.PullCordHandle>`
+.. |PullCordVisuals| replace:: :cs:class:`PullCordVisuals <Leap.Examples.PullCordVisuals>`
+
+*****************************************
+Turntable and Pullcord
+*****************************************
+
+.. image:: ../../../../../img/unity-api/turntable.png
+    :alt: A pair of VR hands with a cube on a turntable
+
+This example provides assets that enable you to add object or product explorer style turntables to your applications. It also provides an example of a pull cord which triggers events to use when in different states.
+
+Tips
+-----
+
+You can modify the visuals and functionality of both the Turntable and the Pull Cord within the scene:
+
+For the Turntable, locate the Turntable Gameobject (Table/Turntable) and try changing the parameters on the Turntable component.
+
+For the Pull Cord, locate the Pull Cord Gameobject (Table/Pull Cord) and try moving its children `Pull Cord Start` and `Pull Cord End` in the scene. You can also modify the Pull Cord functionality by changing parameters such as `Resting Point` or `Explosion Point` on the Pull Cord component.
+
+What Code was used to build the example?
+----------------------------------------
+This example comes with a series of scripts and assets, the code included is:
+
+**Turntable:**
+
+|Turntable| - This is responsible for rotating the turntable whenever any fingertips are intersecting with it. It also calls `TurntableVisuals.UpdateVisuals()` when any turntable parameters have changed.
+
+|TurntableVisuals| - This creates a circle with a line renderer and dashes with drawMeshInstanced. It takes info such as the height and radius of the turntable from Turntable.cs.
+
+**PullCord:**
+
+|PullCord| - PullCord updates the handle projection position,
+updates the resting position for the pullCordHandle,
+provides a value for the progress of the pull cord
+and updates the exploding items.
+
+|PullCordHandle| - PullCordHandle keeps track of the handle's position and moves it according to hand attraction and pinching.
+
+|PullCordVisuals| - PullCordVisuals updates the pull cord visuals depending on the pull cord state.
+
+Video Walkthrough
+=======
+.. youtube:: qgkFZSB1yXw
+    :width: 560
+    :height: 315

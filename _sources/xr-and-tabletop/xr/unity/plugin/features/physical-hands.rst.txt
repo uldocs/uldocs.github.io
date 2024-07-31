@@ -1,0 +1,240 @@
+***********************************
+Physical Hands
+***********************************
+
+.. |IgnorePhysicalHands| replace:: :cs:class:`IgnorePhysicalHands <Leap.PhysicalHands.IgnorePhysicalHands>`
+.. |PhysicalHandEvents| replace:: :cs:class:`PhysicalHandEvents <Leap.PhysicalHands.PhysicalHandEvents>`
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Physical Hands is a new way to experience your virtual world using your hands. Physical Hands utilises the Unity physics engine to allow you to interact with any physics enabled object in your world. </p>
+        <p> There's no need to add any additional scripts to object, just a Rigidbody and Collider. </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/physicalhands.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scenes can be found in:
+	
+	:code:`Assets > Samples > Ultraleap Tracking > x.x.x > XR Examples > 2. Interactions > 1. Physical Hands Playground.unity`
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What's the best way to test out the features?
+-----------------------------------------------
+
+Ultraleap provides example scenes which are a great way to test out physical hands without any programming.
+
+Assuming you followed the :doc:`Getting Started Guide<../../getting-started/index>`, you can try out the Physical Hands example here: 
+
+:code:`Assets > Samples > Ultraleap Tracking > x.x.x > XR Examples > 2. Interactions > 1. Physical Hands Playground.unity`
+
+Video Walkthrough
+---------------------
+
+.. youtube:: FlrPoaj_rUc
+    :align: center
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Contact Modes
+-----------------------------------------------
+
+**Hard contact:** 
+##########
+
+Your hands will wrap around objects instead of going into them. You will be able to pick up and push objects.
+
+**Soft contact:** 
+##########
+
+Your hands will go through objects but you are still able to push and grab objects as you would expect.
+
+**No contact:**
+##########
+
+Your hands will go through all objects. You are unable to push objects but are able to grab them.
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Building your own scene using Physical Hands
+-----------------------------------------------
+
+    For this example, we assume that you have just created a new scene in Unity and have `set up the scene for XR <https://docs.unity3d.com/Manual/xr-scene-setup.html>`_.
+
+
+1. From the toolbar, select :code:`Ultraleap > Physical Hands > Physical Hands Manager`. Also from the toolbar, import your favourite set of hands :code:`Ultraleap > Hands.` And that's all you need in a scene to get started!
+
+.. note:: If you wish to change the origin of the hand tracking data, you can reference any LeapProvider to the Physical Hands Manager
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/toolbar-physical-hands-manager.png
+    :width: 60%
+    :align: center
+
+2. Any object with a Rigidbody and collider will work with Physical Hands. Let's add an object to get started. Right click in the hierarchy, add a cube to your scene and scale it down to 0.4 on all axes in the inspector.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/add-cube-to-scene.png
+    :width: 40%
+    :align: center
+
+3. Add a Rigidbody to the cube. When playing the scene, the cube will drop through the floor so we also need to add a table. For this, add a stretched cube and move the original cube on top of it.
+
+.. note:: If you cannot reach the cube, you may need to move them closer to the XR Origin
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/add-rigidbody.png
+    :width: 40%
+    :align: center
+
+
+4. With these steps complete, you should be able to push and grab your object with your Physical Hands.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/basic-physical-hands-scene.png
+    :width: 70%
+    :align: center
+
+5. Currently, your hands will collide with the table cube. To fix this, we need to add the :cs:class:`IgnorePhysicalHands <Leap.PhysicalHands.IgnorePhysicalHands>` component to your table object. 
+
+.. note:: By default, this component will stop your hands from colliding and grabbing the related Gameobject. To allow either of these, un-tick the option on the component.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Designing for Physical Hands
+-----------------------------------------------
+
+Physical Hands is designed to make it as easy as possible for you to add interactable objects to your scene. Physical Hands uses Unity's built in physics engine and as such, you can interact with any object which has a Rigidbody and Collider. However, we recommend that you follow some basic rules to make your scene;
+
+* Consider using the recommended physics settings. These can be automatically applied from :code:`Project Settings > Ultraleap > Physical Hands`.
+* Avoid thin Colliders due to unreliable interactions of Unity's physics.
+* Some small objects may be more difficult to interact with.
+* While Physical Hands are compatible with physics joints, we do not recommend that you use more than one joint per object as these can become unstable.
+* Make interactions physical. Moving parts and tactile feedback add a deeper understanding to your scene.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Ignoring Physical Hands
+-----------------------------------------------
+
+If you need to include objects which have Colliders or Rigidbodies but you don't want them to interact with the hand, you can add the :cs:class:`IgnorePhysicalHands <Leap.PhysicalHands.IgnorePhysicalHands>` component.
+
+This allows you to select whether the object can be grabbed or pushed by the hands.
+
+.. note:: This does not make the objects un-interactable to any object other than the hand. E.g. you can push ignored objects with other held items.  
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Using Physical Hands Manager
+-----------------------------------------------
+
+The :cs:class:`Physical Hand Manager <Leap.PhysicalHands.PhysicalHandsManager>` allows you to choose between 3 pre-made contact modes: hard, soft, and no contact. These effect how your hands interact with objects in the world;
+
+* Hard contact: Your hands will wrap around objects instead of going into them. You will be able to pick up and push objects.
+* Soft contact: Your hands will go through objects but you are still able to push and grab objects as you would expect.
+* No contact: Your hands will go through all objects. You are unable to push objects but are able to grab them.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/physical-hands-manager-change-contact-mode.png
+    :width: 50%
+    :align: center
+
+Try out these different modes and see which one is best for your project!
+
+.. note:: When changing these modes, the :cs:class:`Physical Hand Manager <Leap.PhysicalHands.PhysicalHandsManager>` will automatically create a child object which includes the relevant contact parent. These are explained below in the :ref:`Contact Parent section <contact-parent>`.
+
+**Advanced Variables**
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/physical-hands-manager.png
+    :width: 100%
+    :align: center
+
+* Input Provider: The Leap Provider will be automatically created for you at runtime. However, if you wish to use a specific Leap Provider, add it to your scene and reference it in the Input Provider variable of the Physical Hands Manager.
+
+* Hover Distance: The distance from an object that the hand must be to trigger "On Hover" events.
+
+* Contact Distance: How close the hand must be to an object before it is considered "Contacting". This distance effects grab and push.
+
+* Events dropdown: 
+
+  * On Hover
+  * On Hover Exit
+  * On Contact
+  * On Contact Exit
+  * On Grab
+  * On Grab Exit
+
+.. note:: All events provide the associated ContactHand and the RigidBody that the hand is interacting with.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Object Interaction Events
+-----------------------------------------------
+
+You may wish to have access to interaction events on specific objects when they are hovered, contacted or grabbed by Physical Hands.
+
+To achieve this, you can add the :cs:class:`Physical Hand Events <Leap.PhysicalHands.PhysicalHandEvents>` component to your GameObject. This will provide you with these UnityEvents for; either, left and right hands:
+
+* Hover Events: Fired when a hand is within the "Hover Distance"
+
+  * OnHoverEnter
+  * OnHover
+  * OnHoverExit
+  
+* Contact Events: Fired when a hand contacts the object
+
+  * OnContactEnter
+  * OnContact
+  * OnContactExit
+  
+* Grab events: Fired when a hand grabs the object
+
+  * OnGrabEnter
+  * OnGrab
+  * OnGrabExit
+
+.. note:: All events provide the associated ContactHand, allowing you to filter them by ContactHand.Handedness if required.
+
+These events allow you to change the visual state of objects, play audio and track interactions based on what users are interacting with.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Grab Helper
+-----------------------
+
+The :cs:class:`Grab Helper <Leap.PhysicalHands.GrabHelper>` handles all grabbing in Physical Hands. It is a necessary script and must be placed on the same object as the :cs:class:`Physical Hand Manager <Leap.PhysicalHands.PhysicalHandsManager>`. 
+
+However, this script is self contained and does not have any public variables so just add it (or add the Physical Hands Manager prefab) and we will handle the rest.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+.. _contact-parent:
+
+Contact Parent
+-----------------------
+
+The contact parent is the main controller of Physical Hands. However, you should never need to edit this component. Default values have been calibrated to give the best experience.
+
+.. warning:: These values will reset if you change the contact mode in the :cs:class:`Physical Hand Manager <Leap.PhysicalHands.PhysicalHandsManager>`.
+
+However, should you wish to change any of these values, be sure to test after each change to make sure that your interactions still work as you intend.

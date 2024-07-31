@@ -1,0 +1,6 @@
+Class Leap::Attachments::AttachmentPointFlagsExtensions
+=======================================================
+
+.. doxygenclass:: Leap::Attachments::AttachmentPointFlagsExtensions
+   :project: unity
+   :members: 

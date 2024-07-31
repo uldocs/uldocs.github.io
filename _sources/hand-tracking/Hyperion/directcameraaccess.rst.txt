@@ -1,0 +1,205 @@
+:hide-toc:
+
+********************************
+Direct Camera Access
+********************************
+
+Ultraleap offers APIs that enable developers to unlock the Leap Motion Controller 2 camera to be used for computer vision use cases
+
+Compared to ‘off the shelf’ sensors; our firmware is developed in-house, which is unusual, so there are lots of unique ways in which the camera can be used for CV applications. 
+
+For customers looking to achieve high IR sensitivity at incredibly fast frame-rates this is one of the best cameras on the market.
+
+Fast mode context switching
+------------
+
+*   Strobe, Gain and Exposure can be adjusted on every frame in a repeating pattern. 
+
+*   Exposure can be adjusted on the fly and, in theory, any camera/sensor setting can be adjusted with fast mode context switching.
+
+*   The frames are produced with the exposure recorded is in the embedded line and the illumination can be determined from the frame number.
+
+*   Any pattern is possible as long as it is repeating.
+
+Custom ISP/Gamma
+------------
+
+The Leap Motion Controller 2 includes a custom ISP/Gamma curve on the sensor which delivers image enhancement. Essentially any Gamma function could be supported.
+
+The Leap Motion Controller 2 sensors are 10bit -> merges down to 8bit via the custom ISP table. This increases the dynamic range. For example, this allows for improvements to the resolution at the darker end of the spectrum via the custom ISP table. This can be used to increase the amount of information in the darker parts of the images.
+
+Optional support
+------------
+
+*   Any subset of 1024 resolution is configurable.
+
+*   Automatic Gain and Exposure control
+
+*   Support for an IMU (with enough volume)
+
+*   Programmable Region of Interest
+
+*   Temperature Sensor
+
+*   Mirror and flip of images on sensor
+
+*   Cropping on sensor
+
+*   Embedded 256 bytes memory available for use
+
+*   Programmable black level
+
+Potential Use cases
+------------
+
+*   Depth sensing using the stereo disparity map
+
+*   3D scanning
+
+*   Detecting IR illumination (reflective or LED emitters)
+
+*   Detecting or inferring information about skin/reflective IR surfaces
+
+*   Eye or Face tracking (high frame rates)
+
+*   Machine learning tasks which might benefit from IR illumination
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="https://www.ultraleap.com/contact-us/">Contact us to get access</a>
+
+-----------
+
+How to use OpenCV for image access
+-----------
+
+The Python code provided below is designed to capture video from the Leap Motion Controller 2 camera, specifically targeting embedded metadata contained in the video stream. The metadata is processesed in a way that allows for "bright" and "dark" frames to be distinguished from one another, displaying them in separate windows while counting their occurrences.
+
+::
+  
+    import numpy as np  # pip install numpy
+    import cv2  # pip install opencv-python
+    import struct
+
+    # note that 384x384 resolution will only work on Python 3.6 and opencv-python==4.1.1.26
+
+
+    cam = cv2.VideoCapture(1)
+    w = 1024
+    h = 1024
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, w)
+    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, h)
+    cam.set(cv2.CAP_PROP_CONVERT_RGB, 0)  # NB: this needs to work!
+    once = True
+    frame_count_bright = 0
+    frame_count_dark = 0
+    while True:
+
+        r, frame = cam.read()
+        frame = np.reshape(frame, (h, int(frame.size / h)))
+        embedded_line = frame[-1, :68]
+        embedded_params = struct.unpack("IIIIHHHHIQIIIIIII", embedded_line.tobytes())
+        frame_label = embedded_params[1]
+        if once:
+            once = False
+            print(frame.shape)
+        frame = cv2.resize(frame, (0, 0), fx=0.6, fy=0.6)
+        frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2RGB)
+        if frame_label == 0:
+            frame_count_bright = frame_count_bright + 1
+            cv2.putText(
+                frame,
+                f"bright frame count: {frame_count_bright}",
+                (5, frame.shape[0] - 5),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (0, 0, 255),
+            )
+            cv2.waitKey(1)
+            cv2.imshow("bright frames", frame)
+        else:
+            frame_count_dark = frame_count_dark + 1
+            cv2.putText(
+                frame,
+                f"dark frame count: {frame_count_dark}",
+                (5, frame.shape[0] - 5),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (0, 0, 255),
+            )
+            cv2.waitKey(1)
+            cv2.imshow("dark frames", frame)
+
+**Code Explanation**
+
+*   **Import Libraries**:
+  
+    *   numpy (as np): Handles numerical operations and array manipulation.
+
+    *   cv2: OpenCV library for computer vision tasks (image/video processing).
+
+    *   struct: Interprets bytes as packed binary data.
+
+*   **Camera Setup**:
+    
+    *   cv2.VideoCapture(1): Opens the second camera (index 1, as the first is usually 0).
+
+    *   Camera resolution is set to 1024x1024 pixels.
+
+    *   Disables RGB conversion (expects grayscale images).
+
+*   **Initialization**:
+
+    *   once: Flag to print frame shape once.
+
+    *   frame_count_bright, frame_count_dark: Counters for frame types.
+
+*   **Main Loop**:
+
+    *   Continuously reads frames from the camera.
+
+*   **Metadata Extraction**:
+
+    *   Reshapes the frame into a 2D array.
+
+    *   Extracts the last line of the frame, which contains embedded data.
+
+    *   Unpacks the binary data into integers using a specific format string.
+
+    *   frame_label is extracted, likely indicating frame type (0 for bright, otherwise dark).
+
+*   **Frame Processing**:
+
+    *   Resizes the frame by a factor of 0.6 in both dimensions.
+
+    *   Converts the grayscale frame to RGB (for display with OpenCV).
+
+*   **Frame Display and Counting**:
+
+    *   If frame_label is 0 (bright frame):
+
+        *   Increments the bright frame counter.
+
+        *   Adds a text label with the count to the frame.
+
+        *   Shows the frame in a window titled "bright frames."
+
+    *   Else (dark frame):
+
+        *   Increments the dark frame counter.
+
+        *   Adds a similar text label.
+
+        *   Shows the frame in a window titled "dark frames."
+
+**Key Points**
+
+*   **Embedded Metadata**: This code assumes the video stream has a specific format where the last line of each frame encodes metadata. The struct.unpack line is crucial for deciphering this information.
+
+*   **Frame Labeling**: The frame_label value (extracted from metadata) is used to categorize frames as bright or dark.
+
+*   **Display and Counting**: Separate windows are used to visualize bright and dark frames, and counters keep track of their occurrences.
+
+*   **Python & OpenCV Version**: The in-line comment mentions compatibility with Python 3.6 and a specific version of OpenCV. Please be aware that there might be potential issues with other configurations.
+
+*   **OpenCV OS Compatibility**: OpenCV can provide image access and has been tested on Windows and Linux - however, there may be problems with this code on MacOS.

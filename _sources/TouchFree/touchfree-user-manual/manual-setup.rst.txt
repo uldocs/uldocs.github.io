@@ -1,0 +1,58 @@
+:hide-toc:
+
+Manual Setup
+============
+
+Use Manual Setup if you want to refine your setup with known distances and angles for your kiosk screen and camera position.
+
+.. image:: ../../img/touchfree-user-manual/manual-setup.png
+    :alt: TouchFree Manual Setup
+
+Screen Height
+-------------
+
+Screen height is measured in centimetres from the bottom edge of the screen (excluding the bezel) to the top edge of the screen (excluding the bezel).
+
+.. Note:: Screen width is not needed here because TouchFree uses your screen resolution to determine the aspect ratio of the screen.
+
+Screen Tilt
+-----------
+
+Screen tilt is measured in degrees with **positive** values tilting the screen **backwards** and **negative** values tilting the screen **forward**. This tilts around the bottom edge of the screen (excluding the bezel).
+
+Camera Distance from Screen
+---------------------------
+
+Camera Distance from Screen is measured in centimetres from the bottom edge of the screen (excluding the bezel). **Positive** values represent a position **in front** of the screen.
+
+.. note:: It is unlikely that this value would be negative.
+
+Camera Rotation
+---------------
+
+Camera Rotation is measured in degrees with 0 facing up, **positive** values **towards** the screen and **negative** values **away from** the screen.
+
+.. note:: see **Measurement Notes** for more information on these rotations.
+
+Camera Left to Right
+--------------------
+
+Camera Left to Right is measured in centimetres from the middle of the bottom edge of the screen (excluding the bezel) to the middle centre of the Ultraleap camera. **Positive** values represent a position to the **right** of the screen when facing it. **Negative** values represent a position to the **left** of the screen when facing it.
+
+Camera Height
+-------------
+
+Camera Height is measured in centimetres from the middle of the bottom edge of the screen (excluding the bezel) to the middle centre of the Ultraleap camera. **Positive** values represent a position **above** the bottom edge of the screen (excluding the bezel). **Negative** values represent a position **below** the bottom edge of the screen (excluding the bezel).
+
+Measurement Notes
+-----------------
+
+.. image:: ../../img/touchfree-user-manual/measurement-notes-1.jpeg
+    :alt: TouchFree Measurement Notes
+
+Distances for relative screen-camera placement are taken from the bottom-centre screen pixel row, to the top centre of the Ultraleap camera module.
+
+.. image:: ../../img/touchfree-user-manual/measurement-notes-2.png
+    :alt: TouchFree Measurement Image
+
+Angles are measured relative to 0° being directly upwards in the room, regardless of orientation or position. *Note: this has changed since TouchFree 1.1.*

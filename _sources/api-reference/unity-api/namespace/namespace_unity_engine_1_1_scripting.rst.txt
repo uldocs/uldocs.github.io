@@ -1,0 +1,6 @@
+Namespace UnityEngine::Scripting
+================================
+
+.. doxygennamespace:: UnityEngine::Scripting
+   :project: unity
+   :no-link: 

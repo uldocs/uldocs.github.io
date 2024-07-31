@@ -1,0 +1,23 @@
+:hide-toc:
+
+************
+Tracking API
+************
+
+.. only:: no_xml
+
+    .. warning:: You are building with no xml so no API reference docs will be available here. Please use CI to gather xml for you or manage the xml files locally yourself to see reference docs.
+
+-------
+
+.. toctree::
+    :caption: Table of Contents
+    :maxdepth: 2
+
+    LeapC Guide <leapc-guide.rst>
+    API Reference <api-reference.rst>
+    Examples <examples.rst>
+
+-----------
+
+`Back to top <#top>`_

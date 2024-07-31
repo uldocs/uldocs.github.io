@@ -1,0 +1,6 @@
+Class Leap::SimpleFacingCameraCallbacks
+=======================================
+
+.. doxygenclass:: Leap::SimpleFacingCameraCallbacks
+   :project: unity
+   :members: 

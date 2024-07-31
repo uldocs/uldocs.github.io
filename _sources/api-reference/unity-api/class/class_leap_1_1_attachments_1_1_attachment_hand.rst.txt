@@ -1,0 +1,6 @@
+Class Leap::Attachments::AttachmentHand
+=======================================
+
+.. doxygenclass:: Leap::Attachments::AttachmentHand
+   :project: unity
+   :members: 

@@ -1,0 +1,138 @@
+:hide-toc:
+
+***************************************************
+Interactive Floating Displays: The Levitate Project
+***************************************************
+
+*At Ultraleap we’ve always been focused on pushing human-computer interfaces forward.*
+
+*In 2017 we partnered with the Universities of Glasgow, UCL, Bayreuth, and Chalmers University of Technology on an EU funded project to research whether it was possible to make two-dimensional digital information into something tangible and three-dimensional. The result was a prototype that uses ultrasonic levitation. A machine that flies particles around so fast 3D objects seem to materialise in mid-air.*
+
+.. youtube:: omO_ukwj2TY
+  :width: 750
+
+Moving Beyond 2D Displays
+#########################
+    
+The Levitate project is a compelling glimpse into a new world where users can connect directly with tangible, floating content. Physical content that is three-dimensional and multimodal - meaning you can see it, hear it, feel it, and manipulate it. 
+
+This triumph over the laws of physics is at the bleeding edge of technology. The Levitate researchers adapted signal processing techniques and took inspiration from massive antenna array designs found in modern telecommunication networks like 4G and 5G.
+
+.. image:: ../img/ultralab/levitate/hands-around-object.gif
+  :alt: Hands move around a floating object
+  :width: 600
+
+Back in 2017, the Levitate team faced this mind-boggling engineering challenge with lots of questions.
+    
+  This was the first big project that landed on my desk when I joined Ultraleap in 2017. Week 2 on the job and I was already heading to Glasgow to meet the team and make stuff levitate…4 years ago, the project basically seemed like a Mars mission, full of risk!
+
+  -- Orestis Georgiou, Director of Research, Ultraleap
+
+From Ordinary to Extraordinary
+##############################
+
+The key to unlocking this truly compelling new form of human-computer interaction was ultrasound. Using ultrasonic speakers to levitate small particles is the stuff of `make-at-home science projects <https://www.instructables.com/Acoustic-Levitator/>`_. But the true potential of ultrasonic levitation opens up extraordinary possibilities for blending digital and physical worlds. 
+
+.. image:: ../img/ultralab/levitate/Pipette-droplet.gif
+  :alt: A pipette leaves a droplet floating in mid-air
+  :width: 600
+
+Acoustic levitation works by focusing ultrasonic energy to create acoustic traps. Acoustic traps can lift and trap small, light objects. Even liquids. 
+
+There are several different `types of acoustic traps <https://en.wikipedia.org/wiki/Acoustic_levitation#Types_of_Levitation>`_. Different hardware produces acoustic traps of different shapes, sizes, and complexity. It was this concept the Levitate team used as a springboard to develop a machine that could lift and control multiple particles at the same time. 
+
+The machine uses 1024 ultrasound speakers. It relies on fast and stable computational algorithms, developed by the Levitate researchers, capable of calculating the acoustic forces needed to levitate particles and move them at speeds of 8.75 m/s. Working together these speakers can adjust the position of the floating particles 17 thousand times a second. This is where imagination becomes reality. 
+
+The human eye and brain can only process about 12 separate images per second. Each image is only retained for around 1/16 of a second. Changing an image within this time frame creates an illusion of continuity. 
+
+This phenomenon is called persistence of vision and it's how animation works. The Levitate project exploited this illusion, using fast-moving levitating particles to draw lines and curves in mid-air. The result is the creation of 3D shapes that appear to materialise in mid-air. A real-life physical hologram.
+
+.. image:: ../img/ultralab/levitate/spinning-world.gif
+  :alt: Levitation creates the illusion of a 3D spinning planet earth
+  :width: 600
+
+From Extraordinary to Astounding
+################################
+
+A core driving principle of the Levitate project was to create a truly compelling interactive experience involving all the senses. 
+
+The unique impact of the Levitate project has been to harness the power of the ultrasonic speakers to build this multimodal interaction.
+
+  Using acoustic levitation alongside mid-air haptics in the same space is a revolutionary idea - there aren’t currently any other feasible solutions to this.
+
+  -- Carl Andersson, Acoustics Researcher, Chalmers
+
+The ultrasonic speakers multitask, performing the feat of levitation while also conjuring haptics. Mid-air tactile sensations, created by focused ultrasound, give the illusion of touching the floating 3D shape. The same speakers are also used to produce audible sound, precisely directing the audio for a full multi-sensory experience. 
+
+  Through interactions with Levitate researchers, we realized the many parallelisms existing between acoustics and "traditional" optical holography. I got involved, bringing approaches from holography to acoustics, which allowed us to make interesting breakthroughs, such as acoustic beams bending around objects or improving levitation approaches. The funny thing is that this has allowed us to use acoustic levitation to create 3D volumetric displays, my initial area of expertise... I guess sometimes you need to take a detour to move forward!
+
+  -- Diego Martinez Plasencia, Lecturer in Multisensory Interfaces, UCL
+
+Joining Forces to Defy Gravity
+##############################
+
+Levitate is essentially creating a multi-sensory illusion. The team knew that the real challenge wouldn’t be in complex algorithms or clever speaker arrays, but in capturing the subtleties of the more human elements. How should levitating particles wiggle when selected? How should users point at the display to interact? 
+
+It was clear that a multimodal display needed a multimodal skillset among the collaborators. So the Levitate team was carefully assembled to include computer scientists, physicists, experts in acoustics, and experts in human interaction, as well as specialists in art and displays. This interdisciplinary team set about creating the HMI paradigm of the future, layering human psychology, design, and ergonomics on computing and acoustics. 
+
+  I was fascinated by the interdisciplinary nature of the project…computer science, physics, engineering, psychology etc.
+
+  I also very much appreciated the opportunity to collaborate with some truly brilliant minds. I was blown away by the enthusiasm and drive of the people involved in the project. 
+
+  -- Viktorija Paneva, Computer Science Researcher, University of Bayreuth
+
+.. image:: ../img/ultralab/levitate/rotating-levitating-cube.gif
+  :alt: Person uses fingers to rotate a levitating cube
+  :width: 600
+
+Shaping the future
+##################
+
+In the future, Levitate researchers hope to go beyond multiple particles, to the levitation of realistic complex objects such as electronic components for circuit assembly in mid-air. This would revolutionize control interfaces for computers as well as enable a range of industrial applications, but the true potential could go way beyond this. 
+
+  Advances here broaden the notion of what a 'display' is, to create visual content in new ways and to incorporate other sensory modalities into the experience
+
+  -- Euan Freeman, Human Computer Interaction Researcher, University of Glasgow
+
+  Recently we have demonstrated a first prototype of the levitation display encompassing visual, audio and haptic feedback. In the future, I expect many improvements in terms of performance, design and size
+ 
+  -- Viktorija Paneva, Computer Science Researcher, University of Bayreuth
+
+This research and the technological advances it has powered have massive potential for shaping how people will interact with content in the future. 
+
+.. image:: ../img/ultralab/levitate/levitate-dog.png
+  :alt: Artists impression of a 3D dog made from levitating particles
+  :width: 600
+
+The Levitate project has advanced our understanding of how ultrasound behaves in air. This translates to huge improvements in our ability to control and manipulate acoustic energy in 3D space. So what’s next? 
+
+There is a vast world of possibilities in harnessing control of acoustic energy - to move objects, to apply pressure to your skin, direct audio waves to your ears, or even wirelessly power small electronics. And this control could theoretically be used in other mediums, such as water or even inside living tissues, perhaps delivering drugs. 
+
+There could be a significant impact on education, work, and entertainment. The systems and platforms created will establish a bridge between different scientific communities and with the creative industries. Mid-air haptics could be used to create holographic dials directly under drivers' hands, let scientists explore the 3D structure of proteins, enable chemists to handle substances without the need for containers, or give engineers the power to build and manipulate complex prototypes.
+
+  My research has always been driven by visions such as the Holodeck in Star Trek or the holograms in Star Wars - creating imagery in thin air. We still have a long way to go, but the interfaces we are creating are taking us closer than ever to such visions, creating stuff that you can see, hear and feel... and we are just taking the first steps! 
+
+  -- Diego Martinez Plasencia, Lecturer in Multisensory Interfaces, UCL
+
+----
+
+For more information contact our Director of Research `Orestis Georgiou <mailto:orestis.georgiou@ultraleap.com>`_.
+
+.. image:: ../img/ultralab/levitate/collabs.png
+  :alt: Logos of collaborating institutions
+  :width: 700
+  :align: center
+
+.. list-table:: 
+    :widths: 15 85
+
+    * - .. image:: ../img/ultralab/levitate/eu-flag.jpeg    
+          :width: 100
+          :align: center
+      - *This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 737087.*
+
+Want to stay in the loop on the latest Ultraleap updates? Sign up to our newsletter `here <https://www.ultraleap.com/newsletter-sign-up/>`_.
+
+----
+
+We welcome feedback on our products and services. `Contact us <https://www.ultraleap.com/contact-us/>`_.

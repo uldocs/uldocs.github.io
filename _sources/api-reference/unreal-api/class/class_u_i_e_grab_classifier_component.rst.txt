@@ -1,0 +1,6 @@
+Class UIEGrabClassifierComponent
+================================
+
+.. doxygenclass:: UIEGrabClassifierComponent
+   :project: unreal
+   :members:

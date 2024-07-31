@@ -1,0 +1,15 @@
+:hide-toc:
+
+************************************************************************
+Install and run the Ultraleap Hand Tracking Software on the Vive Focus 3 
+************************************************************************
+
+1. Make sure your headset is turned on.
+2. Connect your headset to the PC onto which you have downloaded the APKs. Once the headset has been connected it should be available in your file browser.
+3. Copy the APKs to your headset using the file browser - we would recommend you add it to your "Downloads" folder so that it is easy to find it when you are looking for it on your headset.
+4. Put on your headset, open your file browser in VR and locate the folder that contains the APKs.
+5. Select the APKs you wish to install or update, and choose "Install" or "Update" from the popup that appears.
+
+-----------
+
+`Back to top <#top>`_

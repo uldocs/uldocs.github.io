@@ -1,0 +1,6 @@
+Class ULeapBlueprintFunctionLibrary
+===================================
+
+.. doxygenclass:: ULeapBlueprintFunctionLibrary
+   :project: unreal
+   :members:

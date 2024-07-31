@@ -1,0 +1,6 @@
+Struct LEAP_BONE
+================
+
+.. doxygenstruct:: LEAP_BONE
+   :project: tracking
+   :members:

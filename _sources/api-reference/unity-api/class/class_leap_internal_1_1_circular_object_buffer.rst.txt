@@ -1,0 +1,6 @@
+Class LeapInternal::CircularObjectBuffer
+========================================
+
+.. doxygenclass:: LeapInternal::CircularObjectBuffer
+   :project: unity
+   :members: 

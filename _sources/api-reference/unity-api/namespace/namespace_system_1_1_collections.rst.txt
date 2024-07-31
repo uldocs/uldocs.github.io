@@ -1,0 +1,6 @@
+Namespace System::Collections
+=============================
+
+.. doxygennamespace:: System::Collections
+   :project: unity
+   :no-link: 

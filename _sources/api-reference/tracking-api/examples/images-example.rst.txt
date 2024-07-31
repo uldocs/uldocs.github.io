@@ -1,0 +1,90 @@
+**************
+Images Example
+**************
+
+The Ultraleap Tracking Service creates the tracking data provided in a :cpp:struct:`LEAP_TRACKING_EVENT()<LEAP_TRACKING_EVENT>` struct by analyzing a set of stereo images taken by the Ultraleap Hand Tracking Camera.
+
+You can subscribe to receive the images LeapC is analyzing by setting the :cpp:enum:`eLeapPolicyFlag_Images<eLeapPolicyFlag_Images>` policy flag. This will cause LeapC to start dispatching :cpp:struct:`LEAP_IMAGE_EVENT<LEAP_IMAGE_EVENT>` messages through the usual message pump.
+
+Unsubscribing is achieved by calling :cpp:func:`LeapSetPolicyFlags<LeapSetPolicyFlags>` again with :cpp:enum:`eLeapPolicyFlag_Images<eLeapPolicyFlag_Images>` as the "clear" argument.
+
+ImageSample.c
+~~~~~~~~~~~~~
+The ImageSample.c program uses the callback mechanism defined by the `ExampleConnection <example-connection.html>`_ described in the other examples. Instead of printing out frame information, though, ImageSample keeps track of the latest images that the LeapC API has provided.
+
+LeapC allocates the memory for the images that it provides, and will not release the memory for a set of images until:
+  * The client has polled and received the :cpp:struct:`LEAP_IMAGE_EVENT<LEAP_IMAGE_EVENT>` containing that image's data
+  * The client has polled and received the next :cpp:struct:`LEAP_IMAGE_EVENT<LEAP_IMAGE_EVENT>`
+
+If the client wants access to the image after this point then they should copy the data into another, user-allocated, buffer.
+
+The buffer size needed for a set of images is determined by the image dimensions, the image bytes-per-pixel, and the number of images in the set. Each image's dimensions are contained in the :cpp:struct:`LEAP_IMAGE_PROPERTIES<LEAP_IMAGE_PROPERTIES>` structure. For a typical image from a Leap Motion Controller, this size is:
+
+.. code-block:: cpp
+
+	640 (width) * 240 (height) * 1 (byte-per-pixel) * 2 (images) = 307200 bytes
+	
+The full sample code is:
+	
+.. code-block:: cpp
+
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include "LeapC.h"
+  #include "ExampleConnection.h"
+
+  /** Callback for when the connection opens. */
+  static void OnConnect(void){
+    printf("Connected.\n");
+  }
+
+  /** Callback for when a device is found. */
+  static void OnDevice(const LEAP_DEVICE_INFO *props){
+    printf("Found device %s.\n", props->serial);
+  }
+
+  /** Callback for when a frame of tracking data is available. */
+  static void OnFrame(const LEAP_TRACKING_EVENT *frame){
+    printf("Frame %lli with %i hands.\n", (long long int)frame->info.frame_id, frame->nHands);
+    for(uint32_t h = 0; h < frame->nHands; h++){
+      LEAP_HAND* hand = &frame->pHands[h];
+      printf("    Hand id %i is a %s hand with position (%f, %f, %f).\n",
+                  hand->id,
+                  (hand->type == eLeapHandType_Left ? "left" : "right"),
+                  hand->palm.position.x,
+                  hand->palm.position.y,
+                  hand->palm.position.z);
+    }
+  }
+
+  /** Callback for when an image is available. */
+  static void OnImage(const LEAP_IMAGE_EVENT *imageEvent){
+      printf("Received image set for frame %lli with size %lli.\n",
+             (long long int)imageEvent->info.frame_id,
+             (long long int)imageEvent->image[0].properties.width*
+             (long long int)imageEvent->image[0].properties.height*2);
+  }
+
+  int main(int argc, char** argv) {
+    //Set callback function pointers
+    ConnectionCallbacks.on_connection          = &OnConnect;
+    ConnectionCallbacks.on_device_found        = &OnDevice;
+    ConnectionCallbacks.on_frame               = &OnFrame;
+    ConnectionCallbacks.on_image               = &OnImage;
+
+    LEAP_CONNECTION *connection = OpenConnection();
+    LeapSetPolicyFlags(*connection, eLeapPolicyFlag_Images, 0);
+
+    printf("Press Enter to exit program.\n");
+    getchar();
+    CloseConnection();
+    DestroyConnection();
+    return 0;
+  }
+  //End-of-Sample
+
+Note that this example does not attempt to display image data graphically.
+
+-----------
+
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Struct Leap::PointMapping
+=========================
+
+.. doxygenstruct:: Leap::PointMapping
+   :project: unity
+   :members: 

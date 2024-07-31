@@ -1,0 +1,6 @@
+Struct LEAP_DISTORTION_MATRIX
+=============================
+
+.. doxygenstruct:: LEAP_DISTORTION_MATRIX
+   :project: tracking
+   :members:

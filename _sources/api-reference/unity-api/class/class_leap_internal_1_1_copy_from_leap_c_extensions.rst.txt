@@ -1,0 +1,6 @@
+Class LeapInternal::CopyFromLeapCExtensions
+===========================================
+
+.. doxygenclass:: LeapInternal::CopyFromLeapCExtensions
+   :project: unity
+   :members: 

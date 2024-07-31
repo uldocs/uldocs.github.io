@@ -1,0 +1,6 @@
+Class ULeapComponent
+====================
+
+.. doxygenclass:: ULeapComponent
+   :project: unreal
+   :members:

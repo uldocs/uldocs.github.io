@@ -1,0 +1,6 @@
+Class Leap::InputActions::XRHandsInputActionUpdater
+===================================================
+
+.. doxygenclass:: Leap::InputActions::XRHandsInputActionUpdater
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::HandTrackingSourceUtility
+=====================================
+
+.. doxygenclass:: Leap::HandTrackingSourceUtility
+   :project: unity
+   :members: 

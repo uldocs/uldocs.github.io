@@ -1,0 +1,131 @@
+:hide-toc:
+
+TouchFree Tooling For Web
+=========================
+
+`TouchFree Tooling for Web <https://leap2.ultraleap.com/touchfree/>`__ is a lightweight client that can be integrated into your web application, turning it touchless with minimal development effort.
+
+Dependencies
+------------
+
+1. Set up your `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`__
+2. Download and install `TouchFree <https://leap2.ultraleap.com/touchfree/>`__
+3. Configure your Hand Tracking Camera for TouchFree
+4. Download the `TouchFree Tooling bundle <https://leap2.ultraleap.com/touchfree/>`__
+
+Setup
+-----
+
+Make sure the TouchFree Service is running
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the TouchFree Service is not running your application will not receive hand interaction information.
+
+The TouchFree Tray Icon should show that TouchFree Service is running.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_service_tray_running.png
+    :alt: TouchFree Tray Icon Status
+
+The service status can be checked directly in Windows Task Manager -> Services.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_service_running.png
+    :alt: TouchFree Service Listing
+
+If the Service is not in the list, or the Status column suggests it is not running, you may need to re-install the Service. Follow the previous steps to achieve this.
+
+Configure TouchFree
+~~~~~~~~~~~~~~~~~~~
+
+Once you have TouchFree running, it must be configured for your camera position and screen setup. To do this, launch the TouchFree Service Settings by right clicking on the TouchFree Service Tray Icon in your system tray and selecting **Settings**.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_tray_settings.png
+    :alt: TouchFree Tray Icon Settings
+
+We recommend using **Quick Setup** to perform your first physical setup:
+
+1. Select **Setup Camera**
+
+2. Select **Quick Setup**
+
+3. Select your chosen camera position
+
+4. Follow the on-screen instructions to complete your setup
+
+
+TouchFree Tooling Bundle
+------------------------
+
+The TouchFree Tooling Bundle contains the following:
+
+- The bundled tooling source file - ``dist/TouchFree_Tooling.js``.
+- A html quick start example - ``quick-start/Quick-Start_Example.html``.
+- Reference documentation pages for the Tooling in ``Documentation/``.
+
+The quickest way to try TouchFree Tooling is using the **quick start example**.
+
+After completing setup steps mentioned in the previous section (TouchFree Service is running and configured for your display) open the quick start example page ``quick-start/Quick-Start_Example.html``.
+
+The Quick Start has a number of buttons to interact with for testing.
+
+Add TouchFree Tooling In One Minute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section will teach you how to add TouchFree Tooling to an existing HTML page in one minute.
+You can start with the Quick Start example, an existing website or an empty html file.
+
+Step 1: Add script tag to include TouchFree Tooling
+***************************************************
+
+First copy the source file **dist/TouchFree_Tooling.js** from the bundle to your website's directory.
+Then load it on your website with the ``<script>`` tag in ``<head>`` like shown below.
+
+.. code-block:: html
+  :emphasize-lines: 4-6
+
+    <head>
+        <!-- ... existing HTML ... -->
+
+        <!-- Make sure to replace the path to the TouchFree_Tooling.js with the correct path if it's different.
+             Here we are assuming the .js is next to this HTML file. -->
+        <script name="TouchFree_Tooling" type="text/javascript" src="./TouchFree_Tooling.js"></script>
+
+        <!-- ... existing HTML ... -->
+    </head>
+
+
+Step 2: Initialize TouchFree
+****************************
+
+Now initialize TouchFree Tooling with a default cursor within a ``<script>`` tag in the ``<body>``.
+
+.. code-block:: html
+  :emphasize-lines: 5-6
+
+    <body>
+        <!-- ... existing HTML ... -->
+
+        <script>
+            // This is the only call required to initialise TouchFree tooling, getting a default cursor
+            TouchFree.Init();
+        </script>
+
+        <!-- ... existing HTML ... -->
+    </body>
+
+That's It!
+**********
+
+You've successfully added TouchFree tooling to your website!
+
+When you launch the website a cursor is generated, allowing you to use interactable components.
+
+Do More with TouchFree Tooling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Move beyond retrofits and use the full power of TouchFree Tooling:
+
+* Receive and react to events from the TouchFree Service
+* Use contextual information such as hover states and progress to click
+* Customise TouchFree dynamically from your application
+
+Find examples of the above and more on our `examples repository <https://github.com/ultraleap/TouchFree-Tooling-Examples/tree/develop/Examples-Web>`__!

@@ -1,0 +1,63 @@
+:hide-toc:
+
+Camera Feeds and Masking
+========================
+
+
+From TouchFree Settings you can view the live camera feeds to discover problem areas and bright regions that may impact tracking performance. 
+
+You can then adjust the environment or mask problem areas using the on-screen controls.
+
+
+Make Sure Hands Are Tracking Correctly
+--------------------------------------
+
+The Tracking view overlays a 3D representation of tracked hands on the camera feed. This shows what the tracking data is perceiving as a hand and can be used to ensure tracking is working as expected.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_live_camera_feed.png
+    :alt: TouchFree live camera feed
+
+Discover Blocking Objects
+-------------------------
+
+The live camera feeds provide a quick way to ensure there are no objects blocking the camera. Look out for objects in the foreground that may block the cameras view from seeing hands in the desired interaction area.
+
+For example, the cable in this image could cause issues with tracking at the edges.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_camera_feed_with_cable.png
+    :alt: TouchFree live camera feed with cable
+	
+Highlight Bright Regions
+------------------------
+
+Enabling **Highlight Bright Regions** will show you any areas that are especially bright. The bright regions are highlighted in red. These may cause issues for the tracking if these bright regions are not the user's hands.
+
+If it is not possible to move problem objects, it may be possible to mask them using the on-screen sliders.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_camera_feed_highlighted_bright.png
+    :alt: TouchFree live camera feed with highlighted regions
+
+
+Masking
+-------
+
+The Camera Feeds and Masking screen allows you to adjust the area of the environment within which the tracking will detect hands.
+
+To do so, you can move the sliders on the Masking view to block areas near the edges of the view. This removes these areas from the tracking region so should be done as little as possible to produce the best results.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_camera_feed_masking.png
+    :alt: TouchFree live camera feed with masking
+	
+Note: Masking can seem warped within the Tracking view window as this is a flattened image of the ‘fish eye’ view for some camera modules.  This is expected behaviour and does not signify any issue with your camera hardware or TouchFree software
+
+Reverse Camera Orientation
+--------------------------
+
+Enabling the **Reverse Camera Orientation** option will flip the orientation of the images coming from the camera feed. In the camera feed windows, hands should be entering the camera frame from the bottom of the screen.  If this is not the case there are two options:
+
+1. Physically rotate your Ultraleap Hand Tracking Camera by 180 degrees.
+2. Toggle the **Reverse Camera Orientation** option until the hand enters correctly from the bottom of the camera view, as shown below.
+
+.. image:: ../../img/touchfree-user-manual/reverse-camera.png
+    :alt: TouchFree live camera feed with reverse camera example
+	

@@ -1,0 +1,128 @@
+*********
+Getting started with Unreal
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      The Ultraleap Unreal Plugin contains everything you need to get started with Ultraleap hand tracking in Unreal.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../../../_images/unreal-logo.png" alt="The Unreal Engine logo" width="125">
+    </div>
+  </div>
+
+------------
+
+Pre-requisites
+------------
+
+* An `Ultraleap Hand Tracking Camera <https://leap2.ultraleap.com/leap-motion-controller-2/>`_.
+* A computer that meets the `Tracking Requirements <https://leap2.ultraleap.com/gemini-downloads/>`_.
+* `Ultraleap Tracking Software (V5.2+) <https://leap2.ultraleap.com/gemini-downloads/>`_ installed on both the development computer and your XR device if it's standalone.
+* `Unreal 4.27 or 5.2 <https://www.unrealengine.com/en-US/download>`_.
+* An XR runtime plugin. `OpenXR <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.7/manual/index.html>`_ is the most common, but you may require a specific plugin if OpenXR is not supported. For example `Pico <https://developer-global.pico-interactive.com/document/unity/>`_, `HTC Vive <https://developer.vive.com/resources/vive-wave/tutorials/installing-wave-xr-plugin-unity/>`_ or `Meta Quest <https://developer.oculus.com/documentation/unity/unity-gs-overview/>`_.
+
+.. warning:: We no longer support the use of the SteamVR plugin on UE 4.27 with our OpenXR layer. However, our LeapC implementation will still work with the SteamVR plugin enabled on UE 4.27.
+
+-----------
+
+How to get the Plugin
+-----------
+
+As a developer you have two options to get our plugin; via the Unreal Marketplace (`recommended`) or from our Github Repository manually.
+
+.. tabbed:: Unreal Marketplace
+
+    1. Open the Epic Games launcher.
+    2. Select the Marketplace tab and search for ``Ultraleap``.
+    3. Click ``Install to Engine`` then select an engine version and click the install button.
+
+    .. figure:: ../../../../img/unreal-api/EpicGameLauncherPlugin.png
+        :width: 90%
+        :align: center
+
+    4. Create a new project or launch an existing one.
+    5. Once the Unreal Engine project is open select ``Project Settings`` then ``Plugins``.
+    6. There is an ``Input`` section near the top of the Plugins list, the ``Ultraleap Tracking Plugin`` should be available and enabled.
+
+    .. figure:: ../../../../img/unreal-api/EnablePlugin.png
+        :width: 90%
+        :align: center
+
+
+
+.. tabbed:: Github Repository
+
+    1. Download the latest release of the Ultraleap Unreal Plugin and SDK (make sure to use the `.zip link for your version of Unreal <https://github.com/ultraleap/UnrealPlugin/releases>`_).
+    2. Create a new project or launch an existing one.
+    3. Create a ``Plugins`` folder in your project root folder (`if one doesn't already exist`).
+    4. Drag the unzipped ``Ultraleap Tracking plugin`` into the project's ``Plugins`` folder.
+
+    .. figure:: ../../../../img/unreal-api/InstallZip.png
+        :width: 80%
+        :align: center
+
+    5. Enable the plugin in ``Project Settings -> Plugins`` if it isn't already.
+    6. Start using our Unreal Examples.
+
+
+.. dropdown:: Quick Start Video
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    .. youtube:: AvnfoqIZq6k
+        :width: 100%
+        :height: 400
+
+------------
+
+How to use the Plugin
+------------
+
+There are two methods that can be used to start tracking your hands. Either via our custom ``Pawn`` or our custom ``Game Mode``.
+
+.. tabbed:: Leap Hands Pawn 
+
+    1. Ensure the plugin is enabled in the project, restarting when necessary
+    2. Open up an existing level or create a new one.
+    3. Change your default ``Pawn`` to ``LeapHandsPawn`` or place it in the level.
+    4. Select the ``LeapHandsPawn`` and open the ``Details`` Window.
+    5. Locate the Pawn subsection and change the ``Auto Possess Player`` to ``Player 0``.
+    6. Now press ``Play in VR Preview``.
+    7. Move your hands in front of you to check hand tracking is working. The virtual hands should track the movement of the real hands.
+
+    **Please ensure that you're ready to stream VR before starting Unreal otherwise VR Preview will not be available - e.g. ensure SteamVR is running.**
+
+.. tabbed:: IE Game Mode
+
+    1. Ensure the plugin is enabled in the project, restarting when necessary
+    2. Open any level that has an existing ``Player Start`` set up.
+    3. Open the ``World Settings`` window on the editor.
+    4. Within the ``Game Mode`` section, select ``IEGameMode`` from the ``GameMode Override`` dropdown.
+    5. Press Play.
+    6. Move your hands in front of you to check hand tracking is working. The virtual hands should track the movement of the real hands.
+
+------------
+
+`Back to top <#top>`_

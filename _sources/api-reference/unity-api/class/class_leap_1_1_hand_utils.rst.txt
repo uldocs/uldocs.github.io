@@ -1,0 +1,6 @@
+Class Leap::HandUtils
+=====================
+
+.. doxygenclass:: Leap::HandUtils
+   :project: unity
+   :members: 

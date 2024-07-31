@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_HAND
+==============================
+
+.. doxygenstruct:: LeapInternal::LEAP_HAND
+   :project: unity
+   :members: 

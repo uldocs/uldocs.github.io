@@ -1,0 +1,112 @@
+:hide-toc:
+
+Interaction Settings
+====================
+
+Navigate to the **Interaction Settings** screen from the **TouchFree Service Settings** page. 
+
+Within **Interaction Settings** you can select the type of interaction to use, and adjust specific settings relating to that interaction.
+
+.. image:: ../../img/touchfree-user-manual/interaction-settings.png
+    :alt: TouchFree Interaction Settings
+
+Select Interaction Type
+-----------------------
+
+There are three `Interaction Types <https://docs.ultraleap.com/touchless-interfaces/interaction-types/>`_ available; Air Push, Hover & Hold, and Touch Plane.
+
+.. image:: ../../img/touchfree-user-manual/interaction-type.png
+    :alt: TouchFree Interaction Types
+
+Some settings are only available for certain interaction types. For example Scroll and Drag is not available with Hover & Hold.
+
+Select an interaction type to see the settings available for that interaction.
+
+Common Interaction Settings
+---------------------------
+
+The following settings are common to multiple interactions types.
+
+Scroll and Drag
+~~~~~~~~~~~~~~~
+
+**Available with Air Push and Touch Plane.**
+
+.. image:: ../../img/touchfree-user-manual/scroll-drag.png
+    :alt: TouchFree Scroll and Drag
+
+By default our interactions emulate the click and drag behaviour of a mouse. With **Scroll and drag** activated, users can drag and scroll through on-screen content.
+
+When **Scroll and drag** is enabled, the “mouse down” equivalent occurs as the user’s hand approaches the screen. The “mouse up” equivalent does *not* occur until the hand pulls back away from the screen. 
+
+When **Scroll and drag** is disabled, interactions perform an immediate click event when the user’s hand pushes towards the screen (or through the interaction plane in Touch Plane).
+
+This is the equivalent of receiving a “mouse down” and then immediately a “mouse up” and gives users the fastest possible response time.
+
+Cursor Movement
+~~~~~~~~~~~~~~~
+
+**Available on all interactions.**
+
+.. image:: ../../img/touchfree-user-manual/cursor-movement.png
+    :alt: TouchFree Cursor Movement
+
+Our hand tracking is very precise. This means users can sometimes experience “jitter” with the cursor when small movements of the hand are interpreted into small cursor movements.
+
+The Cursor movement slider allows you to adjust the sensitivity of the cursor. This reduces jitter but can increase the likelihood of misalignment between the cursor and the hand location.
+
+We do not recommend setting Cursor movement to be fully responsive with the Hover & Hold interaction.
+
+Start Time and Complete Time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Available on Hover & Hold.**
+
+The Hover & Hold interaction requires users to hold their hand in position for a brief period to begin the interaction, and to keep it there for a second period to complete the interaction. Those two durations are configurable by the respective options below:
+
+**Start Time**
+
+.. image:: ../../img/touchfree-user-manual/start-time.png
+    :alt: TouchFree Start Time
+
+**Complete Time**
+
+.. image:: ../../img/touchfree-user-manual/complete-time.png
+    :alt: TouchFree Complete Time
+
+Touch Plane Interaction Settings
+--------------------------------
+
+When `Touch Plane <https://docs.ultraleap.com/touchless-interfaces/interaction-types.html#touch-plane>`_ is selected as the chosen Interaction Type, settings specific to Touch Plane become available.
+
+Touch Plane Distance
+~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../img/touchfree-user-manual/touchplane-distance.png
+    :alt: TouchFree Touch Plane Distance
+
+Set the distance between the virtual plane and the screen via this setting. We recommend keeping the distance close to the screen itself (~5cm). User testing has shown that accurate positioning of the click event becomes harder at great distances.
+
+Tracking Position
+~~~~~~~~~~~~~~~~~
+
+Touch Plane can recognise a wide variety of hand poses. To achieve this Touch Plane tracks the entire hand and uses the position of the closest bone. In some situations this can cause confusion, so we also provide an option to track only the tip of the index finger. Note that users need to be specifically instructed to use their index finger in this case.
+
+.. image:: ../../img/touchfree-user-manual/tracking-position.png
+    :alt: TouchFree Tracking Position
+
+The Interaction Zone
+--------------------
+
+**Available on all interactions.**
+
+The Interaction Zone can also be adjusted on the Interaction Settings screen. 
+
+Users can be distracted by the cursor if it appears and moves when they are not directly interacting with the screen. This can happen when users are performing secondary tasks such as reading from a mobile device.
+
+Interaction Zone Settings set the region in which Touchfree will track hands. This enables developers to provide a more deliberate experience based on the kiosk setup.
+
+.. image:: ../../img/touchfree-user-manual/interaction-zone.png
+    :alt: TouchFree Interaction Zone
+
+We recommend use of a restricted Interaction Zone in cases where the kiosk is in a busy area.

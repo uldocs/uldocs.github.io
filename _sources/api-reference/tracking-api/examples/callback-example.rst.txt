@@ -1,0 +1,88 @@
+Callback Example
+================
+
+CallbackSample.c
+~~~~~~~~
+CallbackSample.c is an example client application that consumes the tracking data – in this case, by simply printing basic data to stdout.
+
+CallbackSample.c defines three callback functions, one each for OnConnect, OnDevice, and OnFrame. Each of these callback functions are called by ExampleConnection when the LeapC library returns the associated event. The OnConnect callback doesn't have any associated data, but you can use the event to initialize parts of your application that depend on a connection. OnDevice provides the :cpp:struct:`LEAP_DEVICE_INFO()<LEAP_DEVICE_INFO>` struct describing the connected device. OnFrame provides the :cpp:struct:`LEAP_TRACKING_EVENT()<LEAP_TRACKING_EVENT>` struct that contains all the tracking data (except images) for the latest frame.
+
+Callback functions are invoked directly from the ExampleConnection thread created to service the LeapC message pump. This can be problematic for applications that use UI or graphics libraries that must be called on a particular thread. For such applications, you must implement a means for one thread to hand off data to the other. The best approach is platform dependent. For example, the Windows API provides a SynchronizationContext construct that can be used in some cases. The `Polling Example <polling-example.html>`_ demonstrates an approach in which the latest data objects are cached by the servicing thread and the application can access these objects when ready. The `Interpolated Frames Example <interpolated-frames-example.html>`_ demonstrates another way around the problem for tracking data, which works because interpolated frames are returned directly to the calling function rather than passing through the LeapC message pump.
+
+.. code-block:: cpp
+
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include "LeapC.h"
+  #include "ExampleConnection.h"
+
+  static LEAP_CONNECTION* connectionHandle;
+
+  /** Callback for when the connection opens. */
+  static void OnConnect(void){
+    printf("Connected.\n");
+  }
+
+  /** Callback for when a device is found. */
+  static void OnDevice(const LEAP_DEVICE_INFO *props){
+    printf("Found device %s.\n", props->serial);
+  }
+
+  /** Callback for when a frame of tracking data is available. */
+  static void OnFrame(const LEAP_TRACKING_EVENT *frame){
+    if (frame->info.frame_id % 60 == 0)
+      printf("Frame %lli with %i hands.\n", (long long int)frame->info.frame_id, frame->nHands);
+
+    for(uint32_t h = 0; h < frame->nHands; h++){
+      LEAP_HAND* hand = &frame->pHands[h];
+      printf("    Hand id %i is a %s hand with position (%f, %f, %f).\n",
+                  hand->id,
+                  (hand->type == eLeapHandType_Left ? "left" : "right"),
+                  hand->palm.position.x,
+                  hand->palm.position.y,
+                  hand->palm.position.z);
+    }
+  }
+
+  static void OnImage(const LEAP_IMAGE_EVENT *image){
+    printf("Image %lli  => Left: %d x %d (bpp=%d), Right: %d x %d (bpp=%d)\n",
+        (long long int)image->info.frame_id,
+        image->image[0].properties.width,image->image[0].properties.height,image->image[0].properties.bpp*8,
+        image->image[1].properties.width,image->image[1].properties.height,image->image[1].properties.bpp*8);
+  }
+
+  static void* allocate(uint32_t size, eLeapAllocatorType typeHint, void* state) {
+    void* ptr = malloc(size);
+    return ptr;
+  }
+
+  static void deallocate(void* ptr, void* state) {
+    if (!ptr)
+      return;
+    free(ptr);
+  }
+
+  int main(int argc, char** argv) {
+    //Set callback function pointers
+    ConnectionCallbacks.on_connection          = &OnConnect;
+    ConnectionCallbacks.on_device_found        = &OnDevice;
+    ConnectionCallbacks.on_frame               = &OnFrame;
+    ConnectionCallbacks.on_image               = &OnImage;
+
+    connectionHandle = OpenConnection();
+    {
+      LEAP_ALLOCATOR allocator = { allocate, deallocate, NULL };
+      LeapSetAllocator(*connectionHandle, &allocator);
+    }
+    LeapSetPolicyFlags(*connectionHandle, eLeapPolicyFlag_Images | eLeapPolicyFlag_MapPoints, 0);
+
+    printf("Press Enter to exit program.\n");
+    getchar();
+
+    CloseConnection();
+    DestroyConnection();
+
+    return 0;
+  }
+  //End-of-Sample
+

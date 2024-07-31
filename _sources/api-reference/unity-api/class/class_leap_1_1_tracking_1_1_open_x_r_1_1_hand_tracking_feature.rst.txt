@@ -1,0 +1,6 @@
+Class Leap::Tracking::OpenXR::HandTrackingFeature
+=================================================
+
+.. doxygenclass:: Leap::Tracking::OpenXR::HandTrackingFeature
+   :project: unity
+   :members: 

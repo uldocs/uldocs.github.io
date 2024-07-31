@@ -1,0 +1,6 @@
+Class UAnimGraphNode_ModifyBodyStateMappedBones
+===============================================
+
+.. doxygenclass:: UAnimGraphNode_ModifyBodyStateMappedBones
+   :project: unreal
+   :members:

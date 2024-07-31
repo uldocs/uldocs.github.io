@@ -1,0 +1,6 @@
+Interface Leap::ICanReportDuplicateInformation
+==============================================
+
+.. doxygeninterface:: Leap::ICanReportDuplicateInformation
+   :project: unity
+   :members: 

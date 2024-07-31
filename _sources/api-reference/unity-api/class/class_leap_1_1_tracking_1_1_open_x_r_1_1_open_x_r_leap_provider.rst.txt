@@ -1,0 +1,6 @@
+Class Leap::Tracking::OpenXR::OpenXRLeapProvider
+================================================
+
+.. doxygenclass:: Leap::Tracking::OpenXR::OpenXRLeapProvider
+   :project: unity
+   :members: 

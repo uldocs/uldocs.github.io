@@ -1,0 +1,151 @@
+:hide-toc:
+
+*********
+OpenXR
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  OpenXR enables the simplification of AR/VR software development by allowing applications built using OpenXR to be run on any compliant device without the need to port or re-write code. This includes XR namesakes such as Meta, Microsoft, HTC, and Bytedance with the list growing all the time.<br><br>
+    Game engines are encorporating the appropriate piping from runtime's into their engine. Meaning that by simply using an engine that supports OpenXR gives you access to a vast amount of the XR ecosystem for free.<br><br>
+    To learn more about OpenXR itself, click the read more below:
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../_images/openxr.png" alt="The OpenXR Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="https://www.khronos.org/openxr/">Read More</a>
+
+------------
+
+How do we fit into this?
+------------
+
+The core feature set of OpenXR is minimal by design; allowing for apps that don't require certain features to omit them. Instead, OpenXR is extensible through the use of extensions, allowing for desired components to be selected and nothing more.
+
+Not every developer wants to be forced to build an entire compliant runtime in order add their own niche features to OpenXR and this is where API Layers come into play.
+
+.. figure:: ../img/openxr/loader-call-chain.svg
+      :width: 100%
+      :align: center
+
+API Layers sit in between a runtime and an application adding new functionality the runtime may not have by default or by adjusting existing functionality to fit a new use case.
+
+Through the use of our API Layer we are able to supply access to or augment the below extensions:
+
+* `XR_EXT_hand_tracking <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_tracking>`_
+* `XR_EXT_hand_joints_motion_range <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_joints_motion_range>`_
+* `XR_EXT_hand_tracking_data_source <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_tracking_data_source>`_
+* `XR_MSFT_hand_interaction <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_hand_interaction>`_
+* `XR_ULTRALEAP_hand_tracking_forearm <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_ULTRALEAP_hand_tracking_forearm>`_
+* `XR_FB_hand_tracking_aim <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_FB_hand_tracking_aim>`_
+
+We also support the following extension if the active runtime also supports them:
+
+* `XR_EXT_hand_interaction <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_interaction>`_
+* `XR_EXT_palm_pose <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_palm_pose>`_
+
+This is because these extensions are required to add data to all interaction profiles, even ones not supported by Ultraleap.
+
+.. Note::
+    Our API Layer is an *Implicit* API Layer. Therefore **no** additional modification to the application is required to enable support. Any application that requests any of the above extensions will be served by our layer.
+
+This list continues to grow as we expand our offering of support and if there's any extensions that you would love to see, `Let us know! <https://support.leapmotion.com/hc/en-us/requests/new>`_. 
+
+We are also an integral member of the Khronos group, playing a central role in the development of OpenXR through regular contributions to push the standard forward. So recommendations from you could help do the same!
+
+------------
+
+Getting Started
+------------
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+    <p>
+    First things first, head over to the installation page if you haven't already to get our tracking service and layer installed.
+	  </p>
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./installation/index.html">Installation Guide</a>
+  <div><br/></div>
+
+.. note::
+  It is highly recommended that after installation you configure trackers position via the `Tracker Mounting <./configuration/tracker-mounting/index.html>`_ page
+  for the most optimal experience.
+
+
+Once that's done, if you use Unity or Unreal with our OpenXR API Layer we have official write-ups you can follow along with:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1
+
+    .. figure:: ../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../xr-and-tabletop/xr/unity/getting-started/index.html
+        :text: OpenXR in Unity
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../img/unreal-api/unreal-logo.png
+        :width: 20%
+	
+    .. link-button:: ../xr-and-tabletop/xr/unreal/getting-started/index.html
+        :text: OpenXR in Unreal
+        :classes: btn-outline-primary btn-block stretched-link
+
+The beauty of OpenXR is that any engine which supports OpenXR will work with our API Layer and we'll provide you with the above extensions.
+
+Some more notable solutions are:
+
+* `StereoKit <https://stereokit.net/Pages/Guides/Getting-Started.html>`_
+* `Godot <https://docs.godotengine.org/en/stable/tutorials/xr/index.html>`_
+..
+  * `Khronos OpenXR C++ Tutorial (Not out yet but soon)  <https://docs.godotengine.org/en/stable/tutorials/xr/index.html>`_
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+
+    Installation <installation/index.rst>
+    Configuration <configuration/index.rst>
+    Features <features/index.rst>
+    Changelog <changelog/index.rst>
+    Licensing <licensing/index.rst>

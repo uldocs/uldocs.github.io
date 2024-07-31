@@ -1,0 +1,6 @@
+Struct FTelemetry
+=================
+
+.. doxygenstruct:: FTelemetry
+   :project: unreal
+   :members:

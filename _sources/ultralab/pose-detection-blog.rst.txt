@@ -1,0 +1,42 @@
+:hide-toc:
+
+*****************************
+Pose Detection in Unreal
+*****************************
+
+*Jim Simons, Senior Unreal Engineer*
+
+**PoseDetector**-derived components are easy-to-use building blocks that detect and generate events from various hand poses such as **thumbs up** and **palm facing inwards**.
+
+They’re a convenient way to detect what a user’s hand is doing. For example, detect when the fingers of a hand are curled or extended, whether a finger or palm is pointing in a particular direction, or whether the hand or fingertip is close to one of a set of target objects.
+
+You can even detect multiple poses together to generate an event (for example Thumbs up AND Proximate/close to an item). There’s no need for coding or complex blueprints. 
+
+.. image:: ../img/ultralab/unreal-pinch.gif
+    :alt: VR hands turn a light on and off using the pinch pose
+
+
+Our plugin for Unreal Engine 4 connects UE4 applications to hand tracking data, applying real-world physics, UI/UMG input, pre-rigged hand assets and more. 
+
+We’ve recently released an update (available on the Unreal Marketplace) which now includes Pose Detection. 
+
+.. image:: ../img/ultralab/unreal-palm-flip.gif
+    :alt: VR hands turn a light on and off using a palm flip
+
+We’ve included a large set of ready-made detectors including commonly used poses such as extended finger, pinch and proximity. 
+
+Want to create more complex behaviours? Use our `Pose Detector Cookbook <https://github.com/ultraleap/UnrealPlugin/blob/main/Documentation/Documentation.md#pose-detector-cookbook>`_ or make your own pose detector. 
+
+.. image:: ../img/ultralab/unreal-thumbs-up.png
+    :alt: VR hands in unreal making a thumbs up gesture
+
+Detectors can be combined together using a Logic Gate. The **LogicGateDetector** is itself a pose detector component that logically combines two or more other detectors to determine its own state. Need a thumbs up gesture? Combine a thumb extended detector with a thumb pointing upward detector using a logic gate.
+
+ .. youtube:: KnaOF4M10mg
+     :width: 750
+
+To experiment with the presets, load the scene at **/UltraleapTracking/Content/PoseDetection/ExampleScenes/PoseDetection**
+
+For all the details, check out `Pose Detection Components <https://github.com/ultraleap/UnrealPlugin/blob/main/Documentation/Documentation.md#pose-detection-components>`_ in the documentation. 
+
+`Back to top <#top>`_

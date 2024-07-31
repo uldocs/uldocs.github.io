@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_FRAME_HEADER
+======================================
+
+.. doxygenstruct:: LeapInternal::LEAP_FRAME_HEADER
+   :project: unity
+   :members: 

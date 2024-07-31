@@ -1,0 +1,252 @@
+:hide-toc:
+
+***********************************
+Interaction Types in Automotive HMI
+***********************************
+
+Terminology
+###########
+
+**Usability** refers to how easy it is to learn, understand and remember the required form and movement of the gesture
+in order to perform it correctly. A gesture with high usability is considered easy to use relative to other gestures.
+
+**Reliability** refers to the likeliness of the hand tracking device correctly interpreting the gesture. A gesture with
+high reliability can be expected to be recognised the vast majority of the time.
+
+**Comfort** refers to how physically difficult a gesture is to perform, and how much discomfort is experienced whilst
+performing the gesture. A gesture with high comfort can be performed easily with minimal effort.
+
+Hand Tap
+########
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-hand-tap.gif
+    :alt: Flat hand bounces down and up with a fast motion
+
+Using a ﬂat hand, the driver “bounces” their whole hand down and up with a fast motion.
+
+Examples of actions it could be used for in car HMIs:
+
+- Yes
+- Confirm
+- Accept
+- Play / Pause (Toggle)
+- On / Off (Toggle)
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** Medium
+      - **Reliability:** Medium
+      - **Comfort:** High
+
+-------
+
+Fingers Tap
+###########
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-fingers-tap.gif
+    :alt: Flat hand bounces down and up with a fast motion
+
+Keeping their whole arm still, the driver moves their ﬁngers (or a single ﬁnger) down and up with a fast motion.
+Requires less physical effort than the Hand Tap gesture.
+
+Examples of actions it could be used for in car HMIs:
+
+- Select
+- Yes
+- Confirm
+- Accept
+- Play / Pause
+- Toggle On / Off
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** Medium
+      - **Reliability:** Medium
+      - **Comfort:** Medium
+
+--------
+
+Pinch (With Arm Movement)
+#########################
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-pinch.gif
+    :alt: Hand makes a pinching gesture in mid air and moves up
+
+The driver brings their index ﬁngertip and thumb together whilst keeping their remaining ﬁngers open (exposing their
+palm to feel mid-air haptic feedback).
+
+It is the same as the universal sign for “OK”, and can be either be held for adjusting values/objects, or performed
+quickly to serve as a mid-air confirmation action.
+
+They can also move their hand up whilst performing the pinch gesture to increase a value (e.g. volume), and down to
+decrease the value, before opening their hand to conﬁrm the choice.
+
+.. image:: ../img/automotive-guidelines/finger-poses-gesture-interactions.jpg
+    :alt: Hand makes a pinching gesture in mid air and moves up
+
+This same gesture also works whilst moving in other directions, going left/right and forwards/backwards to control
+sliders, menus, and objects.
+
+Examples of actions it could be used for in car HMIs:
+
+- Adjusting values (volume, temperature, etc.)
+- Navigating a 2D or 3D menu
+- Moving forwards/backwards through music or video
+- Picking up and dropping objects in AR/VR
+- Selecting a button that has been highlighted using a hand-controlled cursor
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** Medium
+      - **Reliability:** High
+      - **Comfort:** High
+
+----------
+
+Grab–Release
+############
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-grab-release.gif
+    :alt: Hand grabs and releases in mid air
+
+The driver clenches their hand – making a fist - before opening it again. This is performed in one ﬂuid motion.
+
+Examples of actions it could be used for in car HMIs:
+
+* No
+* Cancel
+* Reject
+* Close
+* Reset
+* Off
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** High
+      - **Reliability:** Low
+      - **Comfort:** High
+
+-----------
+
+Finger Poses
+############
+
+.. image:: ../img/automotive-guidelines/finger-poses-interactions.jpg
+    :alt: Hands demonstrating four different interaction poses with one, two, three, and four fingers held up
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-finger-pose-4.gif
+    :alt: Hand holds up four fingers
+
+The driver simply shows a certain number of ﬁngers to the hand tracking device. This can be used – for example – as a
+shortcut to quickly move between infotainment modes like music, navigation etc.
+
+Examples of actions it could be used for in car HMIs:
+
+- Selecting a particular feature or mode
+- Choosing the desired amount of a particular item
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** High
+      - **Reliability:** Medium
+      - **Comfort:** Low
+
+-----------
+
+Subtle Swipe
+############
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-subtle-swipe.gif
+    :alt: Hand swipes from left to right and back
+
+The driver “ﬂicks” their hand from left to right, then back again in one single motion. Only the forearm needs to move,
+rather than the whole arm.
+
+Examples of actions it could be used for in car HMIs:
+
+- Skipping a music track
+- Toggling between feature modes
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** High
+      - **Reliability:** Low
+      - **Comfort:** Medium
+
+--------
+
+Hand Twist
+##########
+
+.. image:: ../img/automotive-guidelines/gesture-interaction-ultraleap-hand-twist.gif
+    :alt: An open hand turns over and back
+
+Starting with their hand open and palm facing down, the driver turns their hand over then back again in one ﬂuid motion
+(hand rotates outwards rather than inwards).
+
+Examples of actions it could be used for in car HMIs:
+
+- Back to previous screen
+- Cancel
+- Go to beginning of currently playing track / video
+- Play previous track / video
+
+.. list-table::
+    :widths: 33 33 33
+
+    * - **Usability:** High
+      - **Reliability:** High
+      - **Comfort:** Medium
+
+--------
+
+Summary
+#######
+
+.. list-table::
+    :widths: 25 25 25 25
+
+    * -
+      - **Usability**
+      - **Reliability**
+      - **Comfort**
+    * - **Hand Tap**
+      - Medium
+      - Medium
+      - High
+    * - **Fingers Tap**
+      - Medium
+      - Medium
+      - Medium
+    * - **Pinch**
+      - Medium
+      - High
+      - High
+    * - **Grab-Release**
+      - High
+      - Low
+      - High
+    * - **Finger Poses**
+      - High
+      - Medium
+      - High
+    * - **Subtle Swipe**
+      - High
+      - Low
+      - Medium
+    * - **Hand Twist**
+      - High
+      - Medium
+      - High
+
+.. note:: The interactions outlined in this document have been designed and developed in line with user-centred design principles but have not been validated against relevant industry standards and guidelines (e.g. BS-EN-ISO 9241-500, BS-EN-ISO 15005, NHTSA-2010-0053, etc). Any adoption of techniques explored in this document should be conducted in compliance with international automotive standards and in the context of the intended vehicle before implementation for use while driving.
+
+-----------
+
+`Back to top <#top>`_

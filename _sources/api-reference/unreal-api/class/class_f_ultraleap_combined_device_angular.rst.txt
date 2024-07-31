@@ -1,0 +1,6 @@
+Class FUltraleapCombinedDeviceAngular
+=====================================
+
+.. doxygenclass:: FUltraleapCombinedDeviceAngular
+   :project: unreal
+   :members:

@@ -1,0 +1,6 @@
+Class LeapInternal::StructMarshal
+=================================
+
+.. doxygenclass:: LeapInternal::StructMarshal
+   :project: unity
+   :members: 

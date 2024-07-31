@@ -1,0 +1,6 @@
+Class FUltraleapTrackingPlugin
+==============================
+
+.. doxygenclass:: FUltraleapTrackingPlugin
+   :project: unreal
+   :members:

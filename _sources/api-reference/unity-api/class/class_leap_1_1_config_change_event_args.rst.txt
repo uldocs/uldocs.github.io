@@ -1,0 +1,6 @@
+Class Leap::ConfigChangeEventArgs
+=================================
+
+.. doxygenclass:: Leap::ConfigChangeEventArgs
+   :project: unity
+   :members: 

@@ -1,0 +1,112 @@
+************************************
+Service Provider (Desktop/Screentop)
+************************************
+
+.. image:: ../../../../img/unity-api/service-provider.png
+    :alt: Screenshot of the service provider UI.
+	
+This prefab makes it simple to add desktop or screentop based hand tracking to a scene. You should use this prefab once in every scene you wish to enable hand tracking in.
+
+What does this Prefab do?
+--------------------------
+
+This prefab enables Ultraleap hand tracking (in either desktop or screentop mode) in a scene. It handles communication with the hand tracking hardware and ensure the virual hands have the correct transform applied.
+
+When Should You Use This Prefab?
+--------------------------------------------
+
+This prefab should be used to enable a scene with hand tracking in desktop or screentop tracking orientations. 
+
+Where Can You Find This Prefab?
+-------------------------------------------------
+
+This prefab can be found at `Core/Runtime/Prefabs/Service Provider (Desktop)`
+
+This prefab can be found at `Core/Runtime/Prefabs/Service Provider (Screentop)`
+
+How To Use
+-----------
+
+**Edit Time Pose** 
+
+This option changes the orientation of the hands shown in the Editor (scene), based on the chosen tracking mode.
+
+**Interaction Volume Visualization**
+
+This option specifes which tracking volume is shown in the scene view. This helps the user understand where hands will be tracked within their scene or relative to an object (e.g. a headset). The visuals are only displayed when gizmos are active in the scene view. The following options are supported:
+
+.. list-table::
+    :widths: 40 40 40 40
+
+    * - **None**
+      - **Leap Motion Controller**
+      - **Stereo IR170/3Di**
+      - **Automatic**
+    * - No visuals are displayed.
+      - The tracking volume for the Leap Motion Controller is displayed.
+      - The tracking volume for the Stereo IR170 device is displayed. The interaction volume is the same for the 3Di.
+      - The tracking volume for most recently connected device is automatically displayed.
+
+**FOV Visualization**
+
+This uses the same device as above and displays a cone representing the Field Of View of that specific device. This is particularly useful when positioning multiple devices within a scene.
+
+**Frame Optimization**
+
+Provides the option to reinterpolate the hand data for the physics timestep, improving the movement of objects being manipulated by hands (ReusePhysicsForUpdate). Enabling this incurs a small time penalty (fraction of a ms).
+
+By default the mode is set to None, this implies that we want to use hand tracking in time with Unity’s Update loop.
+
+.. list-table::
+    :widths: 20 40 40 40
+
+    * -
+      - **None**
+      - **Reuse Update For Physics**
+      - **Reuse Physics For Update**
+    * - **Frame Optimization**
+      - By default, we use `Time.fixedTime <https://docs.unity3d.com/ScriptReference/Time-fixedTime.html>`_ to ensure that our hands are on the same timeline as the Unity Update. We add an extrapolation value to help compensate for latency.
+      - **Recommended for Android**. Sets the fixed timestep to be the HMD’s framerate, and then reuses the update timestep for physics without any additional temporal resampling.
+      - To be used when you want to reuse the hand data from Physics for Update.
+
+**Physics Extrapolation** - (Exposed when using No Frame Optimization)
+
+.. list-table::
+    :widths: 20 40 40 40
+
+    * -
+      - **None**
+      - **Auto**
+      - **Manual**
+    * - **Physics Extrapolation**
+      - No extrapolation is used at all.
+      - Extrapolation is chosen based on the fixed timestep.
+      - Extrapolation time is chosen manually by the user.
+
+**Multiple Device Mode**
+
+.. list-table::
+    :widths: 20 40 40
+
+    * -
+      - **Disabled**
+      - **Specific**
+    * - **Multiple Device Mode**
+      - One device will be used.
+      - Specify the devices by serial either via the dropdown or via code. See Multiple Device Example Scene for more information.
+
+**Prevent Initializing Tracking Mode** 
+
+When checked, tracking mode will not be modified from its current state. This can be used to maintain the existing tracking mode if you wish to handle the tracking mode manually.
+
+**Tracking Optimization** - [Service must be >= 4.9.2!] 
+
+The tracking mode used by the hand tracking service. Should be set appropriately for the hardware configuration (screentop, desktop or HMD mode). XR based applications should use the Service Provider (XR) prefabs, which will automatically set the tracking mode to HMD.
+
+**Worker Thread Profiling** 
+
+When checked, profiling data from the LeapCSharp worker thread will be used to populate the UnityProfiler.
+
+**Server Name Space** 
+
+Specifies the name of the Ultraleap Tracking Service API Endpoint to connect to.  This is configured on the service with the 'api_namespace' argument.

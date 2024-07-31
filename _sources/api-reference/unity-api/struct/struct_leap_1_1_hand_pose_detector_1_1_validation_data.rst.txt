@@ -1,0 +1,6 @@
+Struct Leap::HandPoseDetector::ValidationData
+=============================================
+
+.. doxygenstruct:: Leap::HandPoseDetector::ValidationData
+   :project: unity
+   :members: 

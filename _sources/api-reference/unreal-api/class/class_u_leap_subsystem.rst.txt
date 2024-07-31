@@ -1,0 +1,6 @@
+Class ULeapSubsystem
+====================
+
+.. doxygenclass:: ULeapSubsystem
+   :project: unreal
+   :members:

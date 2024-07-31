@@ -1,0 +1,48 @@
+:hide-toc:
+
+*********
+Further guidance on Unity and Ultraleap
+*********
+
+There are many ways to make use of Ultraleap's hand tracking in Unity.
+
+These pages will explain how to make the best use of hand tracking with code samples and more complex topics.
+
+-----------
+
+Further Guidance Topics
+------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../../../img/unity-api/capsule-hands.png
+
+    .. link-button:: ./features/xri-integration.html
+        :text: External project 3
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/unity-api/capsule-hands.png
+
+    .. link-button:: ./features/xri-integration.html
+        :text: External project 3
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/unity-api/capsule-hands.png
+
+    .. link-button:: ./features/xri-integration.html
+        :text: External project 3
+        :classes: btn-outline-primary btn-block stretched-link
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	

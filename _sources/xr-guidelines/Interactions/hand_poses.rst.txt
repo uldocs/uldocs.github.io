@@ -1,0 +1,139 @@
+:hide-toc:
+
+***********
+Hand poses
+***********
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+----
+
+.. image:: ../../img/xr-guidelines/hand-poses/Hand-Poses-Blocks-Thumbs-Up.gif
+    :alt: Image of hands in virtual reality manipulating a glowing block
+
+
+What is a pose?
+###############
+
+Users make a ‘pose’ when they hold up their hand in a distinct position in the air - for example, holding up a number of fingers or forming a ‘pinching’ pose. This can be recognised by Ultraleap hand tracking and trigger an action at any time, such as swapping mode or exiting the application.
+
+For users who will spend time with an application, or use it regularly, poses offer a convenient way to trigger frequently used actions or shortcuts. 
+
+When to use poses
+################
+
+However, poses must first be taught using tutorials, and can be difficult to remember, particularly for new users. For that reason, Ultraleap recommend using poses sparingly. They are rarely suitable for applications where users will have little time to onboard - such as professional training, requiring notable effort to learn and memorise. 
+
+They work best when used for actions which are valuable to users - this makes them feel memorable and worth learning - such as accessing shortcuts or enabling a memorable feature such as drawing in VR.
+
+Poses can be appropriate to applications which users will spend more time and use often. They must always be taught, and so Ultraleap recommend always using an appropriate `tutorial or hint <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_.
+
+How to use poses effectively
+############################
+
+* Minimise the number of poses users must learn, and make their purpose consistent throughout.
+* Introduce every pose with an appropriate `tutorial or hint <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_. 
+* Ensure users can access help again at any time to be reminded of poses.
+* Design for gradual introduction of poses one by one. Even once taught and mastered, most users will likely only remember a small number.
+* Make sure poses are highly distinctive from one another to avoid unintentional activations.
+* Ensure users receive clear visual and audio feedback that the pose has triggered an action.
+
+Clear visual feedback
+#####################
+
+When performing a hand pose, users need clear visual and audio feedback that the pose has been recognised and has triggered an action. This is especially important as they’re learning how to perform them correctly.
+
+Ultraleap recommend visual cues on the active hand, such as the glowing fingertips in this example.
+
+.. image:: ../../img/xr-guidelines/hand-poses/Hand-poses-Pinch-Highlight.gif
+    :alt: Hands in VR with glowing fingertips to signal when a pinch gesture has been made
+ 
+-------
+
+Examples of poses
+#################
+
+**Pinch to draw**
+
+.. image:: ../../img/xr-guidelines/hand-poses/Hand-Poses-Pinch-To-Draw.gif
+    :alt: Hands in VR making a pinch gesture to activate a drawing tool
+
+In this fun, engaging interaction, users form a pinch pose with either hand to begin drawing or painting, as if their pinched fingers were the brush. Lines remain in the air in 3D space, and users enjoy learning to draw in the air. 
+
+When users release the pinch pose, the painting stops.
+
+-------
+
+**Pinch to create objects**
+
+.. image:: ../../img/xr-guidelines/hand-poses/Hand-Poses-Pinch-To-Block.gif
+
+
+In another fun interaction, users form a pinch pose with both hands simultaneously. By holding the hands close together and moving them slowly apart, users can create free objects, scaling them to the desired size by adjusting the distance between their hands.
+
+When the poses are released, the finished object falls to the ground.
+
+-----------------------
+
+**Thumbs up**
+
+Hand poses can be used to trigger simple actions with objects or the environment, for example in this tutorial, where users are prompted to give a ‘thumbs up’ to indicate they understand an instruction. The system recognises the pose, and the tutorial immediately moves on to the next step without users needing to say, push a button. 
+
+It’s important that every time a pose like a thumbs up is used, the application shows clear visual and audio feedback, so that users understand the pose has triggered a change.
+
+.. image:: ../../img/xr-guidelines/hand-poses/Hand-Poses-Blocks-Thumbs-Up.gif
+    :alt: Image of hands in virtual reality manipulating a glowing block
+
+-------------------------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/hand-pose-detection.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/pose-detection.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+-----------------------------------------------------
+
+
+Getting Started
+##############
+
+Ultraleap’s Detection Utilities are our recommended way to define and detect hand poses - included as part of our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+In our current Unity Plugin, the detection utilities are deprecated. Ultraleap are working on a new release which will be announced soon.
+
+Download `XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+
+Related Resources
+###############
+
+**Unity:**
+
+* Documentation: (Deprecated) `Detection Utilities <https://developer-archive.leapmotion.com/documentation/v2/unity/unity/Unity_DetectionUtilities.html>`_
+* Preview Example Scene: Pinch To Paint - ``/Examples/PinchToPaint``
+
+**Unreal:**
+
+* Blog: `Pose Detection In Unreal <https://docs.ultraleap.com/ultralab/pose-detection-blog.html>`_
+* Documentation: `Pose Detection In Unreal <https://docs.ultraleap.com/unreal-api/unreal-guide/pose-detection.html>`_
+* Example Scene: Pose Detection - ``/UltraleapTracking Content/PoseDetection/ExampleScenes/PoseDetection``
+
+`Back to top <#top>`_

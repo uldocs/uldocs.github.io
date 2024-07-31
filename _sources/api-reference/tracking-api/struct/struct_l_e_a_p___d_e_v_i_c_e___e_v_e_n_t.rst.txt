@@ -1,0 +1,6 @@
+Struct LEAP_DEVICE_EVENT
+========================
+
+.. doxygenstruct:: LEAP_DEVICE_EVENT
+   :project: tracking
+   :members:

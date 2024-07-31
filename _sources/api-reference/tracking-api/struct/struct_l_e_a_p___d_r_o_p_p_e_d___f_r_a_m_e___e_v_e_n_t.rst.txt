@@ -1,0 +1,6 @@
+Struct LEAP_DROPPED_FRAME_EVENT
+===============================
+
+.. doxygenstruct:: LEAP_DROPPED_FRAME_EVENT
+   :project: tracking
+   :members:

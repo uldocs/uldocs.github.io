@@ -1,0 +1,52 @@
+:hide-toc:
+
+*****************
+Advanced Settings
+*****************
+
+This section contains useful information about the software and hardware relating to TouchFree for your current system.
+
+.. image:: ../../img/touchfree-user-manual/advanced-settings.png
+    :alt: TouchFree Advanced Settings
+
+Configuration File Location
+###########################
+
+In some kiosk scenarios, the default file location for the **Configuration Files** may be inaccessible due to permissions. In **Advanced Settings** you can select an alternate location for the configuration files. We do not recommend changing this location except to avoid permissions issues.
+
+In most cases these settings should not be changed.
+	
+.. image:: ../../img/touchfree-user-manual/file-location.png
+    :alt: TouchFree Advanced File Location
+
+.. Note:: If you select an alternate location, TouchFree Service may not be able to read or edit the config files unless it is launched in Administrator mode.
+
+
+Custom IP and Port
+###########################
+
+TouchFree runs over ``localhost:9739`` by default, however it can be configured to utilise a different port or IP by manually modifying the ``ServicePort`` and ``ServiceIP`` values respectively within **ServiceConfig.json**.
+
+This config file can be found in your **Configuration File Location**, as detailed above.
+
+.. Note:: Changing the port and/or IP will require a manual restart of the TouchFree service for the changes to take effect.
+
+
+Tracking Settings
+###########################
+
+Leaving these settings enabled allows Ultraleap to use anonymized diagnostics, application, and usage data. This helps us improve the performance of our hand tracking solutions. You can also click on the link to view our privacy policy.
+
+.. image:: ../../img/touchfree-user-manual/tracking-settings.png
+    :alt: TouchFree Advanced Tracking Settings
+
+You can click on the link to view our privacy policy.
+
+
+Application Log Files
+###########################
+
+The two **Open Folder** buttons take you to the locations of the Tracking and TouchFree log files.
+
+.. image:: ../../img/touchfree-user-manual/log-files.png
+    :alt: TouchFree Advanced Tracking Settings

@@ -1,0 +1,6 @@
+Struct LEAP_TRACKING_MODE_EVENT
+===============================
+
+.. doxygenstruct:: LEAP_TRACKING_MODE_EVENT
+   :project: tracking
+   :members:

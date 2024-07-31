@@ -1,0 +1,90 @@
+:hide-toc:
+
+*********************
+TouchFree User Manual
+*********************
+
+Welcome to the user manual for `TouchFree <https://leap2.ultraleap.com/touchfree/>`_ and `TouchFree Tooling for Web and Unity <https://leap2.ultraleap.com/touchfree/>`_.
+
+Here you can find all the details on setting up TouchFree, including camera setup, interaction settings, user interface settings, and a technical glossary.
+
+Ultraleap’s TouchFree software uses hand tracking data to generate an on-screen cursor that users can control touchlessly. This touchless gesture control allows easy, intuitive, and hygienic interaction with kiosks and digital displays.
+
+Looking for a quick-start guide? Visit our developer site `here. <https://leap2.ultraleap.com/touchfree/>`_
+
+.. link-button:: https://leap2.ultraleap.com/touchfree/
+    :type: url
+    :text: Download TouchFree Now
+    :classes: btn-outline-primary btn-block
+
+--------
+
+How it Works
+############
+
+TouchFree
+*********
+
+The TouchFree application runs invisibly on top of existing user interfaces. You can retrofit systems without needing to modify your existing application’s user interface, or changing a single line of code. It provides a cursor that users control touchlessly and communicates with Windows’ input system to control your application.
+
+The TouchFree application can also be used to evaluate the capabilities of TouchFree in advance of integrating TouchFree Tooling into your own Web or Unity applications natively.
+
+TouchFree Tooling
+*****************
+
+`TouchFree Tooling <https://leap2.ultraleap.com/touchfree/>`_ enables developers to integrate TouchFree’s touchless technology into their target applications as native features. More detailed information, including Quick Start Guides, can be found in the TouchFree Tooling packages for Web and Unity.
+
+TouchFree Service
+*****************
+
+TouchFree Service is the engine of TouchFree and is required to power both the TouchFree application, and applications integrated with TouchFree Tooling.
+
+The TouchFree Service converts hand movements, provided by Ultraleap’s hand tracking cameras, into positional data. The TouchFree application, or your own kiosk application, can use this to represent a cursor on-screen.
+
+The TouchFree Service is included as part of the TouchFree installer package and installs alongside the TouchFree Application.  It runs as a service automatically on the target system.
+
+.. image:: ../../img/touchfree-user-manual/touchfree-system-diagram.png
+    :alt: TouchFree System Diagram
+    :width: 350
+
+--------
+
+System Requirements
+###################
+
+To run `TouchFree <https://leap2.ultraleap.com/touchfree/>`_ we recommend the following system specifications:
+
+- An `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_ 
+- Windows® 10, 64-bit
+- Minimum Intel HD Graphics 530
+- Intel® Core™ i3 processor 5th Gen (must support AVX instructions)
+- 4 GB RAM
+- USB 2.0 port
+
+*TouchFree is currently only compatible with Windows*
+
+--------
+
+.. toctree::
+    :caption: Table of Contents
+
+    Getting Started <setup.rst>
+    Quick Setup <quick-setup.rst>
+    Manual Setup <manual-setup.rst>
+    Large Screen Setup <large-screens-non121.rst>
+    Appearance <settings.rst>
+    Camera Placement <camera-placement.rst>
+    3Di Mounting Solutions <3Di-mounting-solutions.rst>
+    Camera Feeds and Masking <cameras-and-masking.rst>
+    Testing Hand Tracking <testing-hand-tracking.rst>
+    Interaction Settings <interaction-settings.rst>
+    Advanced Settings <advanced-settings.rst>
+    Technical Glossary <technical-glossary.rst>
+    Tooling for Unity <tooling-for-unity.rst>
+    Tooling for Web <tooling-for-web.rst>
+
+
+
+-----------
+
+`Back to top <#top>`_

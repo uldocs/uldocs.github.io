@@ -1,0 +1,6 @@
+Class Leap::XRHandsUtils
+========================
+
+.. doxygenclass:: Leap::XRHandsUtils
+   :project: unity
+   :members: 

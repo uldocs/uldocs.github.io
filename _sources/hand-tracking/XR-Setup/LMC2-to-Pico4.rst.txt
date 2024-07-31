@@ -1,0 +1,76 @@
+***************
+Leap Motion Controller 2 Mount for Pico 4
+***************
+
+.. figure:: ../../img/hand-tracking/XR/leap2_pico4_vr-training.jpg
+   :alt: A Pico4 headset
+   :align: center
+
+The XR Headset Mount for the Leap Motion Controller 2 (“the Mount”) provides an easy and convenient method of adding Ultraleap hand tracking to your Pico 4 headset (“the Headset”). Designed for the Leap Motion Controller 2 (“the Device”), the Mount features a flexible back, allowing it to be used with several different headsets including the Pico 4. This guide provides instructions for attaching the Mount to your Pico 4 headset.
+
+Before getting started, the Mount includes the following:
+
+1. **The Mount.** It features a back that conforms to several headset face curvatures, providing a secure fit across numerous headset designs. It securely fits to the headset face using reusable nanotape.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Mount.png
+   :width: 50%
+   :alt: XR Headset Mount for the Leap Motion Controller 2
+   :align: center
+
+2. **The Cable.** A 22 cm USB 3.0, type C to type C cable is provided to connect the Device to the Headset.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Cable.png
+   :width: 50%
+   :alt: The 22cm C-C USB 3.0 cable
+   :align: center
+
+Instructions
+###################
+
+1. Remove the white backing material from the mating surface of the Mount. This is best done by using a fingernail to peel from the corner.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Tape.png
+   :width: 50%
+   :alt: A arrow pointing to the backing material on the rear side of the mount
+   :align: center
+
+2. Once the backing material is removed, orient the Mount over the headset face such that the 15° face is angled down, as shown.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Tilt.png
+   :width: 50%
+   :alt: A diagram representing the 15° downward tilt
+   :align: center
+
+3. Position the Mount over the  headset face such that the top edge of the Mount aligns centrally with the top edge of the faceplate. This serves to minimize interference with the passthrough cameras while also providing a secure fit. 
+
+*Note: It is possible to adjust Mount position higher on the Headset face to eliminate passthrough interference, but this will leave the top edge of the Device and the Mount susceptible to bumps.*
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Pico4.png
+   :width: 50%
+   :alt: The mount placed at the top of the front face of the Pico 4
+   :align: center
+
+4. Fix the Mount to the headset face by pressing firmly through the gap shown below. The back should conform to the headset surface for a secure fit.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Mount_Press.png
+   :width: 50%
+   :alt: The mount with an arrow pointing inward fro the front surface representing where to push
+   :align: center
+
+5. Load the Device into the Mount by angling the Device into the Mount one end at a time. Following one end of the Device being positioned in the Mount, pivot about this end until the other end snaps in place in the Mount. A picture of one of the Device positioned in the Mount is shown below.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Mount_Device.png
+   :width: 50%
+   :alt: The mount with a Leap motion Controller being placed in it
+   :align: center
+
+6. Connect either end of the included USB C cable to the Device and Pico 4, as shown. This cable position and connector orientation is recommended to minimize cable interference with cameras of the Device or the Pico 4.
+
+.. figure:: ../../img/hand-tracking/XR/LMC2_Pico4_Complete.png
+   :width: 50%
+   :alt: Recommended Cable position of Leap Motion Controller 2 on Pico 4
+   :align: center
+
+-------------
+
+`Back to top <#top>`_

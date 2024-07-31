@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::HardContactParent
+============================================
+
+.. doxygenclass:: Leap::PhysicalHands::HardContactParent
+   :project: unity
+   :members: 

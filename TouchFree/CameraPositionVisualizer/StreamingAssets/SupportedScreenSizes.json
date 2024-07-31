@@ -1,0 +1,42 @@
+{
+  "SupportedSizes": [
+    {
+      "Name": "19\" (16:9)",
+      "Width": 42,
+      "Height": 24
+    },
+    {
+      "Name": "21\" (16:9)",
+      "Width": 46,
+      "Height": 26
+    },
+    {
+      "Name": "27\" (16:9)",
+      "Width": 60,
+      "Height": 34
+    },
+    {
+      "Name": "32\" (16:9)",
+      "Width": 71,
+      "Height": 40
+    },
+    {
+      "Name": "42\" (16:9)",
+      "Width": 93,
+      "Height": 52
+    },
+    {
+      "Name": "55\" (16:9)",
+      "Width": 122,
+      "Height": 68,
+      "TopBezelWidth": 2,
+      "TopBezelThickness": 2,
+      "BottomBezelWidth": 2,
+      "BottomBezelThickness": 2,
+      "LeftBezelWidth": 2,
+      "LeftBezelThickness": 2,
+      "RightBezelWidth": 2,
+      "RightBezelThickness": 2
+    }
+  ]
+}

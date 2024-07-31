@@ -1,0 +1,145 @@
+:hide-toc:
+
+********************************
+Ultraleap Hyperion Overview
+********************************
+
+.. image:: ../../img/hand-tracking/Hyperion/Hyperion_brand.png
+    :alt: Hyperion_brand
+
+
+
+Hyperion is Ultraleap’s latest hand tracking technology.
+
+Designed with headset manufacturers and application developers in mind, Hyperion provides access to the latest
+and greatest tracking models and modes from Ultraleap.
+
+This highly flexible platform gives you unprecedented control over your hand tracking interactions, allowing you 
+to tune different parameters and switch between models to suit your application.
+
+What is included
+------------
+
+Hyperion is available to download for Windows, MacOS and Android. The download typically includes the following:
+
+*   **Tracking Service**
+
+    *   The Tracking Service is the software that enables the camera to run hand tracking - it provides hand tracking data for applications that want to use it.
+
+*   **Tracking SDK** 
+
+    *   The Tracking SDK is what you will need if you want to build applications using our C–style API called `LeapC <https://docs.ultraleap.com/tracking-api/index.html>`_. Alternatively you can use our `Unity or Unreal plugins <https://docs.ultraleap.com/xr-and-tabletop/xr/index.html>`_.
+
+*   **Control Panel**
+
+    *   From the Control Panel you can visualise camera feeds, and adjust settings for the Tracking Service and your Ultraleap Hand Tracking Camera.
+
+*   **Commercial license for the Leap Motion Controller 2**
+
+    *   Any purchase of a Leap Motion Controller 2, past or future, includes a license for the camera so that it can be used for commercial purposes. By using the Ultraleap Leap Motion Controller 2 and associated Ultraleap Hyperion tracking software you agree to the terms of this licence. The terms are available `here <https://leap2.ultraleap.com/enterprise-tracking-licence/>`_.
+
+.. raw:: html
+
+    <div class="text-center">
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/downloads/leap-motion-controller-2/">Download Hyperion for Leap Motion Controller 2</a>
+
+    </div>
+    
+Features
+############
+
+While Hyperion unlocks new hand tracking capabilities, it also gives direct access to the Leap Motion Controller 2 stereo IR camera hardware, expanding its use to other computer vision tasks, like depth sensing or 3D scanning. And for the first time, Hyperion expands Ultraleap’s tracking offering to marker tracking, making it possible to track objects. 
+
+Browse the current list of Hyperion features below to see what is possible today.
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../img/hand-tracking/Hyperion/Hinting_Small_.jpg
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./hintingapi.html
+        :text: Hinting API
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    An API that enables developers to switch between available models and modes according to application context.
+
+    ---
+
+    .. figure:: ../../img/hand-tracking/Hyperion/Tracking_Models_Small.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./trackingmodels.html
+        :text: Tracking Models (BETA)
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Ultraleap provides different tracking models that have been trained to work well for specific use cases.
+    
+    ---
+
+    .. figure:: ../../img/hand-tracking/Hyperion/AR_Marker_Small.jpg
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./markertracking.html
+        :text: AR Marker Tracking (BETA)
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Use the Leap Motion Controller 2 camera to track different sized AR Markers to deliver tracking events and coordinates back to an application.
+
+    ---
+
+    .. figure:: ../../img/hand-tracking/Hyperion/Performance_Modes_Small.jpg
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./performancemodes.html
+        :text: Performance Modes
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    New modes that enable customers to get the best hand tracking performance, based on device parameters or application context.
+
+    ---
+
+    .. figure:: ../../img/hand-tracking/Hyperion/Direct_Camera_Access_Small.jpg
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./directcameraaccess.html
+        :text: Direct Camera Access
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    APIs that enable developers to unlock the Leap Motion Controller 2 camera to be used for computer vision use cases.
+
+-----------
+
+.. note::
+
+    Ultraleap Hyperion is an evolving platform, new features will therefore be added as and when they become available to enable users to experiment with Ultraleap tracking.
+
+.. toctree::
+    :hidden: 
+
+	Hinting API <hintingapi.rst>
+    Tracking Models <trackingmodels.rst>
+    Performance Modes <performancemodes.rst>
+    Direct Camera Access <directcameraaccess.rst>
+    Marker Tracking <markertracking.rst>
+
+
+`Back to top <#top>`_
+

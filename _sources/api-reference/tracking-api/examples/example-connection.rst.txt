@@ -1,0 +1,64 @@
+Example Connection
+==================
+
+The ExampleConnection source files wrap up a LeapC connection and the associated polling loop which serves the LeapC message queue. These files are used in all of the samples.
+
+ExampleConnection.h
+~~~~~~~~~~~~~~~~~~~
+ExampleConnection.h declares the public functions that should be called by applications. Any other functions should be considered private. Typedefs and function pointers for the supported callback functions are also declared here.
+
+.. code-block:: cpp
+
+  #ifndef ExampleConnection_h
+  #define ExampleConnection_h
+
+  #include "LeapC.h"
+
+  /* Client functions */
+  LEAP_CONNECTION* OpenConnection(void);
+  void CloseConnection(void);
+  void DestroyConnection(void);
+  LEAP_TRACKING_EVENT* GetFrame(void); //Used in polling example
+  LEAP_DEVICE_INFO* GetDeviceProperties(void); //Used in polling example
+  const char* ResultString(eLeapRS r);
+
+  /* State */
+  extern bool IsConnected;
+
+  /* Callback function pointers */
+  typedef void (*connection_callback)     (void);
+  typedef void (*device_callback)         (const LEAP_DEVICE_INFO *device);
+  typedef void (*device_lost_callback)    (void);
+  typedef void (*device_failure_callback) (const eLeapDeviceStatus failure_code,
+                                           const LEAP_DEVICE failed_device);
+  typedef void (*policy_callback)         (const uint32_t current_policies);
+  typedef void (*tracking_callback)       (const LEAP_TRACKING_EVENT *tracking_event);
+  typedef void (*image_callback)          (const LEAP_IMAGE_EVENT *image_event);
+  typedef void (*imu_callback)(const LEAP_IMU_EVENT *imu_event);
+  typedef void (*tracking_mode_callback)(const LEAP_TRACKING_MODE_EVENT *mode_event);
+
+  struct Callbacks{
+    connection_callback      on_connection;
+    connection_callback      on_connection_lost;
+    device_callback          on_device_found;
+    device_lost_callback     on_device_lost;
+    device_failure_callback  on_device_failure;
+    policy_callback          on_policy;
+    tracking_callback        on_frame;
+    image_callback           on_image;
+    imu_callback             on_imu;
+    tracking_mode_callback   on_tracking_mode;
+  };
+  extern struct Callbacks ConnectionCallbacks;
+  extern void millisleep(int milliseconds);
+  #endif /* ExampleConnection_h */
+
+ExampleConnection.c
+~~~~~~~~~~~~~~~~~~~
+ExampleConnection.c demonstrates how to service the LeapC message pump. LeapC gathers events from the Ultraleap service and places them in a queue. Client applications must service this queue by calling :cpp:func:`LeapPollConnection()<LeapPollConnection>`. A good way to do this is in a dedicated thread – otherwise servicing the message pump may block the application thread, or conversely, fall behind and lose event messages.
+
+The client application calls the OpenConnection() function in ExampleConnection, which calls LeapC functions to establish the connection with the Ultraleap service. If the connection is successful, a new thread is started to run serviceMessageLoop().
+
+ServiceMessageLoop() calls the LeapC :cpp:func:`LeapPollConnection()<LeapPollConnection>` in a tight loop. When tracking frames are being produced, the average time elapsed per loop iteration will equal the camera frame rate. A separate handler function is defined for each possible LeapC event, which, in turn, invoke the relevant callback funtions (if the main application has provided one).
+
+Note that ExampleConnection is intended as a simple demonstration only, not production-ready code.

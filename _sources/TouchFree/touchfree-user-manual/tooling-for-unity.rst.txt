@@ -1,0 +1,76 @@
+:hide-toc:
+
+TouchFree Tooling For Unity
+===========================
+
+`TouchFree Tooling for Unity <https://leap2.ultraleap.com/touchfree/>`__ is a lightweight client that can be integrated into your Unity application, turning it touchless with minimal development effort.
+
+These instructions will guide you through the setup of TouchFree Tooling for Unity.
+
+Dependencies
+------------
+
+1. Set up your Ultraleap `Hand Tracking Camera <https://www.ultraleap.com/tracking/>`__
+2. Download and install `TouchFree <https://leap2.ultraleap.com/touchfree/>`__
+3. Configure your Hand Tracking Camera for TouchFree
+
+Setup
+-----
+
+Make sure TouchFree is running
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the TouchFree Service is not running your application will not receive hand interaction information.
+
+Once installed, check the TouchFree Service is running. Open your Windows Task Manager, open the Services tab, and find TouchFree Service in the list.
+
+If the Service is not in the list, or the Status column suggests it is not running, you may need to re-install the Service. Follow the previous steps to achieve this.
+
+Configure TouchFree
+~~~~~~~~~~~~~~~~~~~
+
+Once you have TouchFree running, it must be configured for your camera position and screen setup. To do this, launch the TouchFree Service Settings by right clicking on the TouchFree Service Tray Icon in your system tray and selecting **Settings**.
+
+.. image:: ../../img/touchfree-user-manual/service-icon.png
+    :alt: TouchFree Service Icon
+
+We recommend using **Quick Setup** to perform your first physical setup:
+
+Select **Setup Camera**
+
+Select **Quick Setup**
+
+Select your chosen camera position
+
+Follow the on-screen instructions to complete your setup
+
+Import TouchFree Tooling Into Your Project
+------------------------------------------
+
+TouchFree Tooling for Unity is provided as a .unitypackage file ready for import into Unity. To import it into a Unity project, open that project and double click the .unitypackage provided. Alternatively, you can also drag the .unitypackage onto your open Unity editor.
+
+.. youtube:: 1OdfomVRl0w
+    :width: 560
+    :height: 315
+
+Using the Quick Start Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have imported TouchFree Tooling, a Quick Start Example scene is provided.
+
+This will allow you to test that TouchFree Tooling is working with the TouchFree Service. It also serves as an example of how to integrate TouchFree Tooling.
+
+This scene can be found at **TouchFree/Tooling/Examples** in the Assets directory once TouchFree Tooling is imported.
+
+Integrating TouchFree Tooling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you have the example scene running, you’re ready to integrate TouchFree Tooling into your own application.
+
+Reference the example scene for the setup required to access the TouchFree Service. Feel free to inherit from the provided scripts to integrate even more closely with the information provided.
+
+.. note:: We suggest inheriting from the scripts provided instead of modifying them to avoid potential issues when upgrading to future versions of TouchFree Tooling for Unity.
+
+We recommend starting with the **TouchFree Client prefab** when integrating TouchFree Tooling into existing scenes. This prefab can be found in under **TouchFree/Tooling/Prefabs** once the package has been imported.
+
+Simply add this to a scene that is already set up with UI components and that scene should be controllable with TouchFree hand interactions. The prefab can then be unpacked and modified to make adjustments to the Cursor.

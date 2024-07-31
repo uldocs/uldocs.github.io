@@ -1,0 +1,6 @@
+Class LeapInternal::Logger
+==========================
+
+.. doxygenclass:: LeapInternal::Logger
+   :project: unity
+   :members: 

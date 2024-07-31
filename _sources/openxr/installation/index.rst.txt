@@ -1,0 +1,161 @@
+OpenXR API Layer Installation
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 100px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      Click the button below to jump to the section for your given platform to get set-up.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../_images/openxr.png" alt="The OpenXR Logo" width="200">
+    </div>
+  </div>
+  <div align="center">
+    <a class="btn text-wrap btn-outline-primary" href="./index.html#windows">Windows</a>
+    <a class="btn text-wrap btn-outline-primary" href="./index.html#linux">Linux</a>
+  </div>
+
+-----------
+
+Windows
+-----------
+
+**Pre-requisites**
+
+Since we are an API Layer we require an OpenXR runtime beneath us to handle the XR work of your chosen platform whilst we supply our `supported extensions <../index.html#how-do-we-fit-into-this>`_.
+
+Some of the most common Windows runtimes include:
+
+* `Microsoft Windows Mixed Reality <https://docs.microsoft.com/en-us/windows/mixed-reality/openxr-getting-started>`_
+* `Valve SteamVR <https://store.steampowered.com/app/250820/SteamVR/>`_
+* `Oculus OpenXR <https://developer.oculus.com/documentation/native/pc/dg-openxr/>`_
+
+.. Note::
+    The OpenXR runtime that you settle on **must** support the `XR_KHR_win32_convert_performance_counter_time <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_win32_convert_performance_counter_time>`_ extension. All major runtimes (include those mentioned above) do; but if you decide to do anything bespoke keep that in mind!
+
+
+**Installation**
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 150px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      Our Layer requires our <em>Ultraleap Tracking Software</em> to be installed in order to talk to the hardware and pipe the tracking data into it. For Windows both are packaged into the same installer for ease of use. Simply click the <em>Windows Installer</em> button to be taken to the latest software download page. 
+	  </p>
+      <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/gemini-downloads/">Windows Installer</a>
+    </div>
+  </div>
+
+**Checking installation**
+
+If you want to verify the installation was successful a handy tool to use is the `OpenXR Explorer <https://github.com/maluoi/openxr-explorer>`_.
+
+.. figure:: ../../img/openxr/openxr-explorer-window.png
+    :width: 100%
+
+When looking under the *Extensions & Layers* section if you see our `supported extensions <../index.html#how-do-we-fit-into-this>`_ (Particularly *XR_ULTRALEAP_hand_tracking_forearm*) you know that our API Layer is installed correctly and serving our hand tracking via OpenXR!
+
+**Uninstalling**
+
+Uninstallation can be done via the Windows `Add or remove Programs` area of the system settings.
+
+Linux
+-----------
+
+**Pre-requisites**
+
+Since we are an API Layer we require an OpenXR runtime beneath us to handle the XR work of your chosen platform whilst we supply our `supported extensions <../index.html#how-do-we-fit-into-this>`_.
+
+Some of the most common Linux runtimes include:
+
+* `Valve SteamVR <https://store.steampowered.com/app/250820/SteamVR/>`_
+* `Monado <https://monado.dev/>`_
+
+.. Note::
+    The OpenXR runtime that you settle on **must** support the `XR_KHR_convert_timespec_time <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_KHR_convert_timespec_time>`_ extension. All major runtimes (include those mentioned above) do; but if you decide to do anything bespoke keep that in mind!
+
+**Installation**
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 150px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      For installation on Linux we have an Ultraleap APT metapackage to install all the required components including the <em>Ultraleap Tracking Software</em> and our layer. Click the <em>Linux Installtion</em> button 
+	  </p>
+      <a class="btn text-wrap btn-outline-primary" href="../../linux/index.html">Linux Installation</a>
+    </div>
+  </div>
+
+.. Note::
+    If you chose to install the packages manually instead of using the metapackage; the *openxr-layer-ultraleap* requires the *ultraleap-hand-tracking-service* as our layer requires the service to communicate with the hardware itself.
+
+**Checking installation**
+
+If you want to verify the installation was successful a handy tool to use is the `OpenXR Explorer <https://github.com/maluoi/openxr-explorer>`_.
+
+.. figure:: ../../img/openxr/openxr-explorer-window.png
+    :width: 100%
+
+When looking under the *Extensions & Layers* section if you see our `supported extensions <../index.html#how-do-we-fit-into-this>`_ (Particularly *XR_ULTRALEAP_hand_tracking_forearm*) you know that our API Layer is installed correctly and serving our hand tracking via OpenXR!
+
+**Uninstalling**
+
+Uninstallation can be performed from by removing the ``openxr-layer-ultraleap`` package via apt.

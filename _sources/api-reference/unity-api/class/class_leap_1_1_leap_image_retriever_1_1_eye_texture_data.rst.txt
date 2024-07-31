@@ -1,0 +1,6 @@
+Class Leap::LeapImageRetriever::EyeTextureData
+==============================================
+
+.. doxygenclass:: Leap::LeapImageRetriever::EyeTextureData
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::LeapEventArgs
+=========================
+
+.. doxygenclass:: Leap::LeapEventArgs
+   :project: unity
+   :members: 

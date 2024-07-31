@@ -1,0 +1,143 @@
+************
+Hand Prefabs
+************
+	
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Ultraleap offers a collection of prefabs which can be used to visualize hand tracking data using custom mesh-based hands and provide a variety of hand styles. They are pre-built, optimized and rigged meshes that use a transform hierarchy to move the hands.</p>
+        <p> You can get all of the hand prefabs from the file menu "Ultraleap > Hands". Several of these prefabs come with and without arms. </p>
+    </div>
+    <div class="image">
+        <img src="../../../../_images/attachment-hands-toolbar.png" width="400" height="400" style="padding: 10px 10px 10px 10px;">
+    </div>
+  </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    Ghost Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Ghost-Hands-wArms.png
+
+    ---
+
+    Outline Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Outline-Hands.png
+
+    ---
+
+    Skeleton Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Skeleton-Hands-wArms.png
+
+    ---
+
+    Capsule Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Capsule-Hands-wArms.png
+
+    ---
+
+    Attachment Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Attachment-Hands.png
+
+    ---
+
+    Low Poly Hands
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Low-Poly-Hands-wArms.png
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What does this Prefab do?
+--------------------------
+
+The prefabs allows hand visuals to be added to a scene without needing to auto-rig a set of hands each time you want to visualize tracking data. 
+
+The prefabs use a **HandModelBase** script. It will automatically locate the service provider and subscribe to its **OnUpdateFrame** events when added to the scene, assuming one is present.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+When should you use this prefab?
+---------------------------------------------------------
+
+The prefabs demonstrate how mesh-based hands performs when driven by live tracking data, hopefully providing inspiration for your own ideas.
+
+Use the **Capsule Hands** prefab if you need the positions of the joints to very closely match the tracking data. Unlike the mesh hands, the visual representation is procedurally generated from the tracking data.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Where can you find these prefabs?
+--------------------------------
+
+This prefab can be found at **UltraleapTracking/Hands/Runtime/Prefabs**
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Set-Up
+------------------------
+
+To set up a Hand follow these steps:
+
+* Ensure the scene is Hand Tracking Enabled using an XRLeapProviderManager or Service Provider (OpenXR/XR/Desktop/Screentop).
+* Navigate to the Hand Prefab you wish to use and drag it into the scene.
+* Press Play.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Making sense of the inspector
+------------------------
+
+The prefab contains two GameObjects that represent each hand. Each of these has a Hand Binder script which is responsible for transforming the rigged hand joints to the correct location. 
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Hand Binder Settings
+------------------------
+
+Leap Provider - Specifies the hand tracking data source used to update each bone’s transform.
+
+Hand Type - Specifies whether the mesh is for a left or a right hand.
+
+Set Leap Editor Pose - Provides the hand pose to display within the editor.
+
+Use Metacarpal bones - Specifies whether the rigged mesh has metacarpal bones that should be used.
+
+Match Joint Positions With Tracking Data - When set, moves each rigged bone to the location of the tracking data.
+
+Scale Model to Tracking Data - When set, the model is scaled according to the tracking data. This is useful when you want small tracked hands and big tracked hands to both have the correct dimensions and finger widths. If enabled, this option also offers a ScalingSpeedMultiplier that allows you to adjust how quickly hand scaling will happen.
+The scale can be adjusted under `Fine Tuning Options`.  Here, you can also adjust finger tip offsets.
+
+
+**What Scripts does this Prefab Use?**
+
+:cs:class:`Hand Binder <Leap.HandsModule.HandBinder>`
+
+:cs:class:`Hand Enable Disable <Leap.HandEnableDisable>`

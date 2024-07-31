@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DIGIT
+===============================
+
+.. doxygenstruct:: LeapInternal::LEAP_DIGIT
+   :project: unity
+   :members: 

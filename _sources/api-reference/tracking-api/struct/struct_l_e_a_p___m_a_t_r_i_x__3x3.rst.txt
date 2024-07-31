@@ -1,0 +1,6 @@
+Struct LEAP_MATRIX_3x3
+======================
+
+.. doxygenstruct:: LEAP_MATRIX_3x3
+   :project: tracking
+   :members:

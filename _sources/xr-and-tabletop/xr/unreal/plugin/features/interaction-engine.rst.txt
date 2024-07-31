@@ -1,0 +1,289 @@
+*********
+Interaction Engine
+*********
+
+With the Interaction Engine users can interact with physical or pseudo-physical objects. Whether that's a
+`block <https://gallery.leapmotion.com/blocks/>`__, a
+virtual trackball, a button on an interface panel, or a hologram with
+more complex affordances. 
+
+If there are objects in your application you need your user to be able to hover near, touch, or grasp, 
+the Interaction Engine can do that work for you.
+
+This page will briefly explain how to enable your hands to interact with objects, 
+and the different types of interactions that are possible.
+
+------------
+
+The Basic Components of Interaction
+------------
+
+In order to enable the interaction engine, two components are required: ``LeapGrabberComponent`` and ``LeapGrabComponent``. 
+
+``LeapGrabberComponent`` will be attached to the hands that will do the grabbing and the ``LeapGrabComponent`` will be attached to the object that will be grabbed.
+
+``LeapGrabberComponent`` 
+------------
+
+This component can be found in ``/UltraleapTracking/InteractionEngine/BluePrints/LeapComponentsIE/LeapGrabberComponent``.
+
+This component must be added to hands actors, next to the left and right hands. Only one component is needed for both hands.
+As an example we will show how to add it to our hands actor ``LeapHandsIE2``, this can be found in 
+``/UltraleapTracking/InteractionEngine/BluePrints/LeapHandsIE2``
+
+Open ``LeapHandsIE2``, click on ``Add Component``, search for ``LeapGrabberComponent`` then add it.
+   
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_Add_Grabber.gif
+      :width: 80%
+      :align: center
+
+Click on the ``LeapGrabberComponent`` and adjust the bone names for ``LeftHandBaseSocket`` and ``LeftHandAttachSocket``. 
+Do the same thing with the right ones.
+
+The grabbed object will 'follow' the location & rotation of the ``BaseSocket`` (bone). We recommend this to be the Palm.
+``AttachSocket`` is the bone nearest to the grabbed objects. We recommend this to be the end of the Index finger.
+
+  .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/11.png
+      :width: 100%
+      :align: center
+
+.. note:: 1. In order to get the correct bone names for the left & right hand, you may have to open the skeletal mesh of the hand, where all the bone names are listed. Some generic skeletal mesh(es) used for both left & right hands may use the same bone names for the left and right hands. For example, the ghost hands provided with this plugin.
+          2. The hand must have ``LeapComponent``, in order to activate the Grabbing events.
+          
+``LeapGrabComponent`` 
+------------
+
+This component can be found in ``/UltraleapTracking/InteractionEngine/BluePrints/LeapComponentsIE/LeapGrabComponent``.
+Attaching this component to an actor or static mesh in the scene will enable them to be interacted with.
+An example actor where ``LeapGrabComponent`` is added can be found in ``/UltraleapTracking/InteractionEngine/BluePrints/Grabbable_SmallCube``.
+You can also add this component to your actors, by clicking ``Add Component`` then searching for ``LeapGrabComponent``
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_Add_Grab.gif
+      :width: 75%
+      :align: center
+
+The grab component has 4 types of grabbing: Free, Snap, TwoHandsGrab and StickyGrab. 
+Click on the ``LeapGrabComponent`` that you added then adjust the grab type.
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/12.png
+      :width: 75%
+      :align: center
+
+.. dropdown:: 1. Free grab
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   This will pick the object on grab or pinch without adding an offset. 
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_FreeGrab.gif
+      :width: 75%
+      :align: center
+
+
+.. dropdown:: 2. Snap grab
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1    
+
+   This will pick the object on grab or pinch, then snap it to the hand. 
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_SnapGrab.gif
+      :width: 80%
+      :align: center
+
+.. dropdown:: 3. TwoHandsGrab
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1  
+
+   If both hands pinch or grab the object, the object will follow the midpoint between the hands. 
+   If one hand released, the object will lerp the hand that still grabbing. 
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_TwoHandsGrab.gif
+      :width: 80%
+      :align: center
+
+.. dropdown:: 4. StickyGrab grab
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1  
+
+   The object will stick to the hand once grabbed, releasing the hand will not let go of the object. 
+   A drop sticky component can be used to release the object grabbed.
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/Unreal_IE_StickyGrab.gif
+      :width: 80%
+      :align: center
+
+   The ``LeapDropStickyGrab`` component can be found in ``/UltraleapTracking/InteractionEngine/BluePrints/LeapComponentsIE/LeapDropStickyGrab``. 
+   Add this component to an actor in the scene, and it will turn into a docking station for the sticky grab objects.
+   ``LeapDropStickyGrab`` has ``Drop Radius`` parameter, pinching or grabbing a held sticky object in this radius will release it 
+   and move it on top of the docking station.
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/13.png
+      :width: 95%
+      :align: center
+
+
+.. note::
+   LeapVRPawn is set up to use our latest way of interacting. It can be found in ``/UltraleapTracking/InteractionEngine/BluePrints/LeapVRPawn``.
+   This pawn has a child actor that contains ghost hands rigged in addition to the grabber component.
+   This also contains our latest UI interaction component, used for far and near widget interactions.
+
+Check Out The Examples
+------------
+
+The examples folder
+(``UltraleapTracking Content/InteractionEngine/ExampleScenes``) contains
+a series of example scenes that demonstrate the features of the
+Interaction Engine.
+
+All of the examples can be used with Ultraleap tracked hands using an
+Ultraleap Hand Tracking Camera.
+
+
+.. dropdown:: Example 1: UltraleapMainTestMap
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/14.png
+      :width: 70%
+      :align: center
+
+   This map's game mode uses the ``LeapVRPawn`` as the default pawn class. 
+   This sets up the scene to use the recommended way of supporting interactions. 
+   Multiple small pads in the scene table contain actors with different grab types for testing (all the ones mentioned above).
+   The scene contains a location (blue 'pad') for dropping sticky grab objects. 
+   This map also contains a widget that can be interacted with using our UI interactions.
+   This widget can also be used to change the streaming level and also change the tracking data between leapC/OpenXR.
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/15.png
+      :width: 70%
+      :align: center
+
+.. dropdown:: Example 2: Basic UI In The Interaction Engine
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/4.png
+      :width: 70%
+      :align: center
+
+   Interacting with interface elements is a very particular kind of
+   interaction. In VR or AR, we find these interactions make
+   most sense to users when they are afforded physical metaphors and
+   familiar mechanisms. Read more about affordances in our `XR Design Guidelines <https://docs.ultraleap.com/xr-guidelines/>`_. 
+
+   We've built a small (but growing) set of fine-tuned interactions that deal with the most common
+   use-cases; the ``IEButton`` and the ``IESlider``.
+
+   Try manipulating this interface in various ways, including ways it
+   doesn't expect to be used. You should find that even clumsy users will
+   be able to push only one button at a time. 
+
+   Fundamentally, user interfaces in the Interaction Engine only allow the ``primary hovered``
+   interaction object to be manipulated or triggered at any one time.
+
+   This is a soft constraint. Primary hover data is exposed through the
+   ``IEGrabComponent``'s API for any and all interaction objects for which
+   ``hovering`` is enabled. The ``IEButton`` enforces the constraint by
+   disabling contact when it is not "the primary hover" of an interaction
+   controller.
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/5.png
+      :width: 75%
+      :align: center
+
+   This example demonstrates how the hand menu can be accessed by turning the palm to face the user, 
+   this activates an animation to show the hand menu. The menu is not visible when the hand is facing away from the user, 
+   reducing user distraction as they are likely to be interacting with objects in this orientation.
+
+.. dropdown:: Example 3: Interaction Callbacks For Handle-type Interfaces
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/6.jpg
+      :width: 70%
+      :align: center
+
+   The Interaction Callbacks example features a set of interaction objects
+   that collectively form a basic ``TransformTool`` Actor. This can be used at runtime to manipulate the position and rotation of an object. 
+
+   These interaction objects ignore contact, reacting only to grasping
+   controllers and controller proximity through hovering. 
+
+   This tool's controllers (handles) allows the user to change an object's translation (in one axis), depending
+   on the controller grabbed. This can also be used to rotate the object in the axis of the grabbed controller (handle).
+
+   .. note:: This map is the only one that still uses our legacy interaction engine.
+
+.. dropdown:: Example 4: Building on Interaction Objects with Anchors
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/7.jpg
+      :width: 70%
+      :align: center
+
+   The ``IEAnchorableComponent`` and ``IEAnchorComponent`` build on the basic
+   interactivity afforded by interaction objects. ``IEAnchorableComponents``
+   integrate well with ``IEGrabComponents`` (they are designed to sit on the
+   same ``StaticMeshComponent`` or ``PrimitiveComponent``) and allow an interaction
+   object to be placed in Anchor points that can be defined anywhere in
+   your scene.
+
+.. dropdown:: Example 5: Dynamic UI
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/8.png
+      :width: 70%
+      :align: center
+
+   The dynamic UI example shows how user interface elements can be docked and undocked. 
+   The interface collapses and is stashed in the docking container when docked, and appears when undocked.
+
+.. dropdown:: Example 6: Virtual keyboard
+   :title: bg-dropdown-header text-center font-weight-bold
+   :body: bg-dropdown-primary text-left
+   :container: bg-dropdown-header m-1
+
+   .. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/interaction-engine/10.png
+      :width: 70%
+      :align: center
+
+   The virtual keyboard uses ``IEButtons`` for each keyboard key. Rapid
+   typing is possible along with long press to activate advanced character
+   input. Event dispatchers are provided to bind to each key press.
+
+
+Additional Interaction Engine Features
+------------
+
+The latest release of the interaction engine is designed to make it easier to manipulate virtual objects using your hands than ever before. 
+As long as you've rigged hands, you can follow the previous steps 
+to add interaction to any hand meshes that you want.
+
+**Hovering**
+
+Hovering the grabber hand near a grab objects will trigger proximity events, 
+changing the color of the grab object to red when the hand is near it.
+When the color changes to green, this means that the object can be grabbed.
+
+**Legacy Interaction Engine**
+
+Our legacy interaction engine still exists in the plugin, with grabber and grab 
+components. This can be found in ``/UltraleapTracking/InteractionEngine/LegacyComponents/``
+folder. We're moving away from using legacy components and we recommend to use the components 
+mentioned above in this page.
+
+
+-----------
+
+`Back to top <#top>`_

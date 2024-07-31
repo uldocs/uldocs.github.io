@@ -1,0 +1,6 @@
+Struct Leap::BeginProfilingBlockArgs
+====================================
+
+.. doxygenstruct:: Leap::BeginProfilingBlockArgs
+   :project: unity
+   :members: 

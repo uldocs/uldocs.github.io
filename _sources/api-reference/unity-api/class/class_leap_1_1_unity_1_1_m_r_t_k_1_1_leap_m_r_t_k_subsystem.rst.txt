@@ -1,0 +1,6 @@
+Class Leap::Unity::MRTK::LeapMRTKSubsystem
+==========================================
+
+.. doxygenclass:: Leap::Unity::MRTK::LeapMRTKSubsystem
+   :project: unity
+   :members: 

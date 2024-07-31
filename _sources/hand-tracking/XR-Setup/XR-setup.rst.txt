@@ -1,0 +1,103 @@
+***************
+Camera Set Up for XR Headset
+***************
+
+.. figure:: ../../img/hand-tracking/VR-headset-with-LMC.png
+   :alt: A headset with a Leap Motion Controller attached
+   :align: center
+
+   Integrate world-leading hand tracking into virtual worlds.
+
+What Do You Need?
+######################
+
+- An `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_.
+- The latest version of our `Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_.
+
+Download and install the Hand Tracking Software, and follow the steps below to get started right away.
+
+-----------
+
+Set Up Hand Tracking For Your Headset
+###################
+
+1. Mount your camera module and connect it via USB
+
+2. Use the USB cable included in the box.
+
+-----------
+
+For Leap Motion Controller 2
+###################
+
+If you have a Leap Motion Controller 2, you can use the XR Headset Mount for the Leap Motion Controller 2 to attach it to your headset.
+
+There are optimal placement locations depending on which headset you have. We have produced guides for each headset to make mounting easy:
+
+**Pico 4**
+
+.. figure:: ../../img/hand-tracking/XR/leap2_pico4_vr-training.jpg
+   :width: 70%
+   :alt: A Pico4 headset
+   :align: center
+
+Follow `these instructions <LMC2-to-Pico4.html>`_ to attach your Leap Motion Controller 2 to your Pico 4.
+
+**HTC Vive Focus 3**
+
+.. figure:: ../../img/hand-tracking/XR/leap2_mounted_htc-vive-focus3.jpg
+   :width: 70%
+   :alt: A HTC Vive Focus 3 headset
+   :align: center
+
+Follow `these instructions <LMC2-to-Vive3.html>`_ to attach your Leap Motion Controller 2 to your HTC Vive Focus 3.
+
+**Pico Neo 3**
+
+.. figure:: ../../img/hand-tracking/XR/leap2_pico-neo3_mounted.jpg
+   :width: 70%
+   :alt: A Pico neo 3 headset
+   :align: center
+
+Follow `these instructions <LMC2-to-Pico3.html>`_ to attach your Leap Motion Controller 2 to your Pico Neo 3.
+
+-----------
+
+For Leap Motion Controller
+###################
+
+If you have a Leap Motion Controller you can use a `VR Developer Mount <https://www.ultraleap.com/vr-controller-mount-whats-included/>`_ to attach the camera module to your headset.
+
+Peel off the sticker, then use the free cable extender bundled with the mount to connect the controller directly to the computer.
+
+.. youtube:: OUdL3y-mrFM
+        :align: center
+------------
+
+For Stereo IR 170
+###################
+
+If you have an Ultraleap `Stereo IR 170 <https://www.ultraleap.com/product/stereo-ir-170/>`_ and access to a 3D printer, we recommend `downloading <https://developer.leapmotion.com/s/FC0-02210-00-1.STL>`_ and printing the free Stereo IR 170 Mount (CAD files).
+
+If using the 3D printed mount, attach to the centre of the headset and insert the Stereo IR 170. Otherwise, we recommend using a small strip of velcro in the same position. 
+
+The Stereo IR 170 operates with a typical horizontal and vertical field of view of 170° x 170° and a depth of reliable tracking of 10cm to 75cm. 
+
+**Remove both lens caps from the Stereo IR 170**
+
+.. figure:: ../../img/hand-tracking/SIR-lens-caps.png
+   :alt: An SIR170 with the lens caps removed
+   :align: center
+
+-------------
+
+.. toctree::
+    :caption: Table of Contents
+
+    Leap Motion Controller 2 Mount for Pico 4 <LMC2-to-Pico4.rst>
+	Leap Motion Controller 2 Mount for Pico Neo 3 <LMC2-to-Pico3.rst>
+	Leap Motion Controller 2 Mount for Vive Focus 3 <LMC2-to-Vive3.rst>
+	
+-------------
+
+`Back to top <#top>`_

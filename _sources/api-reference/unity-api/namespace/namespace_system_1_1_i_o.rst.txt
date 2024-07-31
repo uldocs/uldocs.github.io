@@ -1,0 +1,6 @@
+Namespace System::IO
+====================
+
+.. doxygennamespace:: System::IO
+   :project: unity
+   :no-link: 

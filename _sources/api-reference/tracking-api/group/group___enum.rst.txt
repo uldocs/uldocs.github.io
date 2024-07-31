@@ -1,0 +1,6 @@
+Group Enum
+==========
+
+.. doxygengroup:: Enum
+   :project: tracking
+   :members:

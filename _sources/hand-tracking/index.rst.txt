@@ -1,0 +1,59 @@
+:hide-toc:
+
+********************************
+Ultraleap Hand Tracking Overview
+********************************
+
+.. image:: ../img/hand-tracking/ultraleap-hand-tracking-hero.jpeg
+    :alt: Ultraleap hand tracking skeleton hands
+
+
+
+Ultraleap’s hand tracking technology is the world’s fastest and most accurate.
+
+The hardware itself is relatively simple. The magic is in our tracking software and game engine plugins, which combine to
+give users a seamless, intuitive, immersive experience.
+
+How it works
+############
+
+Hardware
+********
+
+`Ultraleap Hand Tracking Cameras <https://www.ultraleap.com/tracking/>`_ have two infrared cameras and multiple
+LEDs. The LEDs illuminate your hands with infrared light invisible to the human eye. Image sensors send the data back to
+the computer via USB to track your hands.
+
+The light and cameras both operate within a narrow range of the near–infrared spectrum, so they are robust in a range of
+environments and lighting conditions.
+
+Software
+********
+
+Ultraleap’s Hand Tracking Software models the underlying structure of the hand at the level of the joints and bones.
+This means the software can accurately pinpoint the position of a finger or thumb, even if it’s hidden from view.
+
+.. image:: ../img/hand-tracking/ultraleap-hand-tracking-skeleton-hands.png
+    :alt: Ultraleap hand tracking skeleton hands
+
+Our SDK features a C–style API called `LeapC <https://docs.ultraleap.com/tracking-api/index.html>`_. LeapC is designed for accessing tracking data from the Hand Tracking Service, as well as creating bindings to higher–level languages.
+
+Integrations for the Unity and Unreal engines are built on this API. An official binding for C# is available, along with
+legacy bindings for C++, Java, JavaScript, Python, and Objective–C.
+
+------------
+
+.. toctree::
+    :caption: Table of Contents
+
+    Getting Started <getting-started.rst>
+    Hyperion Overview <Hyperion/index.rst>
+	Camera Set Up for XR Headset <XR-Setup/XR-setup.rst>
+	Tabletop Camera Set Up for Mac and PC <desktop-setup.rst>
+    Integration Tips and Resources <integration-tips-resources.rst>
+	Gemini Migration Guide <gemini-migration.rst>
+
+-----------
+
+`Back to top <#top>`_
+

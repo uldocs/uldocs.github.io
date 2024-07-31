@@ -1,0 +1,6 @@
+Class Leap::PointMappingChangeEventArgs
+=======================================
+
+.. doxygenclass:: Leap::PointMappingChangeEventArgs
+   :project: unity
+   :members: 

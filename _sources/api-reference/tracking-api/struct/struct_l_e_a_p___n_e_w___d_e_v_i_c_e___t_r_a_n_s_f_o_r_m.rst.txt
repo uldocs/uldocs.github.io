@@ -1,0 +1,6 @@
+Struct LEAP_NEW_DEVICE_TRANSFORM
+================================
+
+.. doxygenstruct:: LEAP_NEW_DEVICE_TRANSFORM
+   :project: tracking
+   :members:

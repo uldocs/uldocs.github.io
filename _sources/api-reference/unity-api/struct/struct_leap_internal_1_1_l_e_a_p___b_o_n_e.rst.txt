@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_BONE
+==============================
+
+.. doxygenstruct:: LeapInternal::LEAP_BONE
+   :project: unity
+   :members: 

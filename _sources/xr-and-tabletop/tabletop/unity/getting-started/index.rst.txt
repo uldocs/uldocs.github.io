@@ -1,0 +1,82 @@
+*********
+Getting started with Unity
+*********
+
+Ultraleap Unity Plugin contains everything you need to get started with Ultraleap hand tracking in Unity.
+
+-----------
+
+Prerequisites
+------------
+
+* An `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_
+* A computer that meets the `Tracking Requirements <https://leap2.ultraleap.com/gemini-downloads/>`_
+* `Ultraleap Hand Tracking Software (V5.2+) <https://leap2.ultraleap.com/gemini-downloads/>`_ installed on the development computer.
+* `Unity 2021 LTS or newer <https://unity.com/releases/release-overview>`_
+
+-----------
+
+Set up hand tracking in Unity
+------------
+
+**How to install**
+
+1. Remove any existing Ultraleap Unity modules from your project
+2. In Unity, select Edit -> Project Settings -> Package Manager, add a new scoped registry with the following details:
+    * Name: Ultraleap
+    * URL: :code:`https://package.openupm.com` 
+    * Scope(s): com.ultraleap
+
+.. figure:: ../../../../img/unity-api/scopedregistry.png
+    :width: 80%
+    :align: center
+
+3. Open the Package Manager (Window -> Package Manager) and navigate to "My Registries" in the dropdown at the top left of the window.
+
+.. figure:: ../../../../img/unity-api/myregistries.png
+    :width: 50%
+    :align: center
+
+4. Ultraleap UPM packages should be available in the list. Click on the package you want to change.
+
+.. figure:: ../../../../img/unity-api/packagelist.png
+    :width: 50%
+    :align: center
+	
+5. To include Example content, select the Samples for the package you would like the examples for and import them via the Package Manager.
+
+.. figure:: ../../../../img/unity-api/sampleimport.png
+    :width: 60%
+    :align: center
+
+6. Once imported, open the "Capsule Hands (Desktop)" scene in the package samples (Assets > Samples > Ultraleap Tracking > x.x.x > Tabletop Examples > 1. Capsule Hands (Desktop).unity). With all of the steps completed, when pressing play, you should have hands tracking in the scene and be able to interact.
+
+.. figure:: ../../../../img/unity-api/capsule-hands-desktop.png
+    :width: 80%
+    :align: center
+
+
+-----------
+
+Overview of Plugin contents
+------------
+
+Ultraleap Unity plugin contains a wide variety of tools to get started with hand tracking.
+
+For more details on features of the plugin, go here: :doc:`Plugin Features <../plugin/index>`.
+
+-----------
+
+What's next?
+------------
+
+Now that you have had your first taste of hand tracking in Unity, why not try out setting up your own project here: :doc:`Your first project: Hello Hands <your-first-project>`.
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+    Your First Project <your-first-project.rst>

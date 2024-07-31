@@ -1,0 +1,27 @@
+:hide-toc:
+
+*************
+API Reference
+*************
+
+Looking for Unity Getting Started or Plugin Features?
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="../../xr-and-tabletop/xr/unity/index.html">XR - Unity Getting Started</a>
+  <a class="btn text-wrap btn-outline-primary" href="../../xr-and-tabletop/tabletop/unity/index.html">Tabletop - Unity Getting Started</a>
+
+--------
+
+.. toctree::
+    :caption: Table of Contents
+    :maxdepth: 1
+
+    Classes <classlist.rst>
+    Interfaces <interfacelist.rst>
+    Data Structures <structlist.rst>
+    Namespaces <namespacelist.rst>
+
+-----------
+
+`Back to top <#top>`_

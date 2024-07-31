@@ -1,0 +1,6 @@
+Class UUltraleapIEFunctionLibrary
+=================================
+
+.. doxygenclass:: UUltraleapIEFunctionLibrary
+   :project: unreal
+   :members:

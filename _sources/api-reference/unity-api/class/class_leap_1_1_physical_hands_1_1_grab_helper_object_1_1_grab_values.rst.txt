@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::GrabHelperObject::GrabValues
+=======================================================
+
+.. doxygenclass:: Leap::PhysicalHands::GrabHelperObject::GrabValues
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONFIG_RESPONSE_EVENT_WITH_REF_TYPE
+=============================================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONFIG_RESPONSE_EVENT_WITH_REF_TYPE
+   :project: unity
+   :members: 

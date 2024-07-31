@@ -1,0 +1,6 @@
+Struct LEAP_IMAGE_EVENT
+=======================
+
+.. doxygenstruct:: LEAP_IMAGE_EVENT
+   :project: tracking
+   :members:

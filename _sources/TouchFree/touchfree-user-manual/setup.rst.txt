@@ -1,0 +1,98 @@
+:hide-toc:
+
+Getting Started
+===============
+
+Before installing TouchFree, set up your Ultraleap `Hand Tracking Camera <https://www.ultraleap.com/tracking/>`__.
+
+Installing TouchFree
+--------------------
+
+The `TouchFree download package <https://leap2.ultraleap.com/touchfree/>`__ includes the Ultraleap Hand Tracking Software, TouchFree Application, and TouchFree Service.
+
+Install TouchFree by running the installer. This will add the Service as a Windows Service to your machine. It will launch on startup and run silently in the background.
+
+.. note:: When configuring TouchFree, it is important to do so within an administrator user account to ensure write file access is granted.
+
+--------------
+
+Launching TouchFree
+-------------------
+
+.. note:: If this is the first time TouchFree has been installed then please skip to the Configuring TouchFree section below. This will enable you to set up TouchFree to match your physical hardware setup and personalise your settings.
+
+If TouchFree has previously been configured on your device (for example if this is an upgrade of an existing version) then you can run TouchFree as soon as the installation completes. 
+
+You can run TouchFree and display a cursor on screen by either:
+
+* Right clicking the TouchFree Service icon in the Windows system tray and selecting **Start TouchFree**
+
+.. image:: ../../img/touchfree-user-manual/touch_free_icon_system_tray.png
+    :alt: TouchFree service menu in the system tray
+
+.. note:: The Tray icon can be re-launched from this path by default: C:\Program Files\Ultraleap\TouchFree\Tray
+
+or
+
+* Launching TouchFree from your Windows Start menu
+
+.. image:: ../../img/touchfree-user-manual/touchfree_windows_start_menu.png
+    :alt: TouchFree menu in the windows start menu
+
+When TouchFree is successfully running, you should see the application in the taskbar. 
+
+.. image:: ../../img/touchfree-user-manual/app_icon_taskbar.png
+    :alt: TouchFree application icon in the task bar
+
+A cursor will appear on screen that will follow your hand movements.
+
+To close TouchFree (i.e. make the TouchFree cursor disappear) simply right click the TouchFree Service icon in the Windows system tray and select **Stop TouchFree**. The TouchFree application will no longer be shown on the Windows taskbar and the cursor will no longer be displayed on screen as your hands move.
+
+.. image:: ../../img/touchfree-user-manual/stop_touchfree_menu.png
+    :alt: Stop TouchFree in the TouchFree Menu
+
+TouchFree can be started and stopped at any time through the TouchFree Service icon in the Windows system tray.
+
+Configuring TouchFree
+---------------------
+
+At the end of the TouchFree installation process, leave the **Configure TouchFree** option checked to automatically enter the **TouchFree Settings** screen once Finish is pressed. 
+
+.. image:: ../../img/touchfree-user-manual/touchfree_setup_wizard.png
+    :alt: TouchFree Setup Wizard Window
+
+Alternatively, you can access the TouchFree Settings by either:
+
+* Locating and launching TouchFree Settings from the Windows Start menu
+
+.. image:: ../../img/touchfree-user-manual/touchfree_setting_windows_start.png
+    :alt: TouchFree Settings Window
+
+or
+
+* Right clicking on the TouchFree Service icon in the Windows system tray and selecting **Settings**
+
+.. image:: ../../img/touchfree-user-manual/touchfree_settings_system_tray_menu.png
+    :alt: TouchFree Settings System Tray Menu
+
+TouchFree Settings
+------------------------------
+
+From the **TouchFree Settings** screen, you can configure options such as camera position and orientation, interaction settings, cursor appearance, and more.
+
+.. image:: ../../img/touchfree-user-manual/touchfree_settings_screen.png
+    :alt: TouchFree Settings Screen
+
+These are global settings that impact all touchless applications, whether that’s the TouchFree application or your own application integrated with TouchFree Tooling.
+
+The **TouchFree Settings** screen also includes an indicator to let you know that an Ultraleap Hand Tracking Camera is connected.
+
+Camera Setup
+------------
+
+The first and most important step after installing TouchFree is to configure it to match your physical camera setup. To do this select **Camera Setup**. 
+
+We suggest you begin with **Quick Setup** to get started.
+
+.. image:: ../../img/touchfree-user-manual/touchfree-setupcamera.png
+    :alt: TouchFree Setup Camera

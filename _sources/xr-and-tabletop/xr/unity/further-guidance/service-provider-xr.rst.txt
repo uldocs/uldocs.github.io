@@ -1,0 +1,138 @@
+*********************
+Service Provider (XR)
+*********************
+
+.. image:: ../../../../img/unity-api/service-provider-xr.png
+    :alt: Screenshot of the inspector.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What does this Prefab do?
+--------------------------
+
+This prefab enables Ultraleap hand tracking via the Leap Service in an XR scene. It handles communication with the hand tracking hardware and transforms the hand tracking data so hands are displayed in the correct location relative to the headset.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+When Should You Use This Prefab?
+--------------------------------------------
+
+It should be included in any XR-focused scene that requires hand tracking via the Ultraleap hand tracking service(with appropriate hardware).
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Where Can You Find This Prefab?
+-------------------------------------------------
+
+This prefab is found at `Core/Runtime/Prefabs/Service Provider (XR)`
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+How To Use
+----------
+
+The XR Service Provider requires a reference to the Unity camera in order to transform hand tracking data. This a requirement for XR based hand tracking. A process called Temporal Warping is used to calculate where the hands are given the location of the headset.
+
+The following options are provided on the XR Service Provider to set up a scene for Hand Tracking. These are visible in the Inspector.
+
+**Edit Time Pose** 
+
+This option controls the orientation of the hand tracking data within the Editor scene. The LeapXRServiceProvider defaults to the HeadMounted option. 
+
+**Interaction Volume Visualization**
+
+This option specifies which tracking volume is shown in the scene view. This helps the user understand where hands will be tracked within their scene or relative to an object (e.g. a headset). The visuals are displayed when the game object containing the LeapServiceProvider is selected in the scene hierarchy. The following options are supported:
+
+.. list-table::
+    :widths: 40 40 40 40
+
+    * - **None**
+      - **Leap Motion Controller**
+      - **Stereo IR170/3Di**
+      - **Automatic**
+    * - No visuals are displayed.
+      - The tracking volume for the Leap Motion Controller is displayed.
+      - The tracking volume for the Stereo IR170 device is displayed. The interaction volume is the same for the 3Di.
+      - The tracking volume for most recently connected device is automatically displayed.
+
+**FOV Visualization**
+
+This uses the same device as above and displays a cone representing the Field Of View of that specific device. This is particularly useful when positioning multiple devices within a scene.
+
+**Frame Optimization**
+
+Provides the option to re-interpolate the hand data for the physics timestep, improving the movement of objects being manipulated by hands when using physics (ReusePhysicsForUpdate). Enabling this incurs a small time penalty (fraction of a ms).
+
+By default the mode is set to None, this implies that we want to use hand tracking in time with Unity’s Update loop.
+
+.. list-table::
+    :widths: 20 40 40 40
+
+    * -
+      - **None**
+      - **Reuse Update For Physics**
+      - **Reuse Physics For Update**
+    * - **Frame Optimization**
+      - By default, we use `Time.fixedTime <https://docs.unity3d.com/ScriptReference/Time-fixedTime.html>`_ to ensure that our hands are on the same timeline as the Unity Update. We add an extrapolation value to help compensate for latency.
+      - **Recommended for Android**. Sets the fixed timestep to be the HMD’s framerate, and then reuses the update timestep for physics without any additional temporal resampling.
+      - To be used when you want to reuse the hand data from Physics for Update.
+
+**Physics Extrapolation** - (Exposed when using No Frame Optimization)
+
+.. list-table::
+    :widths: 20 40 40 40
+
+    * -
+      - **None**
+      - **Auto**
+      - **Manual**
+    * - **Physics Extrapolation**
+      - No extrapolation is used at all.
+      - Extrapolation is chosen based on the fixed timestep.
+      - Extrapolation time is chosen manually by the user.
+	  
+**Multiple Device Mode**
+
+.. list-table::
+    :widths: 20 40 40
+
+    * -
+      - **Disabled**
+      - **Specific**
+    * - **Multiple Device Mode**
+      - One device will be used.
+      - Specify the devices by serial either via the dropdown or via code. See Multiple Device Example Scene for more information.
+
+**Advanced Options**
+
+The advanced option section provides additional settings that do not usually need to be adjusted or which require a deeper understanding of how hand tracking data is processed by the plugin.
+
+**Device Offset Mode** 
+
+Enables the offset and tilt of the tracking device relative to the head pose origin to be changed from their default values (when set to manual head offset). Only the Y and Z offset and device tilt (up/down) is editable through the inspector. However, these settings should cover almost all device alignment scenarios. 
+
+Being able to accurately define the physical position and orientation of the hand tracking hardware’s coordinate system relative to the origin of the head pose data is important to deliver the best hand tracking experience. Significant misalignment will degrade the user’s experience.  
+
+Default: Device Offset Y Axis = 0, Device Offset Z Axis = 0.12, Device Tilt X Axis = 5.
+
+Manual Head Transform: All options can be adjusted in the inspector.
+
+Transform: All options are controlled by the assigned transforms position and rotation.
+
+**Temporal Warping**
+
+Temporal warping reduces the affects of ‘hand swim'. Hand swim is visible as a wobble or movement of the virtual hand that does not match the movement (or lack of) of the physical hand and is most apparent when the headset moves (rapdily) and the user's hands stay still. It is caused by latencies in both the hand tracking data and head position data which is inherent in the two systems and which are not synchronized. It also relies on the device offset being reasonably accurate.
+
+Three options are provided to compensate for this effect:
+
+Auto: Used when the system can automatically compensate for most of the effects of temporal warping. This is the default choice for almost all PC VR and Android VR systems.
+Manual: Enables a fixed, custom warp adjustment (latency) to be specified. 
+Images: Use 'Images' for scenarios that overlay Leap device images on tracked hand data.
+
+**Prevent Initializing Tracking Mode** 
+
+When checked, tracking mode will not be modified from its current state. This can be used to maintain the existing tracking mode if you wish to handle the tracking mode manually.
+
+**Server Name Space** 
+
+Specifies the name of the Ultraleap Tracking Service API Endpoint to connect to.  This is configured on the service with the 'api_namespace' argument.

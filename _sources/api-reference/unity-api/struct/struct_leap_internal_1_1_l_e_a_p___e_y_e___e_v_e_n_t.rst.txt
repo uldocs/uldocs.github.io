@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_EYE_EVENT
+===================================
+
+.. doxygenstruct:: LeapInternal::LEAP_EYE_EVENT
+   :project: unity
+   :members: 

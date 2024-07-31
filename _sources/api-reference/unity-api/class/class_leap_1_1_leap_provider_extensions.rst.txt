@@ -1,0 +1,6 @@
+Class Leap::LeapProviderExtensions
+==================================
+
+.. doxygenclass:: Leap::LeapProviderExtensions
+   :project: unity
+   :members: 

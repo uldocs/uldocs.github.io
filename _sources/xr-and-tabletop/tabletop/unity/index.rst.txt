@@ -1,0 +1,63 @@
+:hide-toc:
+
+*********
+Ultraleap in Unity
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+	  The Ultraleap plugin provides features to help you in creating your hand tracked applications.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/unity-logo.png" alt="The Unity Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./getting-started/index.html">Get started!</a>
+
+-----------
+
+Ultraleap Unity Plugin
+------------
+
+.. raw:: html
+
+  <div class="container">
+    <div class="text">
+      <p>
+      Ultraleap provides a Unity plugin to work with Ultraleap hand tracking directly as well as add additional features, prefabs and examples to help you get started.
+      </p>
+    </div>
+    <div class="image">
+      <img src="../../../_images/ul-logo.png" alt="the Ultraleap Logo" width="200">
+    </div>
+  </div>
+  <a class="btn text-wrap btn-outline-primary" href="./plugin/index.html">Ultraleap Unity plugin overview</a>
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+	
+	Getting Started with Unity <getting-started/index.rst>
+    Ultraleap Unity Plugin <plugin/index.rst>

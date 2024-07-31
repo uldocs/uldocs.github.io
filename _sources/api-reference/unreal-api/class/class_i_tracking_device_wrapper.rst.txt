@@ -1,0 +1,6 @@
+Class ITrackingDeviceWrapper
+============================
+
+.. doxygenclass:: ITrackingDeviceWrapper
+   :project: unreal
+   :members:

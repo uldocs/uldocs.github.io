@@ -1,0 +1,149 @@
+********************
+XRI and XRHands Integration
+********************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> XR Interaction Toolkit (XRI), created by Unity and enhanced by Ultraleap, is an ideal starting point for XR projects. Designed for dual hand and controller usage (via Unity's XRHands feature), we strongly recommend leveraging XRI with OpenXR for a seamless experience.</p>
+        <p> This page will teach you how to get set up with XRHands using Ultraleap tracking and also get interactions working using XRI. If you haven't already, check out Unity's  <a HREF=https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>documentation here</a>.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../_video/unity-user-manual/xri-capsules.mp4" type="video/mp4">
+    </div>
+  </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What is XR Hands?
+####################
+
+Unity provides an `XRHands API <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_ for getting started with XR Hands and how to get Hand Tracking data from various sources.
+
+This package includes a subsystem that provides hand data via OpenXR directly. Continue reading to see how to implement this.
+
+Ultraleap provides a custom subsystem for users that can not, or do not wish to use OpenXR for Hand tracking. Continue reading to see how to implement this.
+
+The best way to import packages mentioned in this guide is through the unity package manager which can be found in "window/package manager" in the menu bar.
+The Ultraleap package information can be found here: `Ultraleap OpenUPM package <https://openupm.com/packages/com.ultraleap.tracking/>`_.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What is XRI?
+####################
+
+Unity provides a set of interaction systems under the `XR Interaction Toolkit (XRI) <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/index.html>`_.
+
+XRI provides XR-focussed interactions. It allows you to make one application which works on many platforms, devices and with various input sources (hand tracking, controllers, keyboards, joysticks etc).
+
+Some available Interactors are:
+
+* Direct - For triggering events or grabbing objects
+* Ray - For indirect input, far field UI controls, teleporting, and summoning
+* Poke - For direct UI (3D and 2D) and triggering events
+
+We recommend exploring the capabilities of the XRI package to determine what is most useful for your project. Unity's documentation and guides are a great place to get started.
+
+XRI is usually controlled by the **Input System**. The hands-focussed examples Unity provide come with some specific Input Actions which are driven by **XRHands**.
+
+To get started with XRI when using Ultraleap Hand Tracking, continue reading.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Setting up your project
+---------------------
+
+1. Install `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_, `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ and XR Plugin Management from the Unity Registry in the `Package Manager <https://docs.unity3d.com/Manual/upm-ui.html>`_.
+
+.. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/package-manager-unity-registry.png
+    :width: 50%
+    :align: center
+
+
+.. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/install-xr-hands.png
+    :width: 60%
+    :align: center
+
+2. We recommend that you use `OpenXR <https://www.khronos.org/openxr/>`_ with `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ and `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_ where possible. However, Ultraleap offers a subsystem to use `XR Hands <https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html>`_ directly with Ultraleap hand tracking when `OpenXR <https://www.khronos.org/openxr/>`_ hand tracking is not available.
+
+  Please Select your chosen route from the tabs below:
+   
+.. tabbed:: Direct
+
+  3. Using Leap directly, you will need to enable the Leap XRHands Subsystem from Ultraleap Settings.
+   
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/open-ultraleap-settings.png
+      :width: 60%
+      :align: center
+
+  4. To use Unity's `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ Sample content, you will need to enable "Update Meta Aim Input System". 
+
+    You can use `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ without this but you will need to reference your own Input actions in the Input System.
+
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/enable-leap-subsystem.png
+      :width: 60%
+      :align: center
+
+  5. And you are ready to build your `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ project! if you want to test out `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ with your hands, we recommend installing the XR Interaction Toolkit samples from the package manager then playing the Hand Interaction Demo.
+
+  In order to use the Hands Interaction Demo Sample, you will also need to install the Unity Starter Assets Sample
+    
+    Assets > Samples > XR Interaction Toolkit > 2.4.1 > Hands Interaction Demo > Runtime > HandsDemoScene.unity
+
+
+.. tabbed:: Open XR
+
+  3. When using `OpenXR <https://www.khronos.org/openxr/>`_ you will also need to install the `OpenXR <https://www.khronos.org/openxr/>`_ package from the package manager.
+
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/package-manager-install-openXR.png
+      :width: 60%
+      :align: center
+
+  4. Enable `OpenXR <https://www.khronos.org/openxr/>`_ in the XR Plug-in Management section in Project settings.
+
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/enable-openXR-feature.png
+      :width: 60%
+      :align: center
+
+  5. Then enable the hand tracking subsystem within the `OpenXR <https://www.khronos.org/openxr/>`_ section of XR Plug-in Management.
+
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/enable-openXR-hand-tracking-subsystem.png
+      :width: 60%
+      :align: center
+
+
+  6. You should now be able to see your hands if you play one of Unity's hand demo scenes but you may not be able to interact with `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_. 
+   
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/open-ultraleap-settings.png
+      :width: 60%
+      :align: center
+
+  7. To use Unity's `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ Sample content, you will need to go to the Ultraleap settings and enable "Update Meta Aim Input System".
+
+  .. figure:: ../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/update-input-actions.png
+      :width: 60%
+      :align: center
+
+  8. And you are ready to build your `XRI <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html>`_ project! if you want to test out XRI with your hands, we recommend installing the XR Interaction Toolkit samples from the package manager then playing the Hand Interaction Demo.
+
+  In order to use the Hands Interaction Demo Sample, you will also need to install the Unity Starter Assets Sample
+  :code:`Assets > Samples > XR Interaction Toolkit > 2.4.1 > Hands Interaction Demo > Runtime > HandsDemoScene.unity`

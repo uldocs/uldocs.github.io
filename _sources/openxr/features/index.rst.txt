@@ -1,0 +1,61 @@
+Features
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 200px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      To give our layer maximum flexibility and occasional access to preview functionality; 
+      We have various features that can be enabled or disabled via the same methods described in
+      our <a href="../configuration/index.html">configuration section</a>.
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../_images/openxr.png" alt="The OpenXR Logo" width="200">
+    </div>
+  </div>
+
+------------------
+
+What features are there?
+-----------
+
+All the features our layer provides can be seen below with information on how to enable / disable them if applicable
+on their respective pages:
+
+.. toctree::
+  :maxdepth: 1
+  
+  Ultraleap Tracking Forearm <tracking-forearm/index.rst>
+  Hand Interaction Profile <hand-interaction-profile/index.rst>
+  Controller Switching <controller-switching/index.rst>
+  Meta Tracking Aim <facebook-aim/index.rst>  
+
+.. note::
+    Fully released features will typically be enabled by default. Features in the above list with a 
+    *(preview)* designation will be disabled by default with any risks from enabling the feature 
+    described in its related section.
+
+`Back to top <#top>`_

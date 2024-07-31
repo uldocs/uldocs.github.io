@@ -1,0 +1,226 @@
+:hide-toc:
+
+***************************
+Design considerations
+***************************
+
+.. image:: ../../img/xr-guidelines/design-considerations/Design-Considerations-Hero-Image.png
+    :alt: Image of hands in virtual reality manipulating a glowing block
+
+When designing for hand tracking, the choice of most appropriate interactions will vary from application to application. They will be affected by factors such as frequency of use, familiarity with VR, and the application type.
+
+Here we present some key questions to ask yourself, to help you make the best choices for your application.
+
+-------------------------
+
+Considerations when designing for hand tracking
+####################################################
+
+* User needs and context
+* Direct and distance interaction
+* Use of virtual objects
+* Use of UI panels
+* Locomotion method
+* User help and hints
+* Virtual hands design
+
+-------------------------
+
+User needs and context
+##########################
+**How much time will users spend with your application?**
+
+Think about how frequently people will use your application and how long a typical session might be. The less time spent in use, the less time people will have to learn how to interact. If they’re having a one-time experience – for example a VR arcade game - then hand interactions should be as few and as simple as possible.
+
+If people will pick up your application more frequently - perhaps for work - they are more likely to be able to learn and recall new interactions – for example, hand poses for shortcuts to make their workflow easier. You can use more interactions but may require help and onboarding content to introduce them gradually.
+
+**How familiar are your audience with XR?**
+
+What do you know about your target audience? Think about how familiar they might be with XR technologies - will this be their first time in a headset?
+
+If your application is targeting a range of ages and demographics or will have many new users, then consider carefully how much you expect people to be able to learn - particularly if many of them will be new to VR. You may want to limit the number of interactions you have in your application and ensure users have adequate time to practice the interactions in a tutorial before completing the main tasks.
+
+**What are users trying to achieve?**
+
+Choice of interactions is also affected by what users want or need to achieve in an application.
+
+*Are they trying to remember the order of a procedure?*
+
+The interactions should be extremely simple, feature large interaction areas and allow a wide range of gestures to be used, so that users can focus on their primary goal of recalling the order of the task at hand. They should not have to memorise `hand poses <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_, for example.
+
+*Are they trying to build muscle memory for a task?*
+
+More realistic interactions will be important and users may need to be more accurate when interacting with virtual objects in order to effectively build muscle memory. As much as possible, make use of physical and minimise learned interactions.
+
+*Are they trying to position objects accurately and precisely?*
+
+If users are manipulating objects with their hands – for example designing in VR - the interactions need to be more precise and respond to smaller movements of the fingers to give people more control.
+
+-------------------------
+
+.. image:: ../../img/xr-guidelines/design-considerations/Design-Considerations-direct-and-distance-interaction.png
+    :alt: A hand in virtual reality interacting with a block at a distance
+
+Direct and distance interaction
+##########################
+
+You have the choice of allowing users to interact with panels and objects up-close, or from a distance. Whilst the latter must be learned, it unlocks new capabilities which can be powerful for the right application. For example, designing the layout of a workspace in VR.
+
+More on `direct and distance interaction <https://docs.ultraleap.com/xr-guidelines/Interactions/direct_and_distant_interaction_mode.html>`_. 
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/xri-integration.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+
+-----------------------------------------------------
+
+.. image:: ../../img/xr-guidelines/design-considerations/Design-Considerations-Virtual-Objects.gif
+    :alt: VR hands in unity interacting with virtual objects
+	
+Use of virtual objects
+##########################
+
+Grabbing and manipulating objects is one of the most intuitive things you can do with virtual hands, with these elements responding to hands with realistic physics. Items like drawers and doors benefit from being made as mounted objects too.
+
+`More on objects <https://docs.ultraleap.com/xr-guidelines/Components/virtual-objects.html>`_ and `how to design them for hands <https://docs.ultraleap.com/xr-guidelines/Components/designing-objects-hands.html>`_.
+
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/direct-3D-object-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+-------------------------
+
+.. youtube:: RI-WLeh48Qo
+    :width: 560
+    :height: 315
+
+Use of UI panels
+##########################
+
+Most applications will need access to features and settings via some kind of UI panel. If users will be moving around a lot, a hand panel might be appropriate - or larger UI panels can be triggered by everything from a palm button to a pose to a button within the environment. Consider which features your users will need most regular access to and prioritise making those quick to find.
+
+More on `UI panels <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_.
+
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/3D-ui-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/UI-input-modules.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+-------------------------
+
+.. youtube:: XeR6RdHKsqw
+    :width: 560
+    :height: 315
+
+Locomotion method
+#################
+
+Will your users need to move around the environment? If so you may need a locomotion interaction, which must be learned with prompts and tutorials. There are two main types of locomotion - teleportation or free movement, and several ways you can choose to move around using hands.
+
+`More on locomotion <https://docs.ultraleap.com/xr-guidelines/Interactions/locomotion.html>`_
+
+-------------------------
+
+.. image:: ../../img/xr-guidelines/design-considerations/Design-Considerations-Help-Panel.gif
+    :alt: VR hands search through a menu in mid-air
+
+User help and hints
+##########################
+
+Ultraleap consider interactions to fall into one of two categories - `physical and learned <https://docs.ultraleap.com/xr-guidelines/Interactions/interactions_overview.html>`_. Physical interactions can be instinctive and immediate if designed well, whereas learned interactions will almost always need to be taught to new users. There are several formats of help and hints which can introduce people to new, learned interactions and these should be planned as part of your application’s design to help deliver a positive and delightful experience.
+
+`More on help and hints <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_.
+
+-------------------------
+
+.. image:: ../../img/xr-guidelines/design-considerations/Design-Considerations-virtual-hand-design.png
+    :alt: A pair of hands in virtual reality shown in grey against a black background
+
+Virtual hands design
+##########################
+
+For user immersion and for interactions to feel intuitive and natural, it’s key that the virtual hands also look right. They need to be the right size, and their visual style also has an impact on user expectation and experience, so choosing the right hands is important.
+
+`More on virtual hands <https://docs.ultraleap.com/xr-guidelines/Getting%20started/virtual-hands.html>`_.
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/rigged-hand-support.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/metahuman-support.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+-----------
+
+`Back to top <#top>`_
+

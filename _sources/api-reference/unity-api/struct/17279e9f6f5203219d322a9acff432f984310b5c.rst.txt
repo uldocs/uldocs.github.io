@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONFIG_CHANGE_EVENT
+=============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONFIG_CHANGE_EVENT
+   :project: unity
+   :members: 

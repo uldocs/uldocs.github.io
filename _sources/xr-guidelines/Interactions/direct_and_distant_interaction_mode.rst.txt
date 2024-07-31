@@ -1,0 +1,100 @@
+:hide-toc:
+
+************************************
+Direct and Distant interaction modes
+************************************
+
+VR applications using hands can operate in one of two distinct interaction modes: 
+
+.. youtube:: yDURq0vBlc0
+    :width: 560
+    :height: 315
+
+
+Direct interaction 
+##################
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+**Direct interaction** works much like real life, and as such tends to be immediate and easy for new users to pick up. Users interact with objects and 3D components up close, grabbing items and pushing buttons with their hands and seeing those elements respond appropriately. Objects are picked up simply by grabbing them like as you would in real life, buttons depress when pushed and toggle switches can be flicked with a finger.
+
+Rather than detecting and responding to a distinct hand poses however, direct interaction works best when it allows users to pick up, push and handle elements with a range of subtly different grips, in different positions and orientations. It’s all about the hand making contact with the element in a flexible manner that feels natural. Ultraleap research indicates that for a given interaction - like picking up an object - developers can always expect some natural variation in the way people grip and move it, because everyone’s body, reach, and mannerisms are slightly different. Direct interaction caters for that.
+
+To achieve that immediacy, objects and components must be designed realistically, with depth and physicality, and must respond as expected and with appropriate physics. `More on designing objects <https://docs.ultraleap.com/xr-guidelines/Components/designing-objects-hands.html>`_.
+
+
+Distant interaction
+###################
+
+.. image:: ../../img/xr-guidelines/direct-and-distant-interaction-modes/Direct-and-Distant-interaction-modes-summoning.gif
+    :alt: Image of hands in virtual reality manipulating a glowing block
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+*Coming soon to* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_ 
+
+**Distant interaction** - as the name suggests - allows users to pick up objects, hit buttons and use panels from a distance. This is something that we can’t do in real life, and as such there is a small learning curve for new users, requiring help and onboarding material such as the tutorial in Ultraleap’s `Blocks demo <https://gallery.leapmotion.com/blocks/>`_.
+
+Unlike direct interaction, distant is more binary. With a ray cast from their open hand, users take aim at distant objects or 3D components, and form a pinch or grab gesture to trigger selection or related action. The element then responds with a clear state change and noticeable visual and audio cues. As the hand registers as open or closed, the button reacts accordingly.
+
+With distant interaction, users can interact with all components on a UI panel, pick up, move, drop and throw objects, as well as do things they can’t in real life, like summon distant objects towards them.
+
+-------
+
+A key consideration for a VR application that uses hands, is which interaction mode is appropriate. Direct interaction requires users to be up close to interactive elements, so often requires a `locomotion interaction <https://docs.ultraleap.com/xr-guidelines/Interactions/locomotion.html>`_ to move around. Distant interaction allows users to reach far more from a stationery position, but cannot offer the same flexibility and immediacy in object handling.
+
+
+------------------------------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/direct-3D-object-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+-------
+
+Getting Started
+###############
+
+Get started manipulating objects with your hands using our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_, where we provide the Interaction Engine, and Physics Hands - two physics-based systems designed to easily manipulate objects directly with your hands.
+
+Learn more about these tools, and how to practically apply them, `here <https://docs.ultraleap.com/xr-guidelines/Components/virtual-objects.html>`_.
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources:
+###############
+
+**Unity:** 
+
+* Documentation: `Interaction Engine Basics <https://docs.ultraleap.com/unity-api/The-Basics/interaction-engine.html>`_
+* Example Scene: ``Physical Hands - /XR Examples/2. Interactions/1. Physical Hands Playground``
+* Documentation: `Physics Hands <https://docs.ultraleap.com/unity-api/Preview/physics-hands.html>`_
+* Blog: `Hand-Powered Far Field Interaction - How We Did It <https://docs.ultraleap.com/ultralab/far-field-ray-blog.html>`_
+* Preview Example Scene: Hand Rays - ``Examples/HandRays``
+
+**Unreal:**
+
+* Documentation: `Interaction Engine Basics <https://docs.ultraleap.com/unreal-api/unreal-guide/interaction-engine.html>`_
+* Example Scene: Interaction Objects - ``/UltraleapTracking Content/InteractionEngine/InteractionObjects``
+
+
+
+`Back to top <#top>`_

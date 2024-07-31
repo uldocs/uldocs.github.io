@@ -1,0 +1,6 @@
+Struct LEAP_EYE_EVENT
+=====================
+
+.. doxygenstruct:: LEAP_EYE_EVENT
+   :project: tracking
+   :members:

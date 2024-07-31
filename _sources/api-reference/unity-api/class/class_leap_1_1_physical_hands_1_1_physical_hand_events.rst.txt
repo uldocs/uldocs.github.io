@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::PhysicalHandEvents
+=============================================
+
+.. doxygenclass:: Leap::PhysicalHands::PhysicalHandEvents
+   :project: unity
+   :members: 

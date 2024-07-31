@@ -1,0 +1,6 @@
+Struct LEAP_CONNECTION_EVENT
+============================
+
+.. doxygenstruct:: LEAP_CONNECTION_EVENT
+   :project: tracking
+   :members:

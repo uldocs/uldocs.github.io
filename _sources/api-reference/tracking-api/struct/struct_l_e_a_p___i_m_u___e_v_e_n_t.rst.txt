@@ -1,0 +1,6 @@
+Struct LEAP_IMU_EVENT
+=====================
+
+.. doxygenstruct:: LEAP_IMU_EVENT
+   :project: tracking
+   :members:

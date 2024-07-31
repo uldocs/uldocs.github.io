@@ -1,0 +1,6 @@
+Class AJointOcclusionActor
+==========================
+
+.. doxygenclass:: AJointOcclusionActor
+   :project: unreal
+   :members:

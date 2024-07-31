@@ -1,0 +1,317 @@
+:hide-toc:
+
+*********
+Ultraleap Plugin Features
+*********
+
+The Ultraleap Unity Plugin comes with a collection of features to help you to get started with hand tracking in your application.
+
+Browse the :ref:`plugin features <unity-plugin-features>` below to see what is available off the shelf, or head to the `Further Guidance <../further-guidance/index.html>`_ section for a deeper dive into the possibilities of Ultraleap hand tracking.
+
+
+**Want to skip straight to some code?**
+
+Our scripting fundamentals for Ultraleap Hand Tracking will help you to understand how to get hand tracking data and start to use it for you own customised use case.
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="./features/scripting-fundamentals.html">View Scripting Fundamentals</a>
+
+-----------
+
+.. _unity-plugin-features:
+
+Features
+------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/physical-handsicon.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/physical-hands.html
+        :text: Physical Hands
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Physically interact with standard Unity objects naturally
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene-med.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ../xri-integration.html
+        :text: XRI and XRHands Integration
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    XRI and XRHands integration with or without OpenXR
+
+    ---
+
+    .. figure:: ../../../../img/unity-api/mrtk3-banner.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ../mrtk-support.html
+        :text: MRTK3 Support
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    MRTK3 support with or without OpenXR
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/virtual-hands-track-arms.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/pinch-and-grab-detection.html
+        :text: Pinch Detection
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    How to detect pinches 
+
+        ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Getting-Started/Virtual-Objects-Blocks-Station.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/grab-detector.html
+        :text: Grab Detection
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Ways to detect grabs
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-showcase-scene.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/hand-pose-detection.html
+        :text: Pose Detection
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Detect poses using our pose detector
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/pose-editor-hands.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/pose-recording.html
+        :text: Pose Recording
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Create your own poses to detect
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-recorder.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/hand-recorder.html
+        :text: Hand Animation Recorder
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Record Hand Animations that can be played back for use in Tutorials
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/3D-ui-combined_thumb.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/3D-ui-interactions.html
+        :text: Direct 3D UI Interaction
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Interact with 3D UI elements and hand menus
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/5-hand-models.png
+        :height: 150px
+        :align: center
+
+    .. link-button:: ./features/rigged-hand-support.html
+        :text: Custom Hand Visuals
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Change the way your virtual hands look
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attached-to-hand-object.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/hand-attachments.html
+        :text: Hand Attachments
+        :classes: btn-outline-primary btn-block stretched-link
+    
+    ++++++
+    Attaching Objects to your virtual hands
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attached-in-world-object.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/anchoring-objects.html
+        :text: Anchoring to Objects
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Anchor objects to different points in the world
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/post-process-provider-thumbnail.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/modifying-hand-data.html
+        :text: Modifying Hand Data
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Do more with your virtual hands
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/controller-support.html
+        :text: Controller Support
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Build apps for hands and controllers
+
+    ---
+        
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/networked-hands-demo.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/networking-hands.html
+        :text: Networking Hands
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Enabling multiplayer with your hands
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/multiple-devices.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/multiple-tracking-devices.html
+        :text: Multiple Tracking Devices
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Use two tracking devices to track one or more sets of hands
+	
+    ---
+
+    .. figure:: ../../../../img/unity-api/pinch-to-paint.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/pinch-to-paint.html
+        :text: Pinch to Paint
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Detect pinch and use it to draw in 3D space
+	
+    ---
+
+    .. figure:: ../../../../img/unity-api/turntable.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./features/turntable-and-pullcord.html
+        :text: Turntable and Pullcord
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    View objects from all angles using a turntable and expand them for more information using pullcords
+	
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-tracking-hints-settings.png
+        :height: 100
+
+    .. link-button:: ./features/hand-tracking-hinting.html
+        :text: Hand Tracking Hinting
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ++++++
+    Request specific feature changes from the Hand tracking Service
+
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+
+	Scripting Fundamentals <features/scripting-fundamentals.rst>
+    3D UI Interactions <features/3D-ui-interactions.rst>
+    Pinch Detector <features/pinch-detector.rst>
+    Grab Detector <features/grab-detector.rst>
+    Anchoring Objects <features/anchoring-objects.rst>
+    Controller Support <features/controller-support.rst>
+    Custom Hand Visuals <features/rigged-hand-support.rst>
+	Hand Animation Recorder <features/hand-recorder.rst>
+    Hand Attachments <features/hand-attachments.rst>
+    Hand Pose Detection <features/hand-pose-detection.rst>
+    Hand Pose Recording <features/pose-recording.rst>
+    Hand Tracking Hinting <features/hand-tracking-hinting.rst>
+    Modifying Hand Data <features/modifying-hand-data.rst>
+    Multiple Tracking Devices <features/multiple-tracking-devices.rst>
+    Networking with Hand Data <features/networking-hands.rst>
+    Physical Hands <features/physical-hands.rst>
+    Pinch To Paint <features/pinch-to-paint.rst>
+    Turntable and Pullcord <features/turntable-and-pullcord.rst>

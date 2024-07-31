@@ -1,0 +1,6 @@
+Class Leap::HandPoseRecorder
+============================
+
+.. doxygenclass:: Leap::HandPoseRecorder
+   :project: unity
+   :members: 

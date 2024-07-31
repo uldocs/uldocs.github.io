@@ -1,0 +1,6 @@
+Class Leap::DroppedFrameEventArgs
+=================================
+
+.. doxygenclass:: Leap::DroppedFrameEventArgs
+   :project: unity
+   :members: 

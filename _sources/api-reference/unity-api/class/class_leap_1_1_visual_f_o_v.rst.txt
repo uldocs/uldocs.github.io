@@ -1,0 +1,6 @@
+Class Leap::VisualFOV
+=====================
+
+.. doxygenclass:: Leap::VisualFOV
+   :project: unity
+   :members: 

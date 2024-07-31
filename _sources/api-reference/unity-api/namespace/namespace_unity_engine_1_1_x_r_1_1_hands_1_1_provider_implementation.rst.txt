@@ -1,0 +1,6 @@
+Namespace UnityEngine::XR::Hands::ProviderImplementation
+========================================================
+
+.. doxygennamespace:: UnityEngine::XR::Hands::ProviderImplementation
+   :project: unity
+   :no-link: 

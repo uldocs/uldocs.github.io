@@ -1,0 +1,6 @@
+Struct LEAP_POINT_MAPPING_CHANGE_EVENT
+======================================
+
+.. doxygenstruct:: LEAP_POINT_MAPPING_CHANGE_EVENT
+   :project: tracking
+   :members:

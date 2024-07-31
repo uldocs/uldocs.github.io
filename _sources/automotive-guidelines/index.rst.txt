@@ -1,0 +1,49 @@
+:hide-toc:
+
+*************************
+Automotive HMI Guidelines
+*************************
+
+Ultraleap’s Experience Design and Research team is building the standards for common gestures, interactions, and haptic
+sensations.
+
+This is your guide to best practices for gesture control in automotive HMI.
+
+The automotive HMI of the future is going to use a host of new technologies to respond more intelligently to a driver’s
+needs, increasing safety and letting you control your car in a way that’s natural and easy. It will likely be powered by
+facial and gesture recognition, voice control, visual displays, eye tracking, and haptic technology.
+
+Ultraleap’s world-leading hand tracking powers reliable, customizable gesture control in automotive HMI – allowing
+drivers to control their car’s infotainment system with simple hand gestures.
+
+.. youtube:: USRyAOZjuT0
+    :width: 560
+    :height: 315
+
+*Automotive HMI powered by gesture control with mid-air haptics enables drivers to control infotainment intuitively and
+without taking their eyes off the road. With thanks to Groupe PSA.*
+
+Adding haptic feedback to gesture control using our “virtual touch” haptic technology gives tactile confirmation that an
+action has been completed, even though there’s no button or touchscreen present. Think of it as feeling a “force field”
+against your palm.
+
+Our previous high-fidelity explorations proved that fewer glances away from the road occur when using gesture control
+augmented with mid-air haptics, compared with a traditional touchscreen interface.
+
+However, gesture control is new enough that there are no established standards yet for how to do things well – unlike,
+say, designing for a touchscreen. Our team is building those standards for common gestures, interactions, and haptic
+sensations.
+
+Here, we share our current thinking on best-practice gesture frameworks for automotive HMI.
+
+----------
+
+.. toctree::
+    :caption: Table of Contents
+
+    Designing for Automotive HMI <designing-for-automotive-HMI.rst>
+    Interaction Types <interaction-types.rst>
+
+-----------
+
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Class Leap::HandModelBase
+=========================
+
+.. doxygenclass:: Leap::HandModelBase
+   :project: unity
+   :members: 

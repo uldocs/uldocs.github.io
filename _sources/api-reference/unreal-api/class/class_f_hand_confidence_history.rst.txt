@@ -1,0 +1,6 @@
+Class FHandConfidenceHistory
+============================
+
+.. doxygenclass:: FHandConfidenceHistory
+   :project: unreal
+   :members:

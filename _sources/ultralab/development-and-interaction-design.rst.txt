@@ -1,0 +1,37 @@
+:hide-toc:
+
+*****************************************************
+Development & Interaction Design: XR Bootcamp Lecture
+*****************************************************
+
+How can you work with Ultraleap technologies? What development tools will help you create an application or experience? What are the best ways to user-test your creation?
+
+To answer these questions this lecture, aimed at developers and designers, takes you behind the scenes at Ultraleap.
+
+Given in October 2020 as part of the `XR Bootcamp <https://xrbootcamp.com/>`_ Hand Interactions Pro Event Series, watch
+it here to get expert insight from our engineers.
+
+.. youtube:: pjVjujseFDA
+    :width: 560
+    :height: 315
+
+**John Selstad (Principal Software Engineer)**
+
+John covers how to get started with the Ultraleap Interaction Engine and core development tools. John also discusses
+interacting with objects at a distance.
+
+**Chris Wren (Global Applications Team Lead)**
+
+Chris takes you behind the scenes of our Crystal Cave multiplayer room scale demo. Learn more about social interactions,
+connecting users with each other and the environment, and creating a sense of presence.
+
+**Hannah Limerick (User Research and Insights)**
+
+Test, test, test! Hannah shares testing insights from our VR autonomous vehicle experience. You’ll learn about the
+value of user testing and how users are always surprising you.
+
+--------
+
+For a unique perspective on advanced hand tracking, check out
+`our other lecture in this series <https://www.youtube.com/watch?v=j4_-mizKKPI&t=952s>`_ from Tom Carter (Chief
+Technology Officer and Founder).

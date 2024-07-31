@@ -1,0 +1,8 @@
+.. raw:: html
+
+    <script type="text/javascript">
+        window.location.replace('./index.html');
+    </script>
+
+..
+   The above script redirects any existing links to the index.html in the same folder that this file is in

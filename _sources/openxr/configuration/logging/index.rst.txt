@@ -1,0 +1,62 @@
+Logging
+*********
+
+Chose the desired configuration option below to see the **key-value** pairs and their options:
+
+.. tabbed:: Configuration File
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``log_level``
+          - ``LEVEL``
+          - where ``LEVEL`` is a string that represents the desired logging level. Supported levels 
+            are ``all``, ``debug``, ``info``, ``warn`` and ``error``.
+          - ``warn``
+
+.. tabbed:: Environment Variables
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``ULTRALEAP_OPENXR_LOG_LEVEL``
+          - ``LEVEL``
+          - where ``LEVEL`` is a string that represents the desired logging level. Supported levels 
+            are ``all``, ``debug``, ``info``, ``warn`` and ``error``.
+          - ``warn``
+
+What does it do?
+-----------
+
+By default the layer will output error and warnings generated during the usage of an OpenXR
+application.
+
+How to use it
+-----------
+
+Set the logging to the desired verbosity level shown above and when an OpenXR application runs
+that makes use of one of our `supported extensions <../../index.html#how-do-we-fit-into-this>`_ 
+logs will be output to the following platform specific locations:
+
+* Windows: ``%PROGRAMDATA%\Ultraleap\OpenXR\UltraleapOpenXR.log``
+* Linux: ``$XDG_STATE_HOME/ultraleap/openxr-layer-ultraleap.log``
+* Android: The log is written directly to logcat.
+
+.. note::
+    Currently the log file is **not** circular buffered. So if you have a very verbose 
+    logging level set, the file will grow very quickly in size; requiring manual clean-up. 
+    This doesn't apply for Android.
+
+`Back to top <#top>`_

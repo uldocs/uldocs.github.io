@@ -1,0 +1,72 @@
+:hide-toc:
+
+***************
+Upgrading to Ultraleap Gemini V5.2+
+***************
+
+To develop Ultraleap Gemini we rebuilt our tracking engine from the ground up, and made some changes to how things work.
+These changes enable very exciting new integration possibilities. But there are also breaking changes.
+
+Do you need to upgrade your tools?
+######################
+
+If you have an application built with a previous version of our Hand Tracking Software and any of our developer tools for Unity, Unreal, or our LeapC API, then you will need to upgrade these tools so they work with Ultraleap Gemini.
+
+Upgrading involves just a few simple steps. 
+
+An application built with any prior version of the following will not be compatible with Ultraleap Gemini V5.2+ Hand Tracking Software:
+
+- Ultraleap Hand Tracking Software (i.e. V5.0.0 preview, V4.x, V3.x SDK or V2.x)
+- Ultraleap Unity Modules (i.e. V4.8.0 and below)
+- Ultraleap Unreal Plugin (i.e. V3.7.11 and below)
+- Ultraleap OpenXR Hand Tracking API Layer (i.e. V1.0.0-beta2 release and below)
+
+The following applications will not be compatible with Ultraleap Gemini V5.2+ Hand Tracking Software:
+
+- TouchFree V2.0 and below
+
+-----------
+
+Migrate to Ultraleap Gemini v5.2+ hand tracking software
+###################
+
+.. note:: The V5.2+ software installation will not automatically remove a previous installation.
+
+We recommend uninstalling any previous versions of Ultraleap Hand Tracking Software manually, then installing V5.2+. 
+
+This means that you can potentially have more than one version installed. However, this will lead to conflict between the services when connecting to an Ultraleap camera.
+
+Steps for migration from V4, V4.1, V5.0.0 preview, and an application that is using:
+
+- The LeapC API
+  - Install the SDK from the `Gemini V5 Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_ installer
+  - Update to use the new LeapC libraries
+  - The LeapC API is backwards-compatible with V4. This means you do not need to make changes to your code if you want to update your application to be compatible with V5.2. Simply integrate the new SDK library (specifically the LeapC.dll file) and the application will now work with V5.2. The SDK library is included in the software installer.
+
+- Unity modules
+  - Install the latest `Unity Plugin (V5.0.0+) <https://leap2.ultraleap.com/xr-developer-tools/>`_
+  - Follow our `migration guide <https://docs.ultraleap.com/xr-and-tabletop/xr/unity/further-guidance/upgrading-plugin-version.html>`_, using OpenUPM or .unitypackage files
+
+- Unreal modules
+  - Install the latest `Unreal Plugin (V4.0.3+) <https://leap2.ultraleap.com/xr-developer-tools/>`_ 
+  - Update to use the new Unreal plugin
+
+- Ultraleap OpenXR Hand Tracking API Layer
+  - Install the latest `Ultraleap OpenXR Hand Tracking API Layer (V1.0.0+) <https://github.com/ultraleap/OpenXRHandTracking>`_
+
+Steps for migration from V4, V4.1, V5.0.0 preview, and the following applications:
+
+- TouchFree V2.0 and below
+  - Uninstall/remove previous versions of TouchFree
+  - Install `TouchFree 2.1 <https://leap2.ultraleap.com/touchfree/>`_ to use it with Gemini V5.2+
+
+.. raw:: html
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/gemini-downloads/">Download Gemini</a>
+
+-------------
+
+Visit our `troubleshooting page <https://support.leapmotion.com/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.leapmotion.com%2Fhc%2Fen-us%2Farticles%2F4406124780177-Troubleshooting-Guide-V5-Gemini->`_ for FAQs and more.
+
+-------------
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Class LeapInternal::Connection
+==============================
+
+.. doxygenclass:: LeapInternal::Connection
+   :project: unity
+   :members: 

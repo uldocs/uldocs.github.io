@@ -1,0 +1,6 @@
+Class FDeviceCombiner
+=====================
+
+.. doxygenclass:: FDeviceCombiner
+   :project: unreal
+   :members:

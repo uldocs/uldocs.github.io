@@ -1,0 +1,22 @@
+:hide-toc:
+
+*************
+API Reference
+*************
+
+The LeapC API includes data structures, enumerations, hints, and exported functions.
+
+--------
+
+.. toctree::
+    :caption: Table of Contents
+    :maxdepth: 1
+
+    Data Structures <group/group___structs.rst>
+    Enumerations <group/group___enum.rst>
+    Hints <group/group___hints.rst>
+    Functions <group/group___functions.rst>
+
+-----------
+
+`Back to top <#top>`_

@@ -1,0 +1,80 @@
+:hide-toc:
+
+***************
+Tabletop Camera Set Up for Mac and PC
+***************
+
+.. figure:: ../img/hand-tracking/PC-Desktop-computer.png
+   :alt: A desktop computer
+   :align: center
+
+   Get started with our world-leading hand tracking on your desktop or laptop.
+
+What Do You Need?
+######################
+
+- An `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_.
+- The latest version of our `Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_.
+
+Download and install the Hand Tracking Software, and follow the steps below to get started right away.
+
+-----------
+
+Connect Your Hand Tracking Camera
+###################
+
+**Leap Motion Controller 2**
+
+1. Remove the Leap Motion Controller 2 from the box.
+2. Use a USB3 cable and connection. Center the controller in front of your keyboard or laptop. The shiny side of the controller faces up and the cable faces away from you. Locate it so that it is comfortable to use.
+
+
+**Leap Motion Controller**
+
+1. Remove the sticker from the top of the Leap Motion Controller.
+2. Use the USB cable included in the box. Center the controller in front of your keyboard or laptop. The shiny side of the controller faces up and the green light faces towards you. Locate it so that it is comfortable to use.
+
+|monitor| |stickers|
+
+.. |monitor| image:: ../img/hand-tracking/leap-monitor.png
+   :width: 45%
+
+.. |stickers| image:: ../img/hand-tracking/leap-sticker-diagram.png
+   :width: 45%
+
+-----------
+
+**Stereo IR 170**
+
+1. Remove both lens caps from the Stereo IR 170.
+
+1. Use the USB cable included in the box. Center the Stereo IR 170 in front of your keyboard or laptop with the lenses facing upwards. Locate it so that it is comfortable to use.
+
+|lenscaps| |sir|
+
+.. |lenscaps| image:: ../img/hand-tracking/SIR-lens-caps.png
+   :width: 45%
+
+.. |sir| image:: ../img/hand-tracking/SIR-setup.png
+   :width: 45%
+
+------------
+
+**Ultraleap 3Di**
+
+Looking to try out your Ultraleap 3Di Hand Tracking Camera before mounting it on your kiosk?
+
+1. Connect the 3Di to your device using the USB cable included. 
+
+2. Set up your camera with a separate monitor or display, so that the camera is at least 10 cm away from any part of the screen you want to interact with. 
+
+   * *We do not recommend setting up TouchFree on a laptop – supported camera positions cannot be achieved on a laptop.*
+
+3. Make sure the camera is the right way round. Position the notch closest to the user, whether the camera is above or below the screen.
+
+.. figure:: ../img/hand-tracking/3di-camera-notch.jpg
+   :alt: A 3Di with the notch at the bottom of the device
+   :align: center
+
+-------------
+`Back to top <#top>`_

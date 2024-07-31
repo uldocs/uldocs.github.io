@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_IMAGE_EVENT
+=====================================
+
+.. doxygenstruct:: LeapInternal::LEAP_IMAGE_EVENT
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::DeviceList
+======================
+
+.. doxygenclass:: Leap::DeviceList
+   :project: unity
+   :members: 

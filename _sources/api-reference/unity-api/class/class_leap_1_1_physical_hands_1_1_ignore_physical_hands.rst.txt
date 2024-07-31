@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::IgnorePhysicalHands
+==============================================
+
+.. doxygenclass:: Leap::PhysicalHands::IgnorePhysicalHands
+   :project: unity
+   :members: 

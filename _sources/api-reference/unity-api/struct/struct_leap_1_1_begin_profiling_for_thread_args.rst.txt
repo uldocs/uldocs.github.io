@@ -1,0 +1,6 @@
+Struct Leap::BeginProfilingForThreadArgs
+========================================
+
+.. doxygenstruct:: Leap::BeginProfilingForThreadArgs
+   :project: unity
+   :members: 

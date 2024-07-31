@@ -1,0 +1,6 @@
+Class Leap::DistortionData
+==========================
+
+.. doxygenclass:: Leap::DistortionData
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Namespace System::Runtime::InteropServices
+==========================================
+
+.. doxygennamespace:: System::Runtime::InteropServices
+   :project: unity
+   :no-link: 

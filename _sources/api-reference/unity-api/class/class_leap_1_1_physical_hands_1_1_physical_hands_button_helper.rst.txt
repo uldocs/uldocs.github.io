@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::PhysicalHandsButtonHelper
+====================================================
+
+.. doxygenclass:: Leap::PhysicalHands::PhysicalHandsButtonHelper
+   :project: unity
+   :members: 

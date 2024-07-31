@@ -1,0 +1,6 @@
+Struct Leap::RuntimeGizmos::RuntimeGizmoDrawer::Line
+====================================================
+
+.. doxygenstruct:: Leap::RuntimeGizmos::RuntimeGizmoDrawer::Line
+   :project: unity
+   :members: 

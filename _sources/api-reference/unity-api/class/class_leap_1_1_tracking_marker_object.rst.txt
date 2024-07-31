@@ -1,0 +1,6 @@
+Class Leap::TrackingMarkerObject
+================================
+
+.. doxygenclass:: Leap::TrackingMarkerObject
+   :project: unity
+   :members: 

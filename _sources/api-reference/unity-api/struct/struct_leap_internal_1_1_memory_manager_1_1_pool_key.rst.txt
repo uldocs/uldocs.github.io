@@ -1,0 +1,6 @@
+Struct LeapInternal::MemoryManager::PoolKey
+===========================================
+
+.. doxygenstruct:: LeapInternal::MemoryManager::PoolKey
+   :project: unity
+   :members: 

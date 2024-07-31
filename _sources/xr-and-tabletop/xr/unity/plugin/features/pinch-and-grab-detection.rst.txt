@@ -1,0 +1,276 @@
+********************
+Pinch And Grab Detection
+********************
+
+.. |Hands| replace:: :cs:class:`Hand <Leap.Hand>`
+.. |PinchDetector| replace:: :cs:class:`Hand <Leap.PinchDetector>`
+
+
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p>This guide is to teach you how to set up your own custom pinch and grab interactions. If you only wish to use these for picking up objects and interacting with UI, we provide prebuilt methods and recommend you check out the built in options below.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+.. note:: Sample scenes can be found in:
+
+  * Assets/Samples/Ultraleap Tracking/x.x.x/ XR Examples/2. Interactions/6. Pinch To Paint.unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Built in Pinch and Grab Detection
+---------------------
+
+If you are looking to manipulate objects within the scene, why not try out one of the options below? They are a great place to get started.
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/virtual-objects-blocks-station.png
+        :height: 150px
+        :width: 225px
+        :align: center
+	
+    .. link-button:: ./physical-hands.html
+        :text: 3D Object Interactions
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/3D-ui-combined_thumb.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./3D-ui-interactions.html
+        :text: 3D UI Interactions
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-controller-interaction-demo-scene-med.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./xri-integration.html
+        :text: XRI And XRHands Integration
+        :classes: btn-outline-primary btn-block stretched-link
+
+  
+----------------------------------------------------------------------------------------------------------------------------------
+
+Setting up Custom Pinch and Grabs
+---------------------
+
+The Ultraleap Plugin provides utilities to easily detect whether the user is pinching or grabbing. These are features that you can easily add to your scene and capture the events from anywhere in your code.
+
+This tutorial will require some C# coding and we assume that you have read through and understand the :doc:`Scripting Fundamentals<./scripting-fundamentals>` and that you have all elements mentioned in the :doc:`Direct 3D Object Interactions<./physical-hands>` tutorial in your scene.
+
+We recommend that you use our built in tools for pinch and grab rather than using the pose detection as we have fine tuned them to create the best experience for your users.
+
+.. note::
+  We will assume that you have a location in your code where you wish to check if the hands are pinching. This might be on update or when an event is triggered. 
+
+.. tabbed:: Pinch
+
+  1. Firstly, you need to get the hands from the scene. You can do this by calling the static function in the provider which gets the hands associated with it. 
+
+      You can get either one hand or both hands as shown below.
+
+  ::
+
+      using Leap;
+      using System.Collections.Generic;
+      using UnityEngine;
+
+      public class Example: MonoBehaviour
+      {
+          private void Update()
+          {
+              Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+              List<Hand> _allHands = Hands.Provider.CurrentFrame.Hands; //Get all hands associated with the provider.
+          }
+      }
+
+  2. Now that you have your hand to check, call "IsPinching" on the interaction hand script. You can do this as shown below.
+
+      We assume that you would like to specifically check the left hand for this example.
+
+  ::
+
+      private void Update()
+      {
+          Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+          bool isPinching = _hand.IsPinching();
+      }
+
+  At this point, you can also access other data about the pinch from the :cs:class:`Hands <Leap.Hands>` including:
+
+  ::
+
+      float _pinchStrength = _hand.PinchStrength;
+      float _pinchDistance = _hand.PinchDistance;
+      Vector3 _pinchPosition = _hand.GetPinchPosition();
+      Vector3 _predictedPinchPosition = _hand.GetPredictedPinchPosition();
+
+
+  3. Using the pinch strength, you can determine your own pinch thresholds meaning you can choose the sensitivity. We will use 0.8 for this example
+
+    Pinch strength is a floating value between 0 and 1. 0 being open hand, 1 being full pinch. 
+    It is unlikely that you will ever get the values 1 and 0. So setting values such as 0.8 is a good threshold.
+
+  :: 
+
+    private void Update()
+    {
+        Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+        
+        float _pinchStrength = _hand.PinchStrength;
+
+        if(_pinchStrength > 0.8)
+        {
+          bool _isPinching = true; // or do the rest of your code here, hand is grabbing.
+        }
+    }
+
+
+  We Recommend that you use a hysteresis value for deciding when the hand is un-pinching. This is a value lower than your activation value so that you do not get jitter if the users grab is on the threshold causing it to detect and un-detect rapidly.
+
+
+  For pinch, this would look like the below code:
+
+  :: 
+
+    private void Update()
+    {
+        Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+        
+        float _pinchStrength = _hand.PinchStrength;
+
+        bool _isPinching = false;
+
+        if(_pinchStrength > 0.8 && !_isPinching) //We check _isPinching so this code isn't called if we are already pinching.
+        {
+          _isPinching = true; // grab strength is over 0.8 threshold so it is true
+        }
+        else if(_pinchStrength < 0.7 && _isPinching) //We check _isPinching so this code isn't called if we aren't already pinching.
+        {
+          _isPinching = false; // pinch strength is less than 0.7 so no chance of jittering grab. 
+        }
+    }
+
+
+.. tabbed:: Grab
+
+  1. Firstly, you need to get the hands from the scene. You can do this by calling the static function in the :cs:class:`LeapProvider <Leap.LeapProvider>` which gets the hands associated with it. 
+
+      You can get either one hand or both hands as shown below.
+
+  ::
+
+      using Leap;
+      using System.Collections.Generic;
+      using UnityEngine;
+
+      public class Example: MonoBehaviour
+      {
+          private void Update()
+          {
+              Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+              List<Hand> _allHands = Hands.Provider.CurrentFrame.Hands; //Get all hands associated with the provider.
+          }
+      }
+
+  2. Now that you have your hand to check, you can get the grab strength and grab angle from the interaction hand script. You can do this as shown below.
+
+      We assume that you would like to specifically check the left hand for this example.
+
+  ::
+
+    private void Update()
+    {
+        Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+        float _grabStrength = _hand.GrabStrength;
+        float _grabAngle = _hand.GrabAngle;
+    }
+
+  3. Using the grab strength, you can determine your own grab thresholds meaning you can choose the sensitivity. We will use 0.8 for this example
+
+    Grab strength is a floating value between 0 and 1. 0 being open hand, 1 being full grab. 
+    It is unlikely that you will ever get the values 1 and 0. So setting values such as 0.8 is a good threshold.
+
+  :: 
+
+    private void Update()
+    {
+        Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+        
+        float _grabStrength = _hand.GrabStrength;
+        float _grabAngle = _hand.GrabAngle;
+
+        if(_grabStrength > 0.8)
+        {
+          bool _isGrabbing = true; // or do the rest of your code here, hand is grabbing.
+        }
+    }
+
+  We Recommend that you use a hysteresis value for deciding when the hand is un-grabbing. This is a value lower than your activation value so that you do not get jitter if the users grab is on the threshold causing it to detect and un-detect rapidly.
+
+
+  For grab, this would look like the below code:
+
+  :: 
+
+    private void Update()
+    {
+        Hand _hand = Hands.Provider.GetHand(Chirality.Left); //Get just the left hand.
+        
+        float _grabStrength = _hand.GrabStrength;
+        float _grabAngle = _hand.GrabAngle;
+
+        bool _isGrabbing = false;
+
+        if(_grabStrength > 0.8 && !_isGrabbing) //We check _isGrabbing so this code isn't called if we are already grabbing.
+        {
+          _isGrabbing = true; // grab strength is over 0.8 threshold so it is true
+        }
+        else if(_grabStrength < 0.7 && _isGrabbing) //We check _isGrabbing so this code isn't called if we aren't already grabbing.
+        {
+          _isGrabbing = false; // grab strength is less than 0.7 so no chance of jittering grab. 
+        }
+    }
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Grab and Pinch with XR Interaction Toolkit (XRI)
+---------------------
+
+Our solutions for Unity XRI work well with Unity's guidance on XRI which you can find here: `XRI setup Guides <https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/general-setup.html>`_.
+
+For information on setting up XRI with Ultraleap hand tracking, check out our page :doc:`XRI Integration <../../xri-integration>`

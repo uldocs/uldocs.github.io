@@ -1,0 +1,6 @@
+Class ULeapWidgetInteractionComponent
+=====================================
+
+.. doxygenclass:: ULeapWidgetInteractionComponent
+   :project: unreal
+   :members:

@@ -1,0 +1,6 @@
+Class Leap::HandsModule::HandModelManager::HandModelPair
+========================================================
+
+.. doxygenclass:: Leap::HandsModule::HandModelManager::HandModelPair
+   :project: unity
+   :members: 

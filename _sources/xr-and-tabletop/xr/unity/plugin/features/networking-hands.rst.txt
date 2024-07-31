@@ -1,0 +1,248 @@
+*****************************************
+Networking With Hand Data
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Collaborating in XR is common and seeing each others hands adds to the experience. </p>
+        <p> This page will describe how you can make use of the utilities of the Ultraleap Unity Plugin to share your tracked hands with others through networking.</p>
+    </div>
+    <div class="image">
+      <video width="300" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/networking-cattower.mp4" type="video/mp4">
+    </div>
+  </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Requirements and acknowledgements 
+---------------------------------
+
+Ultraleap do not provide a complete networking solution, we provide the tools to send your hand data over an existing networking solution.
+
+To get started with networking in Unity, consider some of the available solutions on the market and pick the solution that suits you:
+
+.. raw:: html
+
+   <ul>
+      <li><a href="https://docs-multiplayer.unity3d.com/netcode/current/about/" target="_blank">Unity's Netcode for Gameobjects (NGO)</a></li>
+      <li><a href="https://www.photonengine.com/" target="_blank">Photon Networking</a></li>
+      <li><a href="https://github.com/MirrorNetworking/Mirror" target="_blank">Mirror Networking</a></li>
+	  <li><a href="https://coherence.io/features" target="_blank">Coherence Networking</a></li>
+   </ul>
+
+Once you have chosen your networking solution, work through their sample projects to ensure you understand the process behind networking and have a project set up with clients able to connect to one another.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Adding Hands
+------------
+
+If you have followed the guidance above, as well as our :doc:`Your First Project Guide<../../getting-started/your-first-project>`. You are ready to send the hand data across the network.
+
+The Ultraleap Unity Plugin comes with a utility class called :cs:class:`VectorHand <Leap.Encoding.VectorHand>`. This utility has multiple functions, one of which is to encode a :cs:class:`Hand <Leap.Hand>` to and from a :cs:class:`VectorHand <Leap.Encoding.VectorHand>`, another is to convert the basic elements of the VectorHand into a byte[].
+
+Sending hand tracking data over a network can use a lot of bandwidth, so converting it into the smallest data possible will help to reduce lag across your application.
+
+	Make sure you understand how to get hand tracking data by following our :doc:`Scripting Fundamentals<./scripting-fundamentals>`.
+
+If you are the owner of the tracking data, you should convert it into a byte[] like so (this uses pseudo code for simplicity, read on to see a full example):
+
+::
+
+    // variables
+    Hand hand;
+    VectorHand vectorHand;
+    byte[] handBytes;
+
+    // method
+    vectorHand.Encode(hand);
+    vectorHand.FillBytes(handBytes);
+
+Now that you have a :code:`byte[]` you can send it over the network using your chosen method of networking. When your client receives the data, you will need to convert it back into a :cs:class:`LeapHand <Leap.Hand>` to use with the Plugin components.
+To do this, you can use this approach (this uses pseudo code for simplicity, read on to see a full example):
+
+::
+
+    // variables
+    Hand hand;
+    HandModelBase handModel
+    VectorHand vectorHand;
+    byte[] handBytes;
+
+    // method
+    vectorHand.ReadBytes(handBytes);
+    vectorHand.Decode(hand);
+    handModel.SetLeapHand(hand);
+    handModel.UpdateHand();
+
+You will now have applied the hand data to a :cs:class:`HandModelBase <Leap.HandModelBase>`. If you wish to apply it to a different hand type, you can use the :cs:class:`LeapHand <Leap.Hand>` directly after decoding it from the :cs:class:`VectorHand <Leap.Encoding.VectorHand>`.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Complete Example
+----------------
+
+Here is an example of using this to send hands over a network using Unitys Netcode for Gameobject:
+
+::
+
+    using Leap;
+    using Leap.Encoding;
+
+    using UnityEngine;
+    using Unity.Netcode;
+
+    public class NetworkHands : NetworkBehaviour
+    {
+        [SerializeField]
+        private HandModelBase leftModel = null, rightModel = null;
+
+        private LeapProvider leapProvider;
+
+        private VectorHand leftVector = new VectorHand(), rightVector = new VectorHand();
+        private Hand leftHand = new Hand(), rightHand = new Hand();
+
+        private byte[] leftBytes = new byte[VectorHand.NUM_BYTES], rightBytes = new byte[VectorHand.NUM_BYTES];
+
+        private bool leftTracked, rightTracked;
+
+        private void Awake()
+        {
+            // Find the most suitable LeapProvider in the scene automatically
+            leapProvider = Hands.Provider;
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                // We own the hands, so we will be sending the data across the network
+                leapProvider.OnUpdateFrame += OnUpdateFrame;
+                Destroy(leftModel?.gameObject);
+                Destroy(rightModel?.gameObject);
+            }
+            else
+            {
+                // We are going to be sent hand data for these hands.
+                // We should control the hands directly, not from a LeapProvider
+                leftModel.leapProvider = null;
+                rightModel.leapProvider = null;
+            }
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            if (IsOwner)
+            {
+                // We no longer need this event as we have disconnected from the network
+                leapProvider.OnUpdateFrame -= OnUpdateFrame;
+            }
+        }
+
+        private void OnUpdateFrame(Frame frame)
+        {
+            // Find the left hand index and use it if it exists
+            int ind = frame.Hands.FindIndex(x => x.IsLeft);
+            if(ind != -1)
+            {
+                // The left hand exists, encode the vector hand for it and fill the byte[] with data
+                leftTracked = true;
+                leftVector.Encode(frame.Hands[ind]);
+                leftVector.FillBytes(leftBytes);
+            }
+            else
+            {
+                leftTracked = false;
+            }
+
+            ind = frame.Hands.FindIndex(x => !x.IsLeft);
+            if(ind != -1)
+            {
+                // The right hand exists, encode the vector hand for it and fill the byte[] with data
+                rightTracked = true;
+                rightVector.Encode(frame.Hands[ind]);
+                rightVector.FillBytes(rightBytes);
+            }
+            else
+            {
+                rightTracked = false;
+            }
+
+            // Send any data we have generated to the server to be disributed across the network
+            UpdateHandServerRpc(NetworkManager.LocalClientId, leftTracked, rightTracked, leftBytes, rightBytes);
+        }
+
+        [ServerRpc]
+        private void UpdateHandServerRpc(ulong clientId, bool leftTracked, bool rightTracked, byte[] leftHand, byte[] rightHand)
+        {
+            if (!IsServer) return;
+
+            // As the server, we should directly Load the data we were given
+            LoadHandsData(leftTracked, rightTracked, leftHand, rightHand);
+
+            // Send the data on to all clients for use on their hands
+            UpdateHandClientRpc(clientId, leftTracked, rightTracked, leftHand, rightHand);
+        }
+
+        [ClientRpc]
+        private void UpdateHandClientRpc(ulong clientId, bool leftTracked, bool rightTracked, byte[] leftHand, byte[] rightHand)
+        {
+            // If we own this object, we do not need to load the hand data, we produced it!
+            if (IsOwner) return;
+
+            // Load the other client's hand data into our copy of their hands
+            LoadHandsData(leftTracked, rightTracked, leftHand, rightHand);
+        }
+
+        private void LoadHandsData(bool leftTracked, bool rightTracked, byte[] leftHand, byte[] rightHand)
+        {
+            if (leftModel != null)
+            {
+                leftModel.gameObject.SetActive(leftTracked);
+
+                if (leftTracked)
+                {
+                    // Read the new data into the vector hand and then decode it into a Leap.Hand to be send to the hand model
+                    leftVector.ReadBytes(leftHand);
+                    leftVector.Decode(this.leftHand);
+                    leftModel?.SetLeapHand(this.leftHand);
+                    leftModel?.UpdateHand();
+                }
+            }
+
+            if(rightModel != null)
+            {
+                rightModel.gameObject.SetActive(rightTracked);
+
+                if (rightTracked)
+                {
+                    // Read the new data into the vector hand and then decode it into a Leap.Hand to be send to the hand model
+                    rightVector.ReadBytes(rightHand);
+                    rightVector.Decode(this.rightHand);
+                    rightModel?.SetLeapHand(this.rightHand);
+                    rightModel?.UpdateHand();
+                }
+            }
+        }
+    }
+
+
+----------------------------------------------------------------------------------------------------------------------------------

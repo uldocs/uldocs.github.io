@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_MATRIX_3x3
+====================================
+
+.. doxygenstruct:: LeapInternal::LEAP_MATRIX_3x3
+   :project: unity
+   :members: 

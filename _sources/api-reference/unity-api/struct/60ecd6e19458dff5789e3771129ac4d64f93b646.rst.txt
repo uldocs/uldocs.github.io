@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DROPPED_FRAME_EVENT
+=============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_DROPPED_FRAME_EVENT
+   :project: unity
+   :members: 

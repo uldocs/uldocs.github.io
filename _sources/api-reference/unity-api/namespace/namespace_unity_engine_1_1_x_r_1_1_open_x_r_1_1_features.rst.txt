@@ -1,0 +1,6 @@
+Namespace UnityEngine::XR::OpenXR::Features
+===========================================
+
+.. doxygennamespace:: UnityEngine::XR::OpenXR::Features
+   :project: unity
+   :no-link: 

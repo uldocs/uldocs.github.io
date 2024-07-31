@@ -1,0 +1,6 @@
+Namespace Leap::Attachments
+===========================
+
+.. doxygennamespace:: Leap::Attachments
+   :project: unity
+   :no-link: 

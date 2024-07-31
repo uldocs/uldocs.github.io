@@ -1,0 +1,103 @@
+:hide-toc:
+
+********************************
+AR Marker Tracking
+********************************
+
+Use the Leap Motion Controller 2 camera to track different sized AR Markers (also known as fiducial markers) to deliver tracking events and coordinates back to an application.
+
+This experimental feature enables the detection of fiducial markers (AprilTags) and provides the pose data for markers alongside hands. 
+
+There are no limits on the number of markers which can be tracked, however, more tags being tracked will result in reduced system performance.
+
+.. raw:: html
+    
+    <div class="text-center">
+
+	<video width="60%" loop muted controls>
+		<source src="../../_video/Hyperion_video/Marker_Tracking.mp4" type="video/mp4">
+	</video>
+
+    </div>
+
+
+Use Cases
+------------
+
+*   Object placement and interaction in AR/VR environments.
+
+*   Spatial mapping and navigation in training simulations.
+
+*   Interactive training scenarios and feedback.
+
+Generating Markers
+------------
+
+AprilTags can be generated using various online tools or libraries. 
+
+One popular option is the `AprilTag generation tool <https://github.com/AprilRobotics/apriltag-generation%29>`_ which provides a web interface for creating and customising AprilTag markers.
+
+Whilst we are able to track most marker families, we recommend using the the marker family Tag25h9 for optimum tracking performance.
+
+Downloaded or printed markers can then be placed in the physical environment for tracking.
+
+Optimising Marker Performance
+------------
+
+*   Maximise the visible contrast of markers ideally printing onto non-reflective, rigid, surfaces.
+
+*   Position markers within the optimal tracking range specified by the marker size. Larger markers will achieve longer range.
+
+*   Experiment with different marker sizes, tracking frequency, and families to find the best balance between range and accuracy.
+
+-----------
+
+.. note::
+
+    Attaching AprilTags to objects allows the Leap Motion Controller 2 to be used to effectively track these objects. By combining this with the Hand On Object tracking model, users can seamlessly interact with these objects, whether in MR or VR.
+
+    .. raw:: html
+    
+        <div class="text-center">
+
+	        <video width="60%" loop muted controls>
+		        <source src="../../_video/Hyperion_video/HOO.mp4" type="video/mp4">
+	        </video>
+
+        </div>
+
+Getting Started with Marker Tracking:
+------------
+.. note::
+Marker Tracking requires Version 6.0 of the Ultraleap Tracking Service or later. By enabling marker tracking, the CPU usage of the Ultraleap Tracking service will significantly increase.
+
+#. Set hand_tracker_config.json found in C:\\ProgramData\\Ultraleap to fiducial tracking mode:
+    a. Enable fiducial marker tracking by adding a "fiducial_tracker" section to the "hand_tracker_config.json" file: 
+    
+        .. code-block:: json
+        "fiducial_tracker": {
+            "family": "Tag25h9",
+            
+            "size": 0.05,
+            
+            "frequency": 1
+        }
+    b. To maximise the tag tracking range, enable the "full_res_fiducials" setting outside the "fiducial_tracker" block:
+    
+        .. code-block:: json
+        "full_res_fiducials": true
+#. Restart the Ultraleap Tracking Service (this will need to be done anytime you change "hand_tracker.config.json"). On Windows, this can be done by right click on the Ultraleap taskbar icon and selecting "Restart Tracking Service".
+#. In Unity, download our latest plugin: https://github.com/ultraleap/UnityPlugin
+#. In your Unity scene, create a new game object and add the "Tracking Marker Object" script to it.
+#. Create a child game object and add a "Tracking Marker" script to it. Set the ID to the fiducial id you wish to track.
+#. Add the child game object to the "Markers" field of the "Tracking Marker Object" created in step 3.
+#. Hit play and watch as your marker updates the position of the game object!
+
+.. raw:: html
+
+    <div class="text-center">
+
+  <a class="btn text-wrap btn-outline-primary" href="https://leap2.ultraleap.com/downloads/leap-motion-controller-2/">Download Hyperion for Leap Motion Controller 2</a>
+
+    </div>
+

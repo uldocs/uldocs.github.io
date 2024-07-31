@@ -1,0 +1,6 @@
+Namespace UnityEngine::XR::Hands::Processing
+============================================
+
+.. doxygennamespace:: UnityEngine::XR::Hands::Processing
+   :project: unity
+   :no-link: 

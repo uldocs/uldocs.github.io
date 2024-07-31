@@ -1,0 +1,6 @@
+Class Leap::Attachments::AttachmentPointBehaviour
+=================================================
+
+.. doxygenclass:: Leap::Attachments::AttachmentPointBehaviour
+   :project: unity
+   :members: 

@@ -1,0 +1,104 @@
+*****************************************
+Hand Animation Recorder
+*****************************************
+
+.. warning:: This feature is in a preview state and is subject to change before being released in the main plugin
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> The hand recorder enables a developer to record animation clips of hands and additional objects to produce re-playable actions for tutorials and exporting. </p>
+        <p> An example scene will help you to get started capturing hand recordings and playing them back using Unitys animation clips.</p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/hand-recorder.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scene can be found in:
+
+  * Assets/Samples/Ultraleap Tracking Preview/x.x.x/Preview Examples/Hand Recorder/Hand Recorder (XR).unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Video Walkthrough
+---------------------
+
+.. youtube:: sGXAKQthD1A
+    :align: center
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Quick Start with the Hand Recorder
+---------------------
+
+For this example, we assume that you have just finished the :doc:`Getting Started Guide<../../getting-started/your-first-project>`.
+
+From the preview samples folder, open the Hand Recorder (XR) scene: :code:`Assets > Samples > Ultraleap Tracking Preview > x.x.x > Preview Examples > Hand Recorder > Hand Recorder (XR).unity`
+
+1. Click the GhostHands Recorder :cs:class:`HandRecorder <Leap.Recording.HandRecorder>` object from the hierarchy.
+
+2. In the inspector, you will see various options that you can set. Choose which hand(s) you wish to use, additional objects and which animation clip to save to.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-recorder-inspector.png
+    :width: 60%
+    :align: center
+
+3. Press play to run the scene and put your XR headset on.
+
+4. Follow the instructions in the view
+	- Press [Space] to begin recording
+	- Perform your hand movement
+	- Press [Space] to save the recording
+
+5. If you did not change the target Animation Clip, the animation will play on the GhostHands Playback prefab. If you did, your animation will be saved to your target Animation Clip.
+
+.. note:: This saves a Unity AnimationClip. You can modify it as you require including trimming the start and end `See how here <https://docs.unity3d.com/Manual/animeditor-UsingAnimationEditor.html>`_
+
+And that's it! You can record as many clips as you wish and play them back on any hand model that has the same hierarchy as the original
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Hand Recorder options
+---------------------
+
+The Hand Recorder has various options to allow you to customise what is recorded.
+
+- Choose which hand to record, both, left, right or none
+
+
+- Optionally manually select the hand objects that should be recorded. This should be a HandModelBase object.
+
+
+- Add extra objects to record. This can be any GameObject in the scene, e.g. some boxes, a hand menu, a custom hand model or bone
+
+
+- Optionally choose a specific AnimationClip to overwrite with the recording
+
+
+- Choose the quality of the recording compression
+
+
+- Reduce file size by setting the capture framerate. Lower values create smaller files. Smoothing is applied between frames to account for reduced capture framerate
+
+
+- Optionally choose a key to press to start/stop the recording
+
+----------------------------------------------------------------------------------------------------------------------------------

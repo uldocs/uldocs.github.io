@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::PhysicalHandsSliderHelper
+====================================================
+
+.. doxygenclass:: Leap::PhysicalHands::PhysicalHandsSliderHelper
+   :project: unity
+   :members: 

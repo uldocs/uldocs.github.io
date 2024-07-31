@@ -1,0 +1,6 @@
+Class FHandPositionHistory
+==========================
+
+.. doxygenclass:: FHandPositionHistory
+   :project: unreal
+   :members:

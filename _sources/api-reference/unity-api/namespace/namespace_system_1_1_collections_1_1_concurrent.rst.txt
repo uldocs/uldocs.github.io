@@ -1,0 +1,6 @@
+Namespace System::Collections::Concurrent
+=========================================
+
+.. doxygennamespace:: System::Collections::Concurrent
+   :project: unity
+   :no-link: 

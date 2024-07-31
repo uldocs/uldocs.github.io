@@ -1,0 +1,6 @@
+Class IHandTrackingDevice
+=========================
+
+.. doxygenclass:: IHandTrackingDevice
+   :project: unreal
+   :members:

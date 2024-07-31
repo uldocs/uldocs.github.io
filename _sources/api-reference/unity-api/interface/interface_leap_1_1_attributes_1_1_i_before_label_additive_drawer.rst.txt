@@ -1,0 +1,6 @@
+Interface Leap::Attributes::IBeforeLabelAdditiveDrawer
+======================================================
+
+.. doxygeninterface:: Leap::Attributes::IBeforeLabelAdditiveDrawer
+   :project: unity
+   :members: 

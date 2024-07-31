@@ -1,0 +1,6 @@
+Group Functions
+===============
+
+.. doxygengroup:: Functions
+   :project: tracking
+   :members:

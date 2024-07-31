@@ -1,0 +1,6 @@
+Class Leap::Attributes::MinMax
+==============================
+
+.. doxygenclass:: Leap::Attributes::MinMax
+   :project: unity
+   :members: 

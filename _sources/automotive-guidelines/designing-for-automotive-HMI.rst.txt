@@ -1,0 +1,82 @@
+:hide-toc:
+
+***********************************************
+Designing for Gesture Control in Automotive HMI
+***********************************************
+
+In Ultraleap’s Experience Design and Research team, we study human behaviour and use evidence-led design practice to
+determine the gestures, interactions, and haptic sensations that work best. We work with customers integrating our
+technology into a wide range of products, using what we’ve learned to help them design intuitive, touchless experiences.
+
+Gesture and interactions aren’t the same in every case. Our gesture choices will be affected by the context and job the
+user is doing, as well as whether they’re using a 2D screen or a form of virtual or augmented reality.
+
+Are they a driver operating an infotainment system without taking their eyes off the road, or a vehicle designer
+reviewing a 3D model in VR? For each case, we start with the person and find the interactions that best fit their needs.
+
+Recently, Groupe PSA’s new luxury concept car the DS Aero Sport Lounge featured Ultraleap’s hand tracking and mid-air
+haptic technology built into the futuristic car’s central armrest.
+
+Powered by Ultraleap, the driver (or passengers) can control a range of systems with natural hand gestures – from
+entertainment to navigation.
+
+.. image:: ../img/automotive-guidelines/ultraleap-haptics-interior-ds-automobiles.jpg
+    :alt: Automotive HMI interior concept car
+
+*Groupe PSA’s new luxury concept car the DS Aero Sport Lounge features Ultraleap’s hand tracking and mid-air haptic
+technology built into the futuristic car’s central armrest.*
+
+Designing infotainment with gesture control and mid-air haptics
+###############################################################
+
+The gesture interactions in the DS Aero Sport Lounge concept car were based on insights from a previous Ultraleap
+infotainment system design project. These were investigated by designers in our Experience Design and Research team
+through iterative design, under representative workload conditions in a driving simulator.
+
+The scope of the design project was determined by the study of market-leading infotainment systems and qualitative user
+research with drivers from a wide range of backgrounds. This gave us a sense of how automotive HMI is commonly used and
+let us determine the most important functions.
+B
+ased on this, we designed a prototype gesture control infotainment system that allowed users to:
+
+- Control climate through temperature and fan speed
+- Control music through track selection and volume
+- Handle navigation /maps, including setting a new route
+- Answer/decline phone calls
+- Switch between functions with a menu system
+
+.. image:: ../img/automotive-guidelines/haptics-inside-car.jpg
+    :alt: Automotive HMI hand gesture interactions
+
+Our team designed and built a working prototype of the automotive HMI, conducting tests with 42 different users using a
+purpose-built driving simulator very similar to those used in the automotive industry. We then iterated upon the design
+and repeated our tests, learning which combination of hand gestures, haptic sensations, and on-screen UI components
+worked best together.
+
+Designing for reliability
+#########################
+
+With gesture control, we need to consider the reliability with which the technology can recognise a gesture and
+interpret the user’s intention. Unlike pressing buttons on a touchscreen, hand gestures are analogue – the hand goes
+through a range of motions and postures as it forms a gesture and then releases it.
+
+Hand shapes and sizes, the way people gesture and even ambient light will vary hugely, making it a technical challenge
+to get it right every time.
+
+The hand tracking camera must also be mounted where it can get a good view of the user’s hands in the intended
+interaction area. This avoids occlusion (i.e. when it’s not clear what gesture you are making because part or all of
+your hand is blocked from the camera’s view).
+
+During user testing, our team assesses hand gestures and associated haptics and UI elements in terms of their usability,
+their comfort, and their reliability.
+
+The following are our current recommendations for using hand gestures in automotive HMI, each with suggested functions,
+pros and cons.
+
+Picking the right gestures depends on many factors and must be considered as part of a wider design system that includes
+haptics, UI components, audio feedback, and vehicle architecture. Ultraleap are currently undergoing automotive grade
+validation of these elements. For now our guidelines are the best place to start.
+
+-----------
+
+`Back to top <#top>`_

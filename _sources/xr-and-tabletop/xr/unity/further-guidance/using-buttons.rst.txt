@@ -1,0 +1,145 @@
+************
+Using Buttons
+************
+	
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Ultraleap offers two basic button prefabs, one regular button and one toggle button.</p>
+        <p> You can get these prefabs from the file menu "Ultraleap > Physical Interaction". These buttons can be added and modified to suit your needs. </p>
+    </div>
+    <div class="image">
+        <img src="../../../../_images/physical-hands-button-prefab.png" width="400" height="400" style="padding: 10px 10px 10px 10px;">
+    </div>
+  </div>
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What does this Prefab do?
+--------------------------
+
+The prefabs allow you to quickly add physical buttons to your scene. These will work out of the box and can be scaled to suit your needs. 
+
+A button consists of a button base (which has the :cs:class:`Physical Hands Button <Leap.PhysicalHands.PhysicalHandsButton>` script on it) and a pressable object which is a child of the button base and moves on the positive Y axis away from the button base.
+
+The prefabs use a :cs:class:`Physical Hands Button <Leap.PhysicalHands.PhysicalHandsButton>` script which can automatically detect travel distance based on the meshes used for the button and pressable object.
+
+We also provide a toggle button which remains down when pressed. Please see the :ref:`toggle buttons <toggle-button>` section for more information.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+When should you use this prefab?
+---------------------------------------------------------
+
+The prefabs are an ideal starting place to customise your own buttons, just change the meshes of the button base and the pressable object and everything is set up already to use in your own scenes.
+
+This page also explains how to set up your own buttons if you prefer to do it manually.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Where can you find these prefabs?
+--------------------------------
+
+These prefabs can be found at **UltraleapTracking/PhysicalHands/Runtime/Prefabs**
+
+
+.. _toggle-button:
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Toggle Button
+------------------------
+
+A Toggle button is much the same as a regular button. However, it adds the functionality of being able to lock down when pressed. The button can either be un-toggled by pressing again using the "Untoggle when pressed" tick box on the script or untoggled via code using the "SetToggleUnpressed()" function.
+
+There are a few extra functions associated with the toggle button. These can be found in the "PhysicalHandsButtonToggle.cs" script. 
+
+How to use the toggle button
+##########
+
+Toggle buttons inherit from regular physical hands buttons. They are interchangeable. Simply add the PhysicalHandsButtonToggle script to the game object instead of the regular PhysicalHandsButton script. 
+
+You can also find a toggle button prefab at :code:`Ultraleap>Physical Interaction>Physical Hands Button Toggle``
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Set-Up your own buttons
+------------------------
+
+1. Add your button base object to the scene.
+
+2. Add :cs:class:`Physical Hands Button <Leap.PhysicalHands.PhysicalHandsButton>` script to the object. This script will automatically add a rigidbody to the object. 
+
+.. note:: The added rigidbody is a standard rigidbody and as such, it will have "Use Gravity" enabled by default. We recommend that the button has "Use Gravity" disabled, "Is Kinematic" enabled and freeze all constraints. This ensures that the base button object cannot move.
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Physical-Button-inspector.png
+    :width: 40%
+    :align: center
+
+3. Add a pressable object as a child of the physical button base and add it as the pressable object variable on the :cs:class:`Physical Hands Button <Leap.PhysicalHands.PhysicalHandsButton>` script.
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Physical-button-assign-pressable.png
+    :width: 40%
+    :align: center
+
+4. Move the pressable object on the positive Y axis so there is a gap between the pressable object and the button base. This gap can be small but scaling with small distances may cause unwanted behaviour.
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/button-all-set-up.png
+    :width: 80%
+    :align: center
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Making sense of the inspector
+-----------------------------
+
+.. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/physical-button-extended-inspector.png
+    :width: 40%
+    :align: center
+
+* **Pressable Object**: This is the part of the button which the user presses down. Assign your game object here. It will move on the positive Y axis. 
+* **Button Type**: Ultraleap provides a few preset modes for the button which can be selected from the dropdown. If you want to customise the feel, select custom to set your own values.
+* **Which Hand Can Activate Button Presses**: Both is the default but if you only want a specific hand to be able to press the button, select it from the dropdown.
+* **Use Primary Hover**: This means that only the primary hovered button will be pressable. Primary hover means one button per hand can be pressed at a time.
+* **Use Automatic Travel Distance**: This calculates the travel distance based on the extents of the meshes of the button base and the pressable object. When set, the bottom of the pressable object will touch the top of the button base in the fully pressed state. This can be unticked to set a custom travel distance.
+.. note:: There is a gizmo for the button which will show the travel distance as a green box.
+* **Button Exit Threshold**: Determines how far the button should travel (up) before it is considered unpressed. The higher the value, the less it needs to rise before being considered unpressed. i.e. at 0.8, the button will unpress at 80% of its full travel distance. At 10% button must be let out almost fully to be considered unpressed. 
+* **Can be Pressed by Objects**: If this option is enabled, the user will be able to press the button with any physics object. For example, throwing a cube at the button to press it will work.
+* **Ignore Grabbing Button**: Disables the ability to grab the pressable object.
+* **Button Events**: This dropdown shows which unity events can be assigned. 
+.. note:: Some of these events provide information about the contact hand which triggered the event.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What Scripts does this Prefab Use?
+----------------------------------
+
+:cs:class:`Physical Hands Button <Leap.PhysicalHands.PhysicalHandsButton>`
+
+:cs:class:`Physical Hands Button Toggle <Leap.PhysicalHands.PhysicalHandsButtonToggle>`
+
+:cs:class:`Physical Hands Button Editor <Leap.PhysicalHands.PhysicalHandsButtonEditor>`
+
+:cs:class:`Physical Hands Button Helper <Leap.PhysicalHands.PhysicalHandsButtonHelper>`

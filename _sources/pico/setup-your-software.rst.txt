@@ -1,0 +1,19 @@
+:hide-toc:
+
+**********************************************************************
+Install and run the Ultraleap Hand Tracking Software on the Pico Neo 3 
+**********************************************************************
+
+* If you bought your headset and accessory as a bundle from a distributor your software is preinstalled on your new Pico Neo 3 headset.
+* If you purchased an Ultraleap Hand Tracking Accessory to upgrade a headset you already own, the software will come as a zip file from your distributor. Follow the installation instructions below. Your distributor will also give you an SDK agreement.
+* Don't have software? Contact our `support team <https://support.leapmotion.com/hc/en-us/requests/new>`_ to get software and a EULA licence.
+
+1. Make sure your headset is turned on.
+2. Connect your headset to the PC onto which you have downloaded the APKs. Once the headset has been connected it should be available in your file browser.
+3. Copy the APKs to your headset using the file browser - we would recommend you add it to your "Downloads" folder so that it is easy to find it when you are looking for it on your headset.
+4. Put on your headset, open your file browser in VR and locate the folder that contains the APKs.
+5. Select the APKs you wish to install or update, and choose "Install" or "Update" from the popup that appears.
+
+-----------
+
+`Back to top <#top>`_

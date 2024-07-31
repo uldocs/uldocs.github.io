@@ -1,0 +1,6 @@
+Namespace Leap::Unity::MRTK
+===========================
+
+.. doxygennamespace:: Leap::Unity::MRTK
+   :project: unity
+   :no-link: 

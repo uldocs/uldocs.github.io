@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DEVICE_EVENT
+======================================
+
+.. doxygenstruct:: LeapInternal::LEAP_DEVICE_EVENT
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class Leap::LeapXRHandProvider
+==============================
+
+.. doxygenclass:: Leap::LeapXRHandProvider
+   :project: unity
+   :members: 

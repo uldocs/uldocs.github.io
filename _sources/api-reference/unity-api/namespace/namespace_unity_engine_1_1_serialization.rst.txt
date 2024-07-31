@@ -1,0 +1,6 @@
+Namespace UnityEngine::Serialization
+====================================
+
+.. doxygennamespace:: UnityEngine::Serialization
+   :project: unity
+   :no-link: 

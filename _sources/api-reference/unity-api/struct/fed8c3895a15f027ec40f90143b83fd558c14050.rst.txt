@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_CONNECTION_LOST_EVENT
+===============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_CONNECTION_LOST_EVENT
+   :project: unity
+   :members: 

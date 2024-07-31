@@ -1,0 +1,6 @@
+Class Leap::LeapImageRetriever::LeapDistortionData
+==================================================
+
+.. doxygenclass:: Leap::LeapImageRetriever::LeapDistortionData
+   :project: unity
+   :members: 

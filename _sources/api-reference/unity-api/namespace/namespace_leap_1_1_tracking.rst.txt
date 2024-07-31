@@ -1,0 +1,6 @@
+Namespace Leap::Tracking
+========================
+
+.. doxygennamespace:: Leap::Tracking
+   :project: unity
+   :no-link: 

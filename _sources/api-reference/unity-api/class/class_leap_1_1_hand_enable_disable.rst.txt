@@ -1,0 +1,6 @@
+Class Leap::HandEnableDisable
+=============================
+
+.. doxygenclass:: Leap::HandEnableDisable
+   :project: unity
+   :members: 

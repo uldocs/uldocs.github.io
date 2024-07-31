@@ -1,0 +1,6 @@
+Class FKabschSolver
+===================
+
+.. doxygenclass:: FKabschSolver
+   :project: unreal
+   :members:

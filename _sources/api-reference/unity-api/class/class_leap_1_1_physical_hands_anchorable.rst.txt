@@ -1,0 +1,6 @@
+Class Leap::PhysicalHandsAnchorable
+===================================
+
+.. doxygenclass:: Leap::PhysicalHandsAnchorable
+   :project: unity
+   :members: 

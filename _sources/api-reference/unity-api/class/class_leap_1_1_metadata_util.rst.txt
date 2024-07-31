@@ -1,0 +1,6 @@
+Class Leap::MetadataUtil
+========================
+
+.. doxygenclass:: Leap::MetadataUtil
+   :project: unity
+   :members: 

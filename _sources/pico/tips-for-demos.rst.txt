@@ -1,0 +1,96 @@
+:hide-toc:
+
+**********************************************************************
+Tips for Giving Demonstrations
+**********************************************************************
+
+The following recommendations will help you get the best performance for demonstrating Ultraleap Hand Tracking on the Pico Neo 3.
+
+Optimal lighting conditions 
+===========================
+
+Ultraleap hand tracking cameras use infrared light. This means they are not affected by dark lighting conditions, but performance can be affected by bright lights and/or reflective surfaces.
+
+Make sure you get an optimal user experience by avoiding bright conditions.
+
+Start the user with the XR Launcher
+===================================
+
+The Ultraleap XR Launcher is designed to introduce hand tracking to users who are new to hand tracking (and even VR). 
+
+It also acts as a "home screen", from where you can navigate to the other demonstration applications that Ultraleap provide.
+
+.. youtube:: uAT1ZeRZHBs
+    :width: 560
+    :height: 315
+
+We recommend that when helping a new user to get started, make sure the launcher is preloaded so that they can get going quickly.
+
+Developer Mode
+==============
+
+Developer Mode provides options that are not expected to be used by your average consumer and are therefore hidden to avoid overcomplicating their experience. However, these options can really help enhance the demo experience.
+
+Activating Developer Mode
+-------------------------
+
+1. Select **Settings**
+2. Go to **Software Version**
+3. Select **Software Version** seven times with the controller
+
+Note: this will add a new option at the bottom of the settings menu titled “Developer” 
+
+Disable the Play Boundary 
+=========================
+
+The Ultraleap experiences do not require the user to physically walk around. As a result, disabling the Play Boundary is a suitable option, and can be a great way of making it easy to pass headsets between users, without having to reset it every time.
+
+Process for disabling the Boundary
+----------------------------------
+
+1. Go to **Settings**
+2. Select **Developer**
+3. Select **Disable Play Boundary**
+
+CAUTION! Once you have disabled the Play Boundary, users will be unaware of their surroundings and could incur injury if left unattended.
+
+Kiosk Mode
+==========
+
+.. note:: In version 4.8.15+ "Kiosk Mode" is replaced by "Home Screen". Versions older than 4.8.15 should follow instructions for Kiosk Mode. 4.8.15 and beyond should follow instructions for Home Screen, below.
+
+Kiosk Mode allows only one app (the "kiosk app") to be launched upon powering on a device. This locks down the device and prevents users from exiting the kiosk app and accessing other apps on the device.
+
+Setting the XR Launcher as the default application will save you time and explanation because the user will not need controllers to start the application once the headset has been turned on.
+
+Process for setting up the Launcher in Kiosk Mode
+-------------------------------------------------
+
+1. Go to **Settings**
+2. Select **Developer**
+3. Select **Industrial Settings**
+4. Select **Launcher App (kiosk mode)**
+5. Select the **Ultraleap XR Launcher** 
+6. Restart the headset, as directed by the UI
+
+.. note:: If you want to exit the Ultraleap XR Launcher in Kiosk Mode and return to the Pico UI Menu, hold the large white button on the right side of your headset, and at the same time press the down volume button.
+
+Home Screen
+===========
+
+.. note:: Version 4.8.15+ only
+
+In home screen, the user can select app to become the "home" app that is on the home screen when the Pico is turned on.
+
+Process for setting up the Home Screen app
+-------------------------------------------------
+
+1. Go to **General settings**
+2. Click **Industry settings**
+3. Click **Home Screen**
+4. Select the app that you want to be your home screen
+5. To start using the app, restart the headset
+
+-----------
+
+`Back to top <#top>`_

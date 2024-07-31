@@ -1,0 +1,6 @@
+Class Leap::ConnectionLostEventArgs
+===================================
+
+.. doxygenclass:: Leap::ConnectionLostEventArgs
+   :project: unity
+   :members: 

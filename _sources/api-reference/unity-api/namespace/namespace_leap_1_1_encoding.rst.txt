@@ -1,0 +1,6 @@
+Namespace Leap::Encoding
+========================
+
+.. doxygennamespace:: Leap::Encoding
+   :project: unity
+   :no-link: 

@@ -1,0 +1,6 @@
+Namespace UnityEngine::SceneManagement
+======================================
+
+.. doxygennamespace:: UnityEngine::SceneManagement
+   :project: unity
+   :no-link: 

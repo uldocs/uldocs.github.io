@@ -1,0 +1,104 @@
+Tracker Mounting
+*********
+
+Chose the desired configuration option below to see the **key-value** pairs and their options:
+
+.. tabbed:: Configuration File
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``pos``
+          - ``[X,Y,Z]``
+          - where ``X``, ``Y``, and ``Z`` are float offsets in **meters** in their respective axis'.
+          - ``[0.0, 0.0, -0.08]``
+        * - ``tilt_angle``
+          - ``DEG``
+          - where ``DEG`` is an integer tilt angle downwards in **degrees** from the forward facing horizontal.
+          - ``0``
+
+.. tabbed:: Environment Variables
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``ULTRALEAP_OPENXR_POS_X``
+          - ``X``
+          - where ``X`` is a float offset in **meters** along the x-axis.
+          - ``0.0``
+        * - ``ULTRALEAP_OPENXR_POS_Y``
+          - ``Y``
+          - where ``Y`` is a float offset in **meters** along the y-axis.
+          - ``0.0``
+        * - ``ULTRALEAP_OPENXR_POS_Z``
+          - ``Z``
+          - where ``Z`` is a float offset in **meters** along the z-axis.
+          - ``-0.08``
+        * - ``ULTRALEAP_OPENXR_TILT_ANGLE``
+          - ``DEG``
+          - where ``DEG`` is an integer tilt angle downwards in **degrees** from the forward facing horizontal.
+          - ``0``
+
+    .. note::
+        Setting even only one of ``ULTRALEAP_OPENXR_POS_X``, ``ULTRALEAP_OPENXR_POS_Y`` or ``ULTRALEAP_OPENXR_POS_Z`` 
+        will mean all values from the JSON configuration are overridden. 
+        The ones that aren't set will fall back to defaults.
+
+
+What does it do?
+------------
+
+When using an Ultraleap tracking device it assumes the center of the device is at the 
+center of your vision; also known your `Interpupillary Median <https://en.wikipedia.org/wiki/Pupillary_distance>`_.
+
+This in reality however isn't the case when `mounting the device <../../../hand-tracking/XR-Setup/XR-setup.html>`_ 
+to a HMD. Without compensating for this forward offset, your hands in XR appear closer to you than
+they actually are. This also applies to if the mount isn't directly centered on the HMD or the mount has a tilt
+like the Leap Motion Controller 2 mount shown below:
+
+.. figure:: ../../../img/hand-tracking/XR/LMC2_Tilt.png
+   :width: 60%
+   :alt: A diagram representing the 15° downward tilt
+   :align: center
+
+
+By using the tracker mounting configuration options we can account for these discrepancies 
+to ensure your hands appear correctly positioned in XR.
+
+How to use it
+------------
+
+If your HMD and mount is found under the `mounting your camera <../../../hand-tracking/XR-Setup/XR-setup.html>`_
+section; follow the recommended mounting positions in order to avoid blocking HMD cameras and sensors.
+
+Otherwise mount the Ultraleap tracking device onto your HMD, keeping the device as closely to the
+``Interpupillary Median`` as possible being cautious to not block any of the HMDs camera or sensors.
+
+.. image:: ../../../img/hand-tracking/XR/hmd_mounting.png
+  :width: 75%
+  :alt: Ultraleap Mounting Diagram
+  :align: center
+
+
+Once the tracker is mounted measure the distance for the ``[X,Y,Z]`` axis', set the according
+decimal values in the corresponding configurables remembering that the values are in **Meters**;
+Whilst also accounting for any downward tilt of your mount in **Degrees**.
+
+.. note::
+    In OpenXR the ``Z`` axis is actually pointing towards you as opposed to away from you.
+    Therefore when setting the ``Z`` axis offset for the tracker you need to use a negative value.
+    E.G the default of ``-0.08`` to represent the ``8cm`` offset of the tracker in the image above.
+
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Struct Leap::Attachments::AttachmentHand::AttachmentPointsEnumerator
+====================================================================
+
+.. doxygenstruct:: Leap::Attachments::AttachmentHand::AttachmentPointsEnumerator
+   :project: unity
+   :members: 

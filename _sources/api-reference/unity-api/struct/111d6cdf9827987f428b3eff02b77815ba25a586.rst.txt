@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_POINT_MAPPING_CHANGE_EVENT
+====================================================
+
+.. doxygenstruct:: LeapInternal::LEAP_POINT_MAPPING_CHANGE_EVENT
+   :project: unity
+   :members: 

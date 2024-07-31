@@ -1,0 +1,6 @@
+Namespace System::Text::RegularExpressions
+==========================================
+
+.. doxygennamespace:: System::Text::RegularExpressions
+   :project: unity
+   :no-link: 

@@ -1,0 +1,6 @@
+Struct Leap::PhysicalHands::GrabHelperObject::VelocitySample
+============================================================
+
+.. doxygenstruct:: Leap::PhysicalHands::GrabHelperObject::VelocitySample
+   :project: unity
+   :members: 

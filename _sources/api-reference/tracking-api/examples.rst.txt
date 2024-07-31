@@ -1,0 +1,34 @@
+:hide-toc:
+
+********
+Examples
+********
+
+Example programs using the LeapC library.
+
+- :doc:`Example Connection <examples/example-connection>` - A simple wrapper around a LeapC polling thread which is referenced in the other examples.
+- :doc:`Callback Example <examples/callback-example>` – A basic example that services the LeapC message pump and invokes callback functions in response to service-related events. All callbacks are called on the servicing thread NOT the originating thread.
+- :doc:`Polling Example <examples/polling-example>` – A modification of the callback example that allows an application to access tracking data and device properties from its thread of choice.
+- :doc:`Interpolating Frames Example <examples/interpolated-frames-example>` – Demonstrates how to request frames interpolated to a specific point in time. Interpolation can increase the perception of responsiveness in the tracking data with no increase in latency by matching the effective tracking frame rate exactly to the requested frame rate (whether that frame rate is for the display, for the physics, or for something else altogether).
+- :doc:`Images Example <examples/images-example>` – Demonstrates how to get the set of stereo camera images from which a frame of tracking data was generated.
+- :doc:`Multi Device Example <examples/multi-device-example>` – Demonstrates how to connect to, and manage, multiple devices using the same LeapC connection.
+- :doc:`Recording and Playback Example <examples/recording-playback-example>` – Demonstrates how to record a sequence of hand tracking events and play these back later using the LeapC API.
+
+--------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Example Connection <examples/example-connection.rst>
+    Callback Example <examples/callback-example.rst>
+    Polling Example <examples/polling-example.rst>
+    Interpolated Frames Example <examples/interpolated-frames-example.rst>
+    Images Example <examples/images-example.rst>
+    Multi Device Example <examples/multi-device-example.rst>
+    Recording and Playback Example <examples/recording-playback-example.rst>
+
+-----------
+
+
+`Back to top <#top>`_

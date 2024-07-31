@@ -1,0 +1,6 @@
+Class Leap::GrabDetector
+========================
+
+.. doxygenclass:: Leap::GrabDetector
+   :project: unity
+   :members: 

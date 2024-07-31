@@ -1,0 +1,139 @@
+:hide-toc:
+
+******
+Images
+******
+
+Ultraleap Hand Tracking Cameras use infrared stereo cameras as tracking sensors. The LeapC API provides an image buffer containing the sensor brightness values and a distortion buffer containing the camera calibration map. The distortion map can be used to correct lens distortion in the image data. The function :cpp:func:`LeapRectilinearToPixel()<LeapRectilinearToPixel>` can be used to undistort specific pixels in an image and the function :cpp:func:`LeapPixelToRectilinear()<LeapPixelToRectilinear>` can be used to find the 3D location corresponding to a matched pair of stereo pixels.
+
+============
+Using Images
+============
+
+Images are sent automatically if the policy for images is set.
+
+When a stereo image pair is available, a :cpp:struct:`LEAP_IMAGE_EVENT()<LEAP_IMAGE_EVENT>` is added to the event queue and can be accessed via :cpp:func:`LeapPollConnection()<LeapPollConnection>`. The image event contains image properties, distortion correction data, and a pointer to the buffer.
+
+Both images from the stereo cameras are written to the same buffer; left image first then right image.
+
+To get an image:
+
+1. Open the connection 
+2. Set image policy
+3. Poll for images 
+4. Continue polling for image frames (optionally also poll for tracking frames and status messages). When an image is available, a :cpp:struct:`LEAP_IMAGE_EVENT()<LEAP_IMAGE_EVENT>` message is provided by :cpp:func:`LeapPollConnection()<LeapPollConnection>`. The :cpp:struct:`LEAP_IMAGE_EVENT()<LEAP_IMAGE_EVENT>` struct contains the images, a description of the images, and the distortion map
+
+-----------------
+Image Buffer Size
+-----------------
+
+The image buffer size depends on the device type as well as the image type and format. The buffer size depends on the width, height, and pixel format (bytes per pixel) of the image. A single buffer must hold stereo images. For example, if the current images produced by an Ultraleap Hand Tracking Camera device 640 x 240, 1-byte pixels, then the buffer size must be: 640 x 240 x 1 x 2 = 307,200 bytes.
+
+================
+Image Distortion
+================
+
+When a ray of light enters an Ultraleap Hand Tracking Cameras, the lens bends the ray so that it hits the sensor. The sensor then records a greyscale brightness value at a specific pixel location. No lens is perfect, so a ray of light does not land on the sensor in the optically perfect spot. The distortion map provides data to correct this imperfection, allowing you to calculate the true angle of the original ray of light. You can use the corrected angle to generate a rectified image. Using the angles from both images in the stereo pair, you can triangulate the 3D location of a feature identified in both images.
+
+For image rectification, the distortion map can be fed to a shader program that can efficiently interpolate the correction applied to rays of light to produce a texture containing the rectified image. For getting the true angle for a small set of points, you can use the :cpp:func:`LeapPixelToRectilinear()<LeapPixelToRectilinear>` function (but this is not typically efficient enough to transform a full bitmap at a high frame rate).
+
+-----------------------
+Rectifying Image Points
+-----------------------
+
+To rectify individual points in an image, you can call the :cpp:func:`LeapPixelToRectilinear()<LeapPixelToRectilinear>` function. Given a ray from the camera, this function returns the pixel coordinates in the image buffer that contain the light recorded from that direction, corrected for lens distortion.
+
+The following code takes a target texture size and determines the correct pixel brightness value. For each pixel, the code computes the ray direction to the point in the scene that would illuminate the target pixel given an ideal optical system. The code then corrects for optical distortion by calling :cpp:func:`LeapRectilinearToPixel()<LeapRectilinearToPixel>`, which provides the pixel coordinates in the image buffer that actually contains the brightness value for the target pixel. The code copies the brightness value to the target texture buffer. The result is a rectified image.
+
+.. code-block:: cpp
+
+   //The pixel size of the textures we write the undistorted images to
+  #define TEX_WIDTH 400
+  #define TEX_HEIGHT 400
+  //Max field of view varies by device, use 8 for the peripheral, 22 for Rigel
+  #define MAX_FOV 22
+
+  //image_buffer contains the image data
+  for( float row = 0; row < TEX_HEIGHT; row++ ) {
+    for( float col = 0; col < TEX_WIDTH; col++ ) {
+      //Normalize from pixel xy to range [0..1]
+      LEAP_VECTOR input;
+      input.x = col/TEX_WIDTH;
+      input.y = row/TEX_HEIGHT;
+
+      //Convert from normalized [0..1] to ray slopes
+      input.x = (input.x - .5) * MAX_FOV;
+      input.y = (input.y - .5) * MAX_FOV;
+
+      LEAP_VECTOR pixel = LeapRectilinearToPixel(*connection, eLeapPerspectiveType_stereo_left, input);
+      int dindex = (int)floor(row * TEX_WIDTH + col);
+      int pindex = (int)roundf(pixel.y) * image_width + (int)roundf(pixel.x);
+      if(pixel.x >= 0 && pixel.x < image_width && pixel.y >=0 && pixel.y < image_height){
+      undistorted_image_left[dindex] = ((char*)image_buffer)[pindex];
+      } else {
+        undistorted_image_left[dindex] = 128;
+      }
+    }
+  }
+
+For the image on the right, remember to offset the index into the image_buffer array since the right image follows the left.
+
+You can get the actual device field of view from the :cpp:struct:`LEAP_DEVICE_INFO()<LEAP_DEVICE_INFO>`  struct. Use tan(fov/2) in the calculation above instead of MAX_FOV.
+
+Note that :cpp:func:`LeapRectilinearToPixel()<LeapRectilinearToPixel>` may not be fast enough to rectify the image to a high resolution texture in real-time. Generally, you should limit its use to individual points, image patches, or low-resolution textures. For better performance for full images, you can use a shader to rectify the image.
+
+------------------------
+Rectifying with a Shader
+------------------------
+
+To rectify an entire image with a shader, create a texture containing the data in the distortion buffer. The distortion buffer is contained in the distortion_matrix field of the :cpp:struct:`LEAP_IMAGE_EVENT()<LEAP_IMAGE_EVENT>`  struct. This data is set up to use a shader's normal UV interpolation mechanism. You can use the interpolated UV coordinates to look up the corrected brightness in the image texture, as in the following fragment shader program:
+
+.. code-block:: cpp
+
+  uniform sampler2D rawTexture;
+  uniform sampler2D distortionTexture;
+
+  void main()
+  {
+    vec2 distortionIndex = texture2D(distortionTexture, gl_TexCoord[0].st).xy;
+    float hIndex = distortionIndex.r;
+    float vIndex = distortionIndex.g;
+
+    if(vIndex > 0.0 && vIndex < 1.0 && hIndex > 0.0 && hIndex < 1.0)
+    {
+      gl_FragColor = vec4(texture2D(rawTexture, distortionIndex).rrr, 1.0);
+    }
+    else
+    {
+      gl_FragColor = vec4(0.2, 0.0, 0.0, 1.0);
+    }
+  }
+
+To interpolate correctly, the distortion texture must use the following filter and wrap parameters:
+
+.. code-block:: cpp
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+The distortion texture must use two floating point values per texel and contain 64 x 64 texels:
+
+.. code-block:: cpp
+
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RG, 64, 64, 0, GL_RG, GL_FLOAT, distortion_buffer_left);
+
+The distortion map itself rarely changes -- the only time it changes is if the Ultraleap Hand Tracking Camera is swapped with a different device, or if the device is rotated so that the user's hands enter from the opposite side of the vertical field of view. In this case the Ultraleap Hand Tracking Software inverts the image, and the distortion map, to automatically maintain the proper orientation. (Auto-orientation can be turned off in the Ultraleap Tracking Service configuration.)
+
+-----------------------------------------
+Detecting When the Distortion Map Changes
+-----------------------------------------
+
+The distortion map contains a grid of values that can be used to rectify the images. Rectification should be performed if you are aligning 3D objects with pixels in the images or if you are performing stereo triangulation on the image pair.
+
+Each image complete event contains the distortion map for that image. However, since translating the map to an interpolation array or shader texture can itself be an expensive task, you typically only want to do this when the distortion map actually changes -- not once for every image request. The distortion map can only change when the images are flipped due to automatic or manual re-orientation, or if the device itself is changed. You can use the LEAP_IMAGE_EVENT::matrix_version field to detect when the distortion map changes. When the matrix_version changes between images, you know that the distortion map has changed. The matrix version number ALWAYS increases when the distortion map changes and never returns to a prior value.
+
+-----------
+
+`Back to top <#top>`_

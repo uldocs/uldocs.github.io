@@ -1,0 +1,6 @@
+Namespace Bone
+==============
+
+.. doxygennamespace:: Bone
+   :project: unity
+   :no-link: 

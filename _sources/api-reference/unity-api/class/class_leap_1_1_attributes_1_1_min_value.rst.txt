@@ -1,0 +1,6 @@
+Class Leap::Attributes::MinValue
+================================
+
+.. doxygenclass:: Leap::Attributes::MinValue
+   :project: unity
+   :members: 

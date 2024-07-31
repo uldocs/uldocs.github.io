@@ -1,0 +1,6 @@
+Class IUltraleapTrackingPlugin
+==============================
+
+.. doxygenclass:: IUltraleapTrackingPlugin
+   :project: unreal
+   :members:

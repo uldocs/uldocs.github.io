@@ -1,0 +1,6 @@
+Class Leap::Attributes::UnitsAttribute
+======================================
+
+.. doxygenclass:: Leap::Attributes::UnitsAttribute
+   :project: unity
+   :members: 

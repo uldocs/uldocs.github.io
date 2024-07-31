@@ -1,0 +1,6 @@
+Struct LEAP_SERVER_STATUS
+=========================
+
+.. doxygenstruct:: LEAP_SERVER_STATUS
+   :project: tracking
+   :members:

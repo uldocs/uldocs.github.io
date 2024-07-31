@@ -1,0 +1,95 @@
+:hide-toc:
+
+.. image:: img/Docs_homepage_hero.png
+    :alt: Ultraleap Logo
+
+Go deeper with documentation, user manuals, and information on our latest compatible tools.
+
+This site includes our `TouchFree User Manual <https://docs.ultraleap.com/touchfree-user-manual/>`_, design guidelines for `XR <https://docs.ultraleap.com/xr-guidelines/>`_, and our `Ultralab <https://docs.ultraleap.com/ultralab/>`_ developer blog.
+
+Explore our resources, be inspired, and create with our world-leading hand tracking technology.
+
+To design for hand tracking, you’ll need an `Ultraleap Hand Tracking Camera <https://www.ultraleap.com/tracking/>`_ and our latest `Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_.
+
+
+Get started with our plugins for XR developers
+##################################
+
+Get started with Ultraleap hand tracking for game engines and development environments. Build your first project.
+
+.. panels::
+    :container: container-md
+    :column: col-sm-4 p-1
+
+    .. figure:: ./img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ./xr-and-tabletop/xr/unity/getting-started/index.html
+        :text: Get started with Unity
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    Learn how to:
+	
+    - Set up your project
+    - Create your first scene
+    ---
+    .. figure:: ./img/unreal-api/unreal-logo.png
+        :width: 20%
+	
+    .. link-button:: ./xr-and-tabletop/xr/unreal/getting-started/index.html
+        :text: Get started with Unreal
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    Learn how to:
+	
+    - Set up your project
+    - Create your first level
+    ---
+
+    **Other:**
+
+    - `Native LeapC <./api-reference/tracking-api/index.html>`_
+    - `OpenXR Integrations <./openxr/index.html>`_
+    
+*Don't see your integration here?* `Let us know <https://support.leapmotion.com/hc/en-us/requests/new>`_
+
+-----------
+
+Haptics | How our virtual touch technology works
+################################################
+
+Discover how our haptic technology creates the sense of touch in mid-air.
+
+Find out more about `Ultraleap's haptics hardware <https://www.ultraleap.com/haptics/>`_ and
+`software <https://developer.ultrahaptics.com/>`_.
+
+.. youtube:: XnDoej4mnHU
+    :width: 560
+    :height: 315
+
+To add mid-air haptics, you’ll need either a
+`STRATOS Explore <https://www.ultraleap.com/product/stratos-explore/>`_ or
+`STRATOS Inspire <https://www.ultraleap.com/product/stratos-inspire/>`_ haptic module. Both come with a Leap Motion
+Controller included, so this single unit is all you need for both hand tracking and haptics. They also require the
+`Ultraleap Haptics SDK <https://developer.ultrahaptics.com/faq/getting-started/>`_ to run.
+
+-------------
+
+Community and Support
+******************
+
+Powered by Ultraleap…and you. For general chat, showing off projects, or keeping up with the latest software updates, join our Discord server and be part of the conversation.
+
+.. link-button:: https://discord.gg/3VCndThqxS
+    :type: url
+    :text: Discord
+    :classes: btn-secondary
+
+
+Need help? Check out our `support centre <https://support.leapmotion.com/hc>`_ for troubleshooting, FAQs, or to submit a support ticket.
+
+-----------
+
+`Back to top <#top>`_
+
+.. include:: silent_image_includes.txt

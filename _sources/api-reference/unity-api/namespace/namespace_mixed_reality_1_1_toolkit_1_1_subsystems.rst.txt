@@ -1,0 +1,6 @@
+Namespace MixedReality::Toolkit::Subsystems
+===========================================
+
+.. doxygennamespace:: MixedReality::Toolkit::Subsystems
+   :project: unity
+   :no-link: 

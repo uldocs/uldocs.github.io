@@ -1,0 +1,74 @@
+*********************
+Hand Tracking Hinting
+*********************
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+What is Hand Tracking Hinting?
+--------------------------
+
+Hand Tracking Hinting is the ability to change features of the hand tracking system based on specific needs of your application.
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Available Hints are listed in the <a HREF="../../../../../api-reference/tracking-api/group/group___hints.html">LeapC API documentation</a> defined by "Request Using...".</p>
+		<p> e.g. “ultra_performance_mode”. </p>
+    </div>
+  </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+How do I apply Hand Tracking Hints on startup?
+--------------------------
+
+To apply Hand Tracking Hints on startup, or at runtime you can use the following:
+
+1. In your blueprint, call a Blueprint function ``SetLeapDeviceHints``. This function will take as parameter an array of string for the 
+hints. This can also be used to remove all hints if the hints passed are empty strings.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/hand-tracking-hinting/img1.png
+  :width: 60%
+  :align: center
+
+2. To add one hint use Blueprint function call ``AddLeapDeviceHint``. This function will take as parameter a string for the 
+hint we need to add.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/hand-tracking-hinting/img2.png
+  :width: 60%
+  :align: center
+
+3. To remove one hint use Blueprint function call ``RemoveLeapDeviceHint``. This function will take as parameter a string for the 
+hint we need to remove.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/hand-tracking-hinting/img3.png
+  :width: 60%
+  :align: center
+
+4. ``SetLeapOptions`` can also be used similar to ``SetLeapDeviceHints`` to add and remove a list of hints. Make sure to get the correct leap options
+before you call ``SetLeapOptions``, this can be achieved using ``GetLeapOptions``.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unreal/plugin/hand-tracking-hinting/img4.png
+  :width: 60%
+  :align: center
+
+.. note::
+    All the previous functions take as a parameter an array of strings for the device serials. If the device serials is left empty, 
+    it will default to the first device.
+
+
+-----------
+
+`Back to top <#top>`_

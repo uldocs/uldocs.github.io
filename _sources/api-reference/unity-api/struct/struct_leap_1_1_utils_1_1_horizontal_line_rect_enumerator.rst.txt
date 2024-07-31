@@ -1,0 +1,6 @@
+Struct Leap::Utils::HorizontalLineRectEnumerator
+================================================
+
+.. doxygenstruct:: Leap::Utils::HorizontalLineRectEnumerator
+   :project: unity
+   :members: 

@@ -1,0 +1,29 @@
+:hide-toc:
+
+**************************************
+Advanced Hand Tracking With Tom Carter
+**************************************
+
+Join Ultraleap founder and CTO Tom Carter for an interview on state of the art hand tracking, and what the future holds.
+
+This deep dive into the future of hand interaction technology was given in October 2020 as part of the
+`XR Bootcamp <https://xrbootcamp.com/>`_ Hand Interactions Pro Event Series.
+
+Tom gives us his unique perspective on the adoption of hand tracking in XR, Open XR, as well as a Q&A session that
+covers accessibility, touch free screens, enterprise use cases, and automotive. Tom also explains the key advantages
+of Ultraleap camera modules over other providers.
+
+.. youtube:: j4_-mizKKPI
+    :width: 560
+    :height: 315
+
+--------
+
+How can you work with Ultraleap technologies? What development tools will help you create an application or experience?
+What are the best ways to user test your creation?
+
+`Check out our other lecture in this series to go behind the scenes with Ultraleap engineers <https://www.youtube.com/watch?v=pjVjujseFDA&t=2s>`_.
+
+-----------
+
+`Back to top <#top>`_

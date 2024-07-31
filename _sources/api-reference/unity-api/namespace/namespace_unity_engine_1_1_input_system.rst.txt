@@ -1,0 +1,6 @@
+Namespace UnityEngine::InputSystem
+==================================
+
+.. doxygennamespace:: UnityEngine::InputSystem
+   :project: unity
+   :no-link: 

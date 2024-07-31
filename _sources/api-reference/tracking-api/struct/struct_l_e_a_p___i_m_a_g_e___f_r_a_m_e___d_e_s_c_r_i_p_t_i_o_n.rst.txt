@@ -1,0 +1,6 @@
+Struct LEAP_IMAGE_FRAME_DESCRIPTION
+===================================
+
+.. doxygenstruct:: LEAP_IMAGE_FRAME_DESCRIPTION
+   :project: tracking
+   :members:

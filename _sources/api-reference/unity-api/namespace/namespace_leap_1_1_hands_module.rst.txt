@@ -1,0 +1,6 @@
+Namespace Leap::HandsModule
+===========================
+
+.. doxygennamespace:: Leap::HandsModule
+   :project: unity
+   :no-link: 

@@ -1,0 +1,399 @@
+:hide-toc:
+
+************************************
+Microgestures
+************************************
+
+What are microgestures?
+################
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="100%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/microgestureshero.mp4" type="video/mp4">
+        </video>
+    </div>
+
+Microgestures are subtle finger movements made with the hand. They usually refer to self-contacting gestures, for example, a thumb sliding across the index finger. 
+
+Microgestures often afford a relaxed arm pose, with hands down at a user's side, and often involve small and subtle movements to perform. Because of this, they are especially suited for augmented reality, where a large user need is to be able to interact with technology in a socially acceptable manner. Microgestures allow users to interact with their arms in a comfortable position, without drawing attention to themselves.
+
+
+Microgestures compared to standard hand gestures
+===============================================
+
+.. raw:: html
+
+    <br>
+
+.. image:: ../../img/xr-guidelines/microgestures/constraints.png
+    :alt: a left hand with the index and thumb highlighted in green, and all other fingers highlighted in gray.
+    :align: center
+    :width: 80%
+
+.. raw:: html
+
+    <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Microgestures often only use two fingers to perform.</p>
+    <br>
+
+Compared to standard hand gestures, microgestures usually only use one or two fingers to perform. This limited movement space greatly simplifies many problems that are often encountered when working with abstract hand gestures. Due to the reduced interaction space, user overwhelm, learnability and overlapping gesture sets are all improved (though not necessarily completely eradicated). 
+
+Comfort is also improved, as microgestures are easy to perform from a relaxed hand pose, meaning that we can often be confident that the microgestures we design won't contort a user's hands into awkward positions.
+
+Many microgesture motions are already recognisable to users from phone interaction paradigms, providing us with prior knowledge from which to root our user's interaction space in. 
+
+-----------
+
+Microgestures on Ultraleap Hyperion
+################
+
+Ultraleap Hand Tracking is able to detect fine grained **horizontal motion** between the thumb and index fingers.
+
+The full motion set of horizontal microgestures can be described as:
+
+.. raw:: html
+
+    <br>
+
+.. image:: ../../img/xr-guidelines/microgestures/fullmotionset.jpg
+    :alt: a diagram showing the full motion set of horizontal microgestures.
+    :align: center
+    :width: 80%
+
+.. raw:: html
+
+    <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">The full motion set of horizontal microgestures.</p>
+    <br>
+
+This horizontal motion unlocks a number of Microgestures - for example Tap, Scrub, and Swipe.
+
+Tap
+====
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1 panel-transparent
+
+    .. image:: ../../img/xr-guidelines/microgestures/tapmotionset.jpg
+        :alt: an illustration of a tap.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Tap's motion set.</p>
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">    
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/tap.mp4" type="video/mp4">
+            </video>
+
+            <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Example of a tap.</p>
+            <br>
+        </div>
+
+    .. image:: ../../img/xr-guidelines/microgestures/tap.png
+        :alt: an illustration of a tap.
+        :align: center
+        :width: 90%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Each stage of a tap.</p>
+
+Taps are a useful way to select or confirm an action, similar to pinching your fingers when using a far field ray, or clicking your mouse.
+
+They need to be activated on **uncontact**, as once the thumb makes contact with the index finger, the interaction space opens up, with the user able to move horizontally to trigger a different action (such as swipe) - therefore we have to wait until the thumb stops contacting with the hand to detect a tap.
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/tapreactivity.mp4" type="video/mp4">
+        </video>
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Left: Tap with no reaction on contact. Right: Tap with reaction on contact..</p>
+        <br>
+    </div>
+
+When designing for taps, if possible, add reactivity to reinforce a user's confidence in their actions. Reactivity should happen on contact start, and end. 
+
+Double Tap
+============
+
+By themselves, taps aren't always the most appropriate selection method. As we're dealing with fine grained motion, the likelihood of jitter/noise affecting our input signal significantly is increased, and as such, single taps can be susceptible to false positives.
+
+In addition to this, once a user has made contact with their index, if using tap as your selection method, they are locked into performing an action on. This can increase pressure on users.
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/doubletap.mp4" type="video/mp4">
+        </video>
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Example of a double tap.</p>
+        <br>
+    </div>
+
+These downsides can be overcome by using Double Tap - two taps in quick succession, on the same area of the finger.
+
+Adding in a second tap gives users a chance to escape their action before completion. It's also a stronger intent signifier, as it requires two tap actions in the same area of the finger.
+
+Scrub
+============
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1 panel-transparent
+
+    .. image:: ../../img/xr-guidelines/microgestures/scrubmotionset.jpg
+        :alt: an illustration of a scrub.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Scrub's motion set.</p>
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/scrub.mp4" type="video/mp4">
+            </video>
+
+            <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Example of a scrub.</p>
+            <br>
+        </div>
+
+    .. image:: ../../img/xr-guidelines/microgestures/scrub.png
+        :alt: an illustration of a scrub.
+        :align: center
+        :width: 90%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Each stage of a scrub.</p>
+
+Scrubs are a continuous action, defined by how far along your index your thumb slides after making contact. 
+
+Scrubs are useful for fine control of your input -  movements as small as rolling your thumb can affect its value.
+
+**How can we use scrub to control UI?**
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/gain.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    **Gain**
+    
+    Gain can be applied to affect the scrub delta you produce. 
+    
+    Smaller amounts of gain makes it easier to select more precise values. 
+    
+    Larger amounts of gain makes it easier move through the whole range.
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/acceleration.mp4" type="video/mp4">
+            </video> 
+        </div>
+    
+    **Acceleration**
+    
+    You can use acceleration to add some excitement to your gain! By controlling gain using your acceleration, you can produce a mouse-acceleration like affect. This has a higher learning curve than just applying one gain value, but provides more agency to your user.
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/snappingvssmooth.mp4" type="video/mp4">
+            </video> 
+        </div>
+
+    **Snapping vs Smooth**
+
+    Snapping to predefined values can bring more of a sense of control and reduce incorrect choices caused by optical tracking errors.
+
+    Smooth values offer more precise choices in scenarios which require higher fidelity. Smooth values can bring a higher sense of control & reduced "latency", but are more prone to false positives. 
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/inertia.mp4" type="video/mp4">
+            </video> 
+        </div>
+
+    **Inertia**
+
+    Inertia adds a sense of physicality and velocity to the object you're interacting with. Rotational effects move faster or slower depending on how fast your thumb moves. Similar to a traditional inertia effect, velocity slows down over time, and fully stops on thumb contact.
+
+
+Swipe
+========
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1 panel-transparent
+
+    .. image:: ../../img/xr-guidelines/microgestures/swipemotionset.jpg
+        :alt: an illustration of a swipe.
+        :align: center
+        :width: 100%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Swipe's motion set.</p>
+
+    ---
+
+    .. raw:: html
+
+        <div style = "text-align:center;">
+            <video width="100%" loop muted controls autoplay>
+                <source src="../../_video/xr_guidelines/microgestures/swipe.mp4" type="video/mp4">
+            </video>
+
+            <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Example of a swipe.</p>
+            <br>
+        </div>
+
+    .. image:: ../../img/xr-guidelines/microgestures/swipe.png
+        :alt: an illustration of a swipe.
+        :align: center
+        :width: 90%
+
+    .. raw:: html
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Each stage of a swipe.</p>
+
+Swipes are discrete values, defined by your thumb's horizontal movement. Users can swipe left or right. 
+
+Depending on how your swipe is calculated, user's actions can be reinforced and encouraged through visual feedback of how close a user is to swiping.
+
+Swipes can be activated as soon as the user's thumb is detected as having moved left or right - they don't necessarily need to be activated on thumb up.
+
+**Swipe direction can be subjective**
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/swipesubjective.mp4" type="video/mp4">
+        </video>
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Swiping right.</p>
+        <br>
+    </div>
+
+Microgestures afford similar hand poses & gestures to using a thumbstick, and inherit a similar issue - inverted controls. Users can have differing opinions on how their swipe should affect the UI, because they are not directly interacting with it. 
+
+Take the above example. When swiping right, are you dragging the UI left? Or are you telling the UI to move right? The answer will vary among users. 
+
+Ultraleap recommend allowing users to configure how swipes affect your UI, for example, by providing a "Invert Swipe Direction" setting.
+
+**Dual mapping of scrub and swipe on the same element**
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/scrubswipe.mp4" type="video/mp4">
+        </video>
+
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">A scrub triggering a swipe.</p>
+        <br>
+    </div>
+
+Scrubs can be used to trigger swipes - defined by moving a certain distance along the index finger whilst contacting. Using scrubs to detect swipes benefits from being able to convey feedback to the user around their progress towards completing the gesture.
+
+Scrub swipe's **primary** output is discrete (left/right swipe). Their **secondary** output is continuous (a progress value towards a swipe).
+
+Due to technological limitations, scrub swipes may not always be possible - swipes may only be able to be detected after they've happened.
+
+If you're able to obtain a progress value, Ultraleap recommend using it to drive a secondary visual on the screen - not directly affecting the UI, but rather a subtle progress value on the UI itself. 
+
+What should I avoid?
+#####################
+
+It's still possible to overwhelm your users
+=============================================
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/overwhelm.mp4" type="video/mp4">
+        </video>
+                
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">An early prototype which caused users to feel overwhelmed, using swipes, scrubs, double taps and tap + hold.</p>
+        <br>
+    </div>
+
+Like working with other gestures, if you're not careful, you can overwhelm users with too many gestures, especially if they overlap. We tried experimenting with "tap and hold" as a way to summon a system menu, and found that when combined with left & right swipes, and double tap, users cognitive load got too much. 
+
+Try to keep the amount of gestures active at any time low.
+
+
+Don't apply horizontal motion to vertical interaction
+======================================================
+
+.. raw:: html
+
+    <div style = "text-align:center;">
+        <video width="80%" loop muted controls autoplay>
+            <source src="../../_video/xr_guidelines/microgestures/horizontalmotionverticalaction.mp4" type="video/mp4">
+        </video>
+                
+        <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Scrolling vertically, using a horizontal motion.</p>
+        <br>
+    </div>
+
+Users struggle to apply horizontal motion to vertical interactions - the action of swiping horizontally to interact with vertical controls was too disconnected to make sense as a sensible interaction to most users. 
+
+--------
+
+Getting Started
+###############
+
+Download the `Microgestures Playground <https://leap2.ultraleap.com/demos/microgestures-playground/>`_ application to try out the examples seen above for yourself!
+
+Example code for our microgestures system used in the Playground can be found in our `Unity Hand Interaction Experiments repo <https://github.com/ultraleap/Unity-Hand-Interaction-Experiments>`_.
+
+
+Related Resources
+##################
+
+* Guidelines: `Hand Pose Guidelines <https://docs.ultraleap.com/xr-guidelines/Interactions/hand_poses.html>`_
+
+
+`Back to top <#top>`_

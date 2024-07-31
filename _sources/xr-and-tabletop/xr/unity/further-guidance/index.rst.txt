@@ -1,0 +1,71 @@
+:hide-toc:
+
+*********
+Further guidance on Unity and Ultraleap
+*********
+
+There are many ways to make use of Ultraleap's hand tracking in Unity.
+
+These pages will explain how to make the best use of hand tracking with code samples and more complex topics, as well as ways to integrate Ultraleap hand tracking without using the `Ultraleap hand tracking plugin for Unity <../plugin/index.html>`_.
+
+.. note::
+    Some further guidance pages require the Ultraleap hand tracking plugin for Unity and some do not.
+    
+    Each will mention its requirements on the page.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Further Guidance Topics
+------------
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/5-hand-models.png
+        :height: 100
+
+    .. link-button:: ./hand-prefab.html
+        :text: Hand Prefabs
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/dynamic-ui-example-scene.png
+        :height: 100
+
+    .. link-button:: ./service-provider-xr.html
+        :text: Service Provider
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/physical-hands-button-prefab.png
+        :height: 100
+
+    .. link-button:: ./using-buttons.html
+        :text: Using Buttons
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    .. figure:: ../../../../img/xr-and-tabletop/XR/Unity/Further-Guidance/Physical-sliders.png
+        :height: 100
+
+    .. link-button:: ./using-sliders.html
+        :text: Using Sliders
+        :classes: btn-outline-primary btn-block stretched-link
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+
+    Hand Prefabs <hand-prefab.rst>
+    XR Service Provider <service-provider-xr.rst>
+    Upgrading Plugin Version <upgrading-plugin-version.rst>
+    Using Buttons <using-buttons.rst>
+    Using Sliders <using-sliders.rst>

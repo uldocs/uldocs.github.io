@@ -1,0 +1,6 @@
+Struct Leap::InputActions::LeapHandState
+========================================
+
+.. doxygenstruct:: Leap::InputActions::LeapHandState
+   :project: unity
+   :members: 

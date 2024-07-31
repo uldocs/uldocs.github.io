@@ -1,0 +1,6 @@
+Class Leap::Device
+==================
+
+.. doxygenclass:: Leap::Device
+   :project: unity
+   :members: 

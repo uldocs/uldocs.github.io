@@ -1,0 +1,6 @@
+Class Leap::SubsystemStarter
+============================
+
+.. doxygenclass:: Leap::SubsystemStarter
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Namespace static
+================
+
+.. doxygennamespace:: static
+   :project: unity
+   :no-link: 

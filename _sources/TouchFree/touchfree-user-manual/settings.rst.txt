@@ -1,0 +1,62 @@
+:hide-toc:
+
+Appearance
+==========
+
+Customize cursor appearance and the Call to Interact within TouchFree through the **Appearance** settings area.
+
+Navigate to **Appearance** from the **TouchFree Settings** screen.
+
+Cursor Settings
+---------------
+
+Cursor Settings are visible when the cursor is enabled. These settings are available when any interaction is selected. Hover & Hold uses a different cursor to Air Push and Touch Plane, but these settings will be applied to any cursor regardless.
+
+.. image:: ../../img/touchfree-user-manual/cursor-settings.png
+    :alt: TouchFree User Interface Settings
+
+Cursor size and ring thickness can be customized to suit your branding, user interface, and preference. The numeric values for size and thickness do not represent real-world units (e.g. cm), they are offered purely to allow adjustment of cursor sizes in a relative way.
+
+Cursor Colour Customization
+---------------------------
+
+Cursor colour and opacity can be customized using the **Custom** option in the **Appearance Settings** screen.
+
+.. image:: ../../img/touchfree-user-manual/cursor-colour.png
+    :alt: TouchFree Cursor Colours
+
+There are four cursor colour **Presets**: **Light**, **Dark**, **Light Outline** and **Dark Outline**. These are high-contrast white and black cursor combinations. Outline presets remove the solid dot centre of the cursor making it a ring.
+
+To fully customize the cursor’s colour and the visibility of each of its component parts, select **Custom**. A colour picker is provided for each cursor element and can be adjusted through sliders (RGBA or HSVA), HEX values, or through an interactive user interface.
+
+You can change which element is being customized by selecting it on the left hand side. Additionally, each element of the cursor has an **Enable** toggle, which shows/hides this element of the cursor with one convenient switch.
+
+Call to Interact (CTI) Settings
+-------------------------------
+
+TouchFree includes optional graphics and animations that we refer to as the Call to Interact or CTI.
+
+CTIs display when the kiosk is not in use. They signal to the user that your kiosk is touchless, and help the user understand how to interact with your touchless screen.
+
+In **Call to Interact settings** you can:
+
+-  Enable/disable CTI
+-  Select which CTI file to use
+-  Select the trigger to hide the CTI
+-  Configure the inactivity activation timer
+
+.. image:: ../../img/touchfree-user-manual/cti-settings.png
+    :alt: TouchFree Call To Interact Settings
+
+A static image (.png) or movie file (.webm or .mp4) can be added as a CTI overlay.
+
+You can select how the CTI is hidden – either by any hand presence, or by the user performing a specific interaction type you have chosen.
+
+If enabled, the CTI will be shown after a period of inactivity to encourage users to interact with the kiosk.
+
+.. image:: ../../img/touchfree-user-manual/air-push-touchless-interaction-main.gif
+    :alt: TouchFree Airpush CTI
+
+*Example Ultraleap CTI video files are included for reference.*
+
+For information on designing your own Call to Interact and providing instructional information, please refer to our `Design Guidelines. <https://docs.ultraleap.com/touchless-interfaces/>`_

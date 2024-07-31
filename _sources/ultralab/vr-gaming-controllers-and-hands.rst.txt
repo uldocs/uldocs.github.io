@@ -1,0 +1,91 @@
+************************************
+VR Gaming - Controller & Hands
+************************************
+
+*By Joseph Wilk, Artist*
+
+Thanks to Ultraleap and `MyWorld <https://www.myworld-creates.com/>`_, I am on a mission to find the best VR gaming experiences that use hand tracking and controllers. 
+
+I am a disabled gamer with a passion for games with absorbing storylines and innovative gaming mechanics. As a result, I come to VR gaming with a dose of scepticism as I've seen little evidence that there has been much focus on any more than the visual spectacle. Ultimately it has appeared to me that there are a lot of mediocre VR games hiding behind technical flash and sparkle. This is a collection of thoughts after having play tested 70 different VR games.
+
+[Warning: Contains a small puzzle spoiler for “I Expect You To Die 2“]
+
+
+VR's Best Moments
+##################
+
+VR gaming’s best moments are with interactions that are not possible in console gaming. These moments work best when they are orchestrated and allow some user creativity. `“I Expect You To Die 2” <https://iexpectyoutodie.schellgames.com/sequel>`_ is a good example. It delivers narrative crescendos which require you to use virtual objects in ways that break what you have learned from console gaming. The puzzle requires you to smash the window of an airplane using what had previously seemed like useless game props, now useful for their weight. 
+
+.. image:: ../img/ultralab/vr_gaming/IExpectYouToDie2.jpg
+    :alt: A view of a small luxury plane cabin. A wooden table with green felt has a bottle of wine, a glass half full, a cigar, metal cutlery and a menu. There are no other people in the cabin.
+    :align: center
+
+.. raw:: html
+    
+    <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">I Expect You To Die 2: The Airplane</p>
+    <br/>
+
+However, it's worth stating these moments alone do not make a game and it's a mistake a lot of VR games make. There is a lot of leaning on new users transitioning to VR and once that initial wow is over, what's left is often fairly basic game mechanics. While VR is a new experience, throwing away the lessons of game design and story telling feels like a leap backwards. It's a mistake made in all gaming mediums. 
+
+VR does provide a level of immersion distinct from console gaming. It erases the physical world in a way a screen does not and glues a new world onto your eyes. Never in a game have I had a physical response to duck and cover due to a horde of zombies trying to grab me (`Walking Dead: Saints and Sinners <https://www.vrwalkingdead.com/>`_).
+
+.. image:: ../img/ultralab/vr_gaming/WalkingDeadSaintsandSinners.jpg
+    :alt: A zombie is reaching out with an open, grasping hand. The players hands are visible pulling away from the zombie. The scene has lots of rumble and broken cars on the road.
+    :align: center
+
+.. raw:: html
+    
+    <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Walking Dead: Saints and Sinners</p>
+
+I find this interactivity more immersive than a first person perspective, it's like the embodiment of an actor playing a part. Once past the initial adjustment to VR, despite the new level of immersion I found it still required a leap of make-believe (much like console gaming). The physics driven shooter `Bone Works <http://www.stresslevelzero.com/>`_ highlights this nicely when discussing how to best interact with objects in its world which you can never really touch:
+
+    “If you physically imagine you are holding the heavy object, you will have an easier time moving it.”
+
+Console gaming and controllers have built models of interactivity that reduce complexity and nudge users down the intended paths. A gaming controller with 4 core on/off buttons to express all forms of in-game interaction limits how much you can interact with the game world.  Press A in front of a bookshelf, nothing happens, try something else. In VR you can walk up to a bookshelf and gently pick up a specific book from the shelf. Sandbox games like `Blade & Sorcery: Nomad <https://www.warpfrog.com/blade-and-sorcery-nomad>`_ seem very popular in VR as they completely define themselves on not telling you what to do, they provide the tools to do what you want.  
+
+Controllers vs Hands
+#################
+
+Most VR games present your in world representations as hands but how they are controlled is mostly split into controllers or hand tracking. Both control systems have flaws and feel disconnected from tactile feedback, realistic touch or controller blocked hands. Ultimately what makes the moment work is the desire to suspend your disbelieve. One of my favourite VR gaming moments is in `Half Life Alyx <https://www.half-life.com/en/alyx>`_, reaching out with your open hand for a character to grab. It captured a sense of my body being in the game world as I orientated myself to stretch my arm as far as I could, like I could save this character in a story with my hand.  You have a controller in your hand which makes that open hand awkward, but I was too lost in the moment to care.
+
+.. raw:: html
+
+    <div style="text-align: center">
+    <video width="100%" controls muted>
+        <source src="../_video/vr_gaming/half-life-alyx.mp4" type="video/mp4">
+    </video>
+
+    <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Half-life Alyx: Give me your hand. A man is hanging from a broken ladder over a dark, large fall. The player just seen through the hands is stretching out to reach the man so he can grab onto her hand and save himself.</p>
+    </div>
+
+I've found controllers to be effective when a few tools are permanently held for the game. One example would be guns within the shooter genre. Controllers have a strong connection with guns, triggers, the grip and the ability to deliver tactile/vibration feedback. With hands it's harder to judge as it's still early in their development and there are not many games to evaluate. Hands provide an opportunity for more immersive experiences, new audiences and more emotional connection. There is something joyful using your empty hands to carry a little creature in `Silhouette <https://teampanoptes.be/silhouette/>`_.  
+
+.. raw:: html
+
+    <div style="text-align: center">
+    <video width="100%" controls muted>
+        <source src="../_video/vr_gaming/silhouette-vid.mp4" type="video/mp4">
+    </video>
+
+    <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Silhouette. A small, 2D, black and white character is stuck on a rock. The players hands and their shadows are visible. The player places their hand shadow to create a bridge which the little character uses to walk along to get to a new rock.</p>
+    </div>
+
+
+Empathy 
+#################
+
+Whatever the control mechanism it's interesting that most of my favourite VR moments involve some form of hand interaction. There is an emotional potential of the hand as a storytelling device, in terms of interacting with others that's not possible in console gaming. I’ll finish with a very simple moment in `Lone Echo 2 <https://www.oculus.com/lone-echo/>`_ of placing an object in a NPCs hand.
+
+.. raw:: html
+
+    <div style="text-align: center">
+    <video width="100%" controls muted>
+        <source src="../_video/vr_gaming/lone-echo-2.mp4" type="video/mp4">
+    </video>
+
+    <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Lone Echo 2: Placing in hand. A woman is part inside a machine fixing something. Her feet and a single hand are outside the machine. The hand is raised and open awaiting an object. The player flies over in zero-gravity and places a round, metal machine into her hand.</p>
+    </div>
+
+This interaction was a powerful way of building a connection with a character and ultimately heighten the impact of the story.  Interacting in a more natural and human way with an imaginary character gives them a greater sense of body in a world you share with them. The more I believe in the characters of a story, the more empathy I feel for them.
+
+Stories and characters are easy to get lost in, from words on a page to small blurry pixels on a screen. VR is one of the few ways of existing within the same world as the characters. 

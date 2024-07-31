@@ -1,0 +1,120 @@
+************
+Interactions
+************
+
+TouchFree enables a range of touchless, mid-air interactions. 
+
+TouchFree works by detecting a user's hand, showing a cursor at the hand's location on screen and detecting different gestures, such as a small push forward to trigger a click or drag event.
+
+TouchFree offers different interaction types which can be chosen based on appropriateness for your use case and setup. In TouchFree Settings you are able to modify how these interactions feel, and how quickly they can be performed. TouchFree can be operated in one of three modes, which are applied across the whole application:
+
+* AirPush
+* Touch Plane
+* Hover & Hold
+
+All actions are possible in AirPush and Touch Plane modes. Hover & Hold works with button selection, only. Ultraleap encourages you to try each of the interactions and choose which is right for your application. You can change the Interaction in `Interaction settings <https://docs.ultraleap.com/TouchFree/touchfree-user-manual/interaction-settings.html>`__ in TouchFree Settings.
+
+.. list-table::
+    :header-rows: 1
+    :stub-columns: 1
+
+    * -
+      - Air Push
+      - Touch Plane
+      - Hover & Hold
+    * - Select
+      - ✓
+      - ✓
+      - ✓
+    * - Scroll
+      - ✓
+      - ✓
+      - 
+    * - Swipe
+      - ✓
+      - ✓
+      - 
+    * - Pan
+      - ✓
+      - ✓
+      - 
+    * - Spin
+      - ✓
+      - ✓
+      - 
+
+
+Air Push
+--------
+
+.. image:: ../../img/touchfree-user-manual/set-up/air-push.png
+    :alt: TouchFree Air Push
+    :align: center
+
+.. image:: ../../img/touchfree-user-manual/set-up/air-push.gif
+    :alt: TouchFree Air Push
+    :align: center
+
+*Preferred interaction when close to screen*
+
+AirPush mode uses the speed and direction of the user's hand to determine when they are gesturing forward to make a selection. It works for the widest range of users, and interactions can be performed at any distance from the screen (within the camera's field of view).
+
+AirPush is the default mode. We recommend AirPush for most touchless kiosks and screen-based experiences. 
+
+------------
+
+Touch Plane
+-----------
+
+.. image:: ../../img/touchfree-user-manual/set-up/touch-plane.png
+    :alt: TouchFree Touch Plane
+    :align: center
+
+.. image:: ../../img/touchfree-user-manual/set-up/touch-plane.gif
+    :alt: TouchFree Touch Plane
+    :align: center
+
+TouchPlane mode uses an invisible virtual 'plane' in the air in front of the screen. A click event is triggered whenever a users' hand moves through the plane, like a virtual mid-air touchscreen. As such, the interaction works at a fixed distance from the screen which can in be adjusted in TouchFree settings.
+
+-----------
+
+Hover & Hold
+------------
+
+.. image:: ../../img/touchfree-user-manual/set-up/hover-hold.png
+    :alt: TouchFree Hover & Hold
+    :align: center
+
+.. image:: ../../img/touchfree-user-manual/set-up/hover-hold.gif
+    :alt: TouchFree Hover & Hold
+    :align: center
+
+*Preferred interaction when using at distance from screen*
+
+For non 1:1 setups, typically at a larger distance from the screen, hover & hold tends to be the easiest, most reliable and most intuitive interaction.
+
+Hover & Hold is a simple way to interact. Users simply move the cursor into location, hold still as the cursor shows a short, timed animation, then a click event is triggered. The time before a click event is triggered can be adjusted in `TouchFree settings <https://docs.ultraleap.com/TouchFree/touchfree-user-manual/interaction-settings.html>`__.
+
+Hover & Hold works with selecting, however does not work with other interactions such as scroll and drag so we recommend using UI buttons for scrolling and carousels.
+
+-----------
+
+Touchscreen Hybrid
+------------------
+
+TouchFree is able to work seamlessly with touchscreens, providing users with the choice of how they want to interact based on the individual and the situation. Here are a few recommended best practices for setting up TouchFree with touchscreens.
+
+Interaction zone
+################
+
+The interaction zone in TouchFree Settings enables you to set up the zone in front of the screen that the TouchFree cursor is visible from, meaning that TouchFree does not interfere with touchscreen users. We recommend an interaction zone of around 5cm for hybrid setups.
+
+Use AirPush with Scroll & Drag enabled
+######################################
+
+So that TouchFree interactions don't interfere with people using the touchscreen, we recommend using AirPush with Scroll & Drag enabled. Scroll & Drag performs the click when the user pulls back their hand from the same location as they pushed forward. Using AirPush with Scroll and Drag, touchscreen users can move their hand forward, towards a button on screen without TouchFree performing a click.
+
+Fading cursor and cursor-based guidance
+#######################################
+
+Fading TouchFree elements, such as the cursor and any video guidance, when close to the end of the interaction zone means TouchFree can seamlessly blend with touchscreen interfaces. Providing a good experience for touchscreen users while still providing awareness and guidance to TouchFree users.

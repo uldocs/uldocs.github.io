@@ -1,0 +1,6 @@
+Class FUltraleapDevice
+======================
+
+.. doxygenclass:: FUltraleapDevice
+   :project: unreal
+   :members:

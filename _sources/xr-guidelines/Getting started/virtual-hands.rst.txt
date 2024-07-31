@@ -1,0 +1,199 @@
+:hide-toc:
+
+***************************
+Virtual hands
+***************************
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Hero-image.png
+    :alt: Image of hands in virtual reality art application
+
+Hand representation in VR
+####################################################
+
+Displaying virtual hands is an essential part of VR hand tracking experiences. It shows users that their hands are being tracked, helps them feel embodied in the space, and helps them understand what can be done with their hands in the application. 
+
+You can represent hands in a huge range of creative ways, but there are some best practice principles to remember to get the most out of your virtual hands.
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-track-arms.png
+    :alt: Image of hands and arms in virtual reality manipulating a glowing pink block
+
+Track arms
+####################################################
+
+As well as hands, Ultraleap tracking also recognises forearms. This means you can show virtual hands and arms in your applications. Ultraleap recommend this wherever appropriate as it often increases immersion and embodiment for users.
+
+The forearms can also be convenient places to affix UI components users need frequent access to, such as a `locomotion <https://docs.ultraleap.com/xr-guidelines/Interactions/locomotion.html>`_ component or a hand panel.
+
+Hand sizing
+####################
+
+Ultraleap tracking data - and the digital hands you see - are based on the size of your real hands in front of the camera. This important feature allows experiences to work optimally for a wide range of users. For example, a child's hand has a smaller distance between the finger joints than an adult's hand, and getting this right makes a difference when say- accurately picking up a virtual object.
+
+The virtual hands you see in your applications use the hand tracking data from an Ultraleap camera, and overlay hand artwork on top which can either be your own, or one of the options provided in our plugins.
+You can choose to either distort the artwork to match the tracked data, or distort the tracked data to match the artwork. 
+
+When artwork is distorted to match tracked data, the virtual hands will appear the same size and proportion as the real hands in front of the camera. For many applications, this helps user immersion and ensures accuracy when performing interactions like picking up objects.
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-small-vs-large-capsule-hands.gif
+    :alt: Gif of virtual reality hands shown as small and then large
+
+Digital artists are free to model hands in all shapes and sizes, Likewise, our tracking outputs hands in all shapes and sizes based on the user's real-life hands. If you are using heavily styled virtual hands to suit the theme of your game or application, then there may be a mismatch between the size and proportions or users' virtual and real hands. In these cases, you can choose to either distort the art to the tracked hand or the tracked hand to the art. 
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-art-hands.png
+    :alt: Examples of hand art that can be used instead of default hand models
+	
+-----------
+
+Recommended styles
+####################
+
+**Ghost and Outline hands**
+
+*Included as a prefab in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+Ghost and Outline hands offer two realistic appearances which are designed to contrast and stay clearly visible against the vast majority of environments. They’re visually. clean and as such work particularly well for enterprise and training applications. 
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-ghost-hands.png
+    :alt: Image showing ghost hands
+	
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Outline-Hands.png
+    :alt: Image showing outline hands
+	
+-----------
+
+**Capsule hands**
+
+*Included as a prefab in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+Capsule hands are great for showing clearly how many points are being tracked on a hand’s skeleton, as the nodes represented line up perfectly with hand data. Unlike the other mesh hands, the visual representation is procedurally generated from the tracking data.
+
+They’re a great place to get started before you decide on a visual style for your experience and the colours can be quickly customised.
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Capsule-Hands.png
+    :alt: Image showing capsule hands
+	
+-----------
+
+**Realistic hands**
+
+Using realistic virtual hands in an experience can offer enhanced immersion for users, but also carries connotations that the hand will function as a real-life hand would. Users may be more likely to expect objects in the environment to be interactive and behave as they do in real life, and components like hand panels may appear less appropriate.
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Realistic-Hands-1.png
+    :alt: Image showing example of realistic hands
+	
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Realistic-Hands-2.png
+    :alt: Image showing example of realistic hands
+	
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Realistic-Hands-3.gif
+    :alt: clip showing movement of realistic hands
+	
+Realistic virtual hands also have a tendency to invoke a feeling of uncanniness if they are different to the users' real hands - for example in skin tone, or proportions such as finger width and length. Because of the difficulty in getting this right for all users, we recommend realistic hands only for special experiences where they are appropriate for immersion and the environment’s visual style.
+
+However, this doesn’t mean that meaningful hand representation is not important for users. It can be powerful for the experience if users feel embodied and relate to the virtual hands they have. If using realistic hands, Ultraleap recommend giving users options to customise their hands to fit their hand type.
+
+-----------
+
+Interaction zone & tracking loss
+########################################
+
+The `Leap Motion Controller <https://www.ultraleap.com/product/leap-motion-controller/>`_ provides 140x120° typical field of view, and the `Stereo IR 170 provides <https://www.ultraleap.com/product/stereo-ir-170/>`_ 170x170°.
+	
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Interaction-zone-1.png
+    :alt: top view of the size of the interaction zone provided by Ultraleap hand tracking cameras
+	
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Interaction-zone-2.png
+    :alt: top view of the size of the interaction zone provided by Ultraleap hand tracking cameras
+	
+This creates a large interaction zone where a user’s hands can be reliably tracked. However, there are still infrequent times where hands might move outside of the interaction zone and hand tracking is momentarily lost. In moments like this, virtual hands will not keep up with real hands, and user immersion suffers as a result. However, things can be done to minimise user frustration.
+
+To ensure a positive user experience is maintained, it is important users know when their hands are reaching the limits of the interaction zone, and to communicate any momentary tracking losses visually, in a way that feels intentional and part of the experience. 
+
+-----------
+
+Disappearing hands: Default
+########################################
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Disappearing-Hands.gif
+    :alt: clip of vr hands disappearing instantly when hand tracking is lost
+	
+-----------
+
+Freezing the hands in place
+########################################
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Freeze-Hands.gif
+    :alt: clip of vr hands freezing when hand tracking is lost
+	
+*Included in* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+If hand tracking is lost, then virtual hands freeze in place until tracking is restored. This is simple and effective, highlighting where the edges of the interaction zone are. By avoiding the virtual hands ever disappearing from view, users may be reassured that hand tracking has not been seriously interrupted.
+
+-----------
+
+Fading hands out
+########################################
+
+.. image:: ../../img/xr-guidelines/virtual-hands/Virtual-Hands-Fading-Hands.gif
+    :alt: clip of vr hands fading when hand tracking is lost
+
+*Coming soon to* `Ultraleap XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+As virtual hands approach the edge of the interaction zone, they fade out, rather than drop out immediately. This can make hand tracking loss seem less abrupt, and also provides feedback that the edges of the interaction zone are approaching, helping users maintain a sense of control. It is especially appropriate for narrative or social experiences where users aren’t interacting with many objects as the impact of tracking loss is lower. 
+
+-----------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/rigged-hand-support.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/metahuman-support.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+
+-----------
+
+Getting Started
+########################
+
+Build your own virtual hands with the Ultraleap hands module - included as part of our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_.
+
+The Hands Module is a tool that allows you to use real-world data from your own hand and project it onto a virtual 3D representation of your choice. It comes with the prefabs listed above, and a hand binder that allows you to make any 3D model work with Ultraleap hand tracking.
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources:
+########################
+
+**Unity:**
+
+* Blog: `How To Get Started With The Hands Module <https://docs.ultraleap.com/ultralab/hands-module.html>`_
+* Documentation: `Hands Module <https://docs.ultraleap.com/unity-api/The-Basics/hands-module.html>`_
+* Example Scene: `Rigged Hands Example Scene <https://docs.ultraleap.com/unity-api/The-Examples/rigged-hands-desktop.html>`_ ``- /Tabletop Examples/3. Rigged Hands (Desktop)``
+
+**Unreal:**
+
+* Documentation: `Hands Module <https://docs.ultraleap.com/unreal-api/unreal-guide/hands-module.html>`_
+* Example Scene: Hands Overlapped - ``/UltraleapTracking Content/HandModules/ExampleScenes/HandsOverlapped``
+* Example Scene: Hands Side By Side - ``/UltraleapTracking Content/HandModules/ExampleScenes/HandsSideBySide``
+-----------
+
+
+
+-----------
+
+`Back to top <#top>`_
+

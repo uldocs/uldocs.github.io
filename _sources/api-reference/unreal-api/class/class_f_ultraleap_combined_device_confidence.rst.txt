@@ -1,0 +1,6 @@
+Class FUltraleapCombinedDeviceConfidence
+========================================
+
+.. doxygenclass:: FUltraleapCombinedDeviceConfidence
+   :project: unreal
+   :members:

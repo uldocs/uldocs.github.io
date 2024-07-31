@@ -1,0 +1,6 @@
+Class Leap::PhysicalHands::SoftContactBone
+==========================================
+
+.. doxygenclass:: Leap::PhysicalHands::SoftContactBone
+   :project: unity
+   :members: 

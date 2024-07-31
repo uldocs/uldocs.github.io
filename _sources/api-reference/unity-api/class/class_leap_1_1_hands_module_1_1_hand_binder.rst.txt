@@ -1,0 +1,6 @@
+Class Leap::HandsModule::HandBinder
+===================================
+
+.. doxygenclass:: Leap::HandsModule::HandBinder
+   :project: unity
+   :members: 

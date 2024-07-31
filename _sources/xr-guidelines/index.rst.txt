@@ -1,0 +1,272 @@
+********************
+XR Design Guidelines
+********************
+
+.. youtube:: RL6YJd_11FM
+    :width: 560
+    :height: 315
+
+Ultraleap’s industry-leading hand tracking technology is transforming XR. Users can experience the full power of natural interaction in AR and VR. Look down and see your hands, reacting and moving in real time. Effortless, intuitive interaction with no controllers, no wearables, and no learning curve.
+
+---------------
+
+What you'll need
+****************
+
+To begin using our advanced hand tracking in your VR or AR application simply attach a
+`Leap Motion Controller <https://www.ultraleap.com/product/leap-motion-controller/>`_ or
+`Stereo IR 170 Camera Module <https://www.ultraleap.com/product/stereo-ir-170/>`_ to the headset and
+`download our latest Hand Tracking Software release <https://leap2.ultraleap.com/gemini-downloads/>`_.
+
+
+Getting Started
+##########
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../img/xr-guidelines/design-principles/Design-Principles-Provide-extra-feedback.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Getting started/design-principles.html
+        :text: Design Principles
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Principles for designing hand first XR experiences.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/design-considerations/Design-Considerations-Hero-Image.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Getting started/DesignConsiderations.html
+        :text: Design Considerations
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Make the best design choices for your app.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/virtual-hands/Virtual-Hands-Hero-image.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Getting started/virtual-hands.html
+        :text: Virtual Hands
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    How to design virtual hands.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/tutorials-hints-and-help/Tutorials,-Hints-and-help-Hero-Image.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Getting started/tutorials_hints_tip.html
+        :text: Tutorials, Hints, and Help
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Help your users learn how to interact.
+
+------------
+
+Interactions
+##########
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../img/xr-guidelines/interactions-overview/Interactions-Overview-direct-interaction.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Interactions/interactions_overview.html
+        :text: Interactions Overview
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Overview of Physical vs Learned interactions.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/direct-and-distant-interaction-modes/Direct-and-Distant-interaction-modes-summoning.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Interactions/direct_and_distant_interaction_modes.html
+        :text: Direct and Distant Interaction Modes
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Learn when to use Direct and Distant interactions.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/locomotion/Locomotion-Hero-Image.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Interactions/locomotion.html
+        :text: Locomotion
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Learn how to locomote in XR.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/hand-poses/Hand-Poses-Blocks-Thumbs-Up.gif
+        :height: 150px
+        :align: center
+
+    .. link-button:: ./Interactions/hand_poses.html
+        :text: Hand Poses
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Learn when & how to best use Hand Poses.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/microgestures/heroanim.gif
+        :height: 150px
+        :align: center
+
+    .. link-button:: ./Interactions/microgestures.html
+        :text: Microgestures
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Learn the concept and use cases for microgestures.
+
+------------
+
+Components
+##########
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-4 p-1
+
+    .. figure:: ../img/xr-guidelines/components-overview/Components-Overview-UI-Panel.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/components-overview.html
+        :text: Components Overview 
+        :classes: btn-outline-primary btn-block stretched-link
+    
+    ++++++
+    Overview of XR Application components.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/virtual-objects/Virtual-Objects-Hero.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/virtual-objects.html
+        :text: Virtual Objects
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    How to interact with and design for virtual objects.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/designing-objects-for-hands/Designing-Objects-For-Hands-Affordances-2.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/designing-objects-hands.html
+        :text: Designing Objects For Hands
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Design objects to communicate function.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/ui-panels/UI-Panels-Scrolling-Pages.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/ui-panels.html
+        :text: UI Panels
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Design UI Panels for XR Applications.
+
+    ---
+        
+    .. figure:: ../img/xr-guidelines/ui-components/UI-Components-Carousels.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/ui-components.html
+        :text: UI Components
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    In depth advice on UI components. 
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/hand-controls/Hand-Controls-hand-panel.gif
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/handcontrols.html
+        :text: Hand Controls
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Interact with UI attached to your hand.
+
+    ---
+
+    .. figure:: ../img/xr-guidelines/keyboards-and-text-entry/Keyboard-qwerty.png
+        :height: 150px
+        :width: 225px
+        :align: center
+
+    .. link-button:: ./Components/keyboards-text.html
+        :text: Keyboards and Text Entry
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ++++++
+    Design text entry interactions for hands.
+
+-----------
+
+`Back to top <#top>`_
+
+.. toctree::
+    :hidden:
+    
+    Getting started <Getting started/index.rst>
+    Interactions <Interactions/index.rst>
+    Components <Components/index.rst>

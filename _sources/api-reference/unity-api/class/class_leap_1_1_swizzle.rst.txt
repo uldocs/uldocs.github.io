@@ -1,0 +1,6 @@
+Class Leap::Swizzle
+===================
+
+.. doxygenclass:: Leap::Swizzle
+   :project: unity
+   :members: 

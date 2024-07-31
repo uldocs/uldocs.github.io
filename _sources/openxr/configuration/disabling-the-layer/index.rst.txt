@@ -1,0 +1,41 @@
+Disabling the Layer
+*********
+
+.. tabbed:: Environment Variables
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``DISABLE_XR_APILAYER_ULTRALEAP_HAND_TRACKING_1``
+          - ``0``
+          - The value in this case doesn't matter. Only that the environment variable exists.
+          - ``0.0``
+
+What does it do?
+-----------
+
+When this configuration is set, our OpenXR layer will not be loaded via the OpenXR loader.
+This can be very useful for debugging purposes to see if the layer is causing any issues that
+we may have missed!
+
+Alternatively, if you are on ``Windows`` and have our control panel open. You can also disable
+it via the toggle in the settings pane:
+
+.. figure:: ../../../img/openxr/control-panel-settings-pane.png
+   :width: 90%
+   :alt: The settings pane of the control panel with the OpenXR toggle highlighted.
+   :align: center
+
+If you have found an issue with our layer enabled that isn't there when it's disabled;
+`Let us know! <https://support.leapmotion.com/hc/en-us/requests/new>`_.
+
+.. note::
+    This cannot be done via the configuration file, unlike most configurables.
+
+`Back to top <#top>`_

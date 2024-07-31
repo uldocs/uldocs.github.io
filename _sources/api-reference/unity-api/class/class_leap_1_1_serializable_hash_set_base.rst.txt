@@ -1,0 +1,6 @@
+Class Leap::SerializableHashSetBase
+===================================
+
+.. doxygenclass:: Leap::SerializableHashSetBase
+   :project: unity
+   :members: 

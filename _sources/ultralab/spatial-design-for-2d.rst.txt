@@ -1,0 +1,462 @@
+****************************************************************************
+Spatial Design for 2D Screens
+****************************************************************************
+*By Taru Muhonen, Senior UX Designer*
+
+.. image:: ../img/ultralab/tabletopdesign/dogracercover.jpg
+    :width: 0px
+
+
+.. raw:: html
+
+    <div style="text-align: center">
+    <video width="100%" controls poster="../_images/dogracercover.jpg">
+        <source src="../_video/tabletopdesign/DogRacerMain.mp4" type="video/mp4">
+    </video>
+
+    <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Video clips from an internal interaction sprint & game jam focusing on using Leap Motion Controller 2 with traditional displays!</p>
+    </div>
+
+
+Hand tracking is a natural input method for XR applications, but did you know that you can also create hand-tracked “3D” experiences that run on traditional 2D displays? Over the years, creators have been using Ultraleap’s hand tracking for a wide variety of things, ranging from music creation to interactive museum exhibits and VTubing, all without XR headsets.
+
+This spring our XR Research & Applications Development team (RAD) ran a small internal game jam to explore designing hand-tracked 3D environments using traditional displays and a Leap Motion Controller 2. This post will tell you a story of the challenges we encountered and what type of interactions we ended up liking - and some of the ones that didn’t work out so well. 
+
+Check out the Unity code for some of these explorations in `our experiments repository <https://github.com/ultraleap/Unity-Hand-Interaction-Experiments/tree/TabletopExperiments>`_, and download the full game jam build here for `Windows <https://leap2.ultraleap.com/download/software?name=dog-racer&platform=windows>`_ and `MacOS <https://leap2.ultraleap.com/download/software?name=dog-racer&platform=macos>`_!
+
+.. note::
+    You don’t necessarily need to create a 3D world to use hand tracking in traditional displays! Our other team created Leap Motion Controller 2 applications for controlling 2D screens with gestures - see `Widgets application <https://leap2.ultraleap.com/ultraleap-widgets/>`_.
+
+
+A window to a 3D world - spatial input with a non-spatial display
+######
+
+The main focus for our RAD team in the last few years has been creating XR experiences (virtual, augmented, and mixed reality). Designing for hands in a monitor-viewed 3D world shares some similarities with designing for XR - both of the mediums are, in a way, spatial design. Your hands have a presence in a 3D space, like in XR. But in this case, your monitor becomes a “window” to a 3D scene.
+
+.. raw:: html
+
+    <br>
+
+.. image:: ../img/ultralab/tabletopdesign/tabletop.png
+    :alt: Tabletop hand tracking.
+    :align: center
+    :width: 80%
+
+.. raw:: html
+
+    <p style="font-style: italic; color: #aaa; text-align:center;margin-bottom:0">Your monitor acts as a “window” to virtual reality.</p>
+    <br>
+
+
+The differences between the two mediums become clear in practice almost immediately. While we were aware of some of the challenges that tabletop tracking (the camera placed on a table) presented ahead of our game jam, we discovered a lot of interesting things to tackle and gained a lot of insight into the challenges that the setup encounters.
+
+Key challenges when designing for non-spatial displays
+######
+
+When designing a 3D experience, there are two key differences between 2D displays and XR headsets that affect the design:
+
+* **The lack of depth perception.** No headset means no sweet stereo rendering for your eyes (except if you’re using 3D displays - to be explored!). It is now your responsibility to build depth in your scene when your users lack all the most common 3D cues from the environment.
+* **Both your real-world hands and digital hands exist simultaneously in different realities.** In XR, your digital hand presence and physical hand presence are in the same place and blend into each other. When viewing a 3D world through displays, you are basically controlling a *copy* of your real-world hands. Your “puppeteered” virtual hands can occlude your objects, and unlike in XR and real life, moving your head won’t solve the problem, as the camera is in a fixed position.
+
+These two key differences cascade into a lot of tricky design challenges that you won’t have in VR or AR. Here are some of the challenges we encountered:
+
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    **Depth cues**
+    
+    How do we signal where hands are compared to elements in the screen, and how much do you need to move your hands to reach the objects?
+
+    ---
+
+
+    **How to do UI controls?**
+
+    Could part of the UI be 2D - we’re using 2D screens after all? What sort of UI feels natural in this medium?
+
+    ---
+
+    **Hand presence and occlusion**
+
+    As you won’t be able to move your head around to see what’s behind your hands, how do you make sure you won’t be occluding the objects?
+
+    ---
+
+    **Field of View**
+
+    Unlike in VR, the field of view of the hand tracking camera is not aligned with your vision. How do you design the camera’s range in mind, and what are the best spots for components?
+
+    ---
+
+    **Learning gestures and controls**
+
+    How do you teach people to use the input method and gestures they’ve never used before?
+
+    ---
+
+    **Position of the tracking camera**
+
+    You can’t ever be certain where the user has placed their tracking camera - in front of a laptop, or perhaps to the side of it? How much does the user have space around their hand?
+
+    
+
+
+The next chapters will tell you how we approached some of these challenges. 
+
+Exploration time! Prototypes, prototypes, and even more prototypes.
+######
+
+Depth - Where are my hands?
+****
+
+To interact with objects with hands, you need to know where your hands are relative to the objects in the 3D world. Traditionally our depth perception comes from a combination of a wide variety of stereo and monocular cues.
+
+When using 2D monitors, some of the most important depth cues that are missing are:  
+
+* **Stereo separation of our eyes (stereopsis)** - The difference between the “image” we receive from our left and right eye.
+* **Motion parallax** - The difference in the movement speed between near and far objects when your head is moving around. 
+
+Other depth cues lacking in 2D displays include eye focus (accommodation) and convergence. 
+
+Luckily, there are still some depth cues left we can use!
+
+---------------------------
+
+Shadows and reflections
+=======================
+Shadows everywhere! Shadows proved to be one of the most impactful ways to know where your hands are floating in the scene. Shadows both “ground” your hands to the environment and gives a cue to how close they are to the surface catching the shadow. One technique we also saw in other experiences was replacing shadows with reflections, for example from a water surface. We didn’t end up using a reflection in our own experiments as it didn’t fit with our environment, but if you are looking for an alternative to shadows this would be a good option to explore. 
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/groundshadows.mp4" type="video/mp4">
+        </video>
+        
+    Ground receiving shadows
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/self-shadow.mp4" type="video/mp4">
+        </video>
+
+    Finger casts shadows towards the object you are interacting with.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/reflection.mp4" type="video/mp4">
+        </video>    
+    
+    Reflection on the water. Video from V2 Playground experience.
+
+
+
+**Tips for shadows:**
+
+* **The direction of the light forming the shadow matters!** We noticed it is way easier to understand the position of the hand if the shadows are projected directly underneath it. 
+
+* **Fingers form shadows on the object they are approaching.** You can use this to provide cues on how close the fingers are to object surfaces. In our case, we ended up adding some extra real-time lights to create the surface shadows - as the experience is run on a desktop rather than mobile, performance limitations are less of an issue so we can have multiple real-time lights in the scene. 
+
+-----------------------------
+
+Occlusion & reference objects
+=======================
+You can use occlusion to give cues on where the hands, or objects, are related to the other objects in the scene. We ended up experimenting with the following extra occlusion objects:
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. image:: ../img/ultralab/tabletopdesign/objectgrid.png
+        :alt: Helper lines from objects
+
+    **Occlusion helpers**
+
+    You can add extra objects for occlusion, such as lines.
+
+    ---
+
+    .. image:: ../img/ultralab/tabletopdesign/referenceobjchains.png
+        :alt: UI linked to each other with lines 
+
+    **Chaining reference objects**
+
+    UI buttons are connected to the ground geometry with lines to understand where they are in depth relative to the central object.
+
+    ---
+
+    .. image:: ../img/ultralab/tabletopdesign/anyobjects.png
+        :alt: Objects occluding the hand
+
+    **Just any objects, really.**
+
+    Having any objects in the scene help with realizing where your hands are relative to the world, as the hands start occluding with the geometry.
+
+**Tips for occlusion and reference objects:**
+
+* **Be careful if using translucent hands.** We noticed that not only do objects occluding hands matter but also hands occluding the objects. The perception of depth drops if you introduce hand transparency.
+
+---------------------------
+
+Depth helper effects
+====================
+We can use the fact that we aren’t bound by the real world to our advantage and add some special depth helpers! Here are some that we played with:
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-6 p-1
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/refcursor.mp4" type="video/mp4">
+        </video>    
+
+    **Proximity-based cursors on your hands!**
+
+    Hooking things like an additional light or a cursor to your finger allows the surface to react to the proximity of the hand. 
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/floorgrid.mp4" type="video/mp4">
+        </video> 
+
+    **Floor grid highlight**
+
+    Reference surfaces can have reactive colors based on the hand’s position.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/helperlines.mp4" type="video/mp4">
+        </video> 
+
+    **Helper lines**
+
+    Extra helpers to explain the distance from hand to the surfaces.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/leashes.mp4" type="video/mp4">
+        </video> 
+
+    **Attachment “leash”**
+
+    A leash that hooks up to the closest object you can grab. In this case we experimented calculating the closest object in screen-space.
+
+
+**Tips for effects:**
+
+* **Free your imagination!** Real-world limitations won’t affect you in virtual worlds. Test out effects that might fit your own use case.
+
+* **Combining screenspace-calculated effects with 3D may cause confusion.** With the leash effect, we tried out calculating it in 2D space instead of in 3D - the attachment leash connected to the closest object that your hand was in the screen, not in the 3D space. While our users could generally select things quite fast, it was causing confusion in the depth of the objects.  
+
+--------------------------
+
+Creating UI
+*****
+While exploring some older experiences created for tabletop 3D with the previous generation of Ultraleap hand tracking, we discovered a few different ways of handling user interfaces.
+
+.. note::
+    The below applications are older ones we were using as a source of inspiration. Sadly, they are no longer compatible with modern hardware.
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/screenspacemenu.mp4" type="video/mp4">
+        </video> 
+
+    **Screen space UI**
+
+    Menus placed to the edges of the screen in screen space. Here in Sculpting, tool selections were placed to the edge of the screen.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/castingspells.mp4" type="video/mp4">
+        </video> 
+
+    **Gesture-launched actions**
+    
+    Gestures activating menus. In this case a game called Orc’s Arena was using palm up gesture to launch a spell menu.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/handwave.mp4" type="video/mp4">
+        </video> 
+
+
+    **World space buttons**
+    
+    3D buttons placed in the 3D world. The HandWAVE application was using world space buttons to move forward and back in the tutorial. 
+ 
+
+Our team’s conclusion about **screen space menus** was that they can be slightly confusing - the elements exist in screen space, while your hands are in world space. They tended to lead to accidental activations when you were immersed in the 3D space and accidentally taking your hand to the “edges” of the screen.
+
+**Gesture-launched menus have potential!** We particularly liked how Orc's Arena did it for opening their spell menu. We explored this menu option in one of our prototypes for changing a tool the user is using.
+
+
+.. raw:: html
+
+    <div style="text-align: center">
+    <video width="80%" loop muted controls autoplay>
+        <source src="../_video/tabletopdesign/handmenu.mp4" type="video/mp4">
+    </video>
+
+    <p style="font-style: italic; color: #aaa; margin-bottom: 2em">Example of a gesture-launched menu we prototyped.</p>
+    </div>
+
+**World space buttons are easy to learn.** What we ended up picking for our game were world space 3D buttons. Even though they are seemingly simple, they do come with their own design challenges - some of them we did have time to solve, and some of them still need iteration.
+
+**Pros:**
+
+* Users figured out how to use them quite often without any guidance - they were fast to learn.
+* World space buttons kept the user “immersed” in the 3D space - no need to think of 2D screen borders while doing tasks in the 3D space. 
+
+**Cons:**
+
+* It still took a few attempts from the users to figure out how deep the buttons need to be pushed for activation. There are probably some tricks to solve this, but we ran out of time! One way would be to have the buttons made with a dwell-timer (as in the HandWAVE example above), but this causes a delay to each button press.
+* World space buttons take space from your world - there is only a limited number of actions you can place simultaneously in a scene.
+* The direction that users need to push buttons for a successful activation caused some confusion within our app, with users frequently targetting buttons lower than they should. This might be due to the camera angle and could be fixed by having the camera more aligned with the user’s view direction.
+
+---------------------
+
+Enter Dog Racer!
+################
+
+At the end of our jam, we ended up combining a bunch of our interaction experiments into a small Bamzooki-inspired game named “Dog Racer”. 
+
+In Dog Racer, we applied a number of the learnings from our interaction prototypes. We specifically included the following:
+
+* **Shadows:** We are casting shadows both to the ground and towards interactable object while painting.
+* **Depth effects and helpers:** Floor grid highlights, proximity-based cursor effects, attachment leash (without the visual line), reference object chains.
+* **World space buttons:** Using world space buttons to navigate the application.
+
+The experience has three main interactive parts:
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/charactercrea.mp4" type="video/mp4">
+        </video>
+
+    **Part selection**
+
+    Selecting body parts to assemble your dog.
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/paintingdog.mp4" type="video/mp4">
+        </video>
+
+    **Model painting & turntable**
+    
+    Painting the dog with your fingertips. We were quite surprised how satisfying this interaction felt!
+    
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/handpupp.mp4" type="video/mp4">
+        </video>
+
+    **Hand puppets!**
+
+    You’ll be able to control the dog with your hand.
+
+
+ 
+
+.. raw:: html
+
+    <p>The result here leaves a lot to be improved outside the time constraints of the game jam, for example, making the racing part more interactive and polishing some of the components and 3D assets. However, we saw that people were having already fun with this prototype - and we certainly learned a lot while making it! &#128522;</p> 
+
+You can download and try out the experience here: 
+
+* `Windows <https://leap2.ultraleap.com/download/software?name=dog-racer&platform=windows>`_ 
+* `MacOS <https://leap2.ultraleap.com/download/software?name=dog-racer&platform=macos>`_
+
+--------------------
+
+Conclusion
+###########
+
+Designing for non-spatial displays is no mean feat, but hopefully this blog has given you some inspiration on making your own 3D experiences on 2D screens. We've open sourced some of the main experiments discussed in this blog - feel free to download & test them out! You can find them `in this repository <https://github.com/ultraleap/Unity-Hand-Interaction-Experiments/tree/TabletopExperiments>`_.
+
+The experiment repository has the following interactions available:
+
+.. panels::
+    :container: container pb-2
+    :column: col-sm-4 p-1
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/exp-dog.mp4" type="video/mp4">
+        </video>
+
+    **Dog puppet**
+
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/exp-leash.mov" type="video/mp4">
+        </video>
+
+    **2D grabbing and anchors**
+    
+    ---
+
+    .. raw:: html
+
+        <video width="100%" loop muted controls autoplay>
+            <source src="../_video/tabletopdesign/exp-rotate.mp4" type="video/mp4">
+        </video>
+
+    **Turning, scaling and rotating a scene**
+
+
+Finger painting of the dog was done with `mixandjam/Splatoon-Ink: Recreating the Ink System from Splatoon. - <https://github.com/mixandjam/Splatoon-Ink>`_ .
+
+We’re looking forward to see what you create with Leap Motion Controller 2!
+
+| Cheers,
+| `Matt <https://twitter.com/MattFiler>`_, `Pip <https://twitter.com/dwarph>`_ , `Rory <https://twitter.com/rorydotgames>`_, `Taru <https://twitter.com/tarumuh>`_ (& Julia!)

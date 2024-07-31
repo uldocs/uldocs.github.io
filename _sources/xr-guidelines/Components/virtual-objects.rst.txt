@@ -1,0 +1,205 @@
+:hide-toc:
+
+*******************
+Virtual objects
+*******************
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Hero.png
+    :alt: Image showing virtual hands and virtual objects in a VR scene
+	
+-------
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/xri-integration.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/interaction-engine.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+
+------------------------
+
+What are virtual objects?
+#########################
+
+In VR, virtual objects are fully three-dimensional elements with depth and physicality, reacting to your hands in much the same way as objects in the real world, would. 
+
+Unlike `UI components <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_ they can be picked up, moved, knocked over, thrown, stacked, spun and react in almost all the ways you would expect a real world object to. 
+
+Typical examples include everything from tools, flashlights and tablets, to building blocks, balls and paint cans.
+
+`How to design virtual objects for hands <https://docs.ultraleap.com/xr-guidelines/Components/designing-objects-hands.html>`_
+-----
+
+**The importance of physics**
+
+Interacting with objects can be particularly intuitive and natural with VR and hand tracking, even for first time users, because users lean on a lifetime of learned behaviour interacting with objects in the real world. To achieve this immediate familiarity, objects need to react with realistic physics - users should be able to pick them up, knock them over, drop them, throw them etc in the same way they can in real life.
+
+**How to build virtual object interactions**
+
+`Ultraleap’s XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_ feature our **Interaction Engine**, which makes it easy to add realistic behaviour to objects made with Unity or Unreal. It ensures the simulation reacts realistically to users' hands, and in ways they expect, when they reach out to grab, push, pull or swipe the elements around them.
+
+An alternative tool - **Physics Hands** - is in active development and is `available as a preview <https://openupm.com/packages/com.ultraleap.tracking.preview/>`_, with full release available soon. Physics Hands increases realism and immersion by simulating the physical forces your hands and virtual objects apply to one another. For example when users grip an object, their fingers will stick to the object surface as opposed to passing through it. 
+`Read more about Physics Hands here <https://docs.ultraleap.com/ultralab/physicshands-preview-blogpost.html>`_.
+
+.. youtube:: dKcaalop0JA
+    :width: 560
+    :height: 315
+	
+-----------
+
+Types of objects
+################
+
+Whilst objects can be made to react to hands in huge range of ways, the most commonly used can be broadly categorised into three types:
+
+**Free objects**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Free-objects.gif
+    :alt: Clip showing virtual hands interacting with virtual objects in VR
+
+Free objects can be picked up, moved around and rotated, placed, knocked over, thrown and dropped. 
+
+They can be anything from building blocks to kitchen equipment to a fire extinguisher, and they almost always behave as in real life. As such, they can be stacked, and will roll down slopes and fall off ledges. Of course, in VR you can even choose to lower gravity, in which case they will float around, and spin when knocked.
+
+`Ultraleap’s XR plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_ feature our Interaction Engine, which allows users to grip free objects with any fingers and from any angle, offering a realistic and flexible way to handle objects rather than detecting a set hand pose or gesture. This makes for a more intuitive experience that caters for a wide range of users.
+
+**Handle objects**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Handle-Objects.gif
+    :alt: Clip showing a virtual hand picking up a virtual object by its handle
+
+Handle objects behave exactly as free objects do, but the addition of a handle changes user behaviour immediately. Users will naturally grip and pick these objects up by the handle as long as it is accessible, and will expect to see their virtual hand grip the handle in a realistic way. When this works, users feel more engaged and in control as a result.
+
+Examples of handle objects include tools, medical devices, bags and suitcases, torches and kitchen equipment and crockery. 
+
+**Mounted objects**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Mounted-object.gif
+    :alt: Clip showing a tray table as an example of a mounted object
+
+Mounted objects tend to be in a more fixed position with their motion limited in some way. In most cases, mounted objects are used for furniture or storage in the environment, or for mechanical controls such as levers. 
+
+For example, a set of drawers will behave as objects but the drawers can only be pulled and pushed along one axis. In the example above, an airline tray table can be raised and lowered by flipping the catch and rotating the tray around its pivot point. By building this element with mounted objects, developers can achieve a high degree of realism and engagement for users, who will expect the element to behave just as it does in real life.
+
+--------
+
+Common object interactions
+#########################
+
+**Pick up and move**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Pickup-And-Move.gif
+    :alt: Clip showing virtual hands moving virtual blocks
+	
+When built with Ultraleap plugins, objects allow users to grab and pick them up in a wide variety of grips and orientations, from pinching between thumb and forefinger to grasping with a close fist. Users can move their hand in any direction to reposition the object, and open their hand again to drop or place it. 
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Three-Holding-Types.png
+    :alt: Image showing three different ways to hold virtual objects
+
+**How object size affects user behaviour**
+
+The size of an object tends to change how users will reach out to pick them up. This variety is natural and needs to be catered for, for an intuitive experience. That’s why Ultraleap plugins When objects are very small, users will usually grip them between thumb and forefinger of one hand, with a pinch-like grip.
+
+When objects are a little larger, users will still use one hand but may grab with several fingers or their whole fist.
+
+When objects are very large, users will instinctively pick them up with two hands, as they would expect to in real life, although with virtual objects, one hand is still ok too.
+
+-----
+
+**Rotate**
+
+An object positioned in the environment -such as a mounted object - can be freely rotated with either one or both hands if its behaviours allow it. An example would be a rotatable 3D product model for use in a VR design application - this object may be suspended in the air or mounted on a turntable, but otherwise respond to user pushes and swipes as a real world object would.
+
+Objects may be rotated with a simple swipe, push, or gripped between the fingers.
+
+Changing the orientation of the object can also be used to bring up pop-up or contextual menu. An example of this is the shopping app below, where rotating a product model brings up further information.
+
+.. list-table::
+
+   * - .. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-rotate-1.gif
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-rotate-2.gif
+            :width: 200
+     - .. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-rotate-3.gif
+            :width: 200
+
+----
+ 
+
+**Throw**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-Throwing.gif
+    :alt: Clip showing virtual hands throwing virtual objects
+
+Just as objects can be picked up and placed, they can be thrown too. All that’s required is for the hand to move at speed and to open the fingers - Ultraleap’s Interaction Engine will do the rest. 
+
+Developers should note that the limits of the interaction zone should be kept in mind when creating throwing interactions. With large or overhead throws for example, it's possible for hands to briefly leave the interaction zone. 
+
+-----
+
+**Resize**
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-resize.gif
+    :alt: Clip showing virtual hands resizing a virtual block
+	
+Whilst virtual objects are at their most intuitive when they behave much like real life, VR offers additional possibilities for objects that are only possible in the virtual space. 
+
+For example, virtual objects can be re-sized by gripping them with both hands, and moving the hands closer together to shrink and further apart to enlarge the object.
+
+This is an example of an interaction that fits people’s mental model and can be quickly learned, despite not being possible in the physical world.
+
+----
+
+**Summon**
+
+*Coming soon to Ultraleap XR plugins*
+
+.. image:: ../../img/xr-guidelines/virtual-objects/Virtual-Objects-summon.gif
+    :alt: Clip showing virtual hands summoning an object
+
+Another special interaction, only possible in VR, is summoning. When using distant interaction mode, users can take aim at distant objects. With the one they want targeted, they can then pull it through the air towards them by turning the palm upwards and curling the fingers to 'beckon' the object over.
+
+----
+
+Getting Started
+###############
+
+Get started manipulating virtual objects with your hands using our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_, where we provide the Interaction Engine, and Physics Hands.
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources:
+####
+
+**Unity:**
+
+Documentation: `Interaction Engine Basics <https://docs.ultraleap.com/unity-api/The-Basics/interaction-engine.html>`_
+
+* Example Scene: ``Physical Hands - /XR Examples/2. Interactions/1. Physical Hands Playground``
+* Blog: `Physics Hands Basics <https://docs.ultraleap.com/ultralab/physicshands-preview-blogpost.html>`_
+* Documentation: `Physical Hands <https://docs.ultraleap.com/unity-api/Preview/physics-hands.html>`_
+
+**Unreal:**
+
+* Documentation: `Interaction Engine Basics <https://docs.ultraleap.com/unreal-api/unreal-guide/interaction-engine.html>`_
+* Example Scene: Interaction Objects - ``/UltraleapTracking Content/InteractionEngine/InteractionObjects``
+
+`Back to top <#top>`_
+

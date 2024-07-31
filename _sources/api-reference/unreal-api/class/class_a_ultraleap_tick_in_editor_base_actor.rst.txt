@@ -1,0 +1,6 @@
+Class AUltraleapTickInEditorBaseActor
+=====================================
+
+.. doxygenclass:: AUltraleapTickInEditorBaseActor
+   :project: unreal
+   :members:

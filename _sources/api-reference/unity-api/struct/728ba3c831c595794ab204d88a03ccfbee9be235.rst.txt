@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_TRACKING_MODE_EVENT
+=============================================
+
+.. doxygenstruct:: LeapInternal::LEAP_TRACKING_MODE_EVENT
+   :project: unity
+   :members: 

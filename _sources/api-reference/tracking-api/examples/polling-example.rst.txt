@@ -1,0 +1,121 @@
+***************
+Polling Example
+***************
+
+Instead of using callback functions (which are invoked on a separate thread) your application can read the latest available data on its own, natural frame rate. This can be more convenient in situations where your application already has an event loop, and you only need tracking data at the application's frame rate.
+
+PollingSample.c
+~~~~~~~~~~~~~~~
+
+The PollingSample.c program simulates a program loop by just running forever in a for loop. Each iteration it calls the ExampleConnection GetFrame() function. If the frame has changed since the last iteration, the sample prints out some basic data from the frame.
+
+.. code-block:: cpp
+
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  #ifdef _WIN32
+  #include <Windows.h>
+  #else
+  #include <unistd.h>
+  #endif
+
+  #include "LeapC.h"
+  #include "ExampleConnection.h"
+
+  int64_t lastFrameID = 0; //The last frame received
+
+  int main(int argc, char** argv) {
+    OpenConnection();
+    while(!IsConnected)
+      millisleep(100); //wait a bit to let the connection complete
+
+    printf("Connected.");
+    LEAP_DEVICE_INFO* deviceProps = GetDeviceProperties();
+    if(deviceProps)
+      printf("Using device %s.\n", deviceProps->serial);
+
+    for(;;){
+      LEAP_TRACKING_EVENT *frame = GetFrame();
+      if(frame && (frame->tracking_frame_id > lastFrameID)){
+        lastFrameID = frame->tracking_frame_id;
+        printf("Frame %lli with %i hands.\n", (long long int)frame->tracking_frame_id, frame->nHands);
+        for(uint32_t h = 0; h < frame->nHands; h++){
+          LEAP_HAND* hand = &frame->pHands[h];
+          printf("    Hand id %i is a %s hand with position (%f, %f, %f).\n",
+                      hand->id,
+                      (hand->type == eLeapHandType_Left ? "left" : "right"),
+                      hand->palm.position.x,
+                      hand->palm.position.y,
+                      hand->palm.position.z);
+        }
+      }
+    } //ctrl-c to exit
+    return 0;
+  }
+  //End-of-Sample
+
+ExampleConnection.c
+~~~~~~~~~~~~~~~~~~~
+
+The Polling example uses the same ExampleConnection code as the callback, but makes use of the GetFrame() and setFrame() and the GetDeviceProperties() and setDevice() functions. These functions write the structs received from the :cpp:func:`LeapPollConnection()<LeapPollConnection>` function to a global variable where they can be accessed any time by the application. Mutexes are used to guard against both threads accessing the data at the same time.
+
+.. code-block:: cpp
+
+  /* Used in Polling Example: */
+
+  /**
+   * Caches the newest frame by copying the tracking event struct returned by
+   * LeapC.
+   */
+  void setFrame(const LEAP_TRACKING_EVENT *frame){
+    LockMutex(&dataLock);
+    if(!lastFrame) lastFrame = malloc(sizeof(*frame));
+    *lastFrame = *frame;
+    UnlockMutex(&dataLock);
+  }
+
+  /** Returns a pointer to the cached tracking frame. */
+  LEAP_TRACKING_EVENT* GetFrame(){
+    LEAP_TRACKING_EVENT *currentFrame;
+
+    LockMutex(&dataLock);
+    currentFrame = lastFrame;
+    UnlockMutex(&dataLock);
+
+    return currentFrame;
+  }
+
+  /**
+   * Caches the last device found by copying the device info struct returned by
+   * LeapC.
+   */
+  static void setDevice(const LEAP_DEVICE_INFO *deviceProps){
+    LockMutex(&dataLock);
+    if(lastDevice){
+      free(lastDevice->serial);
+    } else {
+      lastDevice = malloc(sizeof(*deviceProps));
+    }
+    *lastDevice = *deviceProps;
+    lastDevice->serial = malloc(deviceProps->serial_length);
+    memcpy(lastDevice->serial, deviceProps->serial, deviceProps->serial_length);
+    UnlockMutex(&dataLock);
+  }
+
+  /** Returns a pointer to the cached device info. */
+  LEAP_DEVICE_INFO* GetDeviceProperties(){
+    LEAP_DEVICE_INFO *currentDevice;
+    LockMutex(&dataLock);
+    currentDevice = lastDevice;
+    UnlockMutex(&dataLock);
+    return currentDevice;
+  }
+
+  //End of polling example-specific code
+ 
+
+
+-----------
+
+`Back to top <#top>`_

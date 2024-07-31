@@ -1,0 +1,6 @@
+Class LeapInternal::LeapC
+=========================
+
+.. doxygenclass:: LeapInternal::LeapC
+   :project: unity
+   :members: 

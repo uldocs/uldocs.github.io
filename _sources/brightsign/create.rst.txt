@@ -1,0 +1,217 @@
+*************************************************************************************
+How To Create a BrightAuthor:connected Presentation Including TouchFree Interactivity
+*************************************************************************************
+
+First Steps
+===========
+
+Creating a BrightAuthor:connected presentation that includes TouchFree touchless interactivity can be achieved by following the steps below:
+
+1. Create an HTML UI for the interactive button
+2. Create a BrightAuthor presentation that can change content
+3. Link the content changes to the interactive button presses
+
+Each step is covered in more detail in the sections below.
+
+Once all steps are completed you will have successfully created a presentation that can be published for your BrightSign XC5 series media player. This presentation will show a single button that can be clicked touchlessly to switch between two videos.
+
+The code for the guide can be found on the `TouchFree examples repository <https://github.com/ultraleap/TouchFree-Tooling-Examples/tree/develop/Examples-BrightSign/Interactivity>`_.
+
+Creating an HTML UI with an interactive button
+==============================================
+
+Start by creating a new HTML file. Create a new text file and name it ``TouchFree_Interactivity.html`` (remember to replace the .txt file extension with .html). We will use this to contain the TouchFree interactivity for the BrightSign presentation. Within this file add an HTML page including a button that is 300 pixels high, 80% of the width of the page, and is positioned at the upper center of the screen
+
+.. code-block:: html
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+  </head>
+
+  <body>
+    <div style="height:300px;width:100vw">
+      <button style="margin-left:10%;height:100%;width:80%">Next Video</button>
+    </div>
+  </body>
+
+  </html>
+
+We then need to add the TouchFree tooling JavaScript file into the ``head`` tag of the HTML by inserting the ``script`` tag below into the ``head`` tag as shown below
+
+.. code-block:: html
+  :emphasize-lines: 2
+
+  <head>
+    <script name="TouchFree" type="text/javascript" src="TouchFree_Tooling.js"></script>
+  </head>
+  
+In addition to the above, the JavaScript file itself (TouchFree_Tooling.js) needs to be added to the same directory where the HTML file was created above. TouchFree_Tooling.js can be obtained by downloading the TouchFree Tooling for Web package from the `Ultraleap download page <https://leap2.ultraleap.com/touchfree/>`_. Once the package is unzipped, TouchFree_Tooling.js can be found in the '.\\Tooling_Package\\dist' folder.
+
+.. image:: ../img/brightsign/create/tooling.png
+    :alt: TouchFree Tooling
+
+The next step is to enable the TouchFree functionality. To do this we need to add another script to the ``head`` tag. This needs to initialise the TouchFree ConnectionManager and the WebInputController
+
+.. code-block:: html
+  :emphasize-lines: 3-7
+
+  <head>
+    <script name="TouchFree" type="text/javascript" src="TouchFree_Tooling.js"></script>
+    <script name="TouchFree_Quick_Start" type="text/javascript">
+        window.onload = () => {
+          TouchFree.Init({ initialiseCursor: false });
+        };
+    </script>
+  </head>
+  
+With this code included we will now connect to the TouchFree Service, and will receive TouchFree data in the JavaScript. To consume this we will need to add some event handling to the button. The events that are triggered by the TouchFree web tooling that we are going to consume are ``onpointerup``, ``onpointerenter`` and ``onpointerleave``. To do this we need to add some methods to the script above and then add them to the button
+
+.. code-block:: html
+  :emphasize-lines: 8-18,26-28
+
+  <head>
+    <script name="TouchFree" type="text/javascript" src="TouchFree_Tooling.js"></script>
+    <script name="TouchFree_Quick_Start" type="text/javascript">
+      window.onload = () => {
+        TouchFree.Init({ initialiseCursor: false });
+      };
+
+      function nextClicked() {
+        // TODO: Handle next click
+      }
+
+      function onHover(element) {
+        element.classList.add("hovered");
+      }
+
+      function onLeave(element) {
+        element.classList.remove("hovered");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div style="height: 300px; width: 100vw">
+      <button
+        style="margin-left: 10%; height: 100%; width: 80%"
+        onpointerup="nextClicked()"
+        onpointerenter="onHover(this)"
+        onpointerleave="onLeave(this)"
+      >
+        Next Video
+      </button>
+    </div>
+  </body>
+  
+As we are now adding and removing a ``hovered`` class to/from the button, we want to add styling to the element for that in the ``head`` tag. Here is a example of how to do that where the colour of the button changes from its default colour to Green when hovered over
+
+.. code-block:: html
+  :emphasize-lines: 2-6
+
+    </script>
+    <style>
+      .hovered {
+        background-color: SpringGreen;
+      }
+    </style>
+  </head>
+
+Before we consider and implement what should happen when the button is clicked, within the ``nextClicked()`` function, we need to first set up the BrightAuthor presentation, which is detailed in the next section.
+
+Creating a BrightAuthor:connected Presentation that can change content
+======================================================================
+
+Setup
+-----
+
+From BrightAuthor:connected, create a new presentation by selecting the **Presentation** dropdown arrow then **New Presentation**. You will be presented with the following screen. Fill out the details as below and click **Start**. Make sure to select **Playlist** in the left sidebar.
+
+.. image:: ../img/brightsign/create/new_project.png
+    :alt: Create new brightsign project
+
+The XC5 series have multiple video outputs, for this demo we only want a single screen. Change the **Screen Count** to 1 and select the portrait orientation.
+
+.. image:: ../img/brightsign/create/xc5_screens.png
+  :alt: Choose single screen for XC5
+
+
+Video
+-----
+
+In the layout tab, make sure the zone fills the entire screen by setting the dimentions in **ZONE Properties**.
+
+.. image:: ../img/brightsign/create/video_zone.png
+  :alt: The zone settings for the video element
+
+In the **Content** tab, the videos can be added to the presentation. Make sure to toggle on the **Interactive** toggle in the top right - this allows us to hook in events from the HTML (and therefore TouchFree) into our presentation.
+
+To import videos into the project, go to the **Library** tab, click **Open** and choose the root directory of your project. Your videos should appear in the bottom tab. For this project the videos need to be 1080x1920 resolution (portrait 1080p). Example videos can be found in the example repository `here <https://github.com/ultraleap/TouchFree-Tooling-Examples/tree/feat/develop/Examples-BrightSign/Interactivity>`_ (Video1.mp4 & Video2.mp4).
+
+Drag videos from the assets tab into the content area then select UDP from the events section above. Clicking on the title of the video object with this selected allows you to assign behaviour when a message is received.
+
+Set a UDP event on Video1 with the settings shown below (pay specific attention to the **Specify UDP Input** and **Target State** settings). Then, do the same for Video2 with the same **UDP Input** but with the target state set to "Video1.mp4".
+
+This setup allows for toggling back and forth between the two videos when the "next-clicked" message is received.
+
+.. image:: ../img/brightsign/create/video_content.png
+  :alt: The content settings for the video zone
+
+HTML
+----
+
+Now to add the HTML to the presentation. Go back to the **Layout** tab, add a new zone in the **Zone** section in the top right and give it the settings shown below.
+
+.. image:: ../img/brightsign/create/html_zone.png
+  :alt: The zone to display the HTML content of the presentation
+
+Then switch to the **Content** tab, add a HTML widget and give it the settings shown below.
+
+.. image:: ../img/brightsign/create/html_content.png
+  :alt: The content for the HTML zone
+
+
+Linking Button Presses to Content Changes
+=========================================
+
+We now have a presentation that will loop through the first video and an HTML page with a button and TouchFree tooling. Now we need to link the button presses to toggling between the videos. To set this up within the HTML code (``TouchFree_Interactivity.html`` from earlier) we need to add the following function to set up sending a UDP message to the BrightAuthor presentation and update the ``nextClicked`` button to send a message
+
+.. code-block:: html
+  :emphasize-lines: 8-19,22
+
+  <head>
+    <script name="TouchFree" type="text/javascript" src="TouchFree_Tooling.js"></script>
+    <script name="TouchFree_Quick_Start" type="text/javascript">
+      window.onload = () => {
+        TouchFree.Init({ initialiseCursor: false });
+      };
+
+      let bsSocket;
+      try {
+        bsSocket = new BSDatagramSocket();
+      } catch {
+        console.error("BrightSign not available");
+      }
+
+      function sendUdpMessage(value) {
+        if (bsSocket) {
+            bsSocket.SendTo("127.0.0.1", "5000", value);
+        }
+      }
+
+      function nextClicked() {
+        sendUdpMessage("next-clicked");
+      }
+      
+Publishing
+==========
+
+At this point we should be able to publish the presentation to the BrightSign media player.
+
+Click the **Publish** button and set the **Type** and **Local Directory** to the desired settings then click **Publish**.
+
+.. image:: ../img/brightsign/create/publish.png
+  :alt: The settings for publishing the presentation
+
+If publishing to a location on the local device, the contents of the published folder can be copied to a blank SD card and inserted into the BrightSign media player. When the media player is restarted, you should see your new, touchless presentation appear on screen.

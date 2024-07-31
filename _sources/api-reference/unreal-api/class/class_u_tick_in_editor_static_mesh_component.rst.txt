@@ -1,0 +1,6 @@
+Class UTickInEditorStaticMeshComponent
+======================================
+
+.. doxygenclass:: UTickInEditorStaticMeshComponent
+   :project: unreal
+   :members:

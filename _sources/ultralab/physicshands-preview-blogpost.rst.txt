@@ -1,0 +1,87 @@
+========================================================
+Physics Hands Now Available in the Unity Preview Package
+========================================================
+
+Physics Hands are a new way of interacting with your objects within Unity, available in our `Unity Preview package <https://openupm.com/packages/com.ultraleap.tracking.preview/>`_. 
+
+With Physics Hands, your hands wrap around objects you touch, attempting to replicate what would happen in the real world. This happens **entirely dynamically at runtime**, being processed by the physics simulation, with **no poses needing to be pre-developed or recorded**.
+
+.. youtube:: dKcaalop0JA
+    :width: 560
+    :height: 315
+
+*Developer Note*
+================
+*While we are still in the development and refinement stages of using Physics Hands, we will be offering them for usage through our Unity Preview package.  We recommend trying them and having a go yourself (they're very fun!) but be warned that they are not fully stable, not fully featured, and are prone to bugs. Physics Hands are reliant on Articulation Bodies which are only available in Unity 2020+ and are therefore not supported in Unity 2019 or earlier.*
+
+Introduction
+============
+In the past we've utilised the Interaction Engine for interacting with objects, which provides a framework of different helpers and tools for interacting within your scene. Physics Hands are a fundamentally different approach where we power the majority of our interactions directly within the Unity physics simulation, with a few small helpers on top.
+
+Coupled with this, we can now support realistic two handed interactions, where you can use the physical force between two hands to move objects around.
+
+.. youtube:: _NLEVeu0H-8
+    :width: 560
+    :height: 315
+
+Getting Started
+===============
+Open up a scene with hand tracking already setup.
+
+Make sure to remove any Interaction Engine scripts from your scene (such as the Manager or Behaviours).
+
+Place the ``PhysicsProvider`` script in your scene.
+
+Assign your standard ``Leap Provider`` to the ``PhysicsProvider``'s ``Input Leap Provider``.
+
+The script will automattically generate the required hands. If you ever need to replace them, or have broken something, press the ``Re-generate Hands`` button.
+
+Re-assign the hands in your scene to have the ``PhysicsProvider`` as their provider.
+
+Note that you will have to do this for both the left and right of each hand pair.
+
+Once you've followed these steps, you can press play and try them out!
+
+The Physics Hands will automatically work with any standard Unity rigidbodies and colliders already present within your scene.
+
+After this you can start adjusting some of the settings and customisations.
+
+Example Scene
+=============
+A simple example scene has been included with the Physics Hands and can be found by going to the Unity Package Manager and importing the Ultraleap Tracking Preview Examples.
+
+.. image:: ../img/ultralab/physicshands.png
+    :alt: A simple scene to show the features included with Physics Hands
+*A simple example scene*
+
+
+This scene is designed to show off different interactions, and the various features included with Physics Hands.
+
+Helpers
+=======
+By default the Physics Hands includes a “Grasp Helper” which, as the name suggests, helps with grasping objects. It works for both large and small objects, but will help with the overall stability of grabs and grasps. They also include an option to interpolate movements when objects are of higher mass to emphasise it's weight, however, this can be individually disabled.
+
+We plan to include further helper functionality in the future to help with other common interactions.
+
+.. list-table::   
+
+   * - .. youtube:: Ip1khhJdQGk
+         :width: 350
+     - .. youtube:: LZiuc6V6dXw 
+         :width: 350
+   * - .. centered:: Without helpers
+     - .. centered:: With helpers
+
+You can by all means turn the helpers off if you do not want to use them, but it is strongly advised to keep them turned on.
+
+Considerations
+==============
+Physics Hands provide a more realistic physics simulation, which in turn introduces significantly higher expectations from the user. If an object does not provide relatively accurate colliders, then the user will instantly notice it. By default, Unity's mesh colliders do not handle concave structures particularly well. We recommend using a plugin such as `Non-Convex Mesh Collider <https://assetstore.unity.com/packages/tools/level-design/non-convex-mesh-collider-automatic-generator-117273>`_ or similar `VHACD <https://github.com/kmammou/v-hacd>`_ implementations.
+
+As the Physics Provider sits in between your data and visuals, we don't recommend using their transforms for logic within your scene. If you wish to bind objects to the hand in your scene, we still recommend using the ``Attachment Hands``, which can have their provider changed to the Physics Provider.
+
+Feedback
+========
+As this is an early preview, we would love all your feedback (both good and bad!). Please reach out to us via our `Github Discussions <https://github.com/ultraleap/UnityPlugin/discussions>`_.
+
+Want to stay in the loop on the latest Ultraleap updates? Sign up to our newsletter `here. <https://www.ultraleap.com/newsletter-sign-up>`_

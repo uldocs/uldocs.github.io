@@ -1,0 +1,163 @@
+
+:hide-toc:
+
+*************
+Hand Controls
+*************
+
+.. image:: ../../img/xr-guidelines/recommended.png
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-hand-panel.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+Hand controls are a convenient way to access features quickly by attaching UI components or information such as task lists close to users' hands. 
+
+When you anchor a small set of controls  to the palm, side of the hand or wrist, users can access them more easily because they have a better sense of where it is in space relative to their own hand. It also allows the features to be accessed easily at any time, while still being hidden when the user is interacting with objects. 
+
+Hand panel
+##########
+
+A hand panel is a small UI panel which appears attached to a users' hand when they raise it into view. It can be used to link to frequently used features as a shortcut menu, access frequently used controls or a way for users to quickly glance at information like a checklist or stats bar in a video game. 
+
+Activating
+##########
+
+Ultraleap recommend hand panels are activated by simply turning the palm to face upwards. Activating the panel in this way is quick and easy for commonly used features. Turning the wrist works well for occasional use, but developers should be careful not to use this for features which are required constantly, or risk discomfort for some users. 
+
+This turning action needs to be taught, but requires little more than to draw user attention - either with a `simple hint <https://docs.ultraleap.com/xr-guidelines/Getting%20started/tutorials_hints_tip.html>`_, or a small arrow positioned around the wrist. 
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Arrow.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+
+Top tips
+########
+
+* Use hand menus for features users need to access quickly and frequently
+* Make sure the visual design of the menu stands out from the virtual environment. It should contrast well and all text labels should be clearly legible.
+* Use only a handful of controls and a small panel area. Hand panels begin to feel cumbersome and difficult to use when they get too big. 
+* Consider allowing users to change which hand the panel is anchored to in settings, or alternatively display it on either hand, depending on which one is turned.
+
+-----------------------
+
+Hand panel examples
+###################
+
+Hand panels are versatile and can support a small number of key features for a wide range of VR applications. Some examples include:
+
+* A checklist of user tasks for a training application
+* A small collection of frequently used controls - such as Undo, Clear and Brush Size - for a drawing application
+* Access to other menus and UI panels at any time for an enterprise application such as interior design larger UI panels can be activated using controls on the hand panel.
+
+Task lists
+##########
+
+When users turn their palm upwards, a check-list appears next to the hand showing the remaining tasks they need to complete. Having the information appear without the user needing to perform another button press works well in this experience because users need to quickly and frequently check what tasks they have left to complete, and as the list is not interactive, users can’t accidentally activate it. 
+
+This type of panel works well in training applications and games.
+
+----------------------
+
+Palm button
+###########
+
+A palm button which appears next to, or on the palm of the the non-dominant hand can be pressed with the other hand. When the button is pressed it opens a `UI panel <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_. This is good for experiences which need a larger menu system but don’t need it open all of the time. 
+
+When using a button on the palm, when the button is pressed, the user’s fingers should touch their opposite hand, giving tactile feedback which gives users extra confidence the button has been pressed.
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Palm-Button-Next.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Palm-Button.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+-------------------------
+ 
+Multiple buttons 
+################
+
+In this example, three main buttons toggle on and off three sub-sections of other controls, which allows users to access a greater selection of features without enlarging the panel. 
+
+It’s best not to include too many buttons in a hand menu as when it gets crowded users can find it difficult to select them accurately. 
+
+Additionally, any arrangment of UI components in the hand panel should be arranged in a grid for most applications, rather than say, following the curve of the hand. This ensures the controls remain easy to quickly read and understand.
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Multiple-Buttons.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+---------------------
+
+Menus
+#####
+
+Hand panels can be turned into menus that allow you to access more features when needed. This is limited by the need to keep buttons at 2cm across or more, and to avoid making the panel size too large.
+
+Large panels can feel cumbersome and unweildly to users. If you require a larger set of controls, instead consider a `UI panel <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_ which sits in the environment.
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Menus.gif
+    :alt: Image of hands in virtual reality turning to activate a menu
+
+-----------------------------------
+
+Draggable elements
+##################
+
+In this variation, users can pinch to pickup elements on the panel in a similar way to small virtual objects. They can then drag them into the environment before releasing the pinch pose to activate features at a chosen spot, or to place a `UI panel <https://docs.ultraleap.com/xr-guidelines/Components/ui-panels.html>`_.
+
+Menu items should appear as small objects that look like they can be picked up, as opposed to flat elements. 
+
+Once an item has been dragged off the hand panel, ensure the spot where it came from on the hand is clearly empty or different visually. This greatly helps users track which items are still on the hand, and which have been moved to the environment.
+
+Items positioned in the environment can be pushed (acting like a `button <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_) to return them to the hand menu, or dragged back instead.
+
+`Anchors <https://docs.ultraleap.com/unity-api/The-Examples/XR/anchors.html>`_ are the tooling which enable most of this functionality. Available in Ultraleap’s Unity and Unreal plugins.
+
+.. image:: ../../img/xr-guidelines/hand-controls/Hand-Controls-Draggable-Elements.gif
+    :alt: Image of hands in virtual reality dragging elements on a menu
+
+
+--------
+
+Want to learn more about implementing these features in the game engine of your choice? Check out the implementation guides:
+
+.. panels::
+    :container: container-md
+    :column: col-sm-6 p-1 text-center
+
+    .. figure:: ../../img/unity-api/unity-logo.png
+        :width: 20%
+	
+    .. link-button:: ../../xr-and-tabletop/xr/unity/plugin/features/3D-ui-interactions.html
+        :text: Unity Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+    ---
+    .. figure:: ../../img/unreal-api/unreal-logo.png
+        :width: 20%
+
+    .. link-button:: ../../xr-and-tabletop/xr/unreal/plugin/features/UI-input-modules.html
+        :text: Unreal Implementation
+        :classes: btn-outline-primary btn-block stretched-link
+	
+..    Unavailable
+
+-------------------
+
+Getting Started
+###############
+
+Get started with Hand Panels using our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_. 
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources
+#################
+
+**Unity**
+
+* Example Scene: `Hand Menu <https://docs.ultraleap.com/unity-api/The-Examples/XR/hand-ui.html>`_ - ``/XR Examples/2 Interactions/3. Hand Menu``
+
+**Unreal**
+
+* Documentation: `Interaction Engine <https://docs.ultraleap.com/unreal-api/unreal-guide/interaction-engine.html>`_
+* Example Scene: Dynamic UI - ``/UltraleapTracking Content/InteractionEngine/ExampleScenes/Dynamic UI``

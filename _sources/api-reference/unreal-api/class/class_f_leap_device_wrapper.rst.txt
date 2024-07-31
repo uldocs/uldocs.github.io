@@ -1,0 +1,6 @@
+Class FLeapDeviceWrapper
+========================
+
+.. doxygenclass:: FLeapDeviceWrapper
+   :project: unreal
+   :members:

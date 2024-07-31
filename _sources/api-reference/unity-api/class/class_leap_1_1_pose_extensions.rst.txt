@@ -1,0 +1,6 @@
+Class Leap::PoseExtensions
+==========================
+
+.. doxygenclass:: Leap::PoseExtensions
+   :project: unity
+   :members: 

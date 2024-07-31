@@ -1,0 +1,100 @@
+*****************************************
+Hand Attachments
+*****************************************
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> Attachment hands allow you to attach objects to any part of your hand. This is great for <a HREF=3D-ui-interactions.html>hand ui</a> and inventories.</p>
+        <p> Attachment hands work well with any other hands that you have in the scene as they are invisible under regular conditions.</p>
+     </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+.. note:: Sample scene can be found in:
+
+* Assets/Samples/Ultraleap Tracking/x.x.x/XR Examples/1. Basics/2. Attachment Hands.unity
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Quick Start with attachment hands
+---------------------
+
+    For this example, we assume that you have just finished the :doc:`Your First Project Guide<../../getting-started/your-first-project>`.
+
+
+1. Add attachment hands to your scene from the toolbar menu. This can be found in :code:`Ultraleap > Hands > Attachment Hands`.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-hands-toolbar.png
+    :width: 60%
+    :align: center
+
+2. Click on the new Attachment Hands item in the Hierarchy. This will have a script called :cs:class:`Attachment Hands <Leap.Attachments.AttachmentHands>`. In the Attachment Transforms section, you can select which joints you would like to use. For this example, we will just use the palm as it is the best place to anchor hand attached UI.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-transforms-palm.png
+    :width: 60%
+    :align: center
+
+3. If you drop down the left attachment hand fully in the hierarchy, you should see this (replace "Palm" with your chosen joint).
+
+    You may delete the 3 capsules and the Example Transform highlighted in the image below. They are there to show you where the attachment will be.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-hands-base-hierarchy.png
+    :width: 60%
+    :align: center
+
+4. Attach your items as a children of the palm object. This will attach your object to the palm as shown below. If you play your scene now, the object will be attached to your hand and will move whenever you move your hands.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/object-attached-to-hand.png
+    :width: 60%
+    :align: center
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Other Great Uses for Hand Attachments
+---------------------
+
+If you want to see what else you can do by attaching objects to your hands, check out the guides below!
+
+.. panels::
+    :container: container-lg pb-2
+    :column: col-sm-6 p-1
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-hand-ui.png
+	
+    .. link-button:: ./3D-ui-interactions.html
+        :text: 3D UI Interactions
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Attachment hands UI is a great way to keep UI at your fingertips at all times.
+    ---
+
+    .. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/hand-anchors-scene.png
+
+    .. link-button:: ./anchoring-objects.html
+        :text: Anchoring Objects
+        :classes: btn-outline-primary btn-block stretched-link
+
+    Anchoring Objects allows you to have objects you can place with the player and out in your virtual world.
+
+

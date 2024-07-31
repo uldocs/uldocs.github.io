@@ -1,0 +1,6 @@
+Class Leap::HandsModule::BoneNameDefinitions
+============================================
+
+.. doxygenclass:: Leap::HandsModule::BoneNameDefinitions
+   :project: unity
+   :members: 

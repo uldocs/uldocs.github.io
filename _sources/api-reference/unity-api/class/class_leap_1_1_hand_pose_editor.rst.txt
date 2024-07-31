@@ -1,0 +1,6 @@
+Class Leap::HandPoseEditor
+==========================
+
+.. doxygenclass:: Leap::HandPoseEditor
+   :project: unity
+   :members: 

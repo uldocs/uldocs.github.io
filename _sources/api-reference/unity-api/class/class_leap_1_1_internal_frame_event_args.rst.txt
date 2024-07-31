@@ -1,0 +1,6 @@
+Class Leap::InternalFrameEventArgs
+==================================
+
+.. doxygenclass:: Leap::InternalFrameEventArgs
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class FLeapUtility
+==================
+
+.. doxygenclass:: FLeapUtility
+   :project: unreal
+   :members:

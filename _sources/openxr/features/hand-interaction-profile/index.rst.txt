@@ -1,0 +1,71 @@
+Hand Interaction Profile
+*********
+
+Chose the desired configuration option below to see the **key-value** pairs and their options:
+
+.. tabbed:: Configuration File
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``feature_hand_interaction``
+          - ``BOOL``
+          - where ``BOOL`` is a boolean describing the active state of the feature. Options are ``true`` and ``false``
+          - ``true``
+
+.. tabbed:: Environment Variables
+
+    .. list-table::
+        :widths: 25 25 25 25
+        :header-rows: 1
+        :align: center
+
+        * - Keys
+          - Values
+          - Details
+          - Defaults
+        * - ``ULTRALEAP_OPENXR_FEATURE_HAND_INTERACTION``
+          - ``BOOL``
+          - where ``BOOL`` is a boolean describing the active state of the feature. Options are ``true`` and ``false``
+          - ``true``
+
+What does it do?
+-----------
+
+This feature enables support for the `XR_MSFT_hand_interaction <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_MSFT_hand_interaction>`_
+vendor extension and if supported by the underlying runtime, the full extension 
+`XR_EXT_hand_interaction <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_hand_interaction>`_.
+
+These extensions add a new interaction profile for OpenXR's `Action System <https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#input>`_
+supplying first class support for hands as a driver for actions.
+
+Below are all the component paths that as a developer you will have access to if using OpenXR directly:
+
+* ``…/input/aim/pose``
+* ``…/input/grip/pose``
+* ``…/input/pinch_ext/pose`` *
+* ``…/input/poke_ext/pose`` *
+* ``…/input/select/value``
+* ``…/input/squeeze/value``
+* ``…/input/pinch_ext/value`` *
+* ``…/input/pinch_ext/ready_ext`` *
+* ``…/input/aim_activate_ext/value`` *
+* ``…/input/aim_activate_ext/ready_ext`` *
+* ``…/input/grasp_ext/value`` *
+* ``…/input/grasp_ext/ready_ext`` *
+
+.. note::
+  Those with an ``*`` are only supplied if the full extension is supported by the underlying runtime.
+
+
+Engines that support above extensions will often have abstractions over the OpenXR implementation to fit in
+with their native input system. Unity has a very fleshed out implementation of this via their 
+`OpenXR Plugin <https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.8/manual/features/handinteractionprofile.html>`_
+
+`Back to top <#top>`_

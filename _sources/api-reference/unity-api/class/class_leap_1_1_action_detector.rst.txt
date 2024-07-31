@@ -1,0 +1,6 @@
+Class Leap::ActionDetector
+==========================
+
+.. doxygenclass:: Leap::ActionDetector
+   :project: unity
+   :members: 

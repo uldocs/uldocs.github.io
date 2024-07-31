@@ -1,0 +1,6 @@
+Namespace Leap::InputActions
+============================
+
+.. doxygennamespace:: Leap::InputActions
+   :project: unity
+   :no-link: 

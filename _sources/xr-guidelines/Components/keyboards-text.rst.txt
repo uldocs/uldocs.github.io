@@ -1,0 +1,145 @@
+:hide-toc:
+
+************************
+Keyboards and text entry
+************************
+
+.. image:: ../../img/xr-guidelines/Research-in-progress.jpg
+
+.. youtube:: lvlYmjyOeEc
+    :width: 560
+    :height: 315
+
+Hand tracking and VR keyboards
+############################
+
+When we type in real life, we use our hands - either typing up an essay on a PC or texting someone on our phones. Typing with our hands tends to be a high precision activity which feels most natural when using our hands, as opposed to clutching controllers, which can be bulky and cumbersome when used together with a VR keyboard. 
+
+Whilst long form text entry (typing up articles, writing essays, developing applications) hasn’t yet been solved in VR, Ultraleap can recommend a solution suitable for short form text entry such as emails, passwords and search terms.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-qwerty.png
+    :alt: The Ultraleap hand tracking keyboard
+
+Qwerty keyboard
+###############
+
+Entering text, especially sensitive, precise strings such as passwords and usernames can be a stressful situation - it’s essential to provide keys that feel great to use and work reliably. You should be able to turn your finger movements into text with minimal effort and frustration.
+
+Ultraleap recommend a qwerty keyboard component made up of the same `Buttons <https://docs.ultraleap.com/xr-guidelines/Components/ui-components.html>`_ which work so well on UI panels - three dimensional elements which are raised off the keyboard surface, and which depress when pressed with the fingers - combined with `direct interaction <https://docs.ultraleap.com/xr-guidelines/Interactions/direct_and_distant_interaction_mode.html>`_. This requires little thought to use and tends to be intuitive for most users.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-button.gif
+    :alt: The Ultraleap hand tracking keyboard button component
+
+
+Whilst new and novel keyboard designs may deliver faster words per minute rates than a qwerty keyboard, they require a great deal of learning and practice from users. The familiarity of a qwerty keyboard helps new users get to grips with it very quickly, and means fewer errors and frustrations.
+
+When to use the keyboard
+########################
+
+* Search terms
+* Usernames
+* Passwords 
+
+Activation 
+##########
+
+Ultraleap recommend the following as default spawn positions for a keyboard:
+
+* A default pitch rotation of 35 degrees
+* An initial spawn position of 40cm away from the user 38.5cm below their head, space allowing.
+
+When spawning in the keyboard, rotate it to be facing the player. This enables the user to quickly interact with it without needing to think about how to angle themselves to get to it.
+
+Repositioning and angling the keyboard
+######################################
+
+As with UI panels, users should be able to reposition the keyboard any time they want - they must be able to reach every button comfortably, without fully extending their arm. This is essential to cater for a wide range of users and their respective body types and sizes.
+
+Ultraleap prototypes currently use micro-handles which can be grabbed and used to move or angle the keyboard into the desired position. These are small, round shapes which looks like they can be grabbed easily with the fingers of one hand.
+
+Ultraleap prototypes currently use one handle at tge keyboard base used for repositioning, and two others in the top left and right corners, used for angling.
+
+* When being moved, the keyboard should be kept facing the user, but should maintain its rotation and position when typing - moving the keyboard whilst interacting with it can cause typos & break a user’s flow.
+* The roll of the keyboard should be locked so that the keyboard is always aligned to the horizon.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-adjusting-keyboard-position-and-rotation.gif
+    :alt: Adjusting keyboard position and rotation
+
+
+Using the keyboard with a UI panel
+##################################
+
+When interacting with a UI panel - for example for password entry - it is important to position the keyboard in a manner which can help guide the user towards the UI they are actively engaged with, by keeping both it and the keyboard in their vision.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-keyboard-with-ui-panel.gif
+    :alt: Aligning the keyboard with the UI
+
+If the user is interacting with a UI panel immediately in front of them, align the keyboard with the UI and ensure its set height does not obscure any of the panel content.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-position-relative-to-ui.gif
+    :alt: Positioning the keyboard relative to the UI
+
+If the user is interacting with a UI panel which isn’t immediately in front of them, position the keyboard along a vector between the player’s position and the UI panel they’re interacting with. 
+
+Button design
+#############
+
+The most important part of a keyboard is the keys themselves - their size and make-up not only dictates how large the overall keyboard will be, but is also the largest contributing factor to how usable your keyboard will be.  
+
+For keyboards, Ultraleap recommend keys of **4cm x 4cm** size, with a **0.5cm** gap between each key. These values provide a large key area to minimise typos, but small enough to stop the keyboard from taking up too much space. If you’re using the `XR Keyboard preview <https://github.com/ultraleap/XR-Keyboard>`_, these are all quickly changeable in the UI Keyboard Resizer.
+
+In order to ensure a user can easily locate, press and be confident that they’ve pressed a button, feedback is incredibly important. This can be done through both the visuals and the audio. 
+
+Ultraleap recommends changing the key’s colour or tone when a finger is in close proximity - for example to a slightly lighter shade.  Having a distinct ‘hover' state helps signal to the user both that the key can be interacted with, and that their fingers are in the right position to do so.
+
+Ultraleap recommend changing the button’s tone or colour again on key down. Doing this ensures that the user knows when the key is pressed, and subsequently when it has been unpressed (as it will return to its default state). 
+
+To help reinforce this feedback, Ultraleap also recommend having separate audio effects for keydown and keyup.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-button-feedback.gif
+    :alt: Keyboard button feedback
+
+There are optional extra components in a qwerty keyboard which are separate to the main panel - numbers and accented characters.
+
+Number rows and pads
+####################
+
+If required, Ultraleap recommend using a number row, over a separate number pad. Number pads add a lot of extra width to a keyboard and can become uncomfortable to reach for some users. Number rows are more space-efficient and easier to reach.
+
+.. image:: ../../img/xr-guidelines/keyboards-and-text-entry/Keyboard-number-row.gif
+    :alt: Keyboard number row in use
+
+Accented characters
+###################
+
+If required, Ultraleap recommend accented characters appearing on a long-press of a key - this provides a quick and logical way to summon the accent panel. However, it must be taught to users in order for them to discover it, for which Ultraleap recommend a simple hint or keyboard tutorial in a help panel.
+
+Accented characters appearing adjacent to the selected key provides minimal context switching for the user and reduces the movement required to select the accented character
+
+Ultraleap then recommend that the accented characters disappear on the next keypress after becoming active, or when the 'x' button is pressed - giving the user confidence & speed. In addition to this, it also helps to make the characters disappear after 10 seconds, for scenarios where they may have been accidentally summoned.
+
+.. youtube:: oM3rRoHHiZI
+    :width: 560
+    :height: 315
+
+Getting Started
+###############
+
+Get started with text input using our XR plugins for `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_. A keyboard is provided as part of `Ultraleap Unreal Plugin <https://leap2.ultraleap.com/xr-developer-tools/>`_. An `experimental XR Keyboard Repo <https://github.com/ultraleap/XR-Keyboard>`_ is available for Unity Developers to download and use. It uses the Ultraleap Unity Plugin. 
+
+`Download XR development plugins <https://leap2.ultraleap.com/xr-developer-tools/>`_
+
+Related Resources
+#################
+
+**Unity**
+
+* Blog: `How To Use Our XR Keyboard For Unity <https://docs.ultraleap.com/ultralab/xr-keyboard.html>`_
+* Git Repo: `XR Keyboard <https://github.com/ultraleap/XR-Keyboard>`_
+
+**Unreal**
+
+* Documentation: `Interaction Engine <https://docs.ultraleap.com/unreal-api/unreal-guide/interaction-engine.html>`_
+* Example Scene: Virtual Keyboard - ``/UltraleapTracking Content/InteractionEngine/ExampleScenes/VirtualKeyboardScene``
+
+ 

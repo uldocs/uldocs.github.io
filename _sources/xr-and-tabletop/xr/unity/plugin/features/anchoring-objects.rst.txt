@@ -1,0 +1,114 @@
+***********************************
+Anchoring Objects
+***********************************
+
+.. |AnchorableBehaviour| replace:: :cs:class:`AnchorableBehaviour <Leap.AnchorableBehaviour>`
+.. |Anchor| replace:: :cs:class:`Anchor <Leap.Anchor>`
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+        <p> The Ultraleap plugin provides a couple of scripts that allow the anchoring of objects to both the hands and to other places in the world. This is great for <a HREF=./3D-ui-interactions.html>Dynamic UI</a>.</p>
+        <p> This page will briefly describe how to use attachment hands but for a better look at what you can do with hand attachments, check out the <a HREF=hand-attachments.html>Hand Attachments page</a>. </p>
+    </div>
+    <div class="image">
+      <video width="320" height="240" controls style="padding:5%;">
+        <source src="../../../../../_video/unity-user-manual/video-coming-soon.mp4" type="video/mp4">
+    </div>
+  </div>
+
+
+.. note:: Sample scene can be found in:
+
+  * Assets/Samples/Ultraleap Tracking/VERSION/XR Examples/2. Interactions/4. Anchors.unity
+
+.. _getting_starter_with_anchoring_objects:
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Getting started with anchoring objects
+-----------------------------------------------
+
+.. note:: For this example, we assume that you have set up a scene to interact with 3D objects as is described in :doc:`How to interact directly with objects in XR<./physical-hands>`. And have an understanding of :doc:`Hand Attachments<./hand-attachments>`.
+
+
+1. First add an :cs:class:`Anchorable Object <Leap.AnchorableBehaviour>` and an :cs:class:`Anchor <Leap.Anchor>` to the scene from the toolbar menu. These can be found in :code:`Ultraleap > Physical Interaction > Anchor / Anchorable Object`.
+
+2. Place Both the anchor and the :cs:class:`Anchorable Object <Leap.AnchorableBehaviour>` within reach in your scene. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/anchor-in-the-world.png
+    :width: 60%
+    :align: center
+
+3. Press play on the scene and you will be able to pick up the :cs:class:`Anchorable Object <Leap.AnchorableBehaviour>` and attach it to the anchor you placed in the world by moving the :cs:class:`Anchorable Object <Leap.AnchorableBehaviour>` close to the anchor before letting go. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attached-in-world-object.png
+    :width: 60%
+    :align: center
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Anchoring objects to your hands
+-----------------------------------------------
+
+1. Assuming you have followed the Getting started with anchoring objects section above, you will now need to add a set of attachment hands to the scene.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/import-attachment-hands.png
+    :width: 60%
+    :align: center
+
+2. As explained in :doc:`Hand Attachments<./hand-attachments>`, we will disable all attachment transforms of the attachment hand we do not want. For this example, we will be leaving the palm attachment only. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-transforms-palm.png
+    :width: 60%
+    :align: center
+
+3. Child the :cs:class:`Anchor <Leap.Anchor>` underneath the palm. Your hierarchy should look similar to the one below.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attachment-object-hierarchy.png
+    :width: 60%
+    :align: center
+
+4. If you set the :cs:class:`Anchor <Leap.Anchor>`'s position to 0,0,0 in the inspector, the anchor will be set in the centre of the hand. You can move this to a position anywhere around the hand. We will move it to the pinky finger side of the palm.
+
+.. note:: This anchor is now attached to the palm and will move and turn with the parent hand. We have found that the pinky side of the palm is the best place to place objects for easy interactions.
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/anchor-to-side-of-hand.png
+    :width: 70%
+    :align: center
+
+5. Press play on the scene and you will be able to pick up the :cs:class:`Anchorable Object <Leap.AnchorableBehaviour>` and attach it to the :cs:class:`Anchor <Leap.Anchor>` on your hand by moving it close before letting go. 
+
+.. figure:: ../../../../../img/xr-and-tabletop/XR/Unity/Plugin/Features/attached-to-hand-object.png
+    :width: 60%
+    :align: center
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Whats next?
+-----------------------------------------------
+
+Now you know how to anchor object in the world and in the players' hand. You can use as many :cs:class:`Anchors <Leap.Anchor>` and :cs:class:`Anchorable Objects <Leap.AnchorableBehaviour>` in your world as you would like but we recommend using up to 4 on the players hand.
+
+These objects can be used for many things such as inventories and even dynamic UIs for the player to carry around with them. Check out the :doc:`Dynamic UI page<./3D-ui-interactions>`.
+
+If you are looking for a little more customization for the :cs:class:`Anchor <Leap.Anchor>` and :cs:class:`Anchorable Behaviour <Leap.AnchorableBehaviour>`, check out the references here: :cs:class:`Anchorable Behaviour <Leap.AnchorableBehaviour>` and :cs:class:`Anchor <Leap.Anchor>`

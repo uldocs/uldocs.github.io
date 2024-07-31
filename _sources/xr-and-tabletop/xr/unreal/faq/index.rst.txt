@@ -1,0 +1,98 @@
+:hide-toc:
+
+*********
+Frequently Asked Questions
+*********
+
+Below is a collection of some of the most common questions we get and their answers.
+
+.. dropdown:: I've added the plugin to the plugins folder of my project and it says ``'ProjectName' cannot be compiled``. What do I do?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    This is a quirk of Unreal projects that don't have any C++ code in them
+    (blueprint only projects). To rebuild the ``Ultraleap Tracking plugin``, the
+    project must be converted to a C++ project. 
+    
+    To convert the project:
+
+    1.  Rename the ``Plugins`` folder to ``Plugin`` to prevent it being used on loading the project.
+    2.  Open your project (`.uproject`) file.
+    3.  Go to ``File->New C++ class`` and add an ``Empty C++ class`` to the project with any name.
+    4.  Now, exit your project, rename the ``Plugin`` folder back to ``Plugins``.
+    5.  Right click on your project `.uproject` file and choose ``Generate Visual Studio Project Files``
+    6.  Open the generated solution (`.sln`) and build it.
+    7.  You'll now be able to open your `.uproject` file and edit it as normal.
+
+
+.. dropdown:: How do I set up the hand meshes so that the fingers collide with other objects in the scene?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    Create a ``Physics Asset`` on the hand mesh. Unreal have a guide on how to do this:
+    `Skeletal Mesh Actors \| Unreal Engine
+    Documentation <https://docs.unrealengine.com/4.26/en-US/Basics/Actors/SkeletalMeshActors/>`__.
+    See the ``Collision`` section for details.
+
+.. dropdown:: How do I modify a single joint/bone that has been mapped slightly wrongly?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    In the ``anim graph`` of your ``anim blueprint``, drag a connection out of the
+    ``Ultraleap Modify Mapped Bones`` node and add a ``Transform (Modify)
+    bone`` node. Now edit the ``Transform`` node settings to change
+    whichever bone you want to modify in the skeleton.
+
+    .. image:: ../../../../img/xr-and-tabletop/XR/Unreal/faq/faq1.png
+        :width: 100%
+        :height: 200
+
+.. dropdown:: How do I clear a bone mapping back to ``none`` in the details view?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    Go to the ``Edit Defaults`` tab and click the yellow reset arrow next to
+    the bone you want to reset.
+
+    .. image:: ../../../../img/xr-and-tabletop/XR/Unreal/faq/faq2.png
+        :width: 100%
+        :height: 200
+
+.. dropdown:: Why don't the different hand meshes line up perfectly?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    This is due to differences in each imported rigged model and whether or
+    not metacarpal joints are included/mapped.
+
+.. dropdown:: How do I make my ring finger and little/pinky finger collide with objects in the scene?
+    :title: bg-dropdown-header text-center font-weight-bold
+    :body: bg-dropdown-primary text-left
+    :container: bg-dropdown-header m-1
+
+    By default, the ``Interaction Engine Pawn`` has collisions turned off for
+    these fingers to prevent accidentally hitting buttons/objects. To enable
+    collisions the ``Physics asset`` for the left and right hands must be
+    modified.
+
+    1.  Open the ``IELowPloy_Rigged_Hand_Left_Physics`` asset from ``InteractionEngine/Pawn/IELowPoly_Rigged_Hand_Left_Physics.uasset``.
+
+    .. image:: ../../../../img/xr-and-tabletop/XR/Unreal/faq/faq3.png
+
+    2.  Ctrl/Multi-Select all the joints for the Ring and Pinky fingers.
+
+    .. image:: ../../../../img/xr-and-tabletop/XR/Unreal/faq/faq4.png
+
+    3.  Set the Collision Response to ``Enabled``.
+    4.  Repeat for the ``IELowPloy_Rigged_Hand_Right_Physics`` asset.
+
+    In addition, if you want to enable the smaller fingers so that they can
+    push buttons, edit the ``IEButtonGrabComponent`` ``Disabled Bones`` list
+    and remove ``Pinky`` and ``Ring``.
+
+    .. image:: ../../../../img/xr-and-tabletop/XR/Unreal/faq/faq5.png

@@ -1,0 +1,6 @@
+Class Leap::Attributes::EditTimeOnly
+====================================
+
+.. doxygenclass:: Leap::Attributes::EditTimeOnly
+   :project: unity
+   :members: 

@@ -1,0 +1,6 @@
+Class FUltraleapTrackingEditorModule
+====================================
+
+.. doxygenclass:: FUltraleapTrackingEditorModule
+   :project: unreal
+   :members:

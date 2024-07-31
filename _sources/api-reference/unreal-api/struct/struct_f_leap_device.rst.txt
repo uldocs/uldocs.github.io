@@ -1,0 +1,6 @@
+Struct FLeapDevice
+==================
+
+.. doxygenstruct:: FLeapDevice
+   :project: unreal
+   :members:

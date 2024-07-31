@@ -1,0 +1,6 @@
+Class Leap::HeadPoseEventArgs
+=============================
+
+.. doxygenclass:: Leap::HeadPoseEventArgs
+   :project: unity
+   :members: 

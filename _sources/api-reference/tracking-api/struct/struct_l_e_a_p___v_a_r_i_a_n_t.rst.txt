@@ -1,0 +1,6 @@
+Struct LEAP_VARIANT
+===================
+
+.. doxygenstruct:: LEAP_VARIANT
+   :project: tracking
+   :members:

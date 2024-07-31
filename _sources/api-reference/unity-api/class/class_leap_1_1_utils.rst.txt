@@ -1,0 +1,6 @@
+Class Leap::Utils
+=================
+
+.. doxygenclass:: Leap::Utils
+   :project: unity
+   :members: 

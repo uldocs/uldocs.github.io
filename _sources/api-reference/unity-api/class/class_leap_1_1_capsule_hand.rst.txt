@@ -1,0 +1,6 @@
+Class Leap::CapsuleHand
+=======================
+
+.. doxygenclass:: Leap::CapsuleHand
+   :project: unity
+   :members: 

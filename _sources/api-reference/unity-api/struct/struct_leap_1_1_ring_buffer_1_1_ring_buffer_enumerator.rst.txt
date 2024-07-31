@@ -1,0 +1,6 @@
+Struct Leap::RingBuffer::RingBufferEnumerator
+=============================================
+
+.. doxygenstruct:: Leap::RingBuffer::RingBufferEnumerator
+   :project: unity
+   :members: 

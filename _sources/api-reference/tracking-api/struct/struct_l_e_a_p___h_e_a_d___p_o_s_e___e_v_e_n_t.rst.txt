@@ -1,0 +1,6 @@
+Struct LEAP_HEAD_POSE_EVENT
+===========================
+
+.. doxygenstruct:: LEAP_HEAD_POSE_EVENT
+   :project: tracking
+   :members:

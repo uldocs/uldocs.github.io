@@ -1,0 +1,136 @@
+Configuration
+*********
+
+.. raw:: html
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+    }
+	
+    .text {
+      flex: 1;
+    }
+    
+    .image {
+      text-align: right;
+      margin: 5px;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 200px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text">
+      <p>
+      Our OpenXR layer comes with a number of configurable options and feature flags to allow more fine control over the layer itself.
+      This can leveraged in two ways, either through using a <a href="./index.html#configuration-file">configuration file (recommended)</a> 
+      or through the use of <a href="./index.html#id10">environment variables</a>.
+      <br/><br/>
+      Use the buttons below to be taken to the desired section:
+	  </p>
+    </div>
+    <div class="image">
+      <img src="../../_images/openxr.png" alt="The OpenXR Logo" width="200">
+    </div>
+  </div>
+  <div align="center">
+    <a class="btn text-wrap btn-outline-primary" href="./index.html#configuration-file">Configuration File</a>
+    <a class="btn text-wrap btn-outline-primary" href="./index.html#id10">Environment Variables</a>
+  </div>
+  <div class="text">
+    <p>
+    Once you've set up your preferred method of configuration the table below shows all the layer's configurable options.
+    These same methods are also used to set any <a href="../features/index.html">feature flags</a> you may want to use.
+    </p>
+  </div>
+
+.. toctree::
+  :maxdepth: 1
+  
+  Tracker Mounting <tracker-mounting/index.rst>
+  Logging <logging/index.rst>
+  Disabling the Layer <disabling-the-layer/index.rst>
+
+------------------
+
+Configuration File
+-----------
+
+All of the layer's configurable options (including `feature flags <../features/index.html>`_) can be set using key value pairs in `JSON <https://en.wikipedia.org/wiki/JSON>`_.
+
+.. Note::
+  This is the recommended way of setting any configurations, as this file is parsed every time an application using our layer is started. 
+  This differs to `environment variables <./index.html#id10>`_ as these are only updated when you close and reopen your OpenXR program. 
+
+  For example, if developing in Unity and using `environment variables <./index.html#id10>`_, you would be required to close and reopen Unity every time you made a configuration change.
+  Where as with the `configuration file <./index.html#configuration-file>`_ this isn't necessary.
+
+Firstly, navigate to the appropriate path for your operating system below:
+
+* Windows:
+   * ``%PROGRAMDATA%\Ultraleap\OpenXR``
+* Linux:
+   * System-wide: ``/etc/ultraleap``
+   * Per-user: ``~/.config/ultraleap`` (Overrides System-wide configuration if present)
+
+Then create a new file in that directory called ``api_layer_config.json`` and open it up.
+
+Additions to the file should be done in a key-value pair format where the key is the configurable variable and the value is the desired setting:
+::
+  {
+    "CONFIG_KEY1_STRING": "HelloWorld",
+    "CONFIG_KEY2_BOOL": false,
+    "CONFIG_KEY3_VECTOR": [1,2,3]
+  }
+
+Below is a simple example of the configuration file to get you started. 
+It sets `logging level <./logging/index.html>`_ to ``warn``, and the `tracker offset <./tracker-mounting/index.html>`_ to **8cm** forward from the midpoint of your interpupillary distance with no tilt:
+
+::
+
+  {
+    "log_level": "warn",
+    "pos": [0, 0, -0.08],
+    "tilt_angle": 0
+  }
+
+.. note::
+  If you're making use of both the `configuration file <./index.html#configuration-file>`_ and `environment variables <./index.html#id10>`_
+  then `environment variables <./index.html#id10>`_ override their `configuration file <./index.html#configuration-file>`_ counterpart. 
+
+  If you run into a scenario where the `configuration file <./index.html#configuration-file>`_ isn't working, double check your `environment variables <./index.html#id10>`_!
+
+.. note::
+  JSON can be picky with its syntax and prone to mistakes, it's always good practice to run your file through a `JSON validator <https://jsonlint.com/>` to ensure it is error-free.
+
+More information regarding both of these configuration options, and all other possible additions to the configuration file can be found under the `configuration <./index.html#configuration>`_ and `features <../features/index.html>`_ sections.
+
+`Back to top <#top>`_
+
+
+Environment Variables
+-----------
+
+Any of the configuration options can also be set using environment variables. If set, these **override** the values from the 
+configuration file.
+
+.. note::
+  These environment variables must be set prior to the OpenXR application starting, and if left unset first fall back to the 
+  `configuration file <./index.html#configuration-file>`_ settings and then default values failing that.
+
+Environment variable keys for our layer are fully upper-case and prefixed with ``ULTRALEAP_OPENXR_``.
+
+For example, the key ``tilt_angle`` from `tracker mounting <./tracker-mounting/index.html>`_'s equivalent environment variable is ``ULTRALEAP_OPENXR_TILT_ANGLE``.
+
+.. note::
+  The environment variable key-value pairs are the same on all platforms.
+
+To see what options you can configure with environment variables check out the `table above <./index.html#configuration>`_ for configuration options
+or head over to the `features page <../features/index.html>`_.
+
+`Back to top <#top>`_

@@ -1,0 +1,6 @@
+Class FUltraleapLeapCustomDetailsPanel
+======================================
+
+.. doxygenclass:: FUltraleapLeapCustomDetailsPanel
+   :project: unreal
+   :members:

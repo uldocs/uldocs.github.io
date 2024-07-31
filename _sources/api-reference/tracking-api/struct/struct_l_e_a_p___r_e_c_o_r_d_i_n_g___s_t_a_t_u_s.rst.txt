@@ -1,0 +1,6 @@
+Struct LEAP_RECORDING_STATUS
+============================
+
+.. doxygenstruct:: LEAP_RECORDING_STATUS
+   :project: tracking
+   :members:

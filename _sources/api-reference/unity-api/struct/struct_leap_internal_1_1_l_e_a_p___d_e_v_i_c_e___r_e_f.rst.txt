@@ -1,0 +1,6 @@
+Struct LeapInternal::LEAP_DEVICE_REF
+====================================
+
+.. doxygenstruct:: LeapInternal::LEAP_DEVICE_REF
+   :project: unity
+   :members: 

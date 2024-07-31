@@ -1,0 +1,160 @@
+:hide-toc:
+
+*******************************************
+Exploring Hand Tracking in Casual VR Gaming
+*******************************************
+
+*Matt Corrall, Design Director, Spatial Interaction*
+
+**Recently at Ultraleap, we’ve been investigating how best to design for hand tracking in casual VR games.** 
+
+.. youtube:: Gu2svIa0vEQ
+    :width: 750
+	
+The use of hand tracking in casual VR games opens up new possibilities for both developers and users.
+
+Unlike story-driven RPG games, or social VR, realism isn't central to casual games. So if the aim isn't highly naturalistic interaction, where can our imaginations take our hands? And without controllers to contend with, will non-gamers feel more keen to try VR?
+
+We needed to explore all the ways a player might want to play with hand tracking, to understand all the ways game developers might want to design for hand tracking in casual VR games.
+
+To do this, first we stepped into the shoes of both developer and player (conveniently, most of us here at Ultraleap are both) before testing our prototypes with real-life users.
+
+**By putting the end user first we developed three creative ways of designing for hand tracking in casual VR games.**
+
+What we did
+-----------
+
+We set out to unlock new possibilities for game developers by experimenting with interactions that are fun and intuitive. To maximise creativity, we wanted to make quick, focused progress, in a short space of time. So, we did a `design sprint <https://www.interaction-design.org/literature/topics/design-sprints>`_.  
+
+.. image:: ../img/ultralab/three-vr-hand-tracking-games.png
+    :alt: Images from each of the games to show play testing
+*Starting with the needs of the end user through play-testing*
+
+Popularised by Google, a design sprint can be used as a way of identifying opportunities for new products, quickly prototyping them, then assessing their potential with play-testing.
+
+.. image:: ../img/ultralab/design-sprint-ideation.png
+    :alt: Image of the office wall covered in post it notes to show our ideas
+*What two days of structured design thinking looks like*
+
+Ideation and selection
+----------------------
+
+We did rapid user research – including interviews with gamers and game developers – to make sure we understood what mattered to them and where the opportunities for hand tracking might be. Then we harnessed `Design Thinking <https://www.ideou.com/blogs/inspiration/what-is-design-thinking>`_ techniques to generate dozens of ideas for hand tracking. We narrowed down our concepts to just the three most exciting. We considered how much fun and value they might offer, as well as the technical challenges involved. These concepts were then worked up into games we called Finger Guns, Amaze-ing Escape, and Tower Defence. 
+
+.. image:: ../img/ultralab/play-testing-vr-hand-tracking-game.png
+    :alt: Photo of one of our developers playing a VR games
+*One of our guinea pig developers has a play before we get external users involved*
+
+Play testing
+------------
+
+By using Ultraleap’s hand tracking `Plugin for Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_, the team were able to rapidly prototype vertical slices of all three games in just a few days. We got our UX designers involved to refine the ergonomics and user interfaces in line with `what we know works best for hand tracking <https://www.ultraleap.com/company/news/blog/hand-tracking-vr-design/>`_. 
+
+Ultraleap’s `Interaction Engine <https://docs.ultraleap.com/unity-api/unity-user-manual/interaction-engine.html>`_ (included in both Ultraleap’s `Unity <https://leap2.ultraleap.com/xr-developer-tools/>`_ and `Unreal <https://leap2.ultraleap.com/xr-developer-tools/>`_ plugins) makes it simple to grab, push and throw virtual objects around in VR using just your hands. So very quickly we were able to get each game working the way we’d imagined it.
+
+The final stage was to test the prototypes with a handful of representative players (not just ourselves!) and see how well the ideas held up to real world use.
+
+Our user researchers arranged play sessions so the team could observe participants getting to grips with the games and ask questions. This meant we could really get a feel for the further potential of each idea, all in a single day.
+
+This “reality check” is a hugely valuable step that saves teams a great deal of time and reduces risk. It kept things focused on what matters to users, and helped us decide if we should continue work or change direction.
+
+The Games
+---------
+
+**Finger Guns**
+
+.. image:: ../img/ultralab/finger-guns-vr-game.jpeg
+    :alt: Concept card showing key information for the finger guns game
+
+    ”Finger guns encapsulates the childhood fantasy of cowboys and bandits. A super simple interaction of flicking 	your wrist, with the added fun of reloading ammo straight into your arms! It's a highly satisfying experience when 	combined with the extra sounds and bullet effects, with the big ammo being a massive hit!”
+
+    -- Rory Clark, XR Software Engineer 
+	
+.. youtube:: shWYXDGzDxY
+    :width: 750
+	
+**What worked well**
+
+* Shooting finger guns was playful and immediate. Players reverted to childhood (lots of smiles and laughter from some serious engineers).
+* Players particularly enjoyed getting lots of feedback from their shots, such as sending big targets flying. 
+
+**Improvements to make**
+
+* Aiming requires some kind of targeting reticule or other visual aid to help players know exactly where their shots will go.
+* Players used a variety of hand poses to form the guns. A very short onboarding tutorial could teach players exactly what to do.
+
+Amaze-ing Escape
+----------------
+
+.. image:: ../img/ultralab/amazeing-escape-vr-game.jpeg
+    :alt: Concept card showing key information for the maze game
+	
+	”Amaze-ing Escape is a top-down stealth game, focused around helping an escapee find the exit to a maze filled 	with baddies and keys! Primarily built on top of a far field interaction (the ability to interact with things out of 	reach), you aim and pinch at where you want the escapee to go. Aiming with your hands feels natural and easy to 	pick up - making it easy to quickly get to grips with what is going on. Game time and progress can be seen at any 	time by simply turning over the left hand.”
+
+	-- Pip Turner, Research & Development Engineer
+	
+.. youtube:: D0O2o1G2IMk
+    :width: 750
+	
+**What worked well**
+
+* Players quickly understood the goal of the game.
+* Players found the game exciting.
+* Players became emotionally invested in looking after the character during play.
+
+**Improvements to make**
+
+* Players weren’t sure what to do to direct their character. A very short onboarding tutorial could teach players how to perform the far field interaction.
+* Either hand could direct the character, but this caused some confusion and false positives in testing. We learned to make the interaction single hand only.
+
+Tower Defence
+----------------
+
+.. image:: ../img/ultralab/tower-defence-vr-game.jpeg
+    :alt: Concept card showing key information for the tower defence game
+	
+	”Tower Defence places players on top of a castle wall looking out over a field. Taking inspiration from Plants 	vs Zombies, the player must defend their castle against incoming waves of enemies in order to stay alive. 
+
+	The game combines mechanics from typical wave-based and realtime games to create a frantic survival experience, 	making use of the reliability and stability of Ultraleap's `Hand Tracking Software <https://leap2.ultraleap.com/gemini-downloads/>`_ in even the toughest of situations. Players must 	grab turrets from a crate to their side, and place them on anchor points in front of them - doing this will 	build a usable turret in the battlefield, which can shoot and explode in order to defend against the attackers, 	when triggered by the player. 
+
+	These interactions utilise both the Interaction Engine (for anchors, grabbing, and dropping) and UI Input Module 	(for on-object buttons and UI buttons) from Ultraleap’s new `Unity plugin 	<https://leap2.ultraleap.com/xr-developer-tools/>`_.”
+
+	-- Matt Filer, Unity Engineer
+
+.. youtube:: SN4IAVH5sEM
+    :width: 750
+		
+**What worked well**
+
+* Players intuitively understood how to pick up and place towers, and push buttons in the interface.
+* Our players had a love/hate reaction to this game. But for some it was so compelling they kept coming back to play again and master the challenge.
+
+**Improvements to make**
+
+* The game could be overwhelming for new players. We needed to introduce challenge more gradually.
+* Players didn’t understand all the UI elements and struggled to keep track of them all. We needed to simplify our UI to allow more focus on the game world.
+
+.. image:: ../img/ultralab/playing-finger-guns-vr-game.png
+    :alt: Photo of one of our developers playing the VR hand tracking games
+	
+So how can you best make hand tracking work for your casual VR game? By using a focused design sprint and, most importantly, playing, we were able to create three games that went beyond natural interaction and used hand tracking in new and unexpected ways.
+
+Grabbing, reaching, aiming, and even shooting with hands added an exciting dimension to play. Players found this new layer of the gaming experience satisfying and fun, and felt connected to the game in a novel way.
+
+Key Takeaways
+----------------
+
+* New interactions, made possible by hand tracking, can make games more immediate, visceral, or playful than controllers.
+* Players made suggestions for how the games could “level up” in challenge and complexity over more extended play.
+* The first few seconds of the experience are key. Paying close attention to the design of tutorial content, UI elements, and hand representation, means almost everyone can learn to use their hands quickly and easily. Even players completely new to interacting with their hands in VR. 
+* All three games showed potential to be fun and engaging for casual gamers.
+
+By putting the end user first, we will continue to work on how best to design for hand-tracking in VR gaming, and give developers the support they need. 
+
+We can’t wait to see what you build!
+
+Check out the `Ultraleap XR Design Guidelines <https://docs.ultraleap.com/xr-guidelines/>`_ for more on the principles of designing the 3D VR space.
+
+And watch this space for more design sprints to come…
+
+`Back to top <#top>`_

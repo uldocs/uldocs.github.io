@@ -1,0 +1,6 @@
+Namespace UnityEngine::Assertions
+=================================
+
+.. doxygennamespace:: UnityEngine::Assertions
+   :project: unity
+   :no-link: 

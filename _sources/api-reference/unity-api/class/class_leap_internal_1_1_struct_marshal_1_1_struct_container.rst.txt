@@ -1,0 +1,6 @@
+Class LeapInternal::StructMarshal::StructContainer
+==================================================
+
+.. doxygenclass:: LeapInternal::StructMarshal::StructContainer
+   :project: unity
+   :members: 

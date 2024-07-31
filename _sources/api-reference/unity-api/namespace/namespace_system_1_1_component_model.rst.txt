@@ -1,0 +1,6 @@
+Namespace System::ComponentModel
+================================
+
+.. doxygennamespace:: System::ComponentModel
+   :project: unity
+   :no-link: 
