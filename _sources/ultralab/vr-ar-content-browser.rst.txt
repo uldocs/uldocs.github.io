@@ -1,0 +1,72 @@
+A Design Concept for a New Kind of VR/AR Content Browser
+=======================================================
+
+Imagine a content browser capable of existing anywhere. Not just on a desk or behind a small glass screen in your hand, but one that exists in the world. An interface that’s infinitely extensible and three dimensional. Today we’re excited to share one of our spatial computing design concepts: Stems.
+
+Stems are like windows in a desktop OS, but designed specifically for interaction in virtual and augmented reality, using only your hands. We call them stems because early in the project we envisioned organic interfaces that could branch and grow.
+
+Beneath the surface is a robust interactive model built around three simple interactions: pinch, palm in, and palm out. These provide the foundation for an intuitive AR/VR concept interface that also allows direct physical interactions without being complicated.
+
+.. image:: ../img/ultralab/vr-ar-content-browser/ultraleap-stems-scroll-1.gif
+
+
+Fully interactive
+---------------------------------------
+
+Stems can be subtly embedded (like seeds) in your environment, or available as an “always on” interface. They take full form when your hand is near. Once a stem is visible, you can pinch your fingers together and move your hand up and down to scroll. You can scroll with either hand, and even scroll from a distance.
+
+
+`Download our technical introduction to hand tracking <https://www.ultraleap.com/company/news/resources/hand-tracking-technical-intro/>`_
+-------------
+
+Beneath the surface is a robust interactive model built around three simple interactions: pinch, palm in, and palm out. These provide the foundation for an intuitive AR/VR concept interface that also allows direct physical interactions without being complicated.
+
+.. image:: ../img/ultralab/vr-ar-content-browser/ultraleap-stems-tap-1.gif
+
+
+Dynamic content in AR/VR
+-------------
+
+Stems can hold many different types of content, and unlike windows in a desktop OS, take advantage of depth to allow for rich interactive displays. Stems can hold almost any kind of dynamic content you can imagine, from images and videos to 3D models and menus. This makes it possible to introduce more complex and powerful interactions within a simple framework.
+
+
+AR aesthetics
+-------------
+
+Stems is also designed to be portable across virtual and augmented realities. Spatial computing as a medium needs a common interactive foundation to build a new kind of human intuition. But at the same time, each platform has its own quirks and requirements.
+
+Augmented reality headsets work on a simple principle: adding light to the real world to create illusions. They don’t yet have the ability to selectively filter out light. This means that black objects in augmented reality are simply transparent.
+
+Stems are bright and boldly coloured, with no dark backgrounds, because we designed them with additive colour in mind. This is the native aesthetic for augmented reality as it currently exists (and will for some time).
+
+.. image:: ../img/ultralab/vr-ar-content-browser/ultraleap-stems-pinch-scroll-1.gif
+
+
+Grabbing and carrying stems
+-------------
+
+You can pick up a stem by pinching it and turning your hand towards you. If you release the pinch, the stem stays fixed to your hand.
+
+Once a stem is being carried, you can scroll through it by pinching and moving your hand up and down. Turn your hand away to minimise the stem, or pinch and turn your hand to put the stem back into the environment. This can be extended so that you can carry multiple stems and easily switch between them for quick reference.
+
+.. image:: ../img/ultralab/vr-ar-content-browser/ultraleap-ar-vr-interaction-1.gif
+
+
+Interactions at a distance
+-------------
+
+Summon objects with a pinch and turn of your hand. You can even resize a stem, taking advantage of the virtual world’s near-infinite canvas.
+
+
+What’s next for spatial computing?
+-------------
+
+Stems are powerful, minimalist UI components that can be quickly and easily operated with a single hand. This concept can be extended to make a huge variety of components, from simple text labels, to menus, instructions, web pages, apps and more.
+
+While this is strictly a design concept, we can imagine many more features that can be added to this foundation. Pinning stems to physical and virtual objects. Nesting stems. Docking stems in walls, tables, and keyboards. We can even experiment with more advanced content types such as the power hands concept from our Virtual Elements series.
+
+As spatial computing continues to evolve and mature, new interfaces will arise that take full advantage of its capabilities. As VR and AR headsets become increasingly integrated into our everyday lives, these interfaces will form the basis for unprecedented operating systems – with simple, direct, physical interactions with the human hand at the centre.
+
+.. youtube:: xUTmXbPE8WA
+    :width: 560
+    :height: 315

@@ -1,0 +1,46 @@
+Virtual Elements: The Periodic Table for Augmented and Virtual Reality
+=======================================================
+
+From the moment we’re born, we start learning about the world and the materials in it. Concrete is hard and can scrape your knees. Rubber is soft and grippy and bounces when you throw it. Fire is hot and flickers in the air, water is wet and spreads when you spill it.
+
+Modern VR engines like Unreal and Unity can visually render materials very convincingly. However, this falls apart as soon as you try to interact. Virtual wood looks like wood, but it doesn’t feel or behave like wood. It has no texture or temperature, and it doesn’t bend or splinter like the real thing.
+
+So, instead of trying to simulate the physical world, what if we created new “virtual elements” designed for virtual and augmented reality? Elements that look and feel unlike anything in the physical world, with new but defined properties?
+
+
+Journey to another universe: new laws of physics for VR design
+---------------------------------------
+
+.. image:: ../img/ultralab/virtual-elements-in-vr/plaf-ultraleap.gif
+
+Our journey to this new reality starts with plaf. This element’s responsive surface changes colour as you move closer to it. Plaf is unable to be moved unless bound to another element, but it is reactive to your hands. It can alternate between active and non-active states, and comes in different flat colours and transparencies. It can be used for active components like buttons and sliders, or can be purely decorative.
+
+.. image:: ../img/ultralab/virtual-elements-in-vr/gracine-ultraleap.gif
+
+Here’s another element – gracine, a strangely flexible material that can be moved around. It pops when you push too far. It can be used as a kind of virtual trackpad or scrollbar. Invisible from behind, it could also be used as a privacy screen, or background for text and UI elements.
+
+
+Building a new grammar for virtual and augmented reality interactions
+-------------
+
+By consistently applying these kinds of properties, we can build a new intuition in people, so that everyone learns how these new worlds behave. In the same way you know that metal is hard and liquid is wet, you’ll know that Element X is scalable, Element Y is only visible to you, and Element Z is an interactive UI element. These materials would form part of the grammar of virtual and augmented world interactions.
+
+.. image:: ../img/ultralab/virtual-elements-in-vr/tapron-ultraleap.gif
+
+Let’s say you wanted something tougher. Less squishy. Tapron has a hard surface that can only be pushed in fixed directions, and it carries no momentum. It’s great for sliders and buttons.
+
+
+`Download our technical introduction to hand tracking <https://www.ultraleap.com/company/news/resources/hand-tracking-technical-intro/>`_
+-------------
+
+The possibilities for virtual elements are limitless. Visually, they could be colour-coded, smoky, liquid, particle fields, light shafts, wireframes, point clouds, or have lines, hatches, or textures. They could be portals to other worlds, or defy the rules of conventional geometry. Auditory and haptic cues can be combined and remixed for a huge variety of elemental types.
+
+.. image:: ../img/ultralab/virtual-elements-in-vr/compound-gracine-plaf-ultraleap.gif
+
+Virtual elements can also be combined in new and startling ways. This compound of plaf and gracine unlocks a potential selector interface.
+
+.. image:: ../img/ultralab/virtual-elements-in-vr/power-hands-ultraleap.gif
+
+Between the world of atoms and the world of ones and zeros is the original interface, the human hand. This slider allows our hands to shift through different states of matter, unlocking an additional range of interactive modes.
+
+We’re now on the verge of a new reality where matter and energy have fundamentally different properties. Rather than trying to reproduce the real world, it’s time to think about how virtual and augmented reality unlock new human capabilities. This is at the heart of our design research at Ultraleap as we look ahead to the next decade of spatial computing.

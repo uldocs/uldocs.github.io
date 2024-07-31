@@ -1,0 +1,98 @@
+Hand tracking: 5 game design tips from VR arcades
+=======================================================
+By Chris Burgess, XR Product Manager and Pip Turner, XR Software Engineer
+
+In home VR gaming, hand tracking is a relatively new way of interacting. But the same can’t be said for VR arcades and other location-based experiences, where hand tracking has been a staple for years. There are many design recommendations from VR arcades that can be applied by developers and designers building hand tracking into VR home gaming. Recently at GDC, we shared some of these insights. Here are our top 5 tips.
+
+.. youtube:: FmfI7yEUWgg
+    :width: 560
+    :height: 315
+Hand tracking in location-based VR experiences by DIVR, Raw Thrills, Dreamcraft, Sandbox and Triotech.
+
+
+1. Don’t underestimate the value of social interaction in VR
+---------------------------------------
+
+What's the first thing you do when you see a friend across the street?
+
+This might be a controversial answer, but usually we find that we shout their name and wave our hands at them! It sounds obvious, but just as in real life, in location-based VR with hand tracking we find that people are naturally social with their hands. It’s how we communicate in real life, and something we instinctively bring with us to virtual reality.
+
+Even seeing your hands in virtual reality is immediately delightful. Using them to communicate naturally with your friends takes this one step further.
+
+*“When people grab controllers, they are like, ‘Ah, okay, this is a videogame.' But when they see their hands in VR… they are like, ‘Wow, I’m actually inside the game right now.’ Shortly followed by the realization that their friends and family are there with them.”* Jorge Torales - CEO, Torch VR
+
+Social gestures and interactions are powerful, and once you’ve got hand tracking in your VR game they’re almost a freebie – most of it will come naturally to players. That said, there are a few things you can do to help:
+
+- **Encourage moments that will be enhanced by social interaction**: For example, try to design your VR game around teamwork. Have stages where two people need to be working in parallel, communicating with each other, giving each other instruction.
+- **Prompt your players to use social gestures immediately**: `Immersive Tech <https://www.immersivetech.co/>`_ created a location-based VR experience called `Uncontained <https://www.youtube.com/watch?v=9RUAVxxYMqA>`_. When they introduce players to hand tracking, they run them through a few easy social gestures. This engages them in the VR experience and gets them interacting early. Doing social gestures such as waving, thumbs up, or pointing can be a great prompt for players to hold on to and remember later.
+- **Social gestures can make NPCs feel more alive**: In our `Blocks <https://gallery.leapmotion.com/blocks/>`_ hand tracking demo, we guide the player through the VR experience using the blocks-bot. They show the player how to interact with the environment by performing actions the player will need. These natural gestures bring the warm, fuzzy feeling of social interaction to a single-player experience and make the NPC feel more alive.
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/ultraleap-blocks-demo.gif
+To get the bot’s attention in our Blocks VR demo, the player needs to wave at them, and do a thumbs-up when they want to move to the next stage of the tutorial.
+
+
+2. Signpost players towards interactable objects
+---------------------------------------
+
+When in VR, and especially when using hand tracking, users' expectation is often high. Their hands are realistic – why shouldn’t the world be too? To set expectations, use visual affordances and a strong visual design language. These indicate to a player naturally what can and can’t be interacted with.
+
+Visual affordances
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Affordances are the characteristics of an object that signal what actions are possible, and how they should be done. Physical objects convey information about their use. A doorknob affords turning, a chair affords sitting.
+
+Well-designed virtual objects provide clues about what can be done, what’s happening, and what is about to happen. Putting grooves in the surface of a virtual ball guides users where to place their fingers to pick it up. Buttons can look like they need to be pushed, UI panel elements can look like they can be grabbed and moved. (There’s lots more about affordances in our VR design guidelines.)
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/casual-vr-gaming.gif
+We recently ran a design sprint focused on core hand tracking interactions for casual VR gaming. This tower defence game prototype included a big button to explode the towers. The button affords being pushed – it’s floating on top of the tower, and has a massive “EXPLODE” sign on it!
+
+A strong design language
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pair your well-designed virtual objects with a strong visual design language to manage player expectations. For example, you could design your VR game so that interactable objects are always highlighted in a colour when users' hands are near, or only allow interactions with objects not attached to physical space. The main point here is consistency – whatever you choose, be consistent with it. Having no design language at all can lead to player disappointment.
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/cat-explorer.gif
+In our Cat Explorer VR demo, controls are all in white, subtly guiding players towards interactable objects. This is further linked through the hands also being in white – creating an immediate connection.
+
+
+3. Prioritise tangible and physical interactions in hand tracking experiences
+---------------------------------------
+
+A player’s main context is their lifetime of physical experience. With hand tracking, you can lean on this as an initial paradigm. If virtual objects behave similarly to real ones, interaction feels natural and can be almost effortless to learn. Pushing buttons, grabbing blocks, spinning turntables – using these as foundations of your VR game makes for a compelling experience.
+
+It’s definitely occasionally useful to include a few abstract gestures, such as turning your hand over or pinching – for example, to teleport or open a menu. Keep them to a minimum though, teach users slowly, and user test extensively.
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/xr-blocks-triangle-to-exit.gif
+Here’s a prototype gesture we tested as a “return to launcher” action. The user is required to hold both hands together in a triangle. This interaction could be useful, but would be hard for a VR player to discover by themselves. It needs to be taught.
+
+
+4. Mix and match hand tracking and VR controllers when it makes sense
+---------------------------------------
+
+It would be tempting for us to argue that hand tracking is the best input modality for all VR use cases. But actually, different ways of interacting all have their own strengths. For example, VR controllers tend to be better for high precision, whereas hand tracking wins out on social interaction. (There’s also voice control and eye tracking…)
+
+Mixing and matching can create a multiplier effect where the whole becomes more than the sum of its parts. We also recently wrote a swapping algorithm that makes the hand-off between VR controllers and hand tracking robust and speedy. Check out our Unreal Plugin, or the preview package of our Unity Plugin.
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/vex-vr-arcade-ultraleap-tracking.jpg
+Hyper-VR developer `VEX <https://www.vex-solutions.com/vex-adventure/>`_ used a VR controller in one hand and kept the other free. Interacting with your spaceship and crewmates? Use hand tracking. Shooting at enemies? Use physical controls.
+
+
+5. Let players do things with their hands in VR that they can’t in real life
+---------------------------------------
+
+Just because players are using their hands doesn’t mean interactions have to be exclusively realistic. In fact, in location-based VR, we’ve found that players expect to be wowed and to have “an experience”.
+
+The whole point of VR is to do things you’re unable to do in real life. So, see where your imagination can take players' hands to develop new VR game mechanics. Just remember that if the interactions used are not based on real life, keep them rooted in context to make them easy to learn.
+
+.. image:: ../img/ultralab/hand-tracking-vr-game-design-tips/vr-game-finger-guns.gif
+A “finger gun” game prototype built during our recent design sprint on casual VR games. By contextualizing the interaction in a cowboy theme, the concept makes sense. It also utilizes player expectations – we’ve all made finger guns as children.
+
+
+Developing with hand tracking in VR
+---------------------------------------
+
+Developing with hand tracking in VR is easier than ever before. We’ve recently made major updates to our Unity and Unreal Engine plugins, including making significant features previously only in Unity available to Unreal VR developers.
+
+Our award-winning Interaction Engine is a layer that exists between the game engine and real-world physics, making interaction feel natural, satisfying, and easy to use. It’s also now easy to bind Ultraleap data to your own hand assets, use optimized and pre-rigged hand models, or switch seamlessly between VR controllers and hand tracking.
+
+We’re looking forward to seeing what new VR game mechanics are made possible by hand tracking! Don’t forget to share your creations with us at `@ultraleapdevs <https://twitter.com/ultraleap_devs>`_.

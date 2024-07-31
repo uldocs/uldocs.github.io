@@ -248,14 +248,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/multi-device-blog.html">Multidevice Preview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/far-field-ray-blog.html">Hand-Powered Far Field Interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/vr-training-design.html">Inside the Design of Our VR Barista Training Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/hand-tracking-vr-game-design-tips.html">Hand tracking: 5 game design tips from VR arcades</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/pose-detection-blog.html">Pose Detection in Unreal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/games-blog.html">Exploring Hand Tracking in Casual VR Gaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/hand-tracking-vr-design.html">6 VR Design Principles for Hand Tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/hands-module.html">How To Get Started With The Hands Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/xr-keyboard.html">How To Use Our XR Keyboard For Unity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/levitate-project.html">Interactive Floating Displays: The Levitate Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/development-and-interaction-design.html">Development &amp; Interaction Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/advanced-hand-tracking-with-tom-carter.html">Advanced Hand Tracking With Tom Carter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/openxr-hand-tracking-in-unity.html">OpenXR Hand Tracking in Unity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/vr-ar-content-browser.html">A Design Concept for a New Kind of VR/AR Content Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ultralab/virtual-elements-in-vr.html">Virtual Elements: The Periodic Table for Augmented and Virtual Reality</a></li>
 </ul>
 </li>
 </ul>
@@ -931,8 +935,8 @@
 <h2>How to get the Plugin<a class="headerlink" href="#how-to-get-the-plugin" title="Permalink to this headline">¶</a></h2>
 <p>As a developer you have two options to get our plugin; via the Unreal Marketplace (<cite>recommended</cite>) or from our Github Repository manually.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="85f990e4-5b83-4b37-af6b-a8f35ffeae6a" name="d30bdd1b-e458-4846-94cf-89b6672c0608" type="radio"/>
-<label class="tabbed-label" for="85f990e4-5b83-4b37-af6b-a8f35ffeae6a">
+<input checked="checked" id="bea5614e-c746-4fb9-96f2-74b8e6829100" name="4e2e90e7-7698-4b69-b1ac-e54d6bbb6cbe" type="radio"/>
+<label class="tabbed-label" for="bea5614e-c746-4fb9-96f2-74b8e6829100">
 Unreal Marketplace</label><div class="tabbed-content docutils">
 <ol class="arabic simple">
 <li><p>Open the Epic Games launcher.</p></li>
@@ -951,8 +955,8 @@ Unreal Marketplace</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../../../../_images/EnablePlugin.png"><img alt="../../../../_images/EnablePlugin.png" src="../../../../_images/EnablePlugin.png" style="width: 90%;"/></a>
 </figure>
 </div>
-<input id="9a79b7f1-2d36-43dd-a30f-cca7d4c24e15" name="d30bdd1b-e458-4846-94cf-89b6672c0608" type="radio"/>
-<label class="tabbed-label" for="9a79b7f1-2d36-43dd-a30f-cca7d4c24e15">
+<input id="0b8f6ba8-acd3-4c36-9237-573c19f4d813" name="4e2e90e7-7698-4b69-b1ac-e54d6bbb6cbe" type="radio"/>
+<label class="tabbed-label" for="0b8f6ba8-acd3-4c36-9237-573c19f4d813">
 Github Repository</label><div class="tabbed-content docutils">
 <ol class="arabic simple">
 <li><p>Download the latest release of the Ultraleap Unreal Plugin and SDK (make sure to use the <a class="reference external" href="https://github.com/ultraleap/UnrealPlugin/releases">.zip link for your version of Unreal</a>).</p></li>
@@ -985,8 +989,8 @@ Quick Start Video<div class="summary-down docutils">
 <h2>How to use the Plugin<a class="headerlink" href="#how-to-use-the-plugin" title="Permalink to this headline">¶</a></h2>
 <p>There are two methods that can be used to start tracking your hands. Either via our custom <code class="docutils literal notranslate"><span class="pre">Pawn</span></code> or our custom <code class="docutils literal notranslate"><span class="pre">Game</span> <span class="pre">Mode</span></code>.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="32530b46-410a-42cf-81e0-93708d16bfbf" name="fcdba4e6-1466-4098-826f-573c18e0a192" type="radio"/>
-<label class="tabbed-label" for="32530b46-410a-42cf-81e0-93708d16bfbf">
+<input checked="checked" id="0e5cbc6a-1e05-41ea-8c81-ffb360dad9d5" name="19c3de7f-0c3e-49f0-b089-a9b8e52c4ab1" type="radio"/>
+<label class="tabbed-label" for="0e5cbc6a-1e05-41ea-8c81-ffb360dad9d5">
 Leap Hands Pawn</label><div class="tabbed-content docutils">
 <ol class="arabic simple">
 <li><p>Ensure the plugin is enabled in the project, restarting when necessary</p></li>
@@ -999,8 +1003,8 @@ Leap Hands Pawn</label><div class="tabbed-content docutils">
 </ol>
 <p><strong>Please ensure that you’re ready to stream VR before starting Unreal otherwise VR Preview will not be available - e.g. ensure SteamVR is running.</strong></p>
 </div>
-<input id="bcc01c63-4e5a-4665-b0ff-144d315da811" name="fcdba4e6-1466-4098-826f-573c18e0a192" type="radio"/>
-<label class="tabbed-label" for="bcc01c63-4e5a-4665-b0ff-144d315da811">
+<input id="f3b05817-8524-41e6-a6a6-cad398117ee6" name="19c3de7f-0c3e-49f0-b089-a9b8e52c4ab1" type="radio"/>
+<label class="tabbed-label" for="f3b05817-8524-41e6-a6a6-cad398117ee6">
 IE Game Mode</label><div class="tabbed-content docutils">
 <ol class="arabic simple">
 <li><p>Ensure the plugin is enabled in the project, restarting when necessary</p></li>

@@ -38,9 +38,15 @@ September 2022
 June 2022
    * `Inside the Design of Our VR Barista Training Demo <vr-training-design.html>`_
 
+April 2022
+   * `Hand tracking: 5 game design tips from VR arcades <hand-tracking-vr-game-design-tips.html>`_
+
 March 2022
    * `Pose Detection in Unreal <pose-detection-blog.html>`_
    * `Exploring Hand Tracking in Casual VR Gaming <games-blog.html>`_
+
+September 2021
+   * `6 VR Design Principles for Hand Tracking <hand-tracking-vr-design.html>`_
 
 July 2021
    * `How To Get Started With The Hands Module <hands-module.html>`_
@@ -57,6 +63,12 @@ February 2021
    * `Advanced Hand Tracking With Tom Carter <advanced-hand-tracking-with-tom-carter.html>`_
    * `OpenXR Hand Tracking in Unity <openxr-hand-tracking-in-unity.html>`_
 
+December 2019
+   * `A Design Concept for a New Kind of VR/AR Content Browser <vr-ar-content-browser.html>`_
+
+November 2019
+   * `Virtual Elements: The Periodic Table for Augmented and Virtual Reality <virtual-elements-in-vr.html>`_
+
 --------
 
 .. toctree::
@@ -71,8 +83,10 @@ February 2021
     Multidevice Preview <multi-device-blog.rst>
     Hand-Powered Far Field Interaction <far-field-ray-blog.rst>
     Inside the Design of Our VR Barista Training Demo <vr-training-design.rst>
+    Hand tracking: 5 game design tips from VR arcades <hand-tracking-vr-game-design-tips.rst>
     Pose Detection in Unreal <pose-detection-blog.rst>
     Exploring Hand Tracking in Casual VR Gaming <games-blog.rst>
+    6 VR Design Principles for Hand Tracking <hand-tracking-vr-design.rst>
     How To Get Started With The Hands Module <hands-module.rst>
     How To Get Your Hand Assets Ready for Unity <rigging-guide.rst>
     How To Use Our XR Keyboard For Unity <xr-keyboard.rst>
@@ -80,5 +94,7 @@ February 2021
     Development & Interaction Design <development-and-interaction-design.rst>
     Advanced Hand Tracking With Tom Carter <advanced-hand-tracking-with-tom-carter.rst>
     OpenXR Hand Tracking in Unity <openxr-hand-tracking-in-unity.rst>
+    A Design Concept for a New Kind of VR/AR Content Browser <vr-ar-content-browser.rst>
+    Virtual Elements: The Periodic Table for Augmented and Virtual Reality <virtual-elements-in-vr.rst>
 
 `Back to top <#top>`_

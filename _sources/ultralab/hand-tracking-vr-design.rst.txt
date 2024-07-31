@@ -1,0 +1,81 @@
+
+6 VR Design Principles for Hand Tracking
+=======================================================
+By Matt Corrall, Design Director at Ultraleap
+
+In virtual reality, hand tracking unlocks experiences that are more intuitive and realistic. VR interfaces optimized for hand tracking feature a few key differences to those designed solely for controllers. Here are six of the key hand tracking design principles we’ve evolved at Ultraleap.
+
+Mainstream adoption of VR means broadening appeal beyond early adopters. It means drawing in more diverse, technology-anxious, or even downright sceptical users. And in enterprise use-cases, it means developing applications that deliver measurable real-world impact.
+
+Making how we interact in VR more intuitive and realistic is an important part of solving the puzzle of mainstream adoption. Allowing users to use their hands more naturally is central to that.
+
+.. youtube:: 00uXQFtWdts
+    :width: 560
+    :height: 315
+VR flight attendant training is a good example of how hand tracking makes VR training more accessible, realistic, and effective. Trainee flight attendants – who have often never tried VR before – can build muscle memory of actions closely mimicking the ones they would do in real life.
+
+But where do you start with designing a hand tracking experience?
+
+We’ve distilled our many years of designing hand tracking VR experiences into six basic principles. Designing a VR experience optimized for hand tracking isn’t rocket science, but it is a little bit different to designing solely for controllers.
+
+By following a few simple hand tracking principles, you can get the most out of hand tracking – quickly and easily. Read on to find out more…
+
+.. image:: ../img/ultralab/hand-tracking-vr-design/Virtual-objects-1.gif
+Tangible, physical interaction examples from our tooling
+
+
+1. Make everything tangible and physical
+---------------------------------------
+
+When virtual objects around you behave much like in real life, interactions feel natural. This negates the need to learn button presses.
+
+Make every element – even UI controls like buttons and menus – three-dimensional and behave with familiar physics as much as possible. Virtual objects work best when their form presents clear affordances to users – that is, the way they look helps make it obvious how to use them without the need for instructions.
+
+They should be the right size to be picked up, and if appropriate have their own handles, surface textures or indents to show how they should be grabbed, slid or rotated.
+
+How users handle an object will also vary depending on who they are, and what they’re doing in the application. Rather than assigning specific gestures like “pinch” to the object, use our Interaction Engine to allow users to grab, push, and pull with any or all of their fingers.
+
+.. image:: ../img/ultralab/hand-tracking-vr-design/Virtual-Objects-2.gif
+Turntable to rotate a virtual object in our Cat Explorer demo
+
+
+2. Keep physical exertion minimal
+---------------------------------------
+
+Users should be able to reach everything they need to comfortably. They shouldn’t have to stretch, regularly raise their arms high or perform fatiguing movements. Consider positioning and how every object could be used, avoiding uncomfortable hand poses and repetitive motions.
+
+
+3. Use abstract hand poses and gestures sparingly
+---------------------------------------
+
+Performing abstract hand poses or gestures (such as turning over a hand or pinching two fingers together) can be a convenient way to teleport or open a menu. However, they are difficult to recall unless people use the application regularly, and should be used sparingly.
+
+Instead, build features through direct interactions with objects and the virtual environment wherever possible.
+
+.. image:: ../img/ultralab/hand-tracking-vr-design/Pinch-draw.gif
+An abstract “pinch” gesture in our Pinch Draw demo.
+
+
+4. Ensure a wide range of people can enjoy your VR application
+---------------------------------------
+
+Remember that comfort and what feels natural is different for different people. There is also a wide range of hand sizes and shapes – and the ways people interact is a bit less predictable than with VR controllers.
+
+Always test your application with a broad, diverse range of users mid-development. Build in options for users to adjust things like panel positions.
+
+We recommend a small “handle” below the panel that users can quickly grab to reposition panels without any chance of interference with other controls.
+
+.. image:: ../img/ultralab/hand-tracking-vr-design/Repositioning-a-panel.gif
+Repositioning a panel in our Particles demo
+
+
+5. Make elements respond to proximity
+---------------------------------------
+
+Many hand tracking VR experiences don’t include mid-air haptic feedback. If yours doesn’t, users will need extra visual feedback from objects in order to interact with confidence. Interactive elements should react to approaching fingers with a small movement or colour change to indicate they can be used.
+
+
+6. ...and then make elements respond to touch
+---------------------------------------
+
+When “touched” by the hand or any number of fingers, virtual objects should respond with another colour change or movement. Audio feedback further helps to indicate say, a successful button press.
